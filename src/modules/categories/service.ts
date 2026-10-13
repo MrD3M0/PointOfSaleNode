@@ -1,6 +1,33 @@
 import { prismaMain } from "@/lib/prismaClient";
+import { Prisma } from "@/generated/prisma/client";
 import { CustomError, ValidationError } from "@/errors/CustomError";
 import { T_CategoryCreateInput } from "./validator";
+
+const assertUnique = async (
+  userId: string,
+  data: T_CategoryCreateInput,
+  excludeId?: string,
+) => {
+  const clash = await prismaMain.category.findFirst({
+    where: {
+      userId,
+      ...(excludeId && { id: { not: excludeId } }),
+      OR: [{ name: data.name }, { shortName: data.shortName }],
+    },
+  });
+  if (!clash) return;
+
+  const fields: Record<string, string> = {};
+  if (clash.name === data.name)
+    fields.name = "Category with the same name already exists";
+  if (clash.shortName === data.shortName)
+    fields.shortName = "Category with the same short name already exists";
+  throw new ValidationError(fields);
+};
+
+const isUniqueError = (error: unknown) =>
+  error instanceof Prisma.PrismaClientKnownRequestError &&
+  error.code === "P2002";
 
 export const CategoryService = {
   index: async (
@@ -10,130 +37,69 @@ export const CategoryService = {
     userId: string,
   ) => {
     const skip = (page - 1) * limit;
-    const searchTerm = typeof search === "string" ? search : "";
+    const where: Prisma.CategoryWhereInput = {
+      userId,
+      ...(search && { name: { contains: search, mode: "insensitive" } }),
+    };
 
-    // Get all categories from the database
     const categories = await prismaMain.category.findMany({
-      where: {
-        name: searchTerm
-          ? { contains: searchTerm, mode: "insensitive" }
-          : undefined,
-        userId,
-      },
+      where,
       skip,
       take: limit,
+      orderBy: { name: "asc" },
     });
+    const total = await prismaMain.category.count({ where });
 
-    // Get the total count of categories without pagination
-    const totalCategories = await prismaMain.category.count({
-      where: {
-        name: searchTerm
-          ? { contains: searchTerm, mode: "insensitive" }
-          : undefined,
-        userId,
-      },
-    });
-
-    return {
-      categories,
-      pagination: {
-        page,
-        limit,
-        total: totalCategories,
-      },
-    };
+    return { categories, pagination: { page, limit, total } };
   },
 
   create: async (data: T_CategoryCreateInput, userId: string) => {
-    // Validate if category with same name exists
-    const existingCategoryByName = await prismaMain.category.findFirst({
-      where: { name: data.name },
-    });
-    if (existingCategoryByName)
-      throw new ValidationError({
-        name: "Category with the same name already exists",
+    await assertUnique(userId, data);
+    try {
+      return await prismaMain.category.create({
+        data: { name: data.name, shortName: data.shortName, userId },
       });
-
-    // Validate if category with same shortName exists
-    const existingCategoryByShortName = await prismaMain.category.findFirst({
-      where: { shortName: data.shortName },
-    });
-    if (existingCategoryByShortName)
-      throw new ValidationError({
-        shortName: "Category with the same short name already exists",
-      });
-
-    // Create the category
-    return await prismaMain.category.create({
-      data: {
-        name: data.name,
-        shortName: data.shortName,
-        userId,
-      },
-    });
+    } catch (error) {
+      if (isUniqueError(error))
+        throw new ValidationError({
+          name: "Category with the same name or short name already exists",
+        });
+      throw error;
+    }
   },
 
-  getById: async (id: string) => {
-    const category = await prismaMain.category.findUnique({
-      where: { id },
+  getById: async (id: string, userId: string) => {
+    const category = await prismaMain.category.findFirst({
+      where: { id, userId },
     });
-
     if (!category) throw new CustomError("Category not found", 404);
-
     return category;
   },
 
-  update: async (id: string, data: T_CategoryCreateInput) => {
-    // Get the existing category
-    const existingCategory = await prismaMain.category.findUnique({
-      where: { id },
+  update: async (id: string, data: T_CategoryCreateInput, userId: string) => {
+    const existing = await prismaMain.category.findFirst({
+      where: { id, userId },
     });
+    if (!existing) throw new CustomError("Category not found", 404);
 
-    if (!existingCategory) throw new CustomError("Category not found", 404);
-
-    // Validate if category with same name exists
-    const existingCategoryByName = await prismaMain.category.findFirst({
-      where: { name: data.name },
-    });
-    if (
-      !!existingCategoryByName &&
-      existingCategory.id !== existingCategoryByName.id
-    )
-      throw new ValidationError({
-        name: "Category with the same name already exists",
+    await assertUnique(userId, data, id);
+    try {
+      return await prismaMain.category.update({
+        where: { id },
+        data: { name: data.name, shortName: data.shortName },
       });
-
-    // Validate if category with same shortName exists
-    const existingCategoryByShortName = await prismaMain.category.findFirst({
-      where: { shortName: data.shortName },
-    });
-    if (
-      !!existingCategoryByShortName &&
-      existingCategory.id !== existingCategoryByShortName.id
-    )
-      throw new ValidationError({
-        shortName: "Category with the same short name already exists",
-      });
-
-    // Update the category
-    return await prismaMain.category.update({
-      where: { id },
-      data: {
-        name: data.name,
-        shortName: data.shortName,
-      },
-    });
+    } catch (error) {
+      if (isUniqueError(error))
+        throw new ValidationError({
+          name: "Category with the same name or short name already exists",
+        });
+      throw error;
+    }
   },
 
-  getByName: async (name: string) => {
-    return await prismaMain.category.findFirst({
-      where: { name },
-    });
-  },
+  getByName: async (name: string, userId: string) =>
+    prismaMain.category.findFirst({ where: { name, userId } }),
 
-  getByShortName: async (shortName: string) => {
-    return await prismaMain.category.findFirst({
-      where: { shortName },
-    });
-  },
+  getByShortName: async (shortName: string, userId: string) =>
+    prismaMain.category.findFirst({ where: { shortName, userId } }),
 };

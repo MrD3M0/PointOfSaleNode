@@ -3,7 +3,7 @@ import { ErrorHandler } from "@/utils/error";
 import { queryFilters } from "@/utils/queryFilters";
 import { ResponseHandler } from "@/utils/response";
 import { Request, Response } from "express";
-import { validateProductCreate } from "./validator";
+import { validateProductCreate, validateProductUpdate } from "./validator";
 import { ProductService } from "./service";
 
 const ProductController = {
@@ -75,12 +75,9 @@ const ProductController = {
 
   getById: async (req: Request, res: Response) => {
     try {
-      // Get the parameter from the Url
+      const userId = res.locals.context.userId;
       const productId = req.params.id as string;
-
-      // Call the service
-      const product = await ProductService.getById(productId);
-
+      const product = await ProductService.getById(productId, userId);
       return ResponseHandler.success({
         res,
         code: 200,
@@ -88,22 +85,16 @@ const ProductController = {
         data: product,
       });
     } catch (error) {
-      // If error occurs, handle the error
       return ErrorHandler.handleError(res, error);
     }
   },
 
   update: async (req: Request, res: Response) => {
     try {
-      // Get parameter from the URL
+      const userId = res.locals.context.userId;
       const productId = req.params.id as string;
-
-      // Validate the data from the request body
-      const data = validateProductCreate(req.body);
-
-      // Call the service
-      const product = await ProductService.update(productId, data);
-
+      const data = validateProductUpdate(req.body);
+      const product = await ProductService.update(productId, data, userId);
       return ResponseHandler.success({
         res,
         code: 200,
@@ -111,7 +102,6 @@ const ProductController = {
         data: product,
       });
     } catch (error) {
-      // If error occurs, handle the error
       return ErrorHandler.handleError(res, error);
     }
   },
@@ -143,12 +133,9 @@ const ProductController = {
   },
   delete: async (req: Request, res: Response) => {
     try {
-      // Get the parameter from the Url
+      const userId = res.locals.context.userId;
       const productId = req.params.id as string;
-
-      // Call the service
-      await ProductService.delete(productId);
-
+      await ProductService.delete(productId, userId);
       return ResponseHandler.success({
         res,
         code: 200,
@@ -156,7 +143,6 @@ const ProductController = {
         data: null,
       });
     } catch (error) {
-      // If error occurs, handle the error
       return ErrorHandler.handleError(res, error);
     }
   },

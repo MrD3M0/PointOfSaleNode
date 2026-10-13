@@ -24,7 +24,12 @@ const CategoryController = {
       const searchTerm = typeof search === "string" ? search : "";
 
       // Call the service
-      const result = await CategoryService.index(pageNumber, limitNumber, searchTerm, userId);
+      const result = await CategoryService.index(
+        pageNumber,
+        limitNumber,
+        searchTerm,
+        userId,
+      );
 
       return ResponseHandler.success({
         res,
@@ -52,7 +57,10 @@ const CategoryController = {
       const { name, shortName } = validateCategoryCreate(req.body);
 
       // Call the service
-      const category = await CategoryService.create({ name, shortName }, userId);
+      const category = await CategoryService.create(
+        { name, shortName },
+        userId,
+      );
 
       // Return the response
       return ResponseHandler.success({
@@ -68,12 +76,9 @@ const CategoryController = {
   },
   retrieve: async (req: Request, res: Response) => {
     try {
-      // Get the parameter from the Url
+      const userId = res.locals.context.userId;
       const categoryId = req.params.id as string;
-
-      // Call the service
-      const category = await CategoryService.getById(categoryId);
-
+      const category = await CategoryService.getById(categoryId, userId);
       return ResponseHandler.success({
         res,
         code: 200,
@@ -81,21 +86,16 @@ const CategoryController = {
         data: category,
       });
     } catch (error) {
-      // If error occurs, handle the error
       return ErrorHandler.handleError(res, error);
     }
   },
+
   update: async (req: Request, res: Response) => {
     try {
-      // Get parameter from the URL
+      const userId = res.locals.context.userId;
       const categoryId = req.params.id as string;
-
-      // Validate the data from the request body
       const data = validateCategoryCreate(req.body);
-
-      // Call the service
-      const category = await CategoryService.update(categoryId, data);
-
+      const category = await CategoryService.update(categoryId, data, userId);
       return ResponseHandler.success({
         res,
         code: 200,
@@ -103,7 +103,6 @@ const CategoryController = {
         data: category,
       });
     } catch (error) {
-      // If error occurs, handle the error
       return ErrorHandler.handleError(res, error);
     }
   },

@@ -5,7 +5,15 @@ import { ResponseHandler } from "@/utils/response";
 import { Request, Response } from "express";
 import { validateBillCreate } from "./validator";
 import { BillService } from "./service";
-
+// "2026-10-13" as endDate means the whole day, not midnight
+const parseDay = (value: unknown, endOfDay: boolean) => {
+  if (typeof value !== "string") return null;
+  const dateOnly = /^\d{4}-\d{2}-\d{2}$/.test(value);
+  const date = new Date(
+    dateOnly ? `${value}T${endOfDay ? "23:59:59.999" : "00:00:00.000"}` : value,
+  );
+  return Number.isNaN(date.getTime()) ? null : date;
+};
 const BillController = {
   index: async (req: Request, res: Response) => {
     try {
@@ -54,10 +62,9 @@ const BillController = {
 
   getById: async (req: Request, res: Response) => {
     try {
+      const userId = res.locals.context.userId;
       const billId = req.params.id as string;
-
-      const bill = await BillService.getById(billId);
-
+      const bill = await BillService.getById(billId, userId);
       return ResponseHandler.success({
         res,
         code: 200,
@@ -71,11 +78,10 @@ const BillController = {
 
   update: async (req: Request, res: Response) => {
     try {
+      const userId = res.locals.context.userId;
       const billId = req.params.id as string;
       const data = validateBillCreate(req.body);
-
-      const bill = await BillService.update(billId, data);
-
+      const bill = await BillService.update(billId, data, userId);
       return ResponseHandler.success({
         res,
         code: 200,
@@ -89,10 +95,9 @@ const BillController = {
 
   delete: async (req: Request, res: Response) => {
     try {
+      const userId = res.locals.context.userId;
       const billId = req.params.id as string;
-
-      await BillService.delete(billId);
-
+      await BillService.delete(billId, userId);
       return ResponseHandler.success({
         res,
         code: 200,
@@ -106,39 +111,31 @@ const BillController = {
 
   getBillsByDateRange: async (req: Request, res: Response) => {
     try {
-      const context = res.locals.context;
-      const userId = context.userId;
+      const userId = res.locals.context.userId;
+      const start = parseDay(req.query.startDate, false);
+      const end = parseDay(req.query.endDate, true);
 
-      const { startDate, endDate, page, limit } = req.query;
-
-      if (!startDate || !endDate) {
+      if (!start || !end)
         return ResponseHandler.error({
           res,
           code: 400,
-          message: "startDate and endDate are required",
+          message: "startDate and endDate are required and must be valid dates",
           error: null,
         });
-      }
 
-      const pageNumber = Number(page) || 1;
-      const limitNumber = Number(limit) || 10;
-
+      const { page, limit } = queryFilters(req);
       const result = await BillService.getBillsByDateRange(
         userId,
-        new Date(startDate as string),
-        new Date(endDate as string),
-        pageNumber,
-        limitNumber,
+        start,
+        end,
+        page,
+        limit,
       );
-
       return ResponseHandler.success({
         res,
         code: 200,
         message: "Bills fetched successfully!",
-        data: {
-          data: result.bills,
-          pagination: result.pagination,
-        },
+        data: { data: result.bills, pagination: result.pagination },
       });
     } catch (error) {
       return ErrorHandler.handleError(res, error);
@@ -165,38 +162,22 @@ const BillController = {
 
   getBillsByCategory: async (req: Request, res: Response) => {
     try {
-      const context = res.locals.context;
-      const userId = context.userId;
-
-      const { categoryId, page, limit } = req.query;
-
-      if (!categoryId) {
-        return ResponseHandler.error({
-          res,
-          code: 400,
-          message: "categoryId is required",
-          error: null,
-        });
-      }
-
-      const pageNumber = Number(page) || 1;
-      const limitNumber = Number(limit) || 10;
+      const userId = res.locals.context.userId;
+      // the route is /category/:categoryId, so read it from params
+      const categoryId = req.params.categoryId as string;
+      const { page, limit } = queryFilters(req);
 
       const result = await BillService.getBillsByCategory(
         userId,
-        categoryId as string,
-        pageNumber,
-        limitNumber,
+        categoryId,
+        page,
+        limit,
       );
-
       return ResponseHandler.success({
         res,
         code: 200,
         message: "Bills fetched successfully!",
-        data: {
-          data: result.bills,
-          pagination: result.pagination,
-        },
+        data: { data: result.bills, pagination: result.pagination },
       });
     } catch (error) {
       return ErrorHandler.handleError(res, error);

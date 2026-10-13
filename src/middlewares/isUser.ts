@@ -1,8 +1,47 @@
 import { Request, Response, NextFunction } from "express";
-import { AuthService } from "../modules/auth/service";
+import { AuthService } from "@/modules/auth/service";
 import { CustomError } from "@/errors/CustomError";
 import { T_Context } from "@/@types/type";
 import { CookieManager } from "@/utils/cookies";
+import { ErrorHandler } from "@/utils/error";
+import { prismaMain } from "@/lib/prismaClient";
+
+const getBearerToken = (req: Request) => {
+  const header = req.headers.authorization;
+  if (!header) return undefined;
+  const [scheme, token] = header.split(" ");
+  return scheme?.toLowerCase() === "bearer" ? token : undefined;
+};
+
+const resolveContext = async (
+  req: Request,
+  res: Response,
+): Promise<T_Context> => {
+  const token = req.cookies?.token || getBearerToken(req);
+  const access = token ? AuthService.verifyToken(token, "access") : null;
+  if (access && access.role) {
+    return { userId: access.userId, role: access.role };
+  }
+
+  // Access token missing/expired: try the refresh token
+  const refreshToken = req.cookies?.refreshToken;
+  const refresh = refreshToken
+    ? AuthService.verifyToken(refreshToken, "refresh")
+    : null;
+  if (!refresh) throw new CustomError("Unauthorized", 401);
+
+  // Re-read the user so the role is always current (and deleted users are rejected)
+  const user = await prismaMain.user.findUnique({
+    where: { id: refresh.userId },
+    select: { id: true, role: true },
+  });
+  if (!user) throw new CustomError("Unauthorized", 401);
+
+  const newToken = AuthService.generateToken(user.id, user.role);
+  res.cookie("token", newToken, CookieManager.accessToken());
+  res.setHeader("X-New-Token", newToken);
+  return { userId: user.id, role: user.role };
+};
 
 export const isUser = async (
   req: Request,
@@ -10,51 +49,10 @@ export const isUser = async (
   next: NextFunction,
 ) => {
   try {
-    // Get the token from cookie or authorization header
-    const token = req.cookies.token || req.headers.authorization?.split(" ")[1];
-    const refreshToken = req.cookies.refreshToken;
-
-    // Validate Tokens
-    const decoded = token ? AuthService.verifyToken(token) : null;
-    const decodedRefresh = refreshToken
-      ? AuthService.verifyToken(refreshToken)
-      : null;
-
-    // Create userContext from decoded token data
-    let userContext: T_Context;
-
-    // If both tokens are invalid or missing , throw unauthorized error
-    if (!decoded && !decodedRefresh) {
-      throw new CustomError("Unauthorized", 401);
-    }
-
-    // If the token is invalid but the refresh token is valid, refresh the token
-    if (!decoded && decodedRefresh) {
-      const tokenData = decodedRefresh as T_Context;
-      const newToken = AuthService.generateToken(
-        tokenData.userId,
-        tokenData.role,
-      );
-
-      // Set the new token in cookies
-      res.cookie("token", newToken, CookieManager.accessToken());
-
-      // Also send the new token in response header for clients using Authorization header
-      res.setHeader("Authorization", `Bearer ${newToken}`);
-      // Use the refresh token data as context
-      userContext = tokenData;
-    } else {
-      // Use the decoded token data as context
-      userContext = decoded as T_Context;
-    }
-    // Attach user info to response locals
-    res.locals.context = userContext;
+    res.locals.context = await resolveContext(req, res);
     return next();
   } catch (error) {
-    // If any error occurs, handle the error
-    return res
-      .status(401)
-      .json({ success: false, message: "Unauthorized", error });
+    return ErrorHandler.handleError(res, error);
   }
 };
 
@@ -64,56 +62,12 @@ export const isAdmin = async (
   next: NextFunction,
 ) => {
   try {
-    // Get the token from cookie or authorization header
-    const token = req.cookies.token || req.headers.authorization?.split(" ")[1];
-    const refreshToken = req.cookies.refreshToken;
-
-    // Validate Tokens
-    const decoded = token ? AuthService.verifyToken(token) : null;
-    const decodedRefresh = refreshToken
-      ? AuthService.verifyToken(refreshToken)
-      : null;
-
-    // Create userContext from decoded token data
-    let userContext: T_Context;
-
-    // If both tokens are invalid or missing , throw unauthorized error
-    if (!decoded && !decodedRefresh) {
-      throw new CustomError("Unauthorized", 401);
-    }
-
-    // If the token is invalid but the refresh token is valid, refresh the token
-    if (!decoded && decodedRefresh) {
-      const tokenData = decodedRefresh as T_Context;
-      const newToken = AuthService.generateToken(
-        tokenData.userId,
-        tokenData.role,
-      );
-
-      // Set the new token in cookies
-      res.cookie("token", newToken, CookieManager.accessToken());
-
-      // Also send the new token in response header for clients using Authorization header
-      res.setHeader("Authorization", `Bearer ${newToken}`);
-      // Use the refresh token data as context
-      userContext = tokenData;
-    } else {
-      // Use the decoded token data as context
-      userContext = decoded as T_Context;
-    }
-
-    // Check if user is admin
-    if (userContext.role !== "Admin") {
+    const context = await resolveContext(req, res);
+    if (context.role !== "ADMIN")
       throw new CustomError("Forbidden: Admin access required", 403);
-    }
-
-    // Attach user info to response locals
-    res.locals.context = userContext;
+    res.locals.context = context;
     return next();
   } catch (error) {
-    // If any error occurs, handle the error
-    return res
-      .status(401)
-      .json({ success: false, message: "Unauthorized", error });
+    return ErrorHandler.handleError(res, error);
   }
 };

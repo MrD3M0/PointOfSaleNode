@@ -7,48 +7,35 @@ import { ErrorHandler } from "@/utils/error";
 import { AuthService } from "./service";
 import { CookieManager } from "@/utils/cookies";
 
+// Compared against when the user doesn't exist, so response time doesn't reveal valid emails
+const DUMMY_HASH = bcrypt.hashSync("dummy-password", 10);
+
 export const AuthController = {
   login: async (req: Request, res: Response) => {
     try {
-      // Validate the Login Input
       const { email, password } = ValidateLogin(req.body);
 
-      // Find user in the DataBase
-      const user = await prismaMain.user.findUnique({
-        where: { email },
-      });
+      const user = await prismaMain.user.findUnique({ where: { email } });
+      const isPasswordValid = await bcrypt.compare(
+        password,
+        user?.password ?? DUMMY_HASH,
+      );
 
-      // If User is not found , Throw Error
-      if (!user)
+      if (!user || !isPasswordValid)
         return ResponseHandler.error({
           res,
-          code: 400,
+          code: 401,
           message: "Invalid Credentials",
           error: null,
         });
 
-      // Verify Password
-      const isPasswordValid = await bcrypt.compare(password, user.password);
-
-      // If Password doesn't match Throw a Error
-      if (!isPasswordValid)
-        return ResponseHandler.error({
-          res,
-          code: 400,
-          message: "Invalid Credentials",
-          error: null,
-        });
-
-      // Generate JWT token
       const token = AuthService.generateToken(user.id, user.role);
+      const refreshToken = AuthService.generateRefreshToken(user.id);
 
-      // Generate refresh token
-      const refreshToken = AuthService.generateRefershToken(user.id, user.role);
-
-      // Set the token in cookies
       res.cookie("token", token, CookieManager.accessToken());
       res.cookie("refreshToken", refreshToken, CookieManager.refreshToken());
 
+      // Tokens live in httpOnly cookies only; they are not returned in the body
       return res.status(200).json({
         message: "Login successful!",
         user: {
@@ -57,69 +44,66 @@ export const AuthController = {
           email: user.email,
           role: user.role,
         },
-        token: token,
-        refreshToken: refreshToken,
       });
     } catch (error) {
       return ErrorHandler.handleError(res, error);
     }
   },
+
   register: async (req: Request, res: Response) => {
     try {
-      // Validate data from the body
       const { username, email, password } = ValidateRegister(req.body);
 
-      // Check Whether email is Taken or Not
-      const Email = await prismaMain.user.findFirst({
+      const existingEmail = await prismaMain.user.findFirst({
         where: { email },
       });
-      // If Email is taken then send error message
-      if (!!Email)
+      if (existingEmail)
         return ResponseHandler.error({
           res,
-          code: 400,
+          code: 409,
           message: "Email is already taken.",
           error: null,
         });
 
-      // Check Whether Username is Taken or Not
       const existingUsername = await prismaMain.user.findFirst({
         where: { username },
       });
-
-      // If Username is taken then send error message
-      if (!!existingUsername)
+      if (existingUsername)
         return ResponseHandler.error({
           res,
-          code: 400,
-          message: "Username is already taken",
+          code: 409,
+          message: "Username is already taken.",
           error: null,
         });
-      // Hash the password before
+
       const hashedPassword = await bcrypt.hash(password, 10);
-      // Creating User
-      const createdUser = await prismaMain.user.create({
-        data: { email: email, username: username, password: hashedPassword },
+      // Unique-constraint races fall through to ErrorHandler (P2002 -> 409)
+      await prismaMain.user.create({
+        data: { email, username, password: hashedPassword },
       });
-      return res.status(200).json({
-        message: "Registered successful!",
-      });
+
+      return res.status(201).json({ message: "Registered successfully!" });
     } catch (error) {
       return ErrorHandler.handleError(res, error);
     }
   },
+
   me: async (req: Request, res: Response) => {
     try {
-      // Get the user info from the response locals
       const context = res.locals.context;
-
-      // Get the user by id
       const user = await prismaMain.user.findUnique({
         where: { id: context.userId },
         select: { id: true, email: true, username: true, role: true },
       });
 
-      // Return the success response
+      if (!user)
+        return ResponseHandler.error({
+          res,
+          code: 401,
+          message: "Unauthorized",
+          error: null,
+        });
+
       return ResponseHandler.success({
         res,
         code: 200,
@@ -130,15 +114,12 @@ export const AuthController = {
       return ErrorHandler.handleError(res, error);
     }
   },
-  logout: async (req: Request, res: Response) => {
+
+  logout: async (_req: Request, res: Response) => {
     try {
-      console.log("Hello ma ya xu");
-      // Clear the cookie
-      res.clearCookie("token");
-      res.clearCookie("refreshToken");
-      return res.status(200).json({
-        message: "Logged out successfully!",
-      });
+      res.clearCookie("token", CookieManager.clear());
+      res.clearCookie("refreshToken", CookieManager.clear());
+      return res.status(200).json({ message: "Logged out successfully!" });
     } catch (error) {
       return ErrorHandler.handleError(res, error);
     }

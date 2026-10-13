@@ -1,0 +1,19443 @@
+# 📁 PROJECT EXPORT FOR LLMs
+
+## 📊 Project Information
+
+- **Project Name**: `PointOfSaleNode`
+- **Generated On**: 2026-10-13 13:18:20 (Asia/Katmandu / GMT+06:45)
+- **Total Files Processed**: 68
+- **Export Tool**: Easy Whole Project to Single Text File for LLMs v1.1.0
+- **Tool Author**: Jota / José Guilherme Pandolfi
+
+### ⚙️ Export Configuration
+
+| Setting | Value |
+|---------|-------|
+| Language | `en` |
+| Max File Size | `1 MB` |
+| Include Hidden Files | `false` |
+| Output Format | `both` |
+
+## 🌳 Project Structure
+
+```
+├── 📁 prisma/
+│   ├── 📁 migrations/
+│   │   ├── 📁 20260520101259_created_user/
+│   │   │   └── 📄 migration.sql (657 B)
+│   │   ├── 📁 20260520153138_y/
+│   │   │   └── 📄 migration.sql (941 B)
+│   │   ├── 📁 20260521155327_added_password_user/
+│   │   │   └── 📄 migration.sql (236 B)
+│   │   ├── 📁 20260521163238_changed_id_type/
+│   │   │   └── 📄 migration.sql (377 B)
+│   │   ├── 📁 20260605144606_created_category_schema_and_maintained_user/
+│   │   │   └── 📄 migration.sql (348 B)
+│   │   ├── 📁 20260605145335_added_created_at_and_updated_at_in_user_and_category/
+│   │   │   └── 📄 migration.sql (631 B)
+│   │   ├── 📁 20260605170848_optional_updated/
+│   │   │   └── 📄 migration.sql (75 B)
+│   │   ├── 📁 20260605173756_added_short_name_in_category/
+│   │   │   └── 📄 migration.sql (246 B)
+│   │   ├── 📁 20260605182515_fixed_updated_at_in_category/
+│   │   │   └── 📄 migration.sql (79 B)
+│   │   ├── 📁 20260606124615_made_updated_at_not_null/
+│   │   │   └── 📄 migration.sql (236 B)
+│   │   ├── 📁 20260608090722_created_product_schema_and_relation/
+│   │   │   └── 📄 migration.sql (776 B)
+│   │   ├── 📁 20260608134553_added_bill_and_billitem/
+│   │   │   └── 📄 migration.sql (2.28 KB)
+│   │   ├── 📁 20261013120205_fix_role_enum/
+│   │   │   └── 📄 migration.sql (623 B)
+│   │   ├── 📁 20261013121455_add_batch/
+│   │   │   └── 📄 migration.sql (1.35 KB)
+│   │   ├── 📁 20261013124606_fixed_fast_search_in_db/
+│   │   │   └── 📄 migration.sql (2.37 KB)
+│   │   └── 📄 migration_lock.toml (128 B)
+│   └── 📄 schema.prisma (3.22 KB)
+├── 📁 src/
+│   ├── 📁 @types/
+│   │   └── 📄 type.ts (77 B)
+│   ├── 📁 dev/
+│   │   └── 📄 seed-default-admin.ts (1.08 KB)
+│   ├── 📁 errors/
+│   │   └── 📄 CustomError.ts (1.5 KB)
+│   ├── 📁 generated/
+│   │   └── 📁 prisma/
+│   │       ├── 📁 internal/
+│   │       │   ├── 📄 class.ts (42.03 KB)
+│   │       │   ├── 📄 prismaNamespace.ts (37.05 KB)
+│   │       │   └── 📄 prismaNamespaceBrowser.ts (4.68 KB)
+│   │       ├── 📁 models/
+│   │       │   ├── 📄 Batch.ts (60.58 KB)
+│   │       │   ├── 📄 Bill.ts (62.07 KB)
+│   │       │   ├── 📄 BillItem.ts (69.87 KB)
+│   │       │   ├── 📄 Category.ts (55.16 KB)
+│   │       │   ├── 📄 Product.ts (69.55 KB)
+│   │       │   └── 📄 User.ts (56.53 KB)
+│   │       ├── 📄 browser.ts (1.06 KB)
+│   │       ├── 📄 client.ts (1.88 KB)
+│   │       ├── 📄 commonInputTypes.ts (19.41 KB)
+│   │       ├── 📄 enums.ts (544 B)
+│   │       └── 📄 models.ts (535 B)
+│   ├── 📁 lib/
+│   │   └── 📄 prismaClient.ts (398 B)
+│   ├── 📁 middlewares/
+│   │   ├── 📄 isUser.ts (2.32 KB)
+│   │   └── 📄 trimBody.ts (610 B)
+│   ├── 📁 modules/
+│   │   ├── 📁 auth/
+│   │   │   ├── 📄 controller.ts (3.91 KB)
+│   │   │   ├── 📄 routes.ts (717 B)
+│   │   │   ├── 📄 service.ts (1.28 KB)
+│   │   │   └── 📄 validator.ts (1.16 KB)
+│   │   ├── 📁 batch/
+│   │   │   ├── 📄 controller.ts (2.73 KB)
+│   │   │   ├── 📄 routes.ts (529 B)
+│   │   │   ├── 📄 service.ts (3.58 KB)
+│   │   │   └── 📄 validator.ts (1.59 KB)
+│   │   ├── 📁 bill/
+│   │   │   ├── 📄 controller.ts (5.45 KB)
+│   │   │   ├── 📄 routes.ts (750 B)
+│   │   │   ├── 📄 service.ts (8.56 KB)
+│   │   │   └── 📄 validator.ts (1.19 KB)
+│   │   ├── 📁 categories/
+│   │   │   ├── 📄 controller.ts (3.28 KB)
+│   │   │   ├── 📄 routes.ts (465 B)
+│   │   │   ├── 📄 service.ts (3.21 KB)
+│   │   │   └── 📄 validator.ts (602 B)
+│   │   └── 📁 product/
+│   │       ├── 📄 controller.ts (4.37 KB)
+│   │       ├── 📄 routes.ts (629 B)
+│   │       ├── 📄 service.ts (4.95 KB)
+│   │       └── 📄 validator.ts (1.5 KB)
+│   ├── 📁 utils/
+│   │   ├── 📄 batchNumber.ts (268 B)
+│   │   ├── 📄 cookies.ts (1.17 KB)
+│   │   ├── 📄 error.ts (3.72 KB)
+│   │   ├── 📄 queryFilters.ts (888 B)
+│   │   └── 📄 response.ts (1.2 KB)
+│   ├── 📄 index.ts (1.97 KB)
+│   └── 📄 router.ts (565 B)
+├── 📄 package.json (1.27 KB)
+├── 📄 pnpm-lock.yaml (81.56 KB)
+├── 📄 prisma.config.ts (388 B)
+└── 📄 tsconfig.json (626 B)
+```
+
+## 📑 Table of Contents
+
+**Project Files:**
+
+- [📄 prisma/migrations/20260520101259_created_user/migration.sql](#📄-prisma-migrations-20260520101259-created-user-migration-sql)
+- [📄 prisma/migrations/20260520153138_y/migration.sql](#📄-prisma-migrations-20260520153138-y-migration-sql)
+- [📄 prisma/migrations/20260521155327_added_password_user/migration.sql](#📄-prisma-migrations-20260521155327-added-password-user-migration-sql)
+- [📄 prisma/migrations/20260521163238_changed_id_type/migration.sql](#📄-prisma-migrations-20260521163238-changed-id-type-migration-sql)
+- [📄 prisma/migrations/20260605144606_created_category_schema_and_maintained_user/migration.sql](#📄-prisma-migrations-20260605144606-created-category-schema-and-maintained-user-migration-sql)
+- [📄 prisma/migrations/20260605145335_added_created_at_and_updated_at_in_user_and_category/migration.sql](#📄-prisma-migrations-20260605145335-added-created-at-and-updated-at-in-user-and-category-migration-sql)
+- [📄 prisma/migrations/20260605170848_optional_updated/migration.sql](#📄-prisma-migrations-20260605170848-optional-updated-migration-sql)
+- [📄 prisma/migrations/20260605173756_added_short_name_in_category/migration.sql](#📄-prisma-migrations-20260605173756-added-short-name-in-category-migration-sql)
+- [📄 prisma/migrations/20260605182515_fixed_updated_at_in_category/migration.sql](#📄-prisma-migrations-20260605182515-fixed-updated-at-in-category-migration-sql)
+- [📄 prisma/migrations/20260606124615_made_updated_at_not_null/migration.sql](#📄-prisma-migrations-20260606124615-made-updated-at-not-null-migration-sql)
+- [📄 prisma/migrations/20260608090722_created_product_schema_and_relation/migration.sql](#📄-prisma-migrations-20260608090722-created-product-schema-and-relation-migration-sql)
+- [📄 prisma/migrations/20260608134553_added_bill_and_billitem/migration.sql](#📄-prisma-migrations-20260608134553-added-bill-and-billitem-migration-sql)
+- [📄 prisma/migrations/20261013120205_fix_role_enum/migration.sql](#📄-prisma-migrations-20261013120205-fix-role-enum-migration-sql)
+- [📄 prisma/migrations/20261013121455_add_batch/migration.sql](#📄-prisma-migrations-20261013121455-add-batch-migration-sql)
+- [📄 prisma/migrations/20261013124606_fixed_fast_search_in_db/migration.sql](#📄-prisma-migrations-20261013124606-fixed-fast-search-in-db-migration-sql)
+- [📄 prisma/migrations/migration_lock.toml](#📄-prisma-migrations-migration-lock-toml)
+- [📄 src/@types/type.ts](#📄-src-types-type-ts)
+- [📄 src/dev/seed-default-admin.ts](#📄-src-dev-seed-default-admin-ts)
+- [📄 src/errors/CustomError.ts](#📄-src-errors-customerror-ts)
+- [📄 src/generated/prisma/internal/class.ts](#📄-src-generated-prisma-internal-class-ts)
+- [📄 src/generated/prisma/internal/prismaNamespace.ts](#📄-src-generated-prisma-internal-prismanamespace-ts)
+- [📄 src/generated/prisma/internal/prismaNamespaceBrowser.ts](#📄-src-generated-prisma-internal-prismanamespacebrowser-ts)
+- [📄 src/generated/prisma/models/Batch.ts](#📄-src-generated-prisma-models-batch-ts)
+- [📄 src/generated/prisma/models/Bill.ts](#📄-src-generated-prisma-models-bill-ts)
+- [📄 src/generated/prisma/models/BillItem.ts](#📄-src-generated-prisma-models-billitem-ts)
+- [📄 src/generated/prisma/models/Category.ts](#📄-src-generated-prisma-models-category-ts)
+- [📄 src/generated/prisma/models/Product.ts](#📄-src-generated-prisma-models-product-ts)
+- [📄 src/generated/prisma/models/User.ts](#📄-src-generated-prisma-models-user-ts)
+- [📄 src/generated/prisma/browser.ts](#📄-src-generated-prisma-browser-ts)
+- [📄 src/generated/prisma/client.ts](#📄-src-generated-prisma-client-ts)
+- [📄 src/generated/prisma/commonInputTypes.ts](#📄-src-generated-prisma-commoninputtypes-ts)
+- [📄 src/generated/prisma/enums.ts](#📄-src-generated-prisma-enums-ts)
+- [📄 src/generated/prisma/models.ts](#📄-src-generated-prisma-models-ts)
+- [📄 src/lib/prismaClient.ts](#📄-src-lib-prismaclient-ts)
+- [📄 src/middlewares/isUser.ts](#📄-src-middlewares-isuser-ts)
+- [📄 src/middlewares/trimBody.ts](#📄-src-middlewares-trimbody-ts)
+- [📄 src/modules/auth/controller.ts](#📄-src-modules-auth-controller-ts)
+- [📄 src/modules/auth/routes.ts](#📄-src-modules-auth-routes-ts)
+- [📄 src/modules/auth/service.ts](#📄-src-modules-auth-service-ts)
+- [📄 src/modules/auth/validator.ts](#📄-src-modules-auth-validator-ts)
+- [📄 src/modules/batch/controller.ts](#📄-src-modules-batch-controller-ts)
+- [📄 src/modules/batch/routes.ts](#📄-src-modules-batch-routes-ts)
+- [📄 src/modules/batch/service.ts](#📄-src-modules-batch-service-ts)
+- [📄 src/modules/batch/validator.ts](#📄-src-modules-batch-validator-ts)
+- [📄 src/modules/bill/controller.ts](#📄-src-modules-bill-controller-ts)
+- [📄 src/modules/bill/routes.ts](#📄-src-modules-bill-routes-ts)
+- [📄 src/modules/bill/service.ts](#📄-src-modules-bill-service-ts)
+- [📄 src/modules/bill/validator.ts](#📄-src-modules-bill-validator-ts)
+- [📄 src/modules/categories/controller.ts](#📄-src-modules-categories-controller-ts)
+- [📄 src/modules/categories/routes.ts](#📄-src-modules-categories-routes-ts)
+- [📄 src/modules/categories/service.ts](#📄-src-modules-categories-service-ts)
+- [📄 src/modules/categories/validator.ts](#📄-src-modules-categories-validator-ts)
+- [📄 src/modules/product/controller.ts](#📄-src-modules-product-controller-ts)
+- [📄 src/modules/product/routes.ts](#📄-src-modules-product-routes-ts)
+- [📄 src/modules/product/service.ts](#📄-src-modules-product-service-ts)
+- [📄 src/modules/product/validator.ts](#📄-src-modules-product-validator-ts)
+- [📄 src/utils/batchNumber.ts](#📄-src-utils-batchnumber-ts)
+- [📄 src/utils/cookies.ts](#📄-src-utils-cookies-ts)
+- [📄 src/utils/error.ts](#📄-src-utils-error-ts)
+- [📄 src/utils/queryFilters.ts](#📄-src-utils-queryfilters-ts)
+- [📄 src/utils/response.ts](#📄-src-utils-response-ts)
+- [📄 src/index.ts](#📄-src-index-ts)
+- [📄 src/router.ts](#📄-src-router-ts)
+- [📄 package.json](#📄-package-json)
+- [📄 pnpm-lock.yaml](#📄-pnpm-lock-yaml)
+- [📄 prisma.config.ts](#📄-prisma-config-ts)
+- [📄 tsconfig.json](#📄-tsconfig-json)
+
+---
+
+## 📈 Project Statistics
+
+| Metric | Count |
+|--------|-------|
+| Total Files | 68 |
+| Total Directories | 34 |
+| Text Files | 67 |
+| Binary Files | 1 |
+| Total Size | 645.25 KB |
+
+### 📄 File Types Distribution
+
+| Extension | Count |
+|-----------|-------|
+| `.ts` | 48 |
+| `.sql` | 15 |
+| `.json` | 2 |
+| `.toml` | 1 |
+| `.prisma` | 1 |
+| `.yaml` | 1 |
+
+## 💻 File Code Contents
+
+### <a id="📄-prisma-migrations-20260520101259-created-user-migration-sql"></a>📄 `prisma/migrations/20260520101259_created_user/migration.sql`
+
+**File Info:**
+- **Size**: 657 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20260520101259_created_user/migration.sql`
+- **Relative Path**: `prisma/migrations/20260520101259_created_user`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `287e60508b6d8ddc7b39e4062e0005d9`
+- **SHA256**: `efda6a0cd3d01b2503e4cc1557f8aba2807664db545a742e52eaca60a3b2e1cb`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+-- CreateTable
+CREATE TABLE "User" (
+    "id" SERIAL NOT NULL,
+    "email" TEXT NOT NULL,
+    "name" TEXT,
+
+    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Post" (
+    "id" SERIAL NOT NULL,
+    "title" TEXT NOT NULL,
+    "content" TEXT,
+    "published" BOOLEAN NOT NULL DEFAULT false,
+    "authorId" INTEGER NOT NULL,
+
+    CONSTRAINT "Post_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- AddForeignKey
+ALTER TABLE "Post" ADD CONSTRAINT "Post_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20260520153138-y-migration-sql"></a>📄 `prisma/migrations/20260520153138_y/migration.sql`
+
+**File Info:**
+- **Size**: 941 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20260520153138_y/migration.sql`
+- **Relative Path**: `prisma/migrations/20260520153138_y`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `36259f1daf6690ed653d488a95644155`
+- **SHA256**: `0448257b954204209beb893423544bda5b817c889dc4fefb53d8dff1c7780847`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+/*
+  Warnings:
+
+  - You are about to drop the column `name` on the `User` table. All the data in the column will be lost.
+  - You are about to drop the `Post` table. If the table is not empty, all the data it contains will be lost.
+  - A unique constraint covering the columns `[username]` on the table `User` will be added. If there are existing duplicate values, this will fail.
+  - Added the required column `username` to the `User` table without a default value. This is not possible if the table is not empty.
+
+*/
+-- CreateEnum
+CREATE TYPE "Role" AS ENUM ('User', 'Admin');
+
+-- DropForeignKey
+ALTER TABLE "Post" DROP CONSTRAINT "Post_authorId_fkey";
+
+-- AlterTable
+ALTER TABLE "User" DROP COLUMN "name",
+ADD COLUMN     "role" "Role" NOT NULL DEFAULT 'User',
+ADD COLUMN     "username" TEXT NOT NULL;
+
+-- DropTable
+DROP TABLE "Post";
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20260521155327-added-password-user-migration-sql"></a>📄 `prisma/migrations/20260521155327_added_password_user/migration.sql`
+
+**File Info:**
+- **Size**: 236 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20260521155327_added_password_user/migration.sql`
+- **Relative Path**: `prisma/migrations/20260521155327_added_password_user`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `a018818215a6e6da5ef6efd02748193f`
+- **SHA256**: `02a465885dc334b3ed6b27170fca523a01206355daa779f136228b0ea94b66dc`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+/*
+  Warnings:
+
+  - Added the required column `password` to the `User` table without a default value. This is not possible if the table is not empty.
+
+*/
+-- AlterTable
+ALTER TABLE "User" ADD COLUMN     "password" TEXT NOT NULL;
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20260521163238-changed-id-type-migration-sql"></a>📄 `prisma/migrations/20260521163238_changed_id_type/migration.sql`
+
+**File Info:**
+- **Size**: 377 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20260521163238_changed_id_type/migration.sql`
+- **Relative Path**: `prisma/migrations/20260521163238_changed_id_type`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `03fdf864f43ca24bb418842dab500f85`
+- **SHA256**: `b2a48054c27926f1aa69e712eee491323e41f56ca3354caf5b0de873abc9bd21`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+/*
+  Warnings:
+
+  - The primary key for the `User` table will be changed. If it partially fails, the table could be left without primary key constraint.
+
+*/
+-- AlterTable
+ALTER TABLE "User" DROP CONSTRAINT "User_pkey",
+ALTER COLUMN "id" DROP DEFAULT,
+ALTER COLUMN "id" SET DATA TYPE TEXT,
+ADD CONSTRAINT "User_pkey" PRIMARY KEY ("id");
+DROP SEQUENCE "User_id_seq";
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20260605144606-created-category-schema-and-maintained-user-migration-sql"></a>📄 `prisma/migrations/20260605144606_created_category_schema_and_maintained_user/migration.sql`
+
+**File Info:**
+- **Size**: 348 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20260605144606_created_category_schema_and_maintained_user/migration.sql`
+- **Relative Path**: `prisma/migrations/20260605144606_created_category_schema_and_maintained_user`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `8d3000abe732036af43d245abfe8c151`
+- **SHA256**: `9594a245205110d6b737f910992f20bf84e6a31b4d26f51747f3acb973046d57`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+-- CreateTable
+CREATE TABLE "Category" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
+
+    CONSTRAINT "Category_pkey" PRIMARY KEY ("id")
+);
+
+-- AddForeignKey
+ALTER TABLE "Category" ADD CONSTRAINT "Category_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20260605145335-added-created-at-and-updated-at-in-user-and-category-migration-sql"></a>📄 `prisma/migrations/20260605145335_added_created_at_and_updated_at_in_user_and_category/migration.sql`
+
+**File Info:**
+- **Size**: 631 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20260605145335_added_created_at_and_updated_at_in_user_and_category/migration.sql`
+- **Relative Path**: `prisma/migrations/20260605145335_added_created_at_and_updated_at_in_user_and_category`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `be6779cd460b004151e948ec02747e3c`
+- **SHA256**: `193d5409a23c384e40e7f9a8dace1516f9bb743cc0f753cc3f49efb0f4958205`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+/*
+  Warnings:
+
+  - Added the required column `updatedAt` to the `Category` table without a default value. This is not possible if the table is not empty.
+  - Added the required column `updatedAt` to the `User` table without a default value. This is not possible if the table is not empty.
+
+*/
+-- AlterTable
+ALTER TABLE "Category" ADD COLUMN     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN     "updatedAt" TIMESTAMP(3) NOT NULL;
+
+-- AlterTable
+ALTER TABLE "User" ADD COLUMN     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN     "updatedAt" TIMESTAMP(3) NOT NULL;
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20260605170848-optional-updated-migration-sql"></a>📄 `prisma/migrations/20260605170848_optional_updated/migration.sql`
+
+**File Info:**
+- **Size**: 75 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20260605170848_optional_updated/migration.sql`
+- **Relative Path**: `prisma/migrations/20260605170848_optional_updated`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `27719bb2a0694f87018a6c6542b0550d`
+- **SHA256**: `9f08b2bcb930eed6ebe32415f23c000798a63109281d775eeb93a67336df34ba`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "updatedAt" DROP NOT NULL;
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20260605173756-added-short-name-in-category-migration-sql"></a>📄 `prisma/migrations/20260605173756_added_short_name_in_category/migration.sql`
+
+**File Info:**
+- **Size**: 246 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20260605173756_added_short_name_in_category/migration.sql`
+- **Relative Path**: `prisma/migrations/20260605173756_added_short_name_in_category`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `2285d963bb4e2a9dc198c10e3de67f53`
+- **SHA256**: `a93ee5c9b4c1fe64f3c14da399915abb120684b2ae13047ddb5e266d6ff806ca`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+/*
+  Warnings:
+
+  - Added the required column `shortName` to the `Category` table without a default value. This is not possible if the table is not empty.
+
+*/
+-- AlterTable
+ALTER TABLE "Category" ADD COLUMN     "shortName" TEXT NOT NULL;
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20260605182515-fixed-updated-at-in-category-migration-sql"></a>📄 `prisma/migrations/20260605182515_fixed_updated_at_in_category/migration.sql`
+
+**File Info:**
+- **Size**: 79 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20260605182515_fixed_updated_at_in_category/migration.sql`
+- **Relative Path**: `prisma/migrations/20260605182515_fixed_updated_at_in_category`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `25cf545c9990a9950b09fcf00c90551b`
+- **SHA256**: `317d2bcf814493fb9ac5f75143d96b103b39ae6a72395b7e2bfea5340a22ba03`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+-- AlterTable
+ALTER TABLE "Category" ALTER COLUMN "updatedAt" DROP NOT NULL;
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20260606124615-made-updated-at-not-null-migration-sql"></a>📄 `prisma/migrations/20260606124615_made_updated_at_not_null/migration.sql`
+
+**File Info:**
+- **Size**: 236 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20260606124615_made_updated_at_not_null/migration.sql`
+- **Relative Path**: `prisma/migrations/20260606124615_made_updated_at_not_null`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `fcaae55b3e8744e7c0b6efdd8346b2b0`
+- **SHA256**: `3514e2fc841edb69b3e9a4bdb626486dbd9ea91ae3a8e24533b7f9fe0ffcc062`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+/*
+  Warnings:
+
+  - Made the column `updatedAt` on table `Category` required. This step will fail if there are existing NULL values in that column.
+
+*/
+-- AlterTable
+ALTER TABLE "Category" ALTER COLUMN "updatedAt" SET NOT NULL;
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20260608090722-created-product-schema-and-relation-migration-sql"></a>📄 `prisma/migrations/20260608090722_created_product_schema_and_relation/migration.sql`
+
+**File Info:**
+- **Size**: 776 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20260608090722_created_product_schema_and_relation/migration.sql`
+- **Relative Path**: `prisma/migrations/20260608090722_created_product_schema_and_relation`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `7eebaa84322bf0df303dc30138528c40`
+- **SHA256**: `efc7b586fbc395fe94749a9455e94653d67c05e6894313442f8f4bbe9b942967`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+-- CreateTable
+CREATE TABLE "Product" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "shortName" TEXT NOT NULL,
+    "price" DOUBLE PRECISION NOT NULL,
+    "quantity" INTEGER NOT NULL DEFAULT 0,
+    "userId" TEXT NOT NULL,
+    "categoryId" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Product_pkey" PRIMARY KEY ("id")
+);
+
+-- AddForeignKey
+ALTER TABLE "Product" ADD CONSTRAINT "Product_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Product" ADD CONSTRAINT "Product_categoryId_fkey" FOREIGN KEY ("categoryId") REFERENCES "Category"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20260608134553-added-bill-and-billitem-migration-sql"></a>📄 `prisma/migrations/20260608134553_added_bill_and_billitem/migration.sql`
+
+**File Info:**
+- **Size**: 2.28 KB
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20260608134553_added_bill_and_billitem/migration.sql`
+- **Relative Path**: `prisma/migrations/20260608134553_added_bill_and_billitem`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `a0b17767b03beb4967ebf147f3f511db`
+- **SHA256**: `983b8eddec775c2f2459885e6e20e219f2ad07bf5fb73b1753cc9e2a4238243a`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+-- CreateEnum
+CREATE TYPE "DiscountType" AS ENUM ('Exact', 'Percentage');
+
+-- DropForeignKey
+ALTER TABLE "Category" DROP CONSTRAINT "Category_userId_fkey";
+
+-- DropForeignKey
+ALTER TABLE "Product" DROP CONSTRAINT "Product_categoryId_fkey";
+
+-- DropForeignKey
+ALTER TABLE "Product" DROP CONSTRAINT "Product_userId_fkey";
+
+-- CreateTable
+CREATE TABLE "Bill" (
+    "id" TEXT NOT NULL,
+    "billNumber" SERIAL NOT NULL,
+    "userId" TEXT NOT NULL,
+    "total" DOUBLE PRECISION NOT NULL DEFAULT 0,
+    "discountType" "DiscountType" NOT NULL,
+    "discount" DOUBLE PRECISION NOT NULL DEFAULT 0,
+    "finalBillAmount" DOUBLE PRECISION NOT NULL DEFAULT 0,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Bill_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "BillItem" (
+    "id" TEXT NOT NULL,
+    "billId" TEXT NOT NULL,
+    "productId" TEXT NOT NULL,
+    "quantity" INTEGER NOT NULL,
+    "unitPrice" DOUBLE PRECISION NOT NULL,
+    "total" DOUBLE PRECISION NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "BillItem_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Bill_billNumber_key" ON "Bill"("billNumber");
+
+-- AddForeignKey
+ALTER TABLE "Category" ADD CONSTRAINT "Category_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Product" ADD CONSTRAINT "Product_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Product" ADD CONSTRAINT "Product_categoryId_fkey" FOREIGN KEY ("categoryId") REFERENCES "Category"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Bill" ADD CONSTRAINT "Bill_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "BillItem" ADD CONSTRAINT "BillItem_billId_fkey" FOREIGN KEY ("billId") REFERENCES "Bill"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "BillItem" ADD CONSTRAINT "BillItem_productId_fkey" FOREIGN KEY ("productId") REFERENCES "Product"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20261013120205-fix-role-enum-migration-sql"></a>📄 `prisma/migrations/20261013120205_fix_role_enum/migration.sql`
+
+**File Info:**
+- **Size**: 623 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20261013120205_fix_role_enum/migration.sql`
+- **Relative Path**: `prisma/migrations/20261013120205_fix_role_enum`
+- **Created**: 2026-10-13 12:02:05 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:02:05 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `b7e6f16fea8a1500823f65dfd3914fa4`
+- **SHA256**: `68dcfc9302d992f1c0bef653b5943e1a6622d680aaa9839ab9bfb89a5da22a24`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+/*
+  Warnings:
+
+  - The values [User,Admin] on the enum `Role` will be removed. If these variants are still used in the database, this will fail.
+
+*/
+-- AlterEnum
+BEGIN;
+CREATE TYPE "Role_new" AS ENUM ('USER', 'ADMIN');
+ALTER TABLE "public"."User" ALTER COLUMN "role" DROP DEFAULT;
+ALTER TABLE "User" ALTER COLUMN "role" TYPE "Role_new" USING ("role"::text::"Role_new");
+ALTER TYPE "Role" RENAME TO "Role_old";
+ALTER TYPE "Role_new" RENAME TO "Role";
+DROP TYPE "public"."Role_old";
+ALTER TABLE "User" ALTER COLUMN "role" SET DEFAULT 'USER';
+COMMIT;
+
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "role" SET DEFAULT 'USER';
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20261013121455-add-batch-migration-sql"></a>📄 `prisma/migrations/20261013121455_add_batch/migration.sql`
+
+**File Info:**
+- **Size**: 1.35 KB
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20261013121455_add_batch/migration.sql`
+- **Relative Path**: `prisma/migrations/20261013121455_add_batch`
+- **Created**: 2026-10-13 12:14:55 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:14:55 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `789246b0e870b8a48939a36319d3632d`
+- **SHA256**: `227a9c63a1ac99a0d08a9981f56b2f9a27f6d495293c96eb4c21c99cc9be7ca7`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+/*
+  Warnings:
+
+  - You are about to drop the column `price` on the `Product` table. All the data in the column will be lost.
+  - You are about to drop the column `quantity` on the `Product` table. All the data in the column will be lost.
+  - Added the required column `batchId` to the `BillItem` table without a default value. This is not possible if the table is not empty.
+
+*/
+-- AlterTable
+ALTER TABLE "BillItem" ADD COLUMN     "batchId" TEXT NOT NULL;
+
+-- AlterTable
+ALTER TABLE "Product" DROP COLUMN "price",
+DROP COLUMN "quantity";
+
+-- CreateTable
+CREATE TABLE "Batch" (
+    "id" TEXT NOT NULL,
+    "batchNumber" TEXT NOT NULL,
+    "costPrice" DECIMAL(10,2) NOT NULL,
+    "price" DECIMAL(10,2) NOT NULL,
+    "quantity" INTEGER NOT NULL DEFAULT 0,
+    "productId" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Batch_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Batch_productId_batchNumber_key" ON "Batch"("productId", "batchNumber");
+
+-- AddForeignKey
+ALTER TABLE "Batch" ADD CONSTRAINT "Batch_productId_fkey" FOREIGN KEY ("productId") REFERENCES "Product"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "BillItem" ADD CONSTRAINT "BillItem_batchId_fkey" FOREIGN KEY ("batchId") REFERENCES "Batch"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-20261013124606-fixed-fast-search-in-db-migration-sql"></a>📄 `prisma/migrations/20261013124606_fixed_fast_search_in_db/migration.sql`
+
+**File Info:**
+- **Size**: 2.37 KB
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20261013124606_fixed_fast_search_in_db/migration.sql`
+- **Relative Path**: `prisma/migrations/20261013124606_fixed_fast_search_in_db`
+- **Created**: 2026-10-13 12:46:06 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:06 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `ed29660dc80a17bed8dfe9b4a54ba3e2`
+- **SHA256**: `99f1ae094502dc180a64c85135c26217ccac080e7b646cce6e6d664efad26cd3`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+/*
+  Warnings:
+
+  - You are about to alter the column `total` on the `Bill` table. The data in that column could be lost. The data in that column will be cast from `DoublePrecision` to `Decimal(12,2)`.
+  - You are about to alter the column `discount` on the `Bill` table. The data in that column could be lost. The data in that column will be cast from `DoublePrecision` to `Decimal(12,2)`.
+  - You are about to alter the column `finalBillAmount` on the `Bill` table. The data in that column could be lost. The data in that column will be cast from `DoublePrecision` to `Decimal(12,2)`.
+  - A unique constraint covering the columns `[userId,name]` on the table `Category` will be added. If there are existing duplicate values, this will fail.
+  - A unique constraint covering the columns `[userId,shortName]` on the table `Category` will be added. If there are existing duplicate values, this will fail.
+  - A unique constraint covering the columns `[userId,name]` on the table `Product` will be added. If there are existing duplicate values, this will fail.
+  - A unique constraint covering the columns `[userId,shortName]` on the table `Product` will be added. If there are existing duplicate values, this will fail.
+  - Made the column `updatedAt` on table `User` required. This step will fail if there are existing NULL values in that column.
+
+*/
+-- AlterTable
+ALTER TABLE "Bill" ALTER COLUMN "total" SET DATA TYPE DECIMAL(12,2),
+ALTER COLUMN "discount" SET DATA TYPE DECIMAL(12,2),
+ALTER COLUMN "finalBillAmount" SET DATA TYPE DECIMAL(12,2);
+
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "updatedAt" SET NOT NULL;
+
+-- CreateIndex
+CREATE INDEX "Bill_userId_createdAt_idx" ON "Bill"("userId", "createdAt");
+
+-- CreateIndex
+CREATE INDEX "BillItem_billId_idx" ON "BillItem"("billId");
+
+-- CreateIndex
+CREATE INDEX "BillItem_productId_idx" ON "BillItem"("productId");
+
+-- CreateIndex
+CREATE INDEX "BillItem_batchId_idx" ON "BillItem"("batchId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Category_userId_name_key" ON "Category"("userId", "name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Category_userId_shortName_key" ON "Category"("userId", "shortName");
+
+-- CreateIndex
+CREATE INDEX "Product_categoryId_idx" ON "Product"("categoryId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Product_userId_name_key" ON "Product"("userId", "name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Product_userId_shortName_key" ON "Product"("userId", "shortName");
+
+```
+
+---
+
+### <a id="📄-prisma-migrations-migration-lock-toml"></a>📄 `prisma/migrations/migration_lock.toml`
+
+**File Info:**
+- **Size**: 128 B
+- **Extension**: `.toml`
+- **Language**: `text`
+- **Location**: `prisma/migrations/migration_lock.toml`
+- **Relative Path**: `prisma/migrations`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:06 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `32c3527c0ea9ff20261cdb5b70d40dea`
+- **SHA256**: `99836963713b4f5b269ad49af0ed3d7b0b2e336115c2f92dc9ac683d139d0900`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```text
+# Please do not edit this file manually
+# It should be added in your version-control system (e.g., Git)
+provider = "postgresql"
+
+```
+
+---
+
+## 🚫 Binary/Excluded Files
+
+The following files were not included in the text content:
+
+- `prisma/schema.prisma`
+
+### <a id="📄-src-types-type-ts"></a>📄 `src/@types/type.ts`
+
+**File Info:**
+- **Size**: 77 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/@types/type.ts`
+- **Relative Path**: `src/@types`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:00:33 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `b2595637a406044053a7c43b0dc3349e`
+- **SHA256**: `3e7a00dc803ffdbeafb1baee03abf6ba8b4fa62be13f1641d056bf2f5a2da38a`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+export type T_Context = {
+  userId: string;
+  role: "USER" | "ADMIN";
+};
+
+```
+
+---
+
+### <a id="📄-src-dev-seed-default-admin-ts"></a>📄 `src/dev/seed-default-admin.ts`
+
+**File Info:**
+- **Size**: 1.08 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/dev/seed-default-admin.ts`
+- **Relative Path**: `src/dev`
+- **Created**: 2026-10-13 11:45:47 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 13:17:23 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `e4dac07c6e3623bd4ca4f44f5b6de172`
+- **SHA256**: `04448ac5f64ae3d91198631ca2cf7d9e70f0fe24403f8ca23c20276957ee8a46`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import { prismaMain } from "@/lib/prismaClient";
+import * as bcrypt from "bcrypt";
+import "dotenv/config";
+
+export async function seedDefaultAdmin() {
+  if (process.env.NODE_ENV === "production") return;
+
+  const email = process.env.SEED_ADMIN_EMAIL?.trim().toLowerCase();
+  const password = process.env.SEED_ADMIN_PASSWORD;
+  const username = process.env.SEED_ADMIN_USERNAME || "admin";
+
+  if (!email || !password) {
+    console.log(
+      "Admin seed skipped (SEED_ADMIN_EMAIL / SEED_ADMIN_PASSWORD not set).",
+    );
+    return;
+  }
+
+  try {
+    const existingUser = await prismaMain.user.findUnique({ where: { email } });
+    if (existingUser) {
+      console.log("Default admin user already exists.");
+      return;
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const adminUser = await prismaMain.user.create({
+      data: { username, email, password: hashedPassword, role: "ADMIN" },
+    });
+    console.log(`Default admin created: ${adminUser.email}`);
+  } catch (error) {
+    console.error("Error creating default admin user:", error);
+  }
+}
+
+```
+
+---
+
+### <a id="📄-src-errors-customerror-ts"></a>📄 `src/errors/CustomError.ts`
+
+**File Info:**
+- **Size**: 1.5 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/errors/CustomError.ts`
+- **Relative Path**: `src/errors`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `650cbc310c9e7af06897e13b7e66be92`
+- **SHA256**: `b9461bec373dc3fefee7047eaaae45f7a42c6d8f27f04153d798f550c617befa`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+export class CustomError extends Error {
+  public status: number;
+  public override message: string;
+
+  constructor(message: string, status: number) {
+    super(message);
+
+    this.status = status;
+    this.message = message;
+    this.name = this.constructor.name;
+
+    // Ensure the message property is enumerable and configurable
+    Object.defineProperty(this, "message", {
+      value: message,
+      enumerable: true,
+      writable: true,
+      configurable: true,
+    });
+
+    Object.setPrototypeOf(this, CustomError.prototype);
+  }
+
+  getErrorMessage() {
+    return this.message;
+  }
+}
+
+export class ValidationError extends Error {
+  public status: number;
+  public fields: Record<string, string[]>;
+
+  constructor(
+    fields: Record<string, string | string[] | Record<string, unknown>>,
+    message: string = "Validation Error",
+  ) {
+    super(message);
+
+    this.status = 422;
+    this.message = message;
+
+    // Normalize all field values to string arrays
+    this.fields = {};
+    for (const [key, value] of Object.entries(fields)) {
+      if (Array.isArray(value)) {
+        this.fields[key] = value.map((v) => String(v));
+      } else if (typeof value === "object" && value !== null) {
+        this.fields[key] = [JSON.stringify(value)];
+      } else {
+        this.fields[key] = [String(value)];
+      }
+    }
+
+    this.name = this.constructor.name;
+
+    Object.setPrototypeOf(this, ValidationError.prototype);
+  }
+
+  getFields() {
+    return this.fields;
+  }
+}
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-internal-class-ts"></a>📄 `src/generated/prisma/internal/class.ts`
+
+**File Info:**
+- **Size**: 42.03 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/internal/class.ts`
+- **Relative Path**: `src/generated/prisma/internal`
+- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `7cdbc0926ddd6b7ef93b62a55cd16fd7`
+- **SHA256**: `c1392d86793af681ca3483e0c3a0db5181544c82a00fbd7d78ac2021375c3dd0`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * WARNING: This is an internal file that is subject to change!
+ *
+ * 🛑 Under no circumstances should you import this file directly! 🛑
+ *
+ * Please import the `PrismaClient` class from the `client.ts` file instead.
+ */
+
+import * as runtime from "@prisma/client/runtime/client"
+import type * as Prisma from "./prismaNamespace"
+
+
+const config: runtime.GetPrismaClientConfig = {
+  "previewFeatures": [],
+  "clientVersion": "7.8.0",
+  "engineVersion": "3c6e192761c0362d496ed980de936e2f3cebcd3a",
+  "activeProvider": "postgresql",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Get a free hosted Postgres database in seconds: `npx create-db`\n\ngenerator client {\n  provider = \"prisma-client\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nenum Role {\n  ADMIN\n  USER\n}\n\nenum DiscountType {\n  Exact\n  Percentage\n}\n\nmodel User {\n  id         String     @id @default(cuid())\n  email      String     @unique\n  username   String     @unique\n  password   String\n  role       Role       @default(USER)\n  categories Category[]\n  products   Product[]\n  bills      Bill[]\n  createdAt  DateTime   @default(now())\n  updatedAt  DateTime   @updatedAt\n}\n\nmodel Category {\n  id        String    @id @default(cuid())\n  name      String\n  shortName String\n  userId    String\n  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)\n  products  Product[]\n  createdAt DateTime  @default(now())\n  updatedAt DateTime  @updatedAt\n\n  @@unique([userId, name])\n  @@unique([userId, shortName])\n}\n\nmodel Product {\n  id         String     @id @default(cuid())\n  name       String\n  shortName  String\n  userId     String\n  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)\n  categoryId String\n  category   Category   @relation(fields: [categoryId], references: [id], onDelete: Cascade)\n  batches    Batch[]\n  billItems  BillItem[]\n  createdAt  DateTime   @default(now())\n  updatedAt  DateTime   @updatedAt\n\n  @@unique([userId, name])\n  @@unique([userId, shortName])\n  @@index([categoryId])\n}\n\nmodel Batch {\n  id          String     @id @default(cuid())\n  batchNumber String\n  costPrice   Decimal    @db.Decimal(10, 2)\n  price       Decimal    @db.Decimal(10, 2)\n  quantity    Int        @default(0)\n  productId   String\n  product     Product    @relation(fields: [productId], references: [id], onDelete: Cascade)\n  billItems   BillItem[]\n  createdAt   DateTime   @default(now())\n  updatedAt   DateTime   @updatedAt\n\n  @@unique([productId, batchNumber])\n}\n\nmodel Bill {\n  id              String       @id @default(cuid())\n  billNumber      Int          @unique @default(autoincrement())\n  userId          String\n  user            User         @relation(fields: [userId], references: [id], onDelete: Cascade)\n  billItems       BillItem[]\n  total           Decimal      @default(0) @db.Decimal(12, 2)\n  discountType    DiscountType\n  discount        Decimal      @default(0) @db.Decimal(12, 2)\n  finalBillAmount Decimal      @default(0) @db.Decimal(12, 2)\n  createdAt       DateTime     @default(now())\n  updatedAt       DateTime     @updatedAt\n\n  @@index([userId, createdAt])\n}\n\nmodel BillItem {\n  id        String   @id @default(cuid())\n  billId    String\n  bill      Bill     @relation(fields: [billId], references: [id], onDelete: Cascade)\n  productId String\n  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)\n  batchId   String\n  batch     Batch    @relation(fields: [batchId], references: [id], onDelete: Restrict)\n  quantity  Int\n  unitPrice Float\n  total     Float\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n\n  @@index([billId])\n  @@index([productId])\n  @@index([batchId])\n}\n",
+  "runtimeDataModel": {
+    "models": {},
+    "enums": {},
+    "types": {}
+  },
+  "parameterizationSchema": {
+    "strings": [],
+    "graph": ""
+  }
+}
+
+config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"username\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"password\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"role\",\"kind\":\"enum\",\"type\":\"Role\"},{\"name\":\"categories\",\"kind\":\"object\",\"type\":\"Category\",\"relationName\":\"CategoryToUser\"},{\"name\":\"products\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"ProductToUser\"},{\"name\":\"bills\",\"kind\":\"object\",\"type\":\"Bill\",\"relationName\":\"BillToUser\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"Category\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"shortName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"CategoryToUser\"},{\"name\":\"products\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"CategoryToProduct\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"Product\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"shortName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"ProductToUser\"},{\"name\":\"categoryId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"category\",\"kind\":\"object\",\"type\":\"Category\",\"relationName\":\"CategoryToProduct\"},{\"name\":\"batches\",\"kind\":\"object\",\"type\":\"Batch\",\"relationName\":\"BatchToProduct\"},{\"name\":\"billItems\",\"kind\":\"object\",\"type\":\"BillItem\",\"relationName\":\"BillItemToProduct\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"Batch\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"batchNumber\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"costPrice\",\"kind\":\"scalar\",\"type\":\"Decimal\"},{\"name\":\"price\",\"kind\":\"scalar\",\"type\":\"Decimal\"},{\"name\":\"quantity\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"productId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"product\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"BatchToProduct\"},{\"name\":\"billItems\",\"kind\":\"object\",\"type\":\"BillItem\",\"relationName\":\"BatchToBillItem\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"Bill\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"billNumber\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"BillToUser\"},{\"name\":\"billItems\",\"kind\":\"object\",\"type\":\"BillItem\",\"relationName\":\"BillToBillItem\"},{\"name\":\"total\",\"kind\":\"scalar\",\"type\":\"Decimal\"},{\"name\":\"discountType\",\"kind\":\"enum\",\"type\":\"DiscountType\"},{\"name\":\"discount\",\"kind\":\"scalar\",\"type\":\"Decimal\"},{\"name\":\"finalBillAmount\",\"kind\":\"scalar\",\"type\":\"Decimal\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"BillItem\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"billId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"bill\",\"kind\":\"object\",\"type\":\"Bill\",\"relationName\":\"BillToBillItem\"},{\"name\":\"productId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"product\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"BillItemToProduct\"},{\"name\":\"batchId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"batch\",\"kind\":\"object\",\"type\":\"Batch\",\"relationName\":\"BatchToBillItem\"},{\"name\":\"quantity\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"unitPrice\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"total\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.parameterizationSchema = {
+  strings: JSON.parse("[\"where\",\"orderBy\",\"cursor\",\"user\",\"category\",\"product\",\"billItems\",\"_count\",\"bill\",\"batch\",\"batches\",\"products\",\"categories\",\"bills\",\"User.findUnique\",\"User.findUniqueOrThrow\",\"User.findFirst\",\"User.findFirstOrThrow\",\"User.findMany\",\"data\",\"User.createOne\",\"User.createMany\",\"User.createManyAndReturn\",\"User.updateOne\",\"User.updateMany\",\"User.updateManyAndReturn\",\"create\",\"update\",\"User.upsertOne\",\"User.deleteOne\",\"User.deleteMany\",\"having\",\"_min\",\"_max\",\"User.groupBy\",\"User.aggregate\",\"Category.findUnique\",\"Category.findUniqueOrThrow\",\"Category.findFirst\",\"Category.findFirstOrThrow\",\"Category.findMany\",\"Category.createOne\",\"Category.createMany\",\"Category.createManyAndReturn\",\"Category.updateOne\",\"Category.updateMany\",\"Category.updateManyAndReturn\",\"Category.upsertOne\",\"Category.deleteOne\",\"Category.deleteMany\",\"Category.groupBy\",\"Category.aggregate\",\"Product.findUnique\",\"Product.findUniqueOrThrow\",\"Product.findFirst\",\"Product.findFirstOrThrow\",\"Product.findMany\",\"Product.createOne\",\"Product.createMany\",\"Product.createManyAndReturn\",\"Product.updateOne\",\"Product.updateMany\",\"Product.updateManyAndReturn\",\"Product.upsertOne\",\"Product.deleteOne\",\"Product.deleteMany\",\"Product.groupBy\",\"Product.aggregate\",\"Batch.findUnique\",\"Batch.findUniqueOrThrow\",\"Batch.findFirst\",\"Batch.findFirstOrThrow\",\"Batch.findMany\",\"Batch.createOne\",\"Batch.createMany\",\"Batch.createManyAndReturn\",\"Batch.updateOne\",\"Batch.updateMany\",\"Batch.updateManyAndReturn\",\"Batch.upsertOne\",\"Batch.deleteOne\",\"Batch.deleteMany\",\"_avg\",\"_sum\",\"Batch.groupBy\",\"Batch.aggregate\",\"Bill.findUnique\",\"Bill.findUniqueOrThrow\",\"Bill.findFirst\",\"Bill.findFirstOrThrow\",\"Bill.findMany\",\"Bill.createOne\",\"Bill.createMany\",\"Bill.createManyAndReturn\",\"Bill.updateOne\",\"Bill.updateMany\",\"Bill.updateManyAndReturn\",\"Bill.upsertOne\",\"Bill.deleteOne\",\"Bill.deleteMany\",\"Bill.groupBy\",\"Bill.aggregate\",\"BillItem.findUnique\",\"BillItem.findUniqueOrThrow\",\"BillItem.findFirst\",\"BillItem.findFirstOrThrow\",\"BillItem.findMany\",\"BillItem.createOne\",\"BillItem.createMany\",\"BillItem.createManyAndReturn\",\"BillItem.updateOne\",\"BillItem.updateMany\",\"BillItem.updateManyAndReturn\",\"BillItem.upsertOne\",\"BillItem.deleteOne\",\"BillItem.deleteMany\",\"BillItem.groupBy\",\"BillItem.aggregate\",\"AND\",\"OR\",\"NOT\",\"id\",\"billId\",\"productId\",\"batchId\",\"quantity\",\"unitPrice\",\"total\",\"createdAt\",\"updatedAt\",\"equals\",\"in\",\"notIn\",\"lt\",\"lte\",\"gt\",\"gte\",\"not\",\"contains\",\"startsWith\",\"endsWith\",\"billNumber\",\"userId\",\"DiscountType\",\"discountType\",\"discount\",\"finalBillAmount\",\"batchNumber\",\"costPrice\",\"price\",\"name\",\"shortName\",\"categoryId\",\"email\",\"username\",\"password\",\"Role\",\"role\",\"every\",\"some\",\"none\",\"productId_batchNumber\",\"userId_name\",\"userId_shortName\",\"is\",\"isNot\",\"connectOrCreate\",\"upsert\",\"createMany\",\"set\",\"disconnect\",\"delete\",\"connect\",\"updateMany\",\"deleteMany\",\"increment\",\"decrement\",\"multiply\",\"divide\"]"),
+  graph: "rQM8YA0LAADHAQAgDAAAxgEAIA0AAMgBACB2AADCAQAwdwAAIwAQeAAAwgEAMHkBAAAAAYABQADFAQAhgQFAAMUBACGZAQEAAAABmgEBAAAAAZsBAQDDAQAhnQEAAMQBnQEiAQAAAAEAIAsDAADMAQAgCwAAxwEAIHYAAN0BADB3AAADABB4AADdAQAweQEAwwEAIYABQADFAQAhgQFAAMUBACGOAQEAwwEAIZYBAQDDAQAhlwEBAMMBACECAwAA9wIAIAsAAPUCACANAwAAzAEAIAsAAMcBACB2AADdAQAwdwAAAwAQeAAA3QEAMHkBAAAAAYABQADFAQAhgQFAAMUBACGOAQEAwwEAIZYBAQDDAQAhlwEBAMMBACGiAQAA2wEAIKMBAADcAQAgAwAAAAMAIAEAAAQAMAIAAAUAIA4DAADMAQAgBAAA2QEAIAYAAM0BACAKAADaAQAgdgAA2AEAMHcAAAcAEHgAANgBADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIZgBAQDDAQAhBAMAAPcCACAEAAD8AgAgBgAA-AIAIAoAAP0CACAQAwAAzAEAIAQAANkBACAGAADNAQAgCgAA2gEAIHYAANgBADB3AAAHABB4AADYAQAweQEAAAABgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIZgBAQDDAQAhogEAANYBACCjAQAA1wEAIAMAAAAHACABAAAIADACAAAJACANBQAA0gEAIAYAAM0BACB2AADVAQAwdwAACwAQeAAA1QEAMHkBAMMBACF7AQDDAQAhfQIAzgEAIYABQADFAQAhgQFAAMUBACGTAQEAwwEAIZQBEADKAQAhlQEQAMoBACECBQAA-gIAIAYAAPgCACAOBQAA0gEAIAYAAM0BACB2AADVAQAwdwAACwAQeAAA1QEAMHkBAAAAAXsBAMMBACF9AgDOAQAhgAFAAMUBACGBAUAAxQEAIZMBAQDDAQAhlAEQAMoBACGVARAAygEAIaEBAADUAQAgAwAAAAsAIAEAAAwAMAIAAA0AIA8FAADSAQAgCAAA0QEAIAkAANMBACB2AADPAQAwdwAADwAQeAAAzwEAMHkBAMMBACF6AQDDAQAhewEAwwEAIXwBAMMBACF9AgDOAQAhfggA0AEAIX8IANABACGAAUAAxQEAIYEBQADFAQAhAwUAAPoCACAIAAD5AgAgCQAA-wIAIA8FAADSAQAgCAAA0QEAIAkAANMBACB2AADPAQAwdwAADwAQeAAAzwEAMHkBAAAAAXoBAMMBACF7AQDDAQAhfAEAwwEAIX0CAM4BACF-CADQAQAhfwgA0AEAIYABQADFAQAhgQFAAMUBACEDAAAADwAgAQAAEAAwAgAAEQAgAwAAAA8AIAEAABAAMAIAABEAIAEAAAAPACABAAAADwAgAwAAAA8AIAEAABAAMAIAABEAIAEAAAALACABAAAADwAgAQAAAAcAIAMAAAAHACABAAAIADACAAAJACAOAwAAzAEAIAYAAM0BACB2AADJAQAwdwAAGwAQeAAAyQEAMHkBAMMBACF_EADKAQAhgAFAAMUBACGBAUAAxQEAIY0BAgDOAQAhjgEBAMMBACGQAQAAywGQASKRARAAygEAIZIBEADKAQAhAgMAAPcCACAGAAD4AgAgDgMAAMwBACAGAADNAQAgdgAAyQEAMHcAABsAEHgAAMkBADB5AQAAAAF_EADKAQAhgAFAAMUBACGBAUAAxQEAIY0BAgAAAAGOAQEAwwEAIZABAADLAZABIpEBEADKAQAhkgEQAMoBACEDAAAAGwAgAQAAHAAwAgAAHQAgAQAAAAMAIAEAAAAHACABAAAAGwAgAQAAAAEAIA0LAADHAQAgDAAAxgEAIA0AAMgBACB2AADCAQAwdwAAIwAQeAAAwgEAMHkBAMMBACGAAUAAxQEAIYEBQADFAQAhmQEBAMMBACGaAQEAwwEAIZsBAQDDAQAhnQEAAMQBnQEiAwsAAPUCACAMAAD0AgAgDQAA9gIAIAMAAAAjACABAAAkADACAAABACADAAAAIwAgAQAAJAAwAgAAAQAgAwAAACMAIAEAACQAMAIAAAEAIAoLAADyAgAgDAAA8QIAIA0AAPMCACB5AQAAAAGAAUAAAAABgQFAAAAAAZkBAQAAAAGaAQEAAAABmwEBAAAAAZ0BAAAAnQECARMAACgAIAd5AQAAAAGAAUAAAAABgQFAAAAAAZkBAQAAAAGaAQEAAAABmwEBAAAAAZ0BAAAAnQECARMAACoAMAETAAAqADAKCwAAzgIAIAwAAM0CACANAADPAgAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGZAQEA4wEAIZoBAQDjAQAhmwEBAOMBACGdAQAAzAKdASICAAAAAQAgEwAALQAgB3kBAOMBACGAAUAA5gEAIYEBQADmAQAhmQEBAOMBACGaAQEA4wEAIZsBAQDjAQAhnQEAAMwCnQEiAgAAACMAIBMAAC8AIAIAAAAjACATAAAvACADAAAAAQAgGgAAKAAgGwAALQAgAQAAAAEAIAEAAAAjACADBwAAyQIAICAAAMsCACAhAADKAgAgCnYAAL4BADB3AAA2ABB4AAC-AQAweQEAqAEAIYABQACrAQAhgQFAAKsBACGZAQEAqAEAIZoBAQCoAQAhmwEBAKgBACGdAQAAvwGdASIDAAAAIwAgAQAANQAwHwAANgAgAwAAACMAIAEAACQAMAIAAAEAIAEAAAAFACABAAAABQAgAwAAAAMAIAEAAAQAMAIAAAUAIAMAAAADACABAAAEADACAAAFACADAAAAAwAgAQAABAAwAgAABQAgCAMAAMcCACALAADIAgAgeQEAAAABgAFAAAAAAYEBQAAAAAGOAQEAAAABlgEBAAAAAZcBAQAAAAEBEwAAPgAgBnkBAAAAAYABQAAAAAGBAUAAAAABjgEBAAAAAZYBAQAAAAGXAQEAAAABARMAAEAAMAETAABAADAIAwAAuQIAIAsAALoCACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIY4BAQDjAQAhlgEBAOMBACGXAQEA4wEAIQIAAAAFACATAABDACAGeQEA4wEAIYABQADmAQAhgQFAAOYBACGOAQEA4wEAIZYBAQDjAQAhlwEBAOMBACECAAAAAwAgEwAARQAgAgAAAAMAIBMAAEUAIAMAAAAFACAaAAA-ACAbAABDACABAAAABQAgAQAAAAMAIAMHAAC2AgAgIAAAuAIAICEAALcCACAJdgAAvQEAMHcAAEwAEHgAAL0BADB5AQCoAQAhgAFAAKsBACGBAUAAqwEAIY4BAQCoAQAhlgEBAKgBACGXAQEAqAEAIQMAAAADACABAABLADAfAABMACADAAAAAwAgAQAABAAwAgAABQAgAQAAAAkAIAEAAAAJACADAAAABwAgAQAACAAwAgAACQAgAwAAAAcAIAEAAAgAMAIAAAkAIAMAAAAHACABAAAIADACAAAJACALAwAAsgIAIAQAALMCACAGAAC1AgAgCgAAtAIAIHkBAAAAAYABQAAAAAGBAUAAAAABjgEBAAAAAZYBAQAAAAGXAQEAAAABmAEBAAAAAQETAABUACAHeQEAAAABgAFAAAAAAYEBQAAAAAGOAQEAAAABlgEBAAAAAZcBAQAAAAGYAQEAAAABARMAAFYAMAETAABWADALAwAAmQIAIAQAAJoCACAGAACcAgAgCgAAmwIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhmAEBAOMBACECAAAACQAgEwAAWQAgB3kBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhmAEBAOMBACECAAAABwAgEwAAWwAgAgAAAAcAIBMAAFsAIAMAAAAJACAaAABUACAbAABZACABAAAACQAgAQAAAAcAIAMHAACWAgAgIAAAmAIAICEAAJcCACAKdgAAvAEAMHcAAGIAEHgAALwBADB5AQCoAQAhgAFAAKsBACGBAUAAqwEAIY4BAQCoAQAhlgEBAKgBACGXAQEAqAEAIZgBAQCoAQAhAwAAAAcAIAEAAGEAMB8AAGIAIAMAAAAHACABAAAIADACAAAJACABAAAADQAgAQAAAA0AIAMAAAALACABAAAMADACAAANACADAAAACwAgAQAADAAwAgAADQAgAwAAAAsAIAEAAAwAMAIAAA0AIAoFAACUAgAgBgAAlQIAIHkBAAAAAXsBAAAAAX0CAAAAAYABQAAAAAGBAUAAAAABkwEBAAAAAZQBEAAAAAGVARAAAAABARMAAGoAIAh5AQAAAAF7AQAAAAF9AgAAAAGAAUAAAAABgQFAAAAAAZMBAQAAAAGUARAAAAABlQEQAAAAAQETAABsADABEwAAbAAwCgUAAIkCACAGAACKAgAgeQEA4wEAIXsBAOMBACF9AgDkAQAhgAFAAOYBACGBAUAA5gEAIZMBAQDjAQAhlAEQAPIBACGVARAA8gEAIQIAAAANACATAABvACAIeQEA4wEAIXsBAOMBACF9AgDkAQAhgAFAAOYBACGBAUAA5gEAIZMBAQDjAQAhlAEQAPIBACGVARAA8gEAIQIAAAALACATAABxACACAAAACwAgEwAAcQAgAwAAAA0AIBoAAGoAIBsAAG8AIAEAAAANACABAAAACwAgBQcAAIQCACAgAACHAgAgIQAAhgIAIFIAAIUCACBTAACIAgAgC3YAALsBADB3AAB4ABB4AAC7AQAweQEAqAEAIXsBAKgBACF9AgCpAQAhgAFAAKsBACGBAUAAqwEAIZMBAQCoAQAhlAEQALUBACGVARAAtQEAIQMAAAALACABAAB3ADAfAAB4ACADAAAACwAgAQAADAAwAgAADQAgAQAAAB0AIAEAAAAdACADAAAAGwAgAQAAHAAwAgAAHQAgAwAAABsAIAEAABwAMAIAAB0AIAMAAAAbACABAAAcADACAAAdACALAwAAggIAIAYAAIMCACB5AQAAAAF_EAAAAAGAAUAAAAABgQFAAAAAAY0BAgAAAAGOAQEAAAABkAEAAACQAQKRARAAAAABkgEQAAAAAQETAACAAQAgCXkBAAAAAX8QAAAAAYABQAAAAAGBAUAAAAABjQECAAAAAY4BAQAAAAGQAQAAAJABApEBEAAAAAGSARAAAAABARMAAIIBADABEwAAggEAMAsDAAD0AQAgBgAA9QEAIHkBAOMBACF_EADyAQAhgAFAAOYBACGBAUAA5gEAIY0BAgDkAQAhjgEBAOMBACGQAQAA8wGQASKRARAA8gEAIZIBEADyAQAhAgAAAB0AIBMAAIUBACAJeQEA4wEAIX8QAPIBACGAAUAA5gEAIYEBQADmAQAhjQECAOQBACGOAQEA4wEAIZABAADzAZABIpEBEADyAQAhkgEQAPIBACECAAAAGwAgEwAAhwEAIAIAAAAbACATAACHAQAgAwAAAB0AIBoAAIABACAbAACFAQAgAQAAAB0AIAEAAAAbACAFBwAA7QEAICAAAPABACAhAADvAQAgUgAA7gEAIFMAAPEBACAMdgAAtAEAMHcAAI4BABB4AAC0AQAweQEAqAEAIX8QALUBACGAAUAAqwEAIYEBQACrAQAhjQECAKkBACGOAQEAqAEAIZABAAC2AZABIpEBEAC1AQAhkgEQALUBACEDAAAAGwAgAQAAjQEAMB8AAI4BACADAAAAGwAgAQAAHAAwAgAAHQAgAQAAABEAIAEAAAARACADAAAADwAgAQAAEAAwAgAAEQAgAwAAAA8AIAEAABAAMAIAABEAIAMAAAAPACABAAAQADACAAARACAMBQAA6wEAIAgAAOoBACAJAADsAQAgeQEAAAABegEAAAABewEAAAABfAEAAAABfQIAAAABfggAAAABfwgAAAABgAFAAAAAAYEBQAAAAAEBEwAAlgEAIAl5AQAAAAF6AQAAAAF7AQAAAAF8AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQETAACYAQAwARMAAJgBADAMBQAA6AEAIAgAAOcBACAJAADpAQAgeQEA4wEAIXoBAOMBACF7AQDjAQAhfAEA4wEAIX0CAOQBACF-CADlAQAhfwgA5QEAIYABQADmAQAhgQFAAOYBACECAAAAEQAgEwAAmwEAIAl5AQDjAQAhegEA4wEAIXsBAOMBACF8AQDjAQAhfQIA5AEAIX4IAOUBACF_CADlAQAhgAFAAOYBACGBAUAA5gEAIQIAAAAPACATAACdAQAgAgAAAA8AIBMAAJ0BACADAAAAEQAgGgAAlgEAIBsAAJsBACABAAAAEQAgAQAAAA8AIAUHAADeAQAgIAAA4QEAICEAAOABACBSAADfAQAgUwAA4gEAIAx2AACnAQAwdwAApAEAEHgAAKcBADB5AQCoAQAhegEAqAEAIXsBAKgBACF8AQCoAQAhfQIAqQEAIX4IAKoBACF_CACqAQAhgAFAAKsBACGBAUAAqwEAIQMAAAAPACABAACjAQAwHwAApAEAIAMAAAAPACABAAAQADACAAARACAMdgAApwEAMHcAAKQBABB4AACnAQAweQEAqAEAIXoBAKgBACF7AQCoAQAhfAEAqAEAIX0CAKkBACF-CACqAQAhfwgAqgEAIYABQACrAQAhgQFAAKsBACEOBwAArQEAICAAALMBACAhAACzAQAgggEBAAAAAYMBAQAAAASEAQEAAAAEhQEBAAAAAYYBAQAAAAGHAQEAAAABiAEBAAAAAYkBAQCyAQAhigEBAAAAAYsBAQAAAAGMAQEAAAABDQcAAK0BACAgAACtAQAgIQAArQEAIFIAALABACBTAACtAQAgggECAAAAAYMBAgAAAASEAQIAAAAEhQECAAAAAYYBAgAAAAGHAQIAAAABiAECAAAAAYkBAgCxAQAhDQcAAK0BACAgAACwAQAgIQAAsAEAIFIAALABACBTAACwAQAgggEIAAAAAYMBCAAAAASEAQgAAAAEhQEIAAAAAYYBCAAAAAGHAQgAAAABiAEIAAAAAYkBCACvAQAhCwcAAK0BACAgAACuAQAgIQAArgEAIIIBQAAAAAGDAUAAAAAEhAFAAAAABIUBQAAAAAGGAUAAAAABhwFAAAAAAYgBQAAAAAGJAUAArAEAIQsHAACtAQAgIAAArgEAICEAAK4BACCCAUAAAAABgwFAAAAABIQBQAAAAASFAUAAAAABhgFAAAAAAYcBQAAAAAGIAUAAAAABiQFAAKwBACEIggECAAAAAYMBAgAAAASEAQIAAAAEhQECAAAAAYYBAgAAAAGHAQIAAAABiAECAAAAAYkBAgCtAQAhCIIBQAAAAAGDAUAAAAAEhAFAAAAABIUBQAAAAAGGAUAAAAABhwFAAAAAAYgBQAAAAAGJAUAArgEAIQ0HAACtAQAgIAAAsAEAICEAALABACBSAACwAQAgUwAAsAEAIIIBCAAAAAGDAQgAAAAEhAEIAAAABIUBCAAAAAGGAQgAAAABhwEIAAAAAYgBCAAAAAGJAQgArwEAIQiCAQgAAAABgwEIAAAABIQBCAAAAASFAQgAAAABhgEIAAAAAYcBCAAAAAGIAQgAAAABiQEIALABACENBwAArQEAICAAAK0BACAhAACtAQAgUgAAsAEAIFMAAK0BACCCAQIAAAABgwECAAAABIQBAgAAAASFAQIAAAABhgECAAAAAYcBAgAAAAGIAQIAAAABiQECALEBACEOBwAArQEAICAAALMBACAhAACzAQAgggEBAAAAAYMBAQAAAASEAQEAAAAEhQEBAAAAAYYBAQAAAAGHAQEAAAABiAEBAAAAAYkBAQCyAQAhigEBAAAAAYsBAQAAAAGMAQEAAAABC4IBAQAAAAGDAQEAAAAEhAEBAAAABIUBAQAAAAGGAQEAAAABhwEBAAAAAYgBAQAAAAGJAQEAswEAIYoBAQAAAAGLAQEAAAABjAEBAAAAAQx2AAC0AQAwdwAAjgEAEHgAALQBADB5AQCoAQAhfxAAtQEAIYABQACrAQAhgQFAAKsBACGNAQIAqQEAIY4BAQCoAQAhkAEAALYBkAEikQEQALUBACGSARAAtQEAIQ0HAACtAQAgIAAAugEAICEAALoBACBSAAC6AQAgUwAAugEAIIIBEAAAAAGDARAAAAAEhAEQAAAABIUBEAAAAAGGARAAAAABhwEQAAAAAYgBEAAAAAGJARAAuQEAIQcHAACtAQAgIAAAuAEAICEAALgBACCCAQAAAJABAoMBAAAAkAEIhAEAAACQAQiJAQAAtwGQASIHBwAArQEAICAAALgBACAhAAC4AQAgggEAAACQAQKDAQAAAJABCIQBAAAAkAEIiQEAALcBkAEiBIIBAAAAkAECgwEAAACQAQiEAQAAAJABCIkBAAC4AZABIg0HAACtAQAgIAAAugEAICEAALoBACBSAAC6AQAgUwAAugEAIIIBEAAAAAGDARAAAAAEhAEQAAAABIUBEAAAAAGGARAAAAABhwEQAAAAAYgBEAAAAAGJARAAuQEAIQiCARAAAAABgwEQAAAABIQBEAAAAASFARAAAAABhgEQAAAAAYcBEAAAAAGIARAAAAABiQEQALoBACELdgAAuwEAMHcAAHgAEHgAALsBADB5AQCoAQAhewEAqAEAIX0CAKkBACGAAUAAqwEAIYEBQACrAQAhkwEBAKgBACGUARAAtQEAIZUBEAC1AQAhCnYAALwBADB3AABiABB4AAC8AQAweQEAqAEAIYABQACrAQAhgQFAAKsBACGOAQEAqAEAIZYBAQCoAQAhlwEBAKgBACGYAQEAqAEAIQl2AAC9AQAwdwAATAAQeAAAvQEAMHkBAKgBACGAAUAAqwEAIYEBQACrAQAhjgEBAKgBACGWAQEAqAEAIZcBAQCoAQAhCnYAAL4BADB3AAA2ABB4AAC-AQAweQEAqAEAIYABQACrAQAhgQFAAKsBACGZAQEAqAEAIZoBAQCoAQAhmwEBAKgBACGdAQAAvwGdASIHBwAArQEAICAAAMEBACAhAADBAQAgggEAAACdAQKDAQAAAJ0BCIQBAAAAnQEIiQEAAMABnQEiBwcAAK0BACAgAADBAQAgIQAAwQEAIIIBAAAAnQECgwEAAACdAQiEAQAAAJ0BCIkBAADAAZ0BIgSCAQAAAJ0BAoMBAAAAnQEIhAEAAACdAQiJAQAAwQGdASINCwAAxwEAIAwAAMYBACANAADIAQAgdgAAwgEAMHcAACMAEHgAAMIBADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIZkBAQDDAQAhmgEBAMMBACGbAQEAwwEAIZ0BAADEAZ0BIguCAQEAAAABgwEBAAAABIQBAQAAAASFAQEAAAABhgEBAAAAAYcBAQAAAAGIAQEAAAABiQEBALMBACGKAQEAAAABiwEBAAAAAYwBAQAAAAEEggEAAACdAQKDAQAAAJ0BCIQBAAAAnQEIiQEAAMEBnQEiCIIBQAAAAAGDAUAAAAAEhAFAAAAABIUBQAAAAAGGAUAAAAABhwFAAAAAAYgBQAAAAAGJAUAArgEAIQOeAQAAAwAgnwEAAAMAIKABAAADACADngEAAAcAIJ8BAAAHACCgAQAABwAgA54BAAAbACCfAQAAGwAgoAEAABsAIA4DAADMAQAgBgAAzQEAIHYAAMkBADB3AAAbABB4AADJAQAweQEAwwEAIX8QAMoBACGAAUAAxQEAIYEBQADFAQAhjQECAM4BACGOAQEAwwEAIZABAADLAZABIpEBEADKAQAhkgEQAMoBACEIggEQAAAAAYMBEAAAAASEARAAAAAEhQEQAAAAAYYBEAAAAAGHARAAAAABiAEQAAAAAYkBEAC6AQAhBIIBAAAAkAECgwEAAACQAQiEAQAAAJABCIkBAAC4AZABIg8LAADHAQAgDAAAxgEAIA0AAMgBACB2AADCAQAwdwAAIwAQeAAAwgEAMHkBAMMBACGAAUAAxQEAIYEBQADFAQAhmQEBAMMBACGaAQEAwwEAIZsBAQDDAQAhnQEAAMQBnQEipAEAACMAIKUBAAAjACADngEAAA8AIJ8BAAAPACCgAQAADwAgCIIBAgAAAAGDAQIAAAAEhAECAAAABIUBAgAAAAGGAQIAAAABhwECAAAAAYgBAgAAAAGJAQIArQEAIQ8FAADSAQAgCAAA0QEAIAkAANMBACB2AADPAQAwdwAADwAQeAAAzwEAMHkBAMMBACF6AQDDAQAhewEAwwEAIXwBAMMBACF9AgDOAQAhfggA0AEAIX8IANABACGAAUAAxQEAIYEBQADFAQAhCIIBCAAAAAGDAQgAAAAEhAEIAAAABIUBCAAAAAGGAQgAAAABhwEIAAAAAYgBCAAAAAGJAQgAsAEAIRADAADMAQAgBgAAzQEAIHYAAMkBADB3AAAbABB4AADJAQAweQEAwwEAIX8QAMoBACGAAUAAxQEAIYEBQADFAQAhjQECAM4BACGOAQEAwwEAIZABAADLAZABIpEBEADKAQAhkgEQAMoBACGkAQAAGwAgpQEAABsAIBADAADMAQAgBAAA2QEAIAYAAM0BACAKAADaAQAgdgAA2AEAMHcAAAcAEHgAANgBADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIZgBAQDDAQAhpAEAAAcAIKUBAAAHACAPBQAA0gEAIAYAAM0BACB2AADVAQAwdwAACwAQeAAA1QEAMHkBAMMBACF7AQDDAQAhfQIAzgEAIYABQADFAQAhgQFAAMUBACGTAQEAwwEAIZQBEADKAQAhlQEQAMoBACGkAQAACwAgpQEAAAsAIAJ7AQAAAAGTAQEAAAABDQUAANIBACAGAADNAQAgdgAA1QEAMHcAAAsAEHgAANUBADB5AQDDAQAhewEAwwEAIX0CAM4BACGAAUAAxQEAIYEBQADFAQAhkwEBAMMBACGUARAAygEAIZUBEADKAQAhAo4BAQAAAAGWAQEAAAABAo4BAQAAAAGXAQEAAAABDgMAAMwBACAEAADZAQAgBgAAzQEAIAoAANoBACB2AADYAQAwdwAABwAQeAAA2AEAMHkBAMMBACGAAUAAxQEAIYEBQADFAQAhjgEBAMMBACGWAQEAwwEAIZcBAQDDAQAhmAEBAMMBACENAwAAzAEAIAsAAMcBACB2AADdAQAwdwAAAwAQeAAA3QEAMHkBAMMBACGAAUAAxQEAIYEBQADFAQAhjgEBAMMBACGWAQEAwwEAIZcBAQDDAQAhpAEAAAMAIKUBAAADACADngEAAAsAIJ8BAAALACCgAQAACwAgAo4BAQAAAAGWAQEAAAABAo4BAQAAAAGXAQEAAAABCwMAAMwBACALAADHAQAgdgAA3QEAMHcAAAMAEHgAAN0BADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIQAAAAAAAakBAQAAAAEFqQECAAAAAa8BAgAAAAGwAQIAAAABsQECAAAAAbIBAgAAAAEFqQEIAAAAAa8BCAAAAAGwAQgAAAABsQEIAAAAAbIBCAAAAAEBqQFAAAAAAQUaAACjAwAgGwAArAMAIKYBAACkAwAgpwEAAKsDACCsAQAAHQAgBRoAAKEDACAbAACpAwAgpgEAAKIDACCnAQAAqAMAIKwBAAAJACAFGgAAnwMAIBsAAKYDACCmAQAAoAMAIKcBAAClAwAgrAEAAA0AIAMaAACjAwAgpgEAAKQDACCsAQAAHQAgAxoAAKEDACCmAQAAogMAIKwBAAAJACADGgAAnwMAIKYBAACgAwAgrAEAAA0AIAAAAAAABakBEAAAAAGvARAAAAABsAEQAAAAAbEBEAAAAAGyARAAAAABAakBAAAAkAECBRoAAJkDACAbAACdAwAgpgEAAJoDACCnAQAAnAMAIKwBAAABACALGgAA9gEAMBsAAPsBADCmAQAA9wEAMKcBAAD4AQAwqAEAAPkBACCpAQAA-gEAMKoBAAD6AQAwqwEAAPoBADCsAQAA-gEAMK0BAAD8AQAwrgEAAP0BADAKBQAA6wEAIAkAAOwBACB5AQAAAAF7AQAAAAF8AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQIAAAARACAaAACBAgAgAwAAABEAIBoAAIECACAbAACAAgAgARMAAJsDADAPBQAA0gEAIAgAANEBACAJAADTAQAgdgAAzwEAMHcAAA8AEHgAAM8BADB5AQAAAAF6AQDDAQAhewEAwwEAIXwBAMMBACF9AgDOAQAhfggA0AEAIX8IANABACGAAUAAxQEAIYEBQADFAQAhAgAAABEAIBMAAIACACACAAAA_gEAIBMAAP8BACAMdgAA_QEAMHcAAP4BABB4AAD9AQAweQEAwwEAIXoBAMMBACF7AQDDAQAhfAEAwwEAIX0CAM4BACF-CADQAQAhfwgA0AEAIYABQADFAQAhgQFAAMUBACEMdgAA_QEAMHcAAP4BABB4AAD9AQAweQEAwwEAIXoBAMMBACF7AQDDAQAhfAEAwwEAIX0CAM4BACF-CADQAQAhfwgA0AEAIYABQADFAQAhgQFAAMUBACEIeQEA4wEAIXsBAOMBACF8AQDjAQAhfQIA5AEAIX4IAOUBACF_CADlAQAhgAFAAOYBACGBAUAA5gEAIQoFAADoAQAgCQAA6QEAIHkBAOMBACF7AQDjAQAhfAEA4wEAIX0CAOQBACF-CADlAQAhfwgA5QEAIYABQADmAQAhgQFAAOYBACEKBQAA6wEAIAkAAOwBACB5AQAAAAF7AQAAAAF8AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQMaAACZAwAgpgEAAJoDACCsAQAAAQAgBBoAAPYBADCmAQAA9wEAMKgBAAD5AQAgrAEAAPoBADAAAAAAAAUaAACTAwAgGwAAlwMAIKYBAACUAwAgpwEAAJYDACCsAQAACQAgCxoAAIsCADAbAACPAgAwpgEAAIwCADCnAQAAjQIAMKgBAACOAgAgqQEAAPoBADCqAQAA-gEAMKsBAAD6AQAwrAEAAPoBADCtAQAAkAIAMK4BAAD9AQAwCgUAAOsBACAIAADqAQAgeQEAAAABegEAAAABewEAAAABfQIAAAABfggAAAABfwgAAAABgAFAAAAAAYEBQAAAAAECAAAAEQAgGgAAkwIAIAMAAAARACAaAACTAgAgGwAAkgIAIAETAACVAwAwAgAAABEAIBMAAJICACACAAAA_gEAIBMAAJECACAIeQEA4wEAIXoBAOMBACF7AQDjAQAhfQIA5AEAIX4IAOUBACF_CADlAQAhgAFAAOYBACGBAUAA5gEAIQoFAADoAQAgCAAA5wEAIHkBAOMBACF6AQDjAQAhewEA4wEAIX0CAOQBACF-CADlAQAhfwgA5QEAIYABQADmAQAhgQFAAOYBACEKBQAA6wEAIAgAAOoBACB5AQAAAAF6AQAAAAF7AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQMaAACTAwAgpgEAAJQDACCsAQAACQAgBBoAAIsCADCmAQAAjAIAMKgBAACOAgAgrAEAAPoBADAAAAAFGgAAiQMAIBsAAJEDACCmAQAAigMAIKcBAACQAwAgrAEAAAEAIAUaAACHAwAgGwAAjgMAIKYBAACIAwAgpwEAAI0DACCsAQAABQAgCxoAAKYCADAbAACrAgAwpgEAAKcCADCnAQAAqAIAMKgBAACpAgAgqQEAAKoCADCqAQAAqgIAMKsBAACqAgAwrAEAAKoCADCtAQAArAIAMK4BAACtAgAwCxoAAJ0CADAbAAChAgAwpgEAAJ4CADCnAQAAnwIAMKgBAACgAgAgqQEAAPoBADCqAQAA-gEAMKsBAAD6AQAwrAEAAPoBADCtAQAAogIAMK4BAAD9AQAwCggAAOoBACAJAADsAQAgeQEAAAABegEAAAABfAEAAAABfQIAAAABfggAAAABfwgAAAABgAFAAAAAAYEBQAAAAAECAAAAEQAgGgAApQIAIAMAAAARACAaAAClAgAgGwAApAIAIAETAACMAwAwAgAAABEAIBMAAKQCACACAAAA_gEAIBMAAKMCACAIeQEA4wEAIXoBAOMBACF8AQDjAQAhfQIA5AEAIX4IAOUBACF_CADlAQAhgAFAAOYBACGBAUAA5gEAIQoIAADnAQAgCQAA6QEAIHkBAOMBACF6AQDjAQAhfAEA4wEAIX0CAOQBACF-CADlAQAhfwgA5QEAIYABQADmAQAhgQFAAOYBACEKCAAA6gEAIAkAAOwBACB5AQAAAAF6AQAAAAF8AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQgGAACVAgAgeQEAAAABfQIAAAABgAFAAAAAAYEBQAAAAAGTAQEAAAABlAEQAAAAAZUBEAAAAAECAAAADQAgGgAAsQIAIAMAAAANACAaAACxAgAgGwAAsAIAIAETAACLAwAwDgUAANIBACAGAADNAQAgdgAA1QEAMHcAAAsAEHgAANUBADB5AQAAAAF7AQDDAQAhfQIAzgEAIYABQADFAQAhgQFAAMUBACGTAQEAwwEAIZQBEADKAQAhlQEQAMoBACGhAQAA1AEAIAIAAAANACATAACwAgAgAgAAAK4CACATAACvAgAgC3YAAK0CADB3AACuAgAQeAAArQIAMHkBAMMBACF7AQDDAQAhfQIAzgEAIYABQADFAQAhgQFAAMUBACGTAQEAwwEAIZQBEADKAQAhlQEQAMoBACELdgAArQIAMHcAAK4CABB4AACtAgAweQEAwwEAIXsBAMMBACF9AgDOAQAhgAFAAMUBACGBAUAAxQEAIZMBAQDDAQAhlAEQAMoBACGVARAAygEAIQd5AQDjAQAhfQIA5AEAIYABQADmAQAhgQFAAOYBACGTAQEA4wEAIZQBEADyAQAhlQEQAPIBACEIBgAAigIAIHkBAOMBACF9AgDkAQAhgAFAAOYBACGBAUAA5gEAIZMBAQDjAQAhlAEQAPIBACGVARAA8gEAIQgGAACVAgAgeQEAAAABfQIAAAABgAFAAAAAAYEBQAAAAAGTAQEAAAABlAEQAAAAAZUBEAAAAAEDGgAAiQMAIKYBAACKAwAgrAEAAAEAIAMaAACHAwAgpgEAAIgDACCsAQAABQAgBBoAAKYCADCmAQAApwIAMKgBAACpAgAgrAEAAKoCADAEGgAAnQIAMKYBAACeAgAwqAEAAKACACCsAQAA-gEAMAAAAAUaAACBAwAgGwAAhQMAIKYBAACCAwAgpwEAAIQDACCsAQAAAQAgCxoAALsCADAbAADAAgAwpgEAALwCADCnAQAAvQIAMKgBAAC-AgAgqQEAAL8CADCqAQAAvwIAMKsBAAC_AgAwrAEAAL8CADCtAQAAwQIAMK4BAADCAgAwCQMAALICACAGAAC1AgAgCgAAtAIAIHkBAAAAAYABQAAAAAGBAUAAAAABjgEBAAAAAZYBAQAAAAGXAQEAAAABAgAAAAkAIBoAAMYCACADAAAACQAgGgAAxgIAIBsAAMUCACABEwAAgwMAMBADAADMAQAgBAAA2QEAIAYAAM0BACAKAADaAQAgdgAA2AEAMHcAAAcAEHgAANgBADB5AQAAAAGAAUAAxQEAIYEBQADFAQAhjgEBAMMBACGWAQEAwwEAIZcBAQDDAQAhmAEBAMMBACGiAQAA1gEAIKMBAADXAQAgAgAAAAkAIBMAAMUCACACAAAAwwIAIBMAAMQCACAKdgAAwgIAMHcAAMMCABB4AADCAgAweQEAwwEAIYABQADFAQAhgQFAAMUBACGOAQEAwwEAIZYBAQDDAQAhlwEBAMMBACGYAQEAwwEAIQp2AADCAgAwdwAAwwIAEHgAAMICADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIZgBAQDDAQAhBnkBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhCQMAAJkCACAGAACcAgAgCgAAmwIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhCQMAALICACAGAAC1AgAgCgAAtAIAIHkBAAAAAYABQAAAAAGBAUAAAAABjgEBAAAAAZYBAQAAAAGXAQEAAAABAxoAAIEDACCmAQAAggMAIKwBAAABACAEGgAAuwIAMKYBAAC8AgAwqAEAAL4CACCsAQAAvwIAMAAAAAGpAQAAAJ0BAgsaAADlAgAwGwAA6gIAMKYBAADmAgAwpwEAAOcCADCoAQAA6AIAIKkBAADpAgAwqgEAAOkCADCrAQAA6QIAMKwBAADpAgAwrQEAAOsCADCuAQAA7AIAMAsaAADcAgAwGwAA4AIAMKYBAADdAgAwpwEAAN4CADCoAQAA3wIAIKkBAAC_AgAwqgEAAL8CADCrAQAAvwIAMKwBAAC_AgAwrQEAAOECADCuAQAAwgIAMAsaAADQAgAwGwAA1QIAMKYBAADRAgAwpwEAANICADCoAQAA0wIAIKkBAADUAgAwqgEAANQCADCrAQAA1AIAMKwBAADUAgAwrQEAANYCADCuAQAA1wIAMAkGAACDAgAgeQEAAAABfxAAAAABgAFAAAAAAYEBQAAAAAGNAQIAAAABkAEAAACQAQKRARAAAAABkgEQAAAAAQIAAAAdACAaAADbAgAgAwAAAB0AIBoAANsCACAbAADaAgAgARMAAIADADAOAwAAzAEAIAYAAM0BACB2AADJAQAwdwAAGwAQeAAAyQEAMHkBAAAAAX8QAMoBACGAAUAAxQEAIYEBQADFAQAhjQECAAAAAY4BAQDDAQAhkAEAAMsBkAEikQEQAMoBACGSARAAygEAIQIAAAAdACATAADaAgAgAgAAANgCACATAADZAgAgDHYAANcCADB3AADYAgAQeAAA1wIAMHkBAMMBACF_EADKAQAhgAFAAMUBACGBAUAAxQEAIY0BAgDOAQAhjgEBAMMBACGQAQAAywGQASKRARAAygEAIZIBEADKAQAhDHYAANcCADB3AADYAgAQeAAA1wIAMHkBAMMBACF_EADKAQAhgAFAAMUBACGBAUAAxQEAIY0BAgDOAQAhjgEBAMMBACGQAQAAywGQASKRARAAygEAIZIBEADKAQAhCHkBAOMBACF_EADyAQAhgAFAAOYBACGBAUAA5gEAIY0BAgDkAQAhkAEAAPMBkAEikQEQAPIBACGSARAA8gEAIQkGAAD1AQAgeQEA4wEAIX8QAPIBACGAAUAA5gEAIYEBQADmAQAhjQECAOQBACGQAQAA8wGQASKRARAA8gEAIZIBEADyAQAhCQYAAIMCACB5AQAAAAF_EAAAAAGAAUAAAAABgQFAAAAAAY0BAgAAAAGQAQAAAJABApEBEAAAAAGSARAAAAABCQQAALMCACAGAAC1AgAgCgAAtAIAIHkBAAAAAYABQAAAAAGBAUAAAAABlgEBAAAAAZcBAQAAAAGYAQEAAAABAgAAAAkAIBoAAOQCACADAAAACQAgGgAA5AIAIBsAAOMCACABEwAA_wIAMAIAAAAJACATAADjAgAgAgAAAMMCACATAADiAgAgBnkBAOMBACGAAUAA5gEAIYEBQADmAQAhlgEBAOMBACGXAQEA4wEAIZgBAQDjAQAhCQQAAJoCACAGAACcAgAgCgAAmwIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhlgEBAOMBACGXAQEA4wEAIZgBAQDjAQAhCQQAALMCACAGAAC1AgAgCgAAtAIAIHkBAAAAAYABQAAAAAGBAUAAAAABlgEBAAAAAZcBAQAAAAGYAQEAAAABBgsAAMgCACB5AQAAAAGAAUAAAAABgQFAAAAAAZYBAQAAAAGXAQEAAAABAgAAAAUAIBoAAPACACADAAAABQAgGgAA8AIAIBsAAO8CACABEwAA_gIAMA0DAADMAQAgCwAAxwEAIHYAAN0BADB3AAADABB4AADdAQAweQEAAAABgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIaIBAADbAQAgowEAANwBACACAAAABQAgEwAA7wIAIAIAAADtAgAgEwAA7gIAIAl2AADsAgAwdwAA7QIAEHgAAOwCADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIQl2AADsAgAwdwAA7QIAEHgAAOwCADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIQV5AQDjAQAhgAFAAOYBACGBAUAA5gEAIZYBAQDjAQAhlwEBAOMBACEGCwAAugIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhlgEBAOMBACGXAQEA4wEAIQYLAADIAgAgeQEAAAABgAFAAAAAAYEBQAAAAAGWAQEAAAABlwEBAAAAAQQaAADlAgAwpgEAAOYCADCoAQAA6AIAIKwBAADpAgAwBBoAANwCADCmAQAA3QIAMKgBAADfAgAgrAEAAL8CADAEGgAA0AIAMKYBAADRAgAwqAEAANMCACCsAQAA1AIAMAAAAAMLAAD1AgAgDAAA9AIAIA0AAPYCACAAAgMAAPcCACAGAAD4AgAgBAMAAPcCACAEAAD8AgAgBgAA-AIAIAoAAP0CACACBQAA-gIAIAYAAPgCACACAwAA9wIAIAsAAPUCACAABXkBAAAAAYABQAAAAAGBAUAAAAABlgEBAAAAAZcBAQAAAAEGeQEAAAABgAFAAAAAAYEBQAAAAAGWAQEAAAABlwEBAAAAAZgBAQAAAAEIeQEAAAABfxAAAAABgAFAAAAAAYEBQAAAAAGNAQIAAAABkAEAAACQAQKRARAAAAABkgEQAAAAAQkLAADyAgAgDQAA8wIAIHkBAAAAAYABQAAAAAGBAUAAAAABmQEBAAAAAZoBAQAAAAGbAQEAAAABnQEAAACdAQICAAAAAQAgGgAAgQMAIAZ5AQAAAAGAAUAAAAABgQFAAAAAAY4BAQAAAAGWAQEAAAABlwEBAAAAAQMAAAAjACAaAACBAwAgGwAAhgMAIAsAAAAjACALAADOAgAgDQAAzwIAIBMAAIYDACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIZkBAQDjAQAhmgEBAOMBACGbAQEA4wEAIZ0BAADMAp0BIgkLAADOAgAgDQAAzwIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhmQEBAOMBACGaAQEA4wEAIZsBAQDjAQAhnQEAAMwCnQEiBwMAAMcCACB5AQAAAAGAAUAAAAABgQFAAAAAAY4BAQAAAAGWAQEAAAABlwEBAAAAAQIAAAAFACAaAACHAwAgCQwAAPECACANAADzAgAgeQEAAAABgAFAAAAAAYEBQAAAAAGZAQEAAAABmgEBAAAAAZsBAQAAAAGdAQAAAJ0BAgIAAAABACAaAACJAwAgB3kBAAAAAX0CAAAAAYABQAAAAAGBAUAAAAABkwEBAAAAAZQBEAAAAAGVARAAAAABCHkBAAAAAXoBAAAAAXwBAAAAAX0CAAAAAX4IAAAAAX8IAAAAAYABQAAAAAGBAUAAAAABAwAAAAMAIBoAAIcDACAbAACPAwAgCQAAAAMAIAMAALkCACATAACPAwAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGOAQEA4wEAIZYBAQDjAQAhlwEBAOMBACEHAwAAuQIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhAwAAACMAIBoAAIkDACAbAACSAwAgCwAAACMAIAwAAM0CACANAADPAgAgEwAAkgMAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhmQEBAOMBACGaAQEA4wEAIZsBAQDjAQAhnQEAAMwCnQEiCQwAAM0CACANAADPAgAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGZAQEA4wEAIZoBAQDjAQAhmwEBAOMBACGdAQAAzAKdASIKAwAAsgIAIAQAALMCACAGAAC1AgAgeQEAAAABgAFAAAAAAYEBQAAAAAGOAQEAAAABlgEBAAAAAZcBAQAAAAGYAQEAAAABAgAAAAkAIBoAAJMDACAIeQEAAAABegEAAAABewEAAAABfQIAAAABfggAAAABfwgAAAABgAFAAAAAAYEBQAAAAAEDAAAABwAgGgAAkwMAIBsAAJgDACAMAAAABwAgAwAAmQIAIAQAAJoCACAGAACcAgAgEwAAmAMAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhmAEBAOMBACEKAwAAmQIAIAQAAJoCACAGAACcAgAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGOAQEA4wEAIZYBAQDjAQAhlwEBAOMBACGYAQEA4wEAIQkLAADyAgAgDAAA8QIAIHkBAAAAAYABQAAAAAGBAUAAAAABmQEBAAAAAZoBAQAAAAGbAQEAAAABnQEAAACdAQICAAAAAQAgGgAAmQMAIAh5AQAAAAF7AQAAAAF8AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQMAAAAjACAaAACZAwAgGwAAngMAIAsAAAAjACALAADOAgAgDAAAzQIAIBMAAJ4DACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIZkBAQDjAQAhmgEBAOMBACGbAQEA4wEAIZ0BAADMAp0BIgkLAADOAgAgDAAAzQIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhmQEBAOMBACGaAQEA4wEAIZsBAQDjAQAhnQEAAMwCnQEiCQUAAJQCACB5AQAAAAF7AQAAAAF9AgAAAAGAAUAAAAABgQFAAAAAAZMBAQAAAAGUARAAAAABlQEQAAAAAQIAAAANACAaAACfAwAgCgMAALICACAEAACzAgAgCgAAtAIAIHkBAAAAAYABQAAAAAGBAUAAAAABjgEBAAAAAZYBAQAAAAGXAQEAAAABmAEBAAAAAQIAAAAJACAaAAChAwAgCgMAAIICACB5AQAAAAF_EAAAAAGAAUAAAAABgQFAAAAAAY0BAgAAAAGOAQEAAAABkAEAAACQAQKRARAAAAABkgEQAAAAAQIAAAAdACAaAACjAwAgAwAAAAsAIBoAAJ8DACAbAACnAwAgCwAAAAsAIAUAAIkCACATAACnAwAgeQEA4wEAIXsBAOMBACF9AgDkAQAhgAFAAOYBACGBAUAA5gEAIZMBAQDjAQAhlAEQAPIBACGVARAA8gEAIQkFAACJAgAgeQEA4wEAIXsBAOMBACF9AgDkAQAhgAFAAOYBACGBAUAA5gEAIZMBAQDjAQAhlAEQAPIBACGVARAA8gEAIQMAAAAHACAaAAChAwAgGwAAqgMAIAwAAAAHACADAACZAgAgBAAAmgIAIAoAAJsCACATAACqAwAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGOAQEA4wEAIZYBAQDjAQAhlwEBAOMBACGYAQEA4wEAIQoDAACZAgAgBAAAmgIAIAoAAJsCACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIY4BAQDjAQAhlgEBAOMBACGXAQEA4wEAIZgBAQDjAQAhAwAAABsAIBoAAKMDACAbAACtAwAgDAAAABsAIAMAAPQBACATAACtAwAgeQEA4wEAIX8QAPIBACGAAUAA5gEAIYEBQADmAQAhjQECAOQBACGOAQEA4wEAIZABAADzAZABIpEBEADyAQAhkgEQAPIBACEKAwAA9AEAIHkBAOMBACF_EADyAQAhgAFAAOYBACGBAUAA5gEAIY0BAgDkAQAhjgEBAOMBACGQAQAA8wGQASKRARAA8gEAIZIBEADyAQAhBAcACwsaAwwGAg0eBgMDAAEHAAoLCgMFAwABBAACBhYFBwAJCg4EAwUAAwYSBQcACAMFAAMIAAYJAAQDAwABBhMFBwAHAQYUAAEGFQACBhgAChcAAQsZAAMLIAAMHwANIQAAAAADBwAQIAARIQASAAAAAwcAECAAESEAEgEDAAEBAwABAwcAFyAAGCEAGQAAAAMHABcgABghABkCAwABBAACAgMAAQQAAgMHAB4gAB8hACAAAAADBwAeIAAfIQAgAQUAAwEFAAMFBwAlIAAoIQApUgAmUwAnAAAAAAAFBwAlIAAoIQApUgAmUwAnAQMAAQEDAAEFBwAuIAAxIQAyUgAvUwAwAAAAAAAFBwAuIAAxIQAyUgAvUwAwAwUAAwgABgkABAMFAAMIAAYJAAQFBwA3IAA6IQA7UgA4UwA5AAAAAAAFBwA3IAA6IQA7UgA4UwA5DgIBDyIBECUBESYBEicBFCkBFSsMFiwNFy4BGDAMGTEOHDIBHTMBHjQMIjcPIzgTJDkCJToCJjsCJzwCKD0CKT8CKkEMK0IULEQCLUYMLkcVL0gCMEkCMUoMMk0WM04aNE8DNVADNlEDN1IDOFMDOVUDOlcMO1gbPFoDPVwMPl0cP14DQF8DQWAMQmMdQ2QhRGUERWYERmcER2gESGkESWsESm0MS24iTHAETXIMTnMjT3QEUHUEUXYMVHkkVXoqVnsGV3wGWH0GWX4GWn8GW4EBBlyDAQxdhAErXoYBBl-IAQxgiQEsYYoBBmKLAQZjjAEMZI8BLWWQATNmkQEFZ5IBBWiTAQVplAEFapUBBWuXAQVsmQEMbZoBNG6cAQVvngEMcJ8BNXGgAQVyoQEFc6IBDHSlATZ1pgE8"
+}
+
+async function decodeBase64AsWasm(wasmBase64: string): Promise<WebAssembly.Module> {
+  const { Buffer } = await import('node:buffer')
+  const wasmArray = Buffer.from(wasmBase64, 'base64')
+  return new WebAssembly.Module(wasmArray)
+}
+
+config.compilerWasm = {
+  getRuntime: async () => await import("@prisma/client/runtime/query_compiler_fast_bg.postgresql.js"),
+
+  getQueryCompilerWasmModule: async () => {
+    const { wasm } = await import("@prisma/client/runtime/query_compiler_fast_bg.postgresql.wasm-base64.js")
+    return await decodeBase64AsWasm(wasm)
+  },
+
+  importName: "./query_compiler_fast_bg.js"
+}
+
+
+
+export type LogOptions<ClientOptions extends Prisma.PrismaClientOptions> =
+  'log' extends keyof ClientOptions ? ClientOptions['log'] extends Array<Prisma.LogLevel | Prisma.LogDefinition> ? Prisma.GetEvents<ClientOptions['log']> : never : never
+
+export interface PrismaClientConstructor {
+    /**
+   * ## Prisma Client
+   * 
+   * Type-safe database client for TypeScript
+   * @example
+   * ```
+   * const prisma = new PrismaClient({
+   *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
+   * })
+   * // Fetch zero or more Users
+   * const users = await prisma.user.findMany()
+   * ```
+   * 
+   * Read more in our [docs](https://pris.ly/d/client).
+   */
+
+  new <
+    Options extends Prisma.PrismaClientOptions = Prisma.PrismaClientOptions,
+    LogOpts extends LogOptions<Options> = LogOptions<Options>,
+    OmitOpts extends Prisma.PrismaClientOptions['omit'] = Options extends { omit: infer U } ? U : Prisma.PrismaClientOptions['omit'],
+    ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs
+  >(options: Prisma.Subset<Options, Prisma.PrismaClientOptions> ): PrismaClient<LogOpts, OmitOpts, ExtArgs>
+}
+
+/**
+ * ## Prisma Client
+ * 
+ * Type-safe database client for TypeScript
+ * @example
+ * ```
+ * const prisma = new PrismaClient({
+ *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
+ * })
+ * // Fetch zero or more Users
+ * const users = await prisma.user.findMany()
+ * ```
+ * 
+ * Read more in our [docs](https://pris.ly/d/client).
+ */
+
+export interface PrismaClient<
+  in LogOpts extends Prisma.LogLevel = never,
+  in out OmitOpts extends Prisma.PrismaClientOptions['omit'] = undefined,
+  in out ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs
+> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['other'] }
+
+  $on<V extends LogOpts>(eventType: V, callback: (event: V extends 'query' ? Prisma.QueryEvent : Prisma.LogEvent) => void): PrismaClient;
+
+  /**
+   * Connect with the database
+   */
+  $connect(): runtime.Types.Utils.JsPromise<void>;
+
+  /**
+   * Disconnect from the database
+   */
+  $disconnect(): runtime.Types.Utils.JsPromise<void>;
+
+/**
+   * Executes a prepared raw query and returns the number of affected rows.
+   * @example
+   * ```
+   * const result = await prisma.$executeRaw`UPDATE User SET cool = ${true} WHERE email = ${'user@email.com'};`
+   * ```
+   *
+   * Read more in our [docs](https://pris.ly/d/raw-queries).
+   */
+  $executeRaw<T = unknown>(query: TemplateStringsArray | Prisma.Sql, ...values: any[]): Prisma.PrismaPromise<number>;
+
+  /**
+   * Executes a raw query and returns the number of affected rows.
+   * Susceptible to SQL injections, see documentation.
+   * @example
+   * ```
+   * const result = await prisma.$executeRawUnsafe('UPDATE User SET cool = $1 WHERE email = $2 ;', true, 'user@email.com')
+   * ```
+   *
+   * Read more in our [docs](https://pris.ly/d/raw-queries).
+   */
+  $executeRawUnsafe<T = unknown>(query: string, ...values: any[]): Prisma.PrismaPromise<number>;
+
+  /**
+   * Performs a prepared raw query and returns the `SELECT` data.
+   * @example
+   * ```
+   * const result = await prisma.$queryRaw`SELECT * FROM User WHERE id = ${1} OR email = ${'user@email.com'};`
+   * ```
+   *
+   * Read more in our [docs](https://pris.ly/d/raw-queries).
+   */
+  $queryRaw<T = unknown>(query: TemplateStringsArray | Prisma.Sql, ...values: any[]): Prisma.PrismaPromise<T>;
+
+  /**
+   * Performs a raw query and returns the `SELECT` data.
+   * Susceptible to SQL injections, see documentation.
+   * @example
+   * ```
+   * const result = await prisma.$queryRawUnsafe('SELECT * FROM User WHERE id = $1 OR email = $2;', 1, 'user@email.com')
+   * ```
+   *
+   * Read more in our [docs](https://pris.ly/d/raw-queries).
+   */
+  $queryRawUnsafe<T = unknown>(query: string, ...values: any[]): Prisma.PrismaPromise<T>;
+
+
+  /**
+   * Allows the running of a sequence of read/write operations that are guaranteed to either succeed or fail as a whole.
+   * @example
+   * ```
+   * const [george, bob, alice] = await prisma.$transaction([
+   *   prisma.user.create({ data: { name: 'George' } }),
+   *   prisma.user.create({ data: { name: 'Bob' } }),
+   *   prisma.user.create({ data: { name: 'Alice' } }),
+   * ])
+   * ```
+   * 
+   * Read more in our [docs](https://www.prisma.io/docs/orm/prisma-client/queries/transactions).
+   */
+  $transaction<P extends Prisma.PrismaPromise<any>[]>(arg: [...P], options?: { maxWait?: number, timeout?: number, isolationLevel?: Prisma.TransactionIsolationLevel }): runtime.Types.Utils.JsPromise<runtime.Types.Utils.UnwrapTuple<P>>
+
+  $transaction<R>(fn: (prisma: Omit<PrismaClient, runtime.ITXClientDenyList>) => runtime.Types.Utils.JsPromise<R>, options?: { maxWait?: number, timeout?: number, isolationLevel?: Prisma.TransactionIsolationLevel }): runtime.Types.Utils.JsPromise<R>
+
+  $extends: runtime.Types.Extensions.ExtendsHook<"extends", Prisma.TypeMapCb<OmitOpts>, ExtArgs, runtime.Types.Utils.Call<Prisma.TypeMapCb<OmitOpts>, {
+    extArgs: ExtArgs
+  }>>
+
+      /**
+   * `prisma.user`: Exposes CRUD operations for the **User** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Users
+    * const users = await prisma.user.findMany()
+    * ```
+    */
+  get user(): Prisma.UserDelegate<ExtArgs, { omit: OmitOpts }>;
+
+  /**
+   * `prisma.category`: Exposes CRUD operations for the **Category** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Categories
+    * const categories = await prisma.category.findMany()
+    * ```
+    */
+  get category(): Prisma.CategoryDelegate<ExtArgs, { omit: OmitOpts }>;
+
+  /**
+   * `prisma.product`: Exposes CRUD operations for the **Product** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Products
+    * const products = await prisma.product.findMany()
+    * ```
+    */
+  get product(): Prisma.ProductDelegate<ExtArgs, { omit: OmitOpts }>;
+
+  /**
+   * `prisma.batch`: Exposes CRUD operations for the **Batch** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Batches
+    * const batches = await prisma.batch.findMany()
+    * ```
+    */
+  get batch(): Prisma.BatchDelegate<ExtArgs, { omit: OmitOpts }>;
+
+  /**
+   * `prisma.bill`: Exposes CRUD operations for the **Bill** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Bills
+    * const bills = await prisma.bill.findMany()
+    * ```
+    */
+  get bill(): Prisma.BillDelegate<ExtArgs, { omit: OmitOpts }>;
+
+  /**
+   * `prisma.billItem`: Exposes CRUD operations for the **BillItem** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more BillItems
+    * const billItems = await prisma.billItem.findMany()
+    * ```
+    */
+  get billItem(): Prisma.BillItemDelegate<ExtArgs, { omit: OmitOpts }>;
+}
+
+export function getPrismaClientClass(): PrismaClientConstructor {
+  return runtime.getPrismaClient(config) as unknown as PrismaClientConstructor
+}
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-internal-prismanamespace-ts"></a>📄 `src/generated/prisma/internal/prismaNamespace.ts`
+
+**File Info:**
+- **Size**: 37.05 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/internal/prismaNamespace.ts`
+- **Relative Path**: `src/generated/prisma/internal`
+- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `916aabb170cd5e854e4a7ad5ad330c30`
+- **SHA256**: `f2dad6a53f446ed7b97e184d321d6972bdc883c6a3ffd32017c3a4a08bcd53ce`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * WARNING: This is an internal file that is subject to change!
+ *
+ * 🛑 Under no circumstances should you import this file directly! 🛑
+ *
+ * All exports from this file are wrapped under a `Prisma` namespace object in the client.ts file.
+ * While this enables partial backward compatibility, it is not part of the stable public API.
+ *
+ * If you are looking for your Models, Enums, and Input Types, please import them from the respective
+ * model files in the `model` directory!
+ */
+
+import * as runtime from "@prisma/client/runtime/client"
+import type * as Prisma from "../models"
+import { type PrismaClient } from "./class"
+
+export type * from '../models'
+
+export type DMMF = typeof runtime.DMMF
+
+export type PrismaPromise<T> = runtime.Types.Public.PrismaPromise<T>
+
+/**
+ * Prisma Errors
+ */
+
+export const PrismaClientKnownRequestError = runtime.PrismaClientKnownRequestError
+export type PrismaClientKnownRequestError = runtime.PrismaClientKnownRequestError
+
+export const PrismaClientUnknownRequestError = runtime.PrismaClientUnknownRequestError
+export type PrismaClientUnknownRequestError = runtime.PrismaClientUnknownRequestError
+
+export const PrismaClientRustPanicError = runtime.PrismaClientRustPanicError
+export type PrismaClientRustPanicError = runtime.PrismaClientRustPanicError
+
+export const PrismaClientInitializationError = runtime.PrismaClientInitializationError
+export type PrismaClientInitializationError = runtime.PrismaClientInitializationError
+
+export const PrismaClientValidationError = runtime.PrismaClientValidationError
+export type PrismaClientValidationError = runtime.PrismaClientValidationError
+
+/**
+ * Re-export of sql-template-tag
+ */
+export const sql = runtime.sqltag
+export const empty = runtime.empty
+export const join = runtime.join
+export const raw = runtime.raw
+export const Sql = runtime.Sql
+export type Sql = runtime.Sql
+
+
+
+/**
+ * Decimal.js
+ */
+export const Decimal = runtime.Decimal
+export type Decimal = runtime.Decimal
+
+export type DecimalJsLike = runtime.DecimalJsLike
+
+/**
+* Extensions
+*/
+export type Extension = runtime.Types.Extensions.UserArgs
+export const getExtensionContext = runtime.Extensions.getExtensionContext
+export type Args<T, F extends runtime.Operation> = runtime.Types.Public.Args<T, F>
+export type Payload<T, F extends runtime.Operation = never> = runtime.Types.Public.Payload<T, F>
+export type Result<T, A, F extends runtime.Operation> = runtime.Types.Public.Result<T, A, F>
+export type Exact<A, W> = runtime.Types.Public.Exact<A, W>
+
+export type PrismaVersion = {
+  client: string
+  engine: string
+}
+
+/**
+ * Prisma Client JS version: 7.8.0
+ * Query Engine version: 3c6e192761c0362d496ed980de936e2f3cebcd3a
+ */
+export const prismaVersion: PrismaVersion = {
+  client: "7.8.0",
+  engine: "3c6e192761c0362d496ed980de936e2f3cebcd3a"
+}
+
+/**
+ * Utility Types
+ */
+
+export type Bytes = runtime.Bytes
+export type JsonObject = runtime.JsonObject
+export type JsonArray = runtime.JsonArray
+export type JsonValue = runtime.JsonValue
+export type InputJsonObject = runtime.InputJsonObject
+export type InputJsonArray = runtime.InputJsonArray
+export type InputJsonValue = runtime.InputJsonValue
+
+
+export const NullTypes = {
+  DbNull: runtime.NullTypes.DbNull as (new (secret: never) => typeof runtime.DbNull),
+  JsonNull: runtime.NullTypes.JsonNull as (new (secret: never) => typeof runtime.JsonNull),
+  AnyNull: runtime.NullTypes.AnyNull as (new (secret: never) => typeof runtime.AnyNull),
+}
+/**
+ * Helper for filtering JSON entries that have `null` on the database (empty on the db)
+ *
+ * @see https://www.prisma.io/docs/concepts/components/prisma-client/working-with-fields/working-with-json-fields#filtering-on-a-json-field
+ */
+export const DbNull = runtime.DbNull
+
+/**
+ * Helper for filtering JSON entries that have JSON `null` values (not empty on the db)
+ *
+ * @see https://www.prisma.io/docs/concepts/components/prisma-client/working-with-fields/working-with-json-fields#filtering-on-a-json-field
+ */
+export const JsonNull = runtime.JsonNull
+
+/**
+ * Helper for filtering JSON entries that are `Prisma.DbNull` or `Prisma.JsonNull`
+ *
+ * @see https://www.prisma.io/docs/concepts/components/prisma-client/working-with-fields/working-with-json-fields#filtering-on-a-json-field
+ */
+export const AnyNull = runtime.AnyNull
+
+
+type SelectAndInclude = {
+  select: any
+  include: any
+}
+
+type SelectAndOmit = {
+  select: any
+  omit: any
+}
+
+/**
+ * From T, pick a set of properties whose keys are in the union K
+ */
+type Prisma__Pick<T, K extends keyof T> = {
+    [P in K]: T[P];
+};
+
+export type Enumerable<T> = T | Array<T>;
+
+/**
+ * Subset
+ * @desc From `T` pick properties that exist in `U`. Simple version of Intersection
+ */
+export type Subset<T, U> = {
+  [key in keyof T]: key extends keyof U ? T[key] : never;
+};
+
+/**
+ * SelectSubset
+ * @desc From `T` pick properties that exist in `U`. Simple version of Intersection.
+ * Additionally, it validates, if both select and include are present. If the case, it errors.
+ */
+export type SelectSubset<T, U> = {
+  [key in keyof T]: key extends keyof U ? T[key] : never
+} &
+  (T extends SelectAndInclude
+    ? 'Please either choose `select` or `include`.'
+    : T extends SelectAndOmit
+      ? 'Please either choose `select` or `omit`.'
+      : {})
+
+/**
+ * Subset + Intersection
+ * @desc From `T` pick properties that exist in `U` and intersect `K`
+ */
+export type SubsetIntersection<T, U, K> = {
+  [key in keyof T]: key extends keyof U ? T[key] : never
+} &
+  K
+
+type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
+
+/**
+ * XOR is needed to have a real mutually exclusive union type
+ * https://stackoverflow.com/questions/42123407/does-typescript-support-mutually-exclusive-types
+ */
+export type XOR<T, U> =
+  T extends object ?
+  U extends object ?
+    (Without<T, U> & U) | (Without<U, T> & T)
+  : U : T
+
+
+/**
+ * Is T a Record?
+ */
+type IsObject<T extends any> = T extends Array<any>
+? False
+: T extends Date
+? False
+: T extends Uint8Array
+? False
+: T extends BigInt
+? False
+: T extends object
+? True
+: False
+
+
+/**
+ * If it's T[], return T
+ */
+export type UnEnumerate<T extends unknown> = T extends Array<infer U> ? U : T
+
+/**
+ * From ts-toolbelt
+ */
+
+type __Either<O extends object, K extends Key> = Omit<O, K> &
+  {
+    // Merge all but K
+    [P in K]: Prisma__Pick<O, P & keyof O> // With K possibilities
+  }[K]
+
+type EitherStrict<O extends object, K extends Key> = Strict<__Either<O, K>>
+
+type EitherLoose<O extends object, K extends Key> = ComputeRaw<__Either<O, K>>
+
+type _Either<
+  O extends object,
+  K extends Key,
+  strict extends Boolean
+> = {
+  1: EitherStrict<O, K>
+  0: EitherLoose<O, K>
+}[strict]
+
+export type Either<
+  O extends object,
+  K extends Key,
+  strict extends Boolean = 1
+> = O extends unknown ? _Either<O, K, strict> : never
+
+export type Union = any
+
+export type PatchUndefined<O extends object, O1 extends object> = {
+  [K in keyof O]: O[K] extends undefined ? At<O1, K> : O[K]
+} & {}
+
+/** Helper Types for "Merge" **/
+export type IntersectOf<U extends Union> = (
+  U extends unknown ? (k: U) => void : never
+) extends (k: infer I) => void
+  ? I
+  : never
+
+export type Overwrite<O extends object, O1 extends object> = {
+    [K in keyof O]: K extends keyof O1 ? O1[K] : O[K];
+} & {};
+
+type _Merge<U extends object> = IntersectOf<Overwrite<U, {
+    [K in keyof U]-?: At<U, K>;
+}>>;
+
+type Key = string | number | symbol;
+type AtStrict<O extends object, K extends Key> = O[K & keyof O];
+type AtLoose<O extends object, K extends Key> = O extends unknown ? AtStrict<O, K> : never;
+export type At<O extends object, K extends Key, strict extends Boolean = 1> = {
+    1: AtStrict<O, K>;
+    0: AtLoose<O, K>;
+}[strict];
+
+export type ComputeRaw<A extends any> = A extends Function ? A : {
+  [K in keyof A]: A[K];
+} & {};
+
+export type OptionalFlat<O> = {
+  [K in keyof O]?: O[K];
+} & {};
+
+type _Record<K extends keyof any, T> = {
+  [P in K]: T;
+};
+
+// cause typescript not to expand types and preserve names
+type NoExpand<T> = T extends unknown ? T : never;
+
+// this type assumes the passed object is entirely optional
+export type AtLeast<O extends object, K extends string> = NoExpand<
+  O extends unknown
+  ? | (K extends keyof O ? { [P in K]: O[P] } & O : O)
+    | {[P in keyof O as P extends K ? P : never]-?: O[P]} & O
+  : never>;
+
+type _Strict<U, _U = U> = U extends unknown ? U & OptionalFlat<_Record<Exclude<Keys<_U>, keyof U>, never>> : never;
+
+export type Strict<U extends object> = ComputeRaw<_Strict<U>>;
+/** End Helper Types for "Merge" **/
+
+export type Merge<U extends object> = ComputeRaw<_Merge<Strict<U>>>;
+
+export type Boolean = True | False
+
+export type True = 1
+
+export type False = 0
+
+export type Not<B extends Boolean> = {
+  0: 1
+  1: 0
+}[B]
+
+export type Extends<A1 extends any, A2 extends any> = [A1] extends [never]
+  ? 0 // anything `never` is false
+  : A1 extends A2
+  ? 1
+  : 0
+
+export type Has<U extends Union, U1 extends Union> = Not<
+  Extends<Exclude<U1, U>, U1>
+>
+
+export type Or<B1 extends Boolean, B2 extends Boolean> = {
+  0: {
+    0: 0
+    1: 1
+  }
+  1: {
+    0: 1
+    1: 1
+  }
+}[B1][B2]
+
+export type Keys<U extends Union> = U extends unknown ? keyof U : never
+
+export type GetScalarType<T, O> = O extends object ? {
+  [P in keyof T]: P extends keyof O
+    ? O[P]
+    : never
+} : never
+
+type FieldPaths<
+  T,
+  U = Omit<T, '_avg' | '_sum' | '_count' | '_min' | '_max'>
+> = IsObject<T> extends True ? U : T
+
+export type GetHavingFields<T> = {
+  [K in keyof T]: Or<
+    Or<Extends<'OR', K>, Extends<'AND', K>>,
+    Extends<'NOT', K>
+  > extends True
+    ? // infer is only needed to not hit TS limit
+      // based on the brilliant idea of Pierre-Antoine Mills
+      // https://github.com/microsoft/TypeScript/issues/30188#issuecomment-478938437
+      T[K] extends infer TK
+      ? GetHavingFields<UnEnumerate<TK> extends object ? Merge<UnEnumerate<TK>> : never>
+      : never
+    : {} extends FieldPaths<T[K]>
+    ? never
+    : K
+}[keyof T]
+
+/**
+ * Convert tuple to union
+ */
+type _TupleToUnion<T> = T extends (infer E)[] ? E : never
+type TupleToUnion<K extends readonly any[]> = _TupleToUnion<K>
+export type MaybeTupleToUnion<T> = T extends any[] ? TupleToUnion<T> : T
+
+/**
+ * Like `Pick`, but additionally can also accept an array of keys
+ */
+export type PickEnumerable<T, K extends Enumerable<keyof T> | keyof T> = Prisma__Pick<T, MaybeTupleToUnion<K>>
+
+/**
+ * Exclude all keys with underscores
+ */
+export type ExcludeUnderscoreKeys<T extends string> = T extends `_${string}` ? never : T
+
+
+export type FieldRef<Model, FieldType> = runtime.FieldRef<Model, FieldType>
+
+type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRef<Model, FieldType>
+
+
+export const ModelName = {
+  User: 'User',
+  Category: 'Category',
+  Product: 'Product',
+  Batch: 'Batch',
+  Bill: 'Bill',
+  BillItem: 'BillItem'
+} as const
+
+export type ModelName = (typeof ModelName)[keyof typeof ModelName]
+
+
+
+export interface TypeMapCb<GlobalOmitOptions = {}> extends runtime.Types.Utils.Fn<{extArgs: runtime.Types.Extensions.InternalArgs }, runtime.Types.Utils.Record<string, any>> {
+  returns: TypeMap<this['params']['extArgs'], GlobalOmitOptions>
+}
+
+export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> = {
+  globalOmitOptions: {
+    omit: GlobalOmitOptions
+  }
+  meta: {
+    modelProps: "user" | "category" | "product" | "batch" | "bill" | "billItem"
+    txIsolationLevel: TransactionIsolationLevel
+  }
+  model: {
+    User: {
+      payload: Prisma.$UserPayload<ExtArgs>
+      fields: Prisma.UserFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.UserFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.UserFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>
+        }
+        findFirst: {
+          args: Prisma.UserFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.UserFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>
+        }
+        findMany: {
+          args: Prisma.UserFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>[]
+        }
+        create: {
+          args: Prisma.UserCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>
+        }
+        createMany: {
+          args: Prisma.UserCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.UserCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>[]
+        }
+        delete: {
+          args: Prisma.UserDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>
+        }
+        update: {
+          args: Prisma.UserUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>
+        }
+        deleteMany: {
+          args: Prisma.UserDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.UserUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.UserUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>[]
+        }
+        upsert: {
+          args: Prisma.UserUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>
+        }
+        aggregate: {
+          args: Prisma.UserAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateUser>
+        }
+        groupBy: {
+          args: Prisma.UserGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.UserCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserCountAggregateOutputType> | number
+        }
+      }
+    }
+    Category: {
+      payload: Prisma.$CategoryPayload<ExtArgs>
+      fields: Prisma.CategoryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CategoryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CategoryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>
+        }
+        findFirst: {
+          args: Prisma.CategoryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CategoryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>
+        }
+        findMany: {
+          args: Prisma.CategoryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>[]
+        }
+        create: {
+          args: Prisma.CategoryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>
+        }
+        createMany: {
+          args: Prisma.CategoryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CategoryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>[]
+        }
+        delete: {
+          args: Prisma.CategoryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>
+        }
+        update: {
+          args: Prisma.CategoryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>
+        }
+        deleteMany: {
+          args: Prisma.CategoryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CategoryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CategoryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>[]
+        }
+        upsert: {
+          args: Prisma.CategoryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>
+        }
+        aggregate: {
+          args: Prisma.CategoryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCategory>
+        }
+        groupBy: {
+          args: Prisma.CategoryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CategoryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CategoryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CategoryCountAggregateOutputType> | number
+        }
+      }
+    }
+    Product: {
+      payload: Prisma.$ProductPayload<ExtArgs>
+      fields: Prisma.ProductFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ProductFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ProductFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductPayload>
+        }
+        findFirst: {
+          args: Prisma.ProductFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ProductFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductPayload>
+        }
+        findMany: {
+          args: Prisma.ProductFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductPayload>[]
+        }
+        create: {
+          args: Prisma.ProductCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductPayload>
+        }
+        createMany: {
+          args: Prisma.ProductCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ProductCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductPayload>[]
+        }
+        delete: {
+          args: Prisma.ProductDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductPayload>
+        }
+        update: {
+          args: Prisma.ProductUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductPayload>
+        }
+        deleteMany: {
+          args: Prisma.ProductDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ProductUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ProductUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductPayload>[]
+        }
+        upsert: {
+          args: Prisma.ProductUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductPayload>
+        }
+        aggregate: {
+          args: Prisma.ProductAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateProduct>
+        }
+        groupBy: {
+          args: Prisma.ProductGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProductGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ProductCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProductCountAggregateOutputType> | number
+        }
+      }
+    }
+    Batch: {
+      payload: Prisma.$BatchPayload<ExtArgs>
+      fields: Prisma.BatchFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.BatchFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BatchPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.BatchFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BatchPayload>
+        }
+        findFirst: {
+          args: Prisma.BatchFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BatchPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.BatchFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BatchPayload>
+        }
+        findMany: {
+          args: Prisma.BatchFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BatchPayload>[]
+        }
+        create: {
+          args: Prisma.BatchCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BatchPayload>
+        }
+        createMany: {
+          args: Prisma.BatchCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.BatchCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BatchPayload>[]
+        }
+        delete: {
+          args: Prisma.BatchDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BatchPayload>
+        }
+        update: {
+          args: Prisma.BatchUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BatchPayload>
+        }
+        deleteMany: {
+          args: Prisma.BatchDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.BatchUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.BatchUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BatchPayload>[]
+        }
+        upsert: {
+          args: Prisma.BatchUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BatchPayload>
+        }
+        aggregate: {
+          args: Prisma.BatchAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateBatch>
+        }
+        groupBy: {
+          args: Prisma.BatchGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BatchGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.BatchCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BatchCountAggregateOutputType> | number
+        }
+      }
+    }
+    Bill: {
+      payload: Prisma.$BillPayload<ExtArgs>
+      fields: Prisma.BillFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.BillFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.BillFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillPayload>
+        }
+        findFirst: {
+          args: Prisma.BillFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.BillFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillPayload>
+        }
+        findMany: {
+          args: Prisma.BillFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillPayload>[]
+        }
+        create: {
+          args: Prisma.BillCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillPayload>
+        }
+        createMany: {
+          args: Prisma.BillCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.BillCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillPayload>[]
+        }
+        delete: {
+          args: Prisma.BillDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillPayload>
+        }
+        update: {
+          args: Prisma.BillUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillPayload>
+        }
+        deleteMany: {
+          args: Prisma.BillDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.BillUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.BillUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillPayload>[]
+        }
+        upsert: {
+          args: Prisma.BillUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillPayload>
+        }
+        aggregate: {
+          args: Prisma.BillAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateBill>
+        }
+        groupBy: {
+          args: Prisma.BillGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BillGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.BillCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BillCountAggregateOutputType> | number
+        }
+      }
+    }
+    BillItem: {
+      payload: Prisma.$BillItemPayload<ExtArgs>
+      fields: Prisma.BillItemFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.BillItemFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillItemPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.BillItemFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillItemPayload>
+        }
+        findFirst: {
+          args: Prisma.BillItemFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillItemPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.BillItemFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillItemPayload>
+        }
+        findMany: {
+          args: Prisma.BillItemFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillItemPayload>[]
+        }
+        create: {
+          args: Prisma.BillItemCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillItemPayload>
+        }
+        createMany: {
+          args: Prisma.BillItemCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.BillItemCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillItemPayload>[]
+        }
+        delete: {
+          args: Prisma.BillItemDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillItemPayload>
+        }
+        update: {
+          args: Prisma.BillItemUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillItemPayload>
+        }
+        deleteMany: {
+          args: Prisma.BillItemDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.BillItemUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.BillItemUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillItemPayload>[]
+        }
+        upsert: {
+          args: Prisma.BillItemUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BillItemPayload>
+        }
+        aggregate: {
+          args: Prisma.BillItemAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateBillItem>
+        }
+        groupBy: {
+          args: Prisma.BillItemGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BillItemGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.BillItemCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BillItemCountAggregateOutputType> | number
+        }
+      }
+    }
+  }
+} & {
+  other: {
+    payload: any
+    operations: {
+      $executeRaw: {
+        args: [query: TemplateStringsArray | Sql, ...values: any[]],
+        result: any
+      }
+      $executeRawUnsafe: {
+        args: [query: string, ...values: any[]],
+        result: any
+      }
+      $queryRaw: {
+        args: [query: TemplateStringsArray | Sql, ...values: any[]],
+        result: any
+      }
+      $queryRawUnsafe: {
+        args: [query: string, ...values: any[]],
+        result: any
+      }
+    }
+  }
+}
+
+/**
+ * Enums
+ */
+
+export const TransactionIsolationLevel = runtime.makeStrictEnum({
+  ReadUncommitted: 'ReadUncommitted',
+  ReadCommitted: 'ReadCommitted',
+  RepeatableRead: 'RepeatableRead',
+  Serializable: 'Serializable'
+} as const)
+
+export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
+
+
+export const UserScalarFieldEnum = {
+  id: 'id',
+  email: 'email',
+  username: 'username',
+  password: 'password',
+  role: 'role',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const CategoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  shortName: 'shortName',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum]
+
+
+export const ProductScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  shortName: 'shortName',
+  userId: 'userId',
+  categoryId: 'categoryId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
+
+
+export const BatchScalarFieldEnum = {
+  id: 'id',
+  batchNumber: 'batchNumber',
+  costPrice: 'costPrice',
+  price: 'price',
+  quantity: 'quantity',
+  productId: 'productId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BatchScalarFieldEnum = (typeof BatchScalarFieldEnum)[keyof typeof BatchScalarFieldEnum]
+
+
+export const BillScalarFieldEnum = {
+  id: 'id',
+  billNumber: 'billNumber',
+  userId: 'userId',
+  total: 'total',
+  discountType: 'discountType',
+  discount: 'discount',
+  finalBillAmount: 'finalBillAmount',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BillScalarFieldEnum = (typeof BillScalarFieldEnum)[keyof typeof BillScalarFieldEnum]
+
+
+export const BillItemScalarFieldEnum = {
+  id: 'id',
+  billId: 'billId',
+  productId: 'productId',
+  batchId: 'batchId',
+  quantity: 'quantity',
+  unitPrice: 'unitPrice',
+  total: 'total',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BillItemScalarFieldEnum = (typeof BillItemScalarFieldEnum)[keyof typeof BillItemScalarFieldEnum]
+
+
+export const SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+} as const
+
+export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
+} as const
+
+export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+
+/**
+ * Field references
+ */
+
+
+/**
+ * Reference to a field of type 'String'
+ */
+export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+    
+
+
+/**
+ * Reference to a field of type 'String[]'
+ */
+export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Role'
+ */
+export type EnumRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Role'>
+    
+
+
+/**
+ * Reference to a field of type 'Role[]'
+ */
+export type ListEnumRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Role[]'>
+    
+
+
+/**
+ * Reference to a field of type 'DateTime'
+ */
+export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+/**
+ * Reference to a field of type 'DateTime[]'
+ */
+export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Decimal'
+ */
+export type DecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal'>
+    
+
+
+/**
+ * Reference to a field of type 'Decimal[]'
+ */
+export type ListDecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Int'
+ */
+export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+/**
+ * Reference to a field of type 'Int[]'
+ */
+export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+/**
+ * Reference to a field of type 'DiscountType'
+ */
+export type EnumDiscountTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DiscountType'>
+    
+
+
+/**
+ * Reference to a field of type 'DiscountType[]'
+ */
+export type ListEnumDiscountTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DiscountType[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Float'
+ */
+export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+/**
+ * Reference to a field of type 'Float[]'
+ */
+export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+    
+
+/**
+ * Batch Payload for updateMany & deleteMany & createMany
+ */
+export type BatchPayload = {
+  count: number
+}
+
+export const defineExtension = runtime.Extensions.defineExtension as unknown as runtime.Types.Extensions.ExtendsHook<"define", TypeMapCb, runtime.Types.Extensions.DefaultArgs>
+export type DefaultPrismaClient = PrismaClient
+export type ErrorFormat = 'pretty' | 'colorless' | 'minimal'
+export type PrismaClientOptions = ({
+  /**
+   * Instance of a Driver Adapter, e.g., like one provided by `@prisma/adapter-pg`.
+   */
+  adapter: runtime.SqlDriverAdapterFactory
+  accelerateUrl?: never
+} | {
+  /**
+   * Prisma Accelerate URL allowing the client to connect through Accelerate instead of a direct database.
+   */
+  accelerateUrl: string
+  adapter?: never
+}) & {
+  /**
+   * @default "colorless"
+   */
+  errorFormat?: ErrorFormat
+  /**
+   * @example
+   * ```
+   * // Shorthand for `emit: 'stdout'`
+   * log: ['query', 'info', 'warn', 'error']
+   * 
+   * // Emit as events only
+   * log: [
+   *   { emit: 'event', level: 'query' },
+   *   { emit: 'event', level: 'info' },
+   *   { emit: 'event', level: 'warn' }
+   *   { emit: 'event', level: 'error' }
+   * ]
+   * 
+   * / Emit as events and log to stdout
+   * og: [
+   *  { emit: 'stdout', level: 'query' },
+   *  { emit: 'stdout', level: 'info' },
+   *  { emit: 'stdout', level: 'warn' }
+   *  { emit: 'stdout', level: 'error' }
+   * 
+   * ```
+   * Read more in our [docs](https://pris.ly/d/logging).
+   */
+  log?: (LogLevel | LogDefinition)[]
+  /**
+   * The default values for transactionOptions
+   * maxWait ?= 2000
+   * timeout ?= 5000
+   */
+  transactionOptions?: {
+    maxWait?: number
+    timeout?: number
+    isolationLevel?: TransactionIsolationLevel
+  }
+  /**
+   * Global configuration for omitting model fields by default.
+   * 
+   * @example
+   * ```
+   * const prisma = new PrismaClient({
+   *   omit: {
+   *     user: {
+   *       password: true
+   *     }
+   *   }
+   * })
+   * ```
+   */
+  omit?: GlobalOmitConfig
+  /**
+   * SQL commenter plugins that add metadata to SQL queries as comments.
+   * Comments follow the sqlcommenter format: https://google.github.io/sqlcommenter/
+   * 
+   * @example
+   * ```
+   * const prisma = new PrismaClient({
+   *   adapter,
+   *   comments: [
+   *     traceContext(),
+   *     queryInsights(),
+   *   ],
+   * })
+   * ```
+   */
+  comments?: runtime.SqlCommenterPlugin[]
+  /**
+   * Optional maximum size for the query plan cache. If not provided, a default size will be used.
+   * A value of `0` can be used to disable the cache entirely. A higher cache size can improve
+   * performance for applications that execute a large number of unique queries, while a smaller
+   * cache size can reduce memory usage.
+   * 
+   * @example
+   * ```
+   * const prisma = new PrismaClient({
+   *   adapter,
+   *   queryPlanCacheMaxSize: 100,
+   * })
+   * ```
+   */
+  queryPlanCacheMaxSize?: number
+}
+export type GlobalOmitConfig = {
+  user?: Prisma.UserOmit
+  category?: Prisma.CategoryOmit
+  product?: Prisma.ProductOmit
+  batch?: Prisma.BatchOmit
+  bill?: Prisma.BillOmit
+  billItem?: Prisma.BillItemOmit
+}
+
+/* Types for Logging */
+export type LogLevel = 'info' | 'query' | 'warn' | 'error'
+export type LogDefinition = {
+  level: LogLevel
+  emit: 'stdout' | 'event'
+}
+
+export type CheckIsLogLevel<T> = T extends LogLevel ? T : never;
+
+export type GetLogType<T> = CheckIsLogLevel<
+  T extends LogDefinition ? T['level'] : T
+>;
+
+export type GetEvents<T extends any[]> = T extends Array<LogLevel | LogDefinition>
+  ? GetLogType<T[number]>
+  : never;
+
+export type QueryEvent = {
+  timestamp: Date
+  query: string
+  params: string
+  duration: number
+  target: string
+}
+
+export type LogEvent = {
+  timestamp: Date
+  message: string
+  target: string
+}
+/* End Types for Logging */
+
+
+export type PrismaAction =
+  | 'findUnique'
+  | 'findUniqueOrThrow'
+  | 'findMany'
+  | 'findFirst'
+  | 'findFirstOrThrow'
+  | 'create'
+  | 'createMany'
+  | 'createManyAndReturn'
+  | 'update'
+  | 'updateMany'
+  | 'updateManyAndReturn'
+  | 'upsert'
+  | 'delete'
+  | 'deleteMany'
+  | 'executeRaw'
+  | 'queryRaw'
+  | 'aggregate'
+  | 'count'
+  | 'runCommandRaw'
+  | 'findRaw'
+  | 'groupBy'
+
+/**
+ * `PrismaClient` proxy available in interactive transactions.
+ */
+export type TransactionClient = Omit<DefaultPrismaClient, runtime.ITXClientDenyList>
+
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-internal-prismanamespacebrowser-ts"></a>📄 `src/generated/prisma/internal/prismaNamespaceBrowser.ts`
+
+**File Info:**
+- **Size**: 4.68 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/internal/prismaNamespaceBrowser.ts`
+- **Relative Path**: `src/generated/prisma/internal`
+- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `4d898adcaf2a8cf49b246e82feefc152`
+- **SHA256**: `81c09257d5cc892903c30ba0a7ec810d5fcb8f973621e9e762d36402dbfd3ae9`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * WARNING: This is an internal file that is subject to change!
+ *
+ * 🛑 Under no circumstances should you import this file directly! 🛑
+ *
+ * All exports from this file are wrapped under a `Prisma` namespace object in the browser.ts file.
+ * While this enables partial backward compatibility, it is not part of the stable public API.
+ *
+ * If you are looking for your Models, Enums, and Input Types, please import them from the respective
+ * model files in the `model` directory!
+ */
+
+import * as runtime from "@prisma/client/runtime/index-browser"
+
+export type * from '../models'
+export type * from './prismaNamespace'
+
+export const Decimal = runtime.Decimal
+
+
+export const NullTypes = {
+  DbNull: runtime.NullTypes.DbNull as (new (secret: never) => typeof runtime.DbNull),
+  JsonNull: runtime.NullTypes.JsonNull as (new (secret: never) => typeof runtime.JsonNull),
+  AnyNull: runtime.NullTypes.AnyNull as (new (secret: never) => typeof runtime.AnyNull),
+}
+/**
+ * Helper for filtering JSON entries that have `null` on the database (empty on the db)
+ *
+ * @see https://www.prisma.io/docs/concepts/components/prisma-client/working-with-fields/working-with-json-fields#filtering-on-a-json-field
+ */
+export const DbNull = runtime.DbNull
+
+/**
+ * Helper for filtering JSON entries that have JSON `null` values (not empty on the db)
+ *
+ * @see https://www.prisma.io/docs/concepts/components/prisma-client/working-with-fields/working-with-json-fields#filtering-on-a-json-field
+ */
+export const JsonNull = runtime.JsonNull
+
+/**
+ * Helper for filtering JSON entries that are `Prisma.DbNull` or `Prisma.JsonNull`
+ *
+ * @see https://www.prisma.io/docs/concepts/components/prisma-client/working-with-fields/working-with-json-fields#filtering-on-a-json-field
+ */
+export const AnyNull = runtime.AnyNull
+
+
+export const ModelName = {
+  User: 'User',
+  Category: 'Category',
+  Product: 'Product',
+  Batch: 'Batch',
+  Bill: 'Bill',
+  BillItem: 'BillItem'
+} as const
+
+export type ModelName = (typeof ModelName)[keyof typeof ModelName]
+
+/*
+ * Enums
+ */
+
+export const TransactionIsolationLevel = runtime.makeStrictEnum({
+  ReadUncommitted: 'ReadUncommitted',
+  ReadCommitted: 'ReadCommitted',
+  RepeatableRead: 'RepeatableRead',
+  Serializable: 'Serializable'
+} as const)
+
+export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
+
+
+export const UserScalarFieldEnum = {
+  id: 'id',
+  email: 'email',
+  username: 'username',
+  password: 'password',
+  role: 'role',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const CategoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  shortName: 'shortName',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum]
+
+
+export const ProductScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  shortName: 'shortName',
+  userId: 'userId',
+  categoryId: 'categoryId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
+
+
+export const BatchScalarFieldEnum = {
+  id: 'id',
+  batchNumber: 'batchNumber',
+  costPrice: 'costPrice',
+  price: 'price',
+  quantity: 'quantity',
+  productId: 'productId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BatchScalarFieldEnum = (typeof BatchScalarFieldEnum)[keyof typeof BatchScalarFieldEnum]
+
+
+export const BillScalarFieldEnum = {
+  id: 'id',
+  billNumber: 'billNumber',
+  userId: 'userId',
+  total: 'total',
+  discountType: 'discountType',
+  discount: 'discount',
+  finalBillAmount: 'finalBillAmount',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BillScalarFieldEnum = (typeof BillScalarFieldEnum)[keyof typeof BillScalarFieldEnum]
+
+
+export const BillItemScalarFieldEnum = {
+  id: 'id',
+  billId: 'billId',
+  productId: 'productId',
+  batchId: 'batchId',
+  quantity: 'quantity',
+  unitPrice: 'unitPrice',
+  total: 'total',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BillItemScalarFieldEnum = (typeof BillItemScalarFieldEnum)[keyof typeof BillItemScalarFieldEnum]
+
+
+export const SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+} as const
+
+export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
+} as const
+
+export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-models-batch-ts"></a>📄 `src/generated/prisma/models/Batch.ts`
+
+**File Info:**
+- **Size**: 60.58 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/models/Batch.ts`
+- **Relative Path**: `src/generated/prisma/models`
+- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `f53fae38d65dff1ea10ee3ff21cc1646`
+- **SHA256**: `6c9eb9b002f6479d085c042c5307ad7d30d9d6d4d73aa217ad3c1780632821c5`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * This file exports the `Batch` model and its related types.
+ *
+ * 🟢 You can import this file directly.
+ */
+import type * as runtime from "@prisma/client/runtime/client"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
+
+/**
+ * Model Batch
+ * 
+ */
+export type BatchModel = runtime.Types.Result.DefaultSelection<Prisma.$BatchPayload>
+
+export type AggregateBatch = {
+  _count: BatchCountAggregateOutputType | null
+  _avg: BatchAvgAggregateOutputType | null
+  _sum: BatchSumAggregateOutputType | null
+  _min: BatchMinAggregateOutputType | null
+  _max: BatchMaxAggregateOutputType | null
+}
+
+export type BatchAvgAggregateOutputType = {
+  costPrice: runtime.Decimal | null
+  price: runtime.Decimal | null
+  quantity: number | null
+}
+
+export type BatchSumAggregateOutputType = {
+  costPrice: runtime.Decimal | null
+  price: runtime.Decimal | null
+  quantity: number | null
+}
+
+export type BatchMinAggregateOutputType = {
+  id: string | null
+  batchNumber: string | null
+  costPrice: runtime.Decimal | null
+  price: runtime.Decimal | null
+  quantity: number | null
+  productId: string | null
+  createdAt: Date | null
+  updatedAt: Date | null
+}
+
+export type BatchMaxAggregateOutputType = {
+  id: string | null
+  batchNumber: string | null
+  costPrice: runtime.Decimal | null
+  price: runtime.Decimal | null
+  quantity: number | null
+  productId: string | null
+  createdAt: Date | null
+  updatedAt: Date | null
+}
+
+export type BatchCountAggregateOutputType = {
+  id: number
+  batchNumber: number
+  costPrice: number
+  price: number
+  quantity: number
+  productId: number
+  createdAt: number
+  updatedAt: number
+  _all: number
+}
+
+
+export type BatchAvgAggregateInputType = {
+  costPrice?: true
+  price?: true
+  quantity?: true
+}
+
+export type BatchSumAggregateInputType = {
+  costPrice?: true
+  price?: true
+  quantity?: true
+}
+
+export type BatchMinAggregateInputType = {
+  id?: true
+  batchNumber?: true
+  costPrice?: true
+  price?: true
+  quantity?: true
+  productId?: true
+  createdAt?: true
+  updatedAt?: true
+}
+
+export type BatchMaxAggregateInputType = {
+  id?: true
+  batchNumber?: true
+  costPrice?: true
+  price?: true
+  quantity?: true
+  productId?: true
+  createdAt?: true
+  updatedAt?: true
+}
+
+export type BatchCountAggregateInputType = {
+  id?: true
+  batchNumber?: true
+  costPrice?: true
+  price?: true
+  quantity?: true
+  productId?: true
+  createdAt?: true
+  updatedAt?: true
+  _all?: true
+}
+
+export type BatchAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Filter which Batch to aggregate.
+   */
+  where?: Prisma.BatchWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Batches to fetch.
+   */
+  orderBy?: Prisma.BatchOrderByWithRelationInput | Prisma.BatchOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the start position
+   */
+  cursor?: Prisma.BatchWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Batches from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Batches.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Count returned Batches
+  **/
+  _count?: true | BatchCountAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to average
+  **/
+  _avg?: BatchAvgAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to sum
+  **/
+  _sum?: BatchSumAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to find the minimum value
+  **/
+  _min?: BatchMinAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to find the maximum value
+  **/
+  _max?: BatchMaxAggregateInputType
+}
+
+export type GetBatchAggregateType<T extends BatchAggregateArgs> = {
+      [P in keyof T & keyof AggregateBatch]: P extends '_count' | 'count'
+    ? T[P] extends true
+      ? number
+      : Prisma.GetScalarType<T[P], AggregateBatch[P]>
+    : Prisma.GetScalarType<T[P], AggregateBatch[P]>
+}
+
+
+
+
+export type BatchGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BatchWhereInput
+  orderBy?: Prisma.BatchOrderByWithAggregationInput | Prisma.BatchOrderByWithAggregationInput[]
+  by: Prisma.BatchScalarFieldEnum[] | Prisma.BatchScalarFieldEnum
+  having?: Prisma.BatchScalarWhereWithAggregatesInput
+  take?: number
+  skip?: number
+  _count?: BatchCountAggregateInputType | true
+  _avg?: BatchAvgAggregateInputType
+  _sum?: BatchSumAggregateInputType
+  _min?: BatchMinAggregateInputType
+  _max?: BatchMaxAggregateInputType
+}
+
+export type BatchGroupByOutputType = {
+  id: string
+  batchNumber: string
+  costPrice: runtime.Decimal
+  price: runtime.Decimal
+  quantity: number
+  productId: string
+  createdAt: Date
+  updatedAt: Date
+  _count: BatchCountAggregateOutputType | null
+  _avg: BatchAvgAggregateOutputType | null
+  _sum: BatchSumAggregateOutputType | null
+  _min: BatchMinAggregateOutputType | null
+  _max: BatchMaxAggregateOutputType | null
+}
+
+export type GetBatchGroupByPayload<T extends BatchGroupByArgs> = Prisma.PrismaPromise<
+  Array<
+    Prisma.PickEnumerable<BatchGroupByOutputType, T['by']> &
+      {
+        [P in ((keyof T) & (keyof BatchGroupByOutputType))]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : Prisma.GetScalarType<T[P], BatchGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], BatchGroupByOutputType[P]>
+      }
+    >
+  >
+
+
+
+export type BatchWhereInput = {
+  AND?: Prisma.BatchWhereInput | Prisma.BatchWhereInput[]
+  OR?: Prisma.BatchWhereInput[]
+  NOT?: Prisma.BatchWhereInput | Prisma.BatchWhereInput[]
+  id?: Prisma.StringFilter<"Batch"> | string
+  batchNumber?: Prisma.StringFilter<"Batch"> | string
+  costPrice?: Prisma.DecimalFilter<"Batch"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalFilter<"Batch"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntFilter<"Batch"> | number
+  productId?: Prisma.StringFilter<"Batch"> | string
+  createdAt?: Prisma.DateTimeFilter<"Batch"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Batch"> | Date | string
+  product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
+  billItems?: Prisma.BillItemListRelationFilter
+}
+
+export type BatchOrderByWithRelationInput = {
+  id?: Prisma.SortOrder
+  batchNumber?: Prisma.SortOrder
+  costPrice?: Prisma.SortOrder
+  price?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  product?: Prisma.ProductOrderByWithRelationInput
+  billItems?: Prisma.BillItemOrderByRelationAggregateInput
+}
+
+export type BatchWhereUniqueInput = Prisma.AtLeast<{
+  id?: string
+  productId_batchNumber?: Prisma.BatchProductIdBatchNumberCompoundUniqueInput
+  AND?: Prisma.BatchWhereInput | Prisma.BatchWhereInput[]
+  OR?: Prisma.BatchWhereInput[]
+  NOT?: Prisma.BatchWhereInput | Prisma.BatchWhereInput[]
+  batchNumber?: Prisma.StringFilter<"Batch"> | string
+  costPrice?: Prisma.DecimalFilter<"Batch"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalFilter<"Batch"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntFilter<"Batch"> | number
+  productId?: Prisma.StringFilter<"Batch"> | string
+  createdAt?: Prisma.DateTimeFilter<"Batch"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Batch"> | Date | string
+  product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
+  billItems?: Prisma.BillItemListRelationFilter
+}, "id" | "productId_batchNumber">
+
+export type BatchOrderByWithAggregationInput = {
+  id?: Prisma.SortOrder
+  batchNumber?: Prisma.SortOrder
+  costPrice?: Prisma.SortOrder
+  price?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  _count?: Prisma.BatchCountOrderByAggregateInput
+  _avg?: Prisma.BatchAvgOrderByAggregateInput
+  _max?: Prisma.BatchMaxOrderByAggregateInput
+  _min?: Prisma.BatchMinOrderByAggregateInput
+  _sum?: Prisma.BatchSumOrderByAggregateInput
+}
+
+export type BatchScalarWhereWithAggregatesInput = {
+  AND?: Prisma.BatchScalarWhereWithAggregatesInput | Prisma.BatchScalarWhereWithAggregatesInput[]
+  OR?: Prisma.BatchScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.BatchScalarWhereWithAggregatesInput | Prisma.BatchScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"Batch"> | string
+  batchNumber?: Prisma.StringWithAggregatesFilter<"Batch"> | string
+  costPrice?: Prisma.DecimalWithAggregatesFilter<"Batch"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalWithAggregatesFilter<"Batch"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntWithAggregatesFilter<"Batch"> | number
+  productId?: Prisma.StringWithAggregatesFilter<"Batch"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Batch"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Batch"> | Date | string
+}
+
+export type BatchCreateInput = {
+  id?: string
+  batchNumber: string
+  costPrice: runtime.Decimal | runtime.DecimalJsLike | number | string
+  price: runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  product: Prisma.ProductCreateNestedOneWithoutBatchesInput
+  billItems?: Prisma.BillItemCreateNestedManyWithoutBatchInput
+}
+
+export type BatchUncheckedCreateInput = {
+  id?: string
+  batchNumber: string
+  costPrice: runtime.Decimal | runtime.DecimalJsLike | number | string
+  price: runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: number
+  productId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  billItems?: Prisma.BillItemUncheckedCreateNestedManyWithoutBatchInput
+}
+
+export type BatchUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  batchNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  costPrice?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  product?: Prisma.ProductUpdateOneRequiredWithoutBatchesNestedInput
+  billItems?: Prisma.BillItemUpdateManyWithoutBatchNestedInput
+}
+
+export type BatchUncheckedUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  batchNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  costPrice?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  billItems?: Prisma.BillItemUncheckedUpdateManyWithoutBatchNestedInput
+}
+
+export type BatchCreateManyInput = {
+  id?: string
+  batchNumber: string
+  costPrice: runtime.Decimal | runtime.DecimalJsLike | number | string
+  price: runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: number
+  productId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BatchUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  batchNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  costPrice?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BatchUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  batchNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  costPrice?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BatchListRelationFilter = {
+  every?: Prisma.BatchWhereInput
+  some?: Prisma.BatchWhereInput
+  none?: Prisma.BatchWhereInput
+}
+
+export type BatchOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
+}
+
+export type BatchProductIdBatchNumberCompoundUniqueInput = {
+  productId: string
+  batchNumber: string
+}
+
+export type BatchCountOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  batchNumber?: Prisma.SortOrder
+  costPrice?: Prisma.SortOrder
+  price?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type BatchAvgOrderByAggregateInput = {
+  costPrice?: Prisma.SortOrder
+  price?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+}
+
+export type BatchMaxOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  batchNumber?: Prisma.SortOrder
+  costPrice?: Prisma.SortOrder
+  price?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type BatchMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  batchNumber?: Prisma.SortOrder
+  costPrice?: Prisma.SortOrder
+  price?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type BatchSumOrderByAggregateInput = {
+  costPrice?: Prisma.SortOrder
+  price?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+}
+
+export type BatchScalarRelationFilter = {
+  is?: Prisma.BatchWhereInput
+  isNot?: Prisma.BatchWhereInput
+}
+
+export type BatchCreateNestedManyWithoutProductInput = {
+  create?: Prisma.XOR<Prisma.BatchCreateWithoutProductInput, Prisma.BatchUncheckedCreateWithoutProductInput> | Prisma.BatchCreateWithoutProductInput[] | Prisma.BatchUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.BatchCreateOrConnectWithoutProductInput | Prisma.BatchCreateOrConnectWithoutProductInput[]
+  createMany?: Prisma.BatchCreateManyProductInputEnvelope
+  connect?: Prisma.BatchWhereUniqueInput | Prisma.BatchWhereUniqueInput[]
+}
+
+export type BatchUncheckedCreateNestedManyWithoutProductInput = {
+  create?: Prisma.XOR<Prisma.BatchCreateWithoutProductInput, Prisma.BatchUncheckedCreateWithoutProductInput> | Prisma.BatchCreateWithoutProductInput[] | Prisma.BatchUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.BatchCreateOrConnectWithoutProductInput | Prisma.BatchCreateOrConnectWithoutProductInput[]
+  createMany?: Prisma.BatchCreateManyProductInputEnvelope
+  connect?: Prisma.BatchWhereUniqueInput | Prisma.BatchWhereUniqueInput[]
+}
+
+export type BatchUpdateManyWithoutProductNestedInput = {
+  create?: Prisma.XOR<Prisma.BatchCreateWithoutProductInput, Prisma.BatchUncheckedCreateWithoutProductInput> | Prisma.BatchCreateWithoutProductInput[] | Prisma.BatchUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.BatchCreateOrConnectWithoutProductInput | Prisma.BatchCreateOrConnectWithoutProductInput[]
+  upsert?: Prisma.BatchUpsertWithWhereUniqueWithoutProductInput | Prisma.BatchUpsertWithWhereUniqueWithoutProductInput[]
+  createMany?: Prisma.BatchCreateManyProductInputEnvelope
+  set?: Prisma.BatchWhereUniqueInput | Prisma.BatchWhereUniqueInput[]
+  disconnect?: Prisma.BatchWhereUniqueInput | Prisma.BatchWhereUniqueInput[]
+  delete?: Prisma.BatchWhereUniqueInput | Prisma.BatchWhereUniqueInput[]
+  connect?: Prisma.BatchWhereUniqueInput | Prisma.BatchWhereUniqueInput[]
+  update?: Prisma.BatchUpdateWithWhereUniqueWithoutProductInput | Prisma.BatchUpdateWithWhereUniqueWithoutProductInput[]
+  updateMany?: Prisma.BatchUpdateManyWithWhereWithoutProductInput | Prisma.BatchUpdateManyWithWhereWithoutProductInput[]
+  deleteMany?: Prisma.BatchScalarWhereInput | Prisma.BatchScalarWhereInput[]
+}
+
+export type BatchUncheckedUpdateManyWithoutProductNestedInput = {
+  create?: Prisma.XOR<Prisma.BatchCreateWithoutProductInput, Prisma.BatchUncheckedCreateWithoutProductInput> | Prisma.BatchCreateWithoutProductInput[] | Prisma.BatchUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.BatchCreateOrConnectWithoutProductInput | Prisma.BatchCreateOrConnectWithoutProductInput[]
+  upsert?: Prisma.BatchUpsertWithWhereUniqueWithoutProductInput | Prisma.BatchUpsertWithWhereUniqueWithoutProductInput[]
+  createMany?: Prisma.BatchCreateManyProductInputEnvelope
+  set?: Prisma.BatchWhereUniqueInput | Prisma.BatchWhereUniqueInput[]
+  disconnect?: Prisma.BatchWhereUniqueInput | Prisma.BatchWhereUniqueInput[]
+  delete?: Prisma.BatchWhereUniqueInput | Prisma.BatchWhereUniqueInput[]
+  connect?: Prisma.BatchWhereUniqueInput | Prisma.BatchWhereUniqueInput[]
+  update?: Prisma.BatchUpdateWithWhereUniqueWithoutProductInput | Prisma.BatchUpdateWithWhereUniqueWithoutProductInput[]
+  updateMany?: Prisma.BatchUpdateManyWithWhereWithoutProductInput | Prisma.BatchUpdateManyWithWhereWithoutProductInput[]
+  deleteMany?: Prisma.BatchScalarWhereInput | Prisma.BatchScalarWhereInput[]
+}
+
+export type DecimalFieldUpdateOperationsInput = {
+  set?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  increment?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  decrement?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  multiply?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  divide?: runtime.Decimal | runtime.DecimalJsLike | number | string
+}
+
+export type IntFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
+export type BatchCreateNestedOneWithoutBillItemsInput = {
+  create?: Prisma.XOR<Prisma.BatchCreateWithoutBillItemsInput, Prisma.BatchUncheckedCreateWithoutBillItemsInput>
+  connectOrCreate?: Prisma.BatchCreateOrConnectWithoutBillItemsInput
+  connect?: Prisma.BatchWhereUniqueInput
+}
+
+export type BatchUpdateOneRequiredWithoutBillItemsNestedInput = {
+  create?: Prisma.XOR<Prisma.BatchCreateWithoutBillItemsInput, Prisma.BatchUncheckedCreateWithoutBillItemsInput>
+  connectOrCreate?: Prisma.BatchCreateOrConnectWithoutBillItemsInput
+  upsert?: Prisma.BatchUpsertWithoutBillItemsInput
+  connect?: Prisma.BatchWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.BatchUpdateToOneWithWhereWithoutBillItemsInput, Prisma.BatchUpdateWithoutBillItemsInput>, Prisma.BatchUncheckedUpdateWithoutBillItemsInput>
+}
+
+export type BatchCreateWithoutProductInput = {
+  id?: string
+  batchNumber: string
+  costPrice: runtime.Decimal | runtime.DecimalJsLike | number | string
+  price: runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  billItems?: Prisma.BillItemCreateNestedManyWithoutBatchInput
+}
+
+export type BatchUncheckedCreateWithoutProductInput = {
+  id?: string
+  batchNumber: string
+  costPrice: runtime.Decimal | runtime.DecimalJsLike | number | string
+  price: runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  billItems?: Prisma.BillItemUncheckedCreateNestedManyWithoutBatchInput
+}
+
+export type BatchCreateOrConnectWithoutProductInput = {
+  where: Prisma.BatchWhereUniqueInput
+  create: Prisma.XOR<Prisma.BatchCreateWithoutProductInput, Prisma.BatchUncheckedCreateWithoutProductInput>
+}
+
+export type BatchCreateManyProductInputEnvelope = {
+  data: Prisma.BatchCreateManyProductInput | Prisma.BatchCreateManyProductInput[]
+  skipDuplicates?: boolean
+}
+
+export type BatchUpsertWithWhereUniqueWithoutProductInput = {
+  where: Prisma.BatchWhereUniqueInput
+  update: Prisma.XOR<Prisma.BatchUpdateWithoutProductInput, Prisma.BatchUncheckedUpdateWithoutProductInput>
+  create: Prisma.XOR<Prisma.BatchCreateWithoutProductInput, Prisma.BatchUncheckedCreateWithoutProductInput>
+}
+
+export type BatchUpdateWithWhereUniqueWithoutProductInput = {
+  where: Prisma.BatchWhereUniqueInput
+  data: Prisma.XOR<Prisma.BatchUpdateWithoutProductInput, Prisma.BatchUncheckedUpdateWithoutProductInput>
+}
+
+export type BatchUpdateManyWithWhereWithoutProductInput = {
+  where: Prisma.BatchScalarWhereInput
+  data: Prisma.XOR<Prisma.BatchUpdateManyMutationInput, Prisma.BatchUncheckedUpdateManyWithoutProductInput>
+}
+
+export type BatchScalarWhereInput = {
+  AND?: Prisma.BatchScalarWhereInput | Prisma.BatchScalarWhereInput[]
+  OR?: Prisma.BatchScalarWhereInput[]
+  NOT?: Prisma.BatchScalarWhereInput | Prisma.BatchScalarWhereInput[]
+  id?: Prisma.StringFilter<"Batch"> | string
+  batchNumber?: Prisma.StringFilter<"Batch"> | string
+  costPrice?: Prisma.DecimalFilter<"Batch"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalFilter<"Batch"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntFilter<"Batch"> | number
+  productId?: Prisma.StringFilter<"Batch"> | string
+  createdAt?: Prisma.DateTimeFilter<"Batch"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Batch"> | Date | string
+}
+
+export type BatchCreateWithoutBillItemsInput = {
+  id?: string
+  batchNumber: string
+  costPrice: runtime.Decimal | runtime.DecimalJsLike | number | string
+  price: runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  product: Prisma.ProductCreateNestedOneWithoutBatchesInput
+}
+
+export type BatchUncheckedCreateWithoutBillItemsInput = {
+  id?: string
+  batchNumber: string
+  costPrice: runtime.Decimal | runtime.DecimalJsLike | number | string
+  price: runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: number
+  productId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BatchCreateOrConnectWithoutBillItemsInput = {
+  where: Prisma.BatchWhereUniqueInput
+  create: Prisma.XOR<Prisma.BatchCreateWithoutBillItemsInput, Prisma.BatchUncheckedCreateWithoutBillItemsInput>
+}
+
+export type BatchUpsertWithoutBillItemsInput = {
+  update: Prisma.XOR<Prisma.BatchUpdateWithoutBillItemsInput, Prisma.BatchUncheckedUpdateWithoutBillItemsInput>
+  create: Prisma.XOR<Prisma.BatchCreateWithoutBillItemsInput, Prisma.BatchUncheckedCreateWithoutBillItemsInput>
+  where?: Prisma.BatchWhereInput
+}
+
+export type BatchUpdateToOneWithWhereWithoutBillItemsInput = {
+  where?: Prisma.BatchWhereInput
+  data: Prisma.XOR<Prisma.BatchUpdateWithoutBillItemsInput, Prisma.BatchUncheckedUpdateWithoutBillItemsInput>
+}
+
+export type BatchUpdateWithoutBillItemsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  batchNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  costPrice?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  product?: Prisma.ProductUpdateOneRequiredWithoutBatchesNestedInput
+}
+
+export type BatchUncheckedUpdateWithoutBillItemsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  batchNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  costPrice?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BatchCreateManyProductInput = {
+  id?: string
+  batchNumber: string
+  costPrice: runtime.Decimal | runtime.DecimalJsLike | number | string
+  price: runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BatchUpdateWithoutProductInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  batchNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  costPrice?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  billItems?: Prisma.BillItemUpdateManyWithoutBatchNestedInput
+}
+
+export type BatchUncheckedUpdateWithoutProductInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  batchNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  costPrice?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  billItems?: Prisma.BillItemUncheckedUpdateManyWithoutBatchNestedInput
+}
+
+export type BatchUncheckedUpdateManyWithoutProductInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  batchNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  costPrice?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+
+/**
+ * Count Type BatchCountOutputType
+ */
+
+export type BatchCountOutputType = {
+  billItems: number
+}
+
+export type BatchCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  billItems?: boolean | BatchCountOutputTypeCountBillItemsArgs
+}
+
+/**
+ * BatchCountOutputType without action
+ */
+export type BatchCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BatchCountOutputType
+   */
+  select?: Prisma.BatchCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * BatchCountOutputType without action
+ */
+export type BatchCountOutputTypeCountBillItemsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BillItemWhereInput
+}
+
+
+export type BatchSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  batchNumber?: boolean
+  costPrice?: boolean
+  price?: boolean
+  quantity?: boolean
+  productId?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  billItems?: boolean | Prisma.Batch$billItemsArgs<ExtArgs>
+  _count?: boolean | Prisma.BatchCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["batch"]>
+
+export type BatchSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  batchNumber?: boolean
+  costPrice?: boolean
+  price?: boolean
+  quantity?: boolean
+  productId?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["batch"]>
+
+export type BatchSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  batchNumber?: boolean
+  costPrice?: boolean
+  price?: boolean
+  quantity?: boolean
+  productId?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["batch"]>
+
+export type BatchSelectScalar = {
+  id?: boolean
+  batchNumber?: boolean
+  costPrice?: boolean
+  price?: boolean
+  quantity?: boolean
+  productId?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+}
+
+export type BatchOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "batchNumber" | "costPrice" | "price" | "quantity" | "productId" | "createdAt" | "updatedAt", ExtArgs["result"]["batch"]>
+export type BatchInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  billItems?: boolean | Prisma.Batch$billItemsArgs<ExtArgs>
+  _count?: boolean | Prisma.BatchCountOutputTypeDefaultArgs<ExtArgs>
+}
+export type BatchIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+}
+export type BatchIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+}
+
+export type $BatchPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Batch"
+  objects: {
+    product: Prisma.$ProductPayload<ExtArgs>
+    billItems: Prisma.$BillItemPayload<ExtArgs>[]
+  }
+  scalars: runtime.Types.Extensions.GetPayloadResult<{
+    id: string
+    batchNumber: string
+    costPrice: runtime.Decimal
+    price: runtime.Decimal
+    quantity: number
+    productId: string
+    createdAt: Date
+    updatedAt: Date
+  }, ExtArgs["result"]["batch"]>
+  composites: {}
+}
+
+export type BatchGetPayload<S extends boolean | null | undefined | BatchDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$BatchPayload, S>
+
+export type BatchCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<BatchFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: BatchCountAggregateInputType | true
+  }
+
+export interface BatchDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Batch'], meta: { name: 'Batch' } }
+  /**
+   * Find zero or one Batch that matches the filter.
+   * @param {BatchFindUniqueArgs} args - Arguments to find a Batch
+   * @example
+   * // Get one Batch
+   * const batch = await prisma.batch.findUnique({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findUnique<T extends BatchFindUniqueArgs>(args: Prisma.SelectSubset<T, BatchFindUniqueArgs<ExtArgs>>): Prisma.Prisma__BatchClient<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find one Batch that matches the filter or throw an error with `error.code='P2025'`
+   * if no matches were found.
+   * @param {BatchFindUniqueOrThrowArgs} args - Arguments to find a Batch
+   * @example
+   * // Get one Batch
+   * const batch = await prisma.batch.findUniqueOrThrow({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findUniqueOrThrow<T extends BatchFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, BatchFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__BatchClient<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find the first Batch that matches the filter.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BatchFindFirstArgs} args - Arguments to find a Batch
+   * @example
+   * // Get one Batch
+   * const batch = await prisma.batch.findFirst({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findFirst<T extends BatchFindFirstArgs>(args?: Prisma.SelectSubset<T, BatchFindFirstArgs<ExtArgs>>): Prisma.Prisma__BatchClient<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find the first Batch that matches the filter or
+   * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BatchFindFirstOrThrowArgs} args - Arguments to find a Batch
+   * @example
+   * // Get one Batch
+   * const batch = await prisma.batch.findFirstOrThrow({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findFirstOrThrow<T extends BatchFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, BatchFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__BatchClient<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find zero or more Batches that matches the filter.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BatchFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @example
+   * // Get all Batches
+   * const batches = await prisma.batch.findMany()
+   * 
+   * // Get first 10 Batches
+   * const batches = await prisma.batch.findMany({ take: 10 })
+   * 
+   * // Only select the `id`
+   * const batchWithIdOnly = await prisma.batch.findMany({ select: { id: true } })
+   * 
+   */
+  findMany<T extends BatchFindManyArgs>(args?: Prisma.SelectSubset<T, BatchFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+  /**
+   * Create a Batch.
+   * @param {BatchCreateArgs} args - Arguments to create a Batch.
+   * @example
+   * // Create one Batch
+   * const Batch = await prisma.batch.create({
+   *   data: {
+   *     // ... data to create a Batch
+   *   }
+   * })
+   * 
+   */
+  create<T extends BatchCreateArgs>(args: Prisma.SelectSubset<T, BatchCreateArgs<ExtArgs>>): Prisma.Prisma__BatchClient<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Create many Batches.
+   * @param {BatchCreateManyArgs} args - Arguments to create many Batches.
+   * @example
+   * // Create many Batches
+   * const batch = await prisma.batch.createMany({
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   *     
+   */
+  createMany<T extends BatchCreateManyArgs>(args?: Prisma.SelectSubset<T, BatchCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Create many Batches and returns the data saved in the database.
+   * @param {BatchCreateManyAndReturnArgs} args - Arguments to create many Batches.
+   * @example
+   * // Create many Batches
+   * const batch = await prisma.batch.createManyAndReturn({
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * 
+   * // Create many Batches and only return the `id`
+   * const batchWithIdOnly = await prisma.batch.createManyAndReturn({
+   *   select: { id: true },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * 
+   */
+  createManyAndReturn<T extends BatchCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, BatchCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+  /**
+   * Delete a Batch.
+   * @param {BatchDeleteArgs} args - Arguments to delete one Batch.
+   * @example
+   * // Delete one Batch
+   * const Batch = await prisma.batch.delete({
+   *   where: {
+   *     // ... filter to delete one Batch
+   *   }
+   * })
+   * 
+   */
+  delete<T extends BatchDeleteArgs>(args: Prisma.SelectSubset<T, BatchDeleteArgs<ExtArgs>>): Prisma.Prisma__BatchClient<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Update one Batch.
+   * @param {BatchUpdateArgs} args - Arguments to update one Batch.
+   * @example
+   * // Update one Batch
+   * const batch = await prisma.batch.update({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: {
+   *     // ... provide data here
+   *   }
+   * })
+   * 
+   */
+  update<T extends BatchUpdateArgs>(args: Prisma.SelectSubset<T, BatchUpdateArgs<ExtArgs>>): Prisma.Prisma__BatchClient<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Delete zero or more Batches.
+   * @param {BatchDeleteManyArgs} args - Arguments to filter Batches to delete.
+   * @example
+   * // Delete a few Batches
+   * const { count } = await prisma.batch.deleteMany({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   * 
+   */
+  deleteMany<T extends BatchDeleteManyArgs>(args?: Prisma.SelectSubset<T, BatchDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Update zero or more Batches.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BatchUpdateManyArgs} args - Arguments to update one or more rows.
+   * @example
+   * // Update many Batches
+   * const batch = await prisma.batch.updateMany({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: {
+   *     // ... provide data here
+   *   }
+   * })
+   * 
+   */
+  updateMany<T extends BatchUpdateManyArgs>(args: Prisma.SelectSubset<T, BatchUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Update zero or more Batches and returns the data updated in the database.
+   * @param {BatchUpdateManyAndReturnArgs} args - Arguments to update many Batches.
+   * @example
+   * // Update many Batches
+   * const batch = await prisma.batch.updateManyAndReturn({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * 
+   * // Update zero or more Batches and only return the `id`
+   * const batchWithIdOnly = await prisma.batch.updateManyAndReturn({
+   *   select: { id: true },
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * 
+   */
+  updateManyAndReturn<T extends BatchUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, BatchUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+  /**
+   * Create or update one Batch.
+   * @param {BatchUpsertArgs} args - Arguments to update or create a Batch.
+   * @example
+   * // Update or create a Batch
+   * const batch = await prisma.batch.upsert({
+   *   create: {
+   *     // ... data to create a Batch
+   *   },
+   *   update: {
+   *     // ... in case it already exists, update
+   *   },
+   *   where: {
+   *     // ... the filter for the Batch we want to update
+   *   }
+   * })
+   */
+  upsert<T extends BatchUpsertArgs>(args: Prisma.SelectSubset<T, BatchUpsertArgs<ExtArgs>>): Prisma.Prisma__BatchClient<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+  /**
+   * Count the number of Batches.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BatchCountArgs} args - Arguments to filter Batches to count.
+   * @example
+   * // Count the number of Batches
+   * const count = await prisma.batch.count({
+   *   where: {
+   *     // ... the filter for the Batches we want to count
+   *   }
+   * })
+  **/
+  count<T extends BatchCountArgs>(
+    args?: Prisma.Subset<T, BatchCountArgs>,
+  ): Prisma.PrismaPromise<
+    T extends runtime.Types.Utils.Record<'select', any>
+      ? T['select'] extends true
+        ? number
+        : Prisma.GetScalarType<T['select'], BatchCountAggregateOutputType>
+      : number
+  >
+
+  /**
+   * Allows you to perform aggregations operations on a Batch.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BatchAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @example
+   * // Ordered by age ascending
+   * // Where email contains prisma.io
+   * // Limited to the 10 users
+   * const aggregations = await prisma.user.aggregate({
+   *   _avg: {
+   *     age: true,
+   *   },
+   *   where: {
+   *     email: {
+   *       contains: "prisma.io",
+   *     },
+   *   },
+   *   orderBy: {
+   *     age: "asc",
+   *   },
+   *   take: 10,
+   * })
+  **/
+  aggregate<T extends BatchAggregateArgs>(args: Prisma.Subset<T, BatchAggregateArgs>): Prisma.PrismaPromise<GetBatchAggregateType<T>>
+
+  /**
+   * Group by Batch.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BatchGroupByArgs} args - Group by arguments.
+   * @example
+   * // Group by city, order by createdAt, get count
+   * const result = await prisma.user.groupBy({
+   *   by: ['city', 'createdAt'],
+   *   orderBy: {
+   *     createdAt: true
+   *   },
+   *   _count: {
+   *     _all: true
+   *   },
+   * })
+   * 
+  **/
+  groupBy<
+    T extends BatchGroupByArgs,
+    HasSelectOrTake extends Prisma.Or<
+      Prisma.Extends<'skip', Prisma.Keys<T>>,
+      Prisma.Extends<'take', Prisma.Keys<T>>
+    >,
+    OrderByArg extends Prisma.True extends HasSelectOrTake
+      ? { orderBy: BatchGroupByArgs['orderBy'] }
+      : { orderBy?: BatchGroupByArgs['orderBy'] },
+    OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
+    ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
+    ByValid extends Prisma.Has<ByFields, OrderFields>,
+    HavingFields extends Prisma.GetHavingFields<T['having']>,
+    HavingValid extends Prisma.Has<ByFields, HavingFields>,
+    ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False,
+    InputErrors extends ByEmpty extends Prisma.True
+    ? `Error: "by" must not be empty.`
+    : HavingValid extends Prisma.False
+    ? {
+        [P in HavingFields]: P extends ByFields
+          ? never
+          : P extends string
+          ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+          : [
+              Error,
+              'Field ',
+              P,
+              ` in "having" needs to be provided in "by"`,
+            ]
+      }[HavingFields]
+    : 'take' extends Prisma.Keys<T>
+    ? 'orderBy' extends Prisma.Keys<T>
+      ? ByValid extends Prisma.True
+        ? {}
+        : {
+            [P in OrderFields]: P extends ByFields
+              ? never
+              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+          }[OrderFields]
+      : 'Error: If you provide "take", you also need to provide "orderBy"'
+    : 'skip' extends Prisma.Keys<T>
+    ? 'orderBy' extends Prisma.Keys<T>
+      ? ByValid extends Prisma.True
+        ? {}
+        : {
+            [P in OrderFields]: P extends ByFields
+              ? never
+              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+          }[OrderFields]
+      : 'Error: If you provide "skip", you also need to provide "orderBy"'
+    : ByValid extends Prisma.True
+    ? {}
+    : {
+        [P in OrderFields]: P extends ByFields
+          ? never
+          : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+      }[OrderFields]
+  >(args: Prisma.SubsetIntersection<T, BatchGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBatchGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+/**
+ * Fields of the Batch model
+ */
+readonly fields: BatchFieldRefs;
+}
+
+/**
+ * The delegate class that acts as a "Promise-like" for Batch.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__BatchClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  readonly [Symbol.toStringTag]: "PrismaPromise"
+  product<T extends Prisma.ProductDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProductDefaultArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  billItems<T extends Prisma.Batch$billItemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Batch$billItemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  /**
+   * Attaches callbacks for the resolution and/or rejection of the Promise.
+   * @param onfulfilled The callback to execute when the Promise is resolved.
+   * @param onrejected The callback to execute when the Promise is rejected.
+   * @returns A Promise for the completion of which ever callback is executed.
+   */
+  then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>
+  /**
+   * Attaches a callback for only the rejection of the Promise.
+   * @param onrejected The callback to execute when the Promise is rejected.
+   * @returns A Promise for the completion of the callback.
+   */
+  catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>
+  /**
+   * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+   * resolved value cannot be modified from the callback.
+   * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+   * @returns A Promise for the completion of the callback.
+   */
+  finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>
+}
+
+
+
+
+/**
+ * Fields of the Batch model
+ */
+export interface BatchFieldRefs {
+  readonly id: Prisma.FieldRef<"Batch", 'String'>
+  readonly batchNumber: Prisma.FieldRef<"Batch", 'String'>
+  readonly costPrice: Prisma.FieldRef<"Batch", 'Decimal'>
+  readonly price: Prisma.FieldRef<"Batch", 'Decimal'>
+  readonly quantity: Prisma.FieldRef<"Batch", 'Int'>
+  readonly productId: Prisma.FieldRef<"Batch", 'String'>
+  readonly createdAt: Prisma.FieldRef<"Batch", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"Batch", 'DateTime'>
+}
+    
+
+// Custom InputTypes
+/**
+ * Batch findUnique
+ */
+export type BatchFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchInclude<ExtArgs> | null
+  /**
+   * Filter, which Batch to fetch.
+   */
+  where: Prisma.BatchWhereUniqueInput
+}
+
+/**
+ * Batch findUniqueOrThrow
+ */
+export type BatchFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchInclude<ExtArgs> | null
+  /**
+   * Filter, which Batch to fetch.
+   */
+  where: Prisma.BatchWhereUniqueInput
+}
+
+/**
+ * Batch findFirst
+ */
+export type BatchFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchInclude<ExtArgs> | null
+  /**
+   * Filter, which Batch to fetch.
+   */
+  where?: Prisma.BatchWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Batches to fetch.
+   */
+  orderBy?: Prisma.BatchOrderByWithRelationInput | Prisma.BatchOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for searching for Batches.
+   */
+  cursor?: Prisma.BatchWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Batches from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Batches.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Batches.
+   */
+  distinct?: Prisma.BatchScalarFieldEnum | Prisma.BatchScalarFieldEnum[]
+}
+
+/**
+ * Batch findFirstOrThrow
+ */
+export type BatchFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchInclude<ExtArgs> | null
+  /**
+   * Filter, which Batch to fetch.
+   */
+  where?: Prisma.BatchWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Batches to fetch.
+   */
+  orderBy?: Prisma.BatchOrderByWithRelationInput | Prisma.BatchOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for searching for Batches.
+   */
+  cursor?: Prisma.BatchWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Batches from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Batches.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Batches.
+   */
+  distinct?: Prisma.BatchScalarFieldEnum | Prisma.BatchScalarFieldEnum[]
+}
+
+/**
+ * Batch findMany
+ */
+export type BatchFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchInclude<ExtArgs> | null
+  /**
+   * Filter, which Batches to fetch.
+   */
+  where?: Prisma.BatchWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Batches to fetch.
+   */
+  orderBy?: Prisma.BatchOrderByWithRelationInput | Prisma.BatchOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for listing Batches.
+   */
+  cursor?: Prisma.BatchWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Batches from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Batches.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Batches.
+   */
+  distinct?: Prisma.BatchScalarFieldEnum | Prisma.BatchScalarFieldEnum[]
+}
+
+/**
+ * Batch create
+ */
+export type BatchCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchInclude<ExtArgs> | null
+  /**
+   * The data needed to create a Batch.
+   */
+  data: Prisma.XOR<Prisma.BatchCreateInput, Prisma.BatchUncheckedCreateInput>
+}
+
+/**
+ * Batch createMany
+ */
+export type BatchCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * The data used to create many Batches.
+   */
+  data: Prisma.BatchCreateManyInput | Prisma.BatchCreateManyInput[]
+  skipDuplicates?: boolean
+}
+
+/**
+ * Batch createManyAndReturn
+ */
+export type BatchCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelectCreateManyAndReturn<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * The data used to create many Batches.
+   */
+  data: Prisma.BatchCreateManyInput | Prisma.BatchCreateManyInput[]
+  skipDuplicates?: boolean
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchIncludeCreateManyAndReturn<ExtArgs> | null
+}
+
+/**
+ * Batch update
+ */
+export type BatchUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchInclude<ExtArgs> | null
+  /**
+   * The data needed to update a Batch.
+   */
+  data: Prisma.XOR<Prisma.BatchUpdateInput, Prisma.BatchUncheckedUpdateInput>
+  /**
+   * Choose, which Batch to update.
+   */
+  where: Prisma.BatchWhereUniqueInput
+}
+
+/**
+ * Batch updateMany
+ */
+export type BatchUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * The data used to update Batches.
+   */
+  data: Prisma.XOR<Prisma.BatchUpdateManyMutationInput, Prisma.BatchUncheckedUpdateManyInput>
+  /**
+   * Filter which Batches to update
+   */
+  where?: Prisma.BatchWhereInput
+  /**
+   * Limit how many Batches to update.
+   */
+  limit?: number
+}
+
+/**
+ * Batch updateManyAndReturn
+ */
+export type BatchUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelectUpdateManyAndReturn<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * The data used to update Batches.
+   */
+  data: Prisma.XOR<Prisma.BatchUpdateManyMutationInput, Prisma.BatchUncheckedUpdateManyInput>
+  /**
+   * Filter which Batches to update
+   */
+  where?: Prisma.BatchWhereInput
+  /**
+   * Limit how many Batches to update.
+   */
+  limit?: number
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchIncludeUpdateManyAndReturn<ExtArgs> | null
+}
+
+/**
+ * Batch upsert
+ */
+export type BatchUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchInclude<ExtArgs> | null
+  /**
+   * The filter to search for the Batch to update in case it exists.
+   */
+  where: Prisma.BatchWhereUniqueInput
+  /**
+   * In case the Batch found by the `where` argument doesn't exist, create a new Batch with this data.
+   */
+  create: Prisma.XOR<Prisma.BatchCreateInput, Prisma.BatchUncheckedCreateInput>
+  /**
+   * In case the Batch was found with the provided `where` argument, update it with this data.
+   */
+  update: Prisma.XOR<Prisma.BatchUpdateInput, Prisma.BatchUncheckedUpdateInput>
+}
+
+/**
+ * Batch delete
+ */
+export type BatchDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchInclude<ExtArgs> | null
+  /**
+   * Filter which Batch to delete.
+   */
+  where: Prisma.BatchWhereUniqueInput
+}
+
+/**
+ * Batch deleteMany
+ */
+export type BatchDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Filter which Batches to delete
+   */
+  where?: Prisma.BatchWhereInput
+  /**
+   * Limit how many Batches to delete.
+   */
+  limit?: number
+}
+
+/**
+ * Batch.billItems
+ */
+export type Batch$billItemsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+  where?: Prisma.BillItemWhereInput
+  orderBy?: Prisma.BillItemOrderByWithRelationInput | Prisma.BillItemOrderByWithRelationInput[]
+  cursor?: Prisma.BillItemWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BillItemScalarFieldEnum | Prisma.BillItemScalarFieldEnum[]
+}
+
+/**
+ * Batch without action
+ */
+export type BatchDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchInclude<ExtArgs> | null
+}
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-models-bill-ts"></a>📄 `src/generated/prisma/models/Bill.ts`
+
+**File Info:**
+- **Size**: 62.07 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/models/Bill.ts`
+- **Relative Path**: `src/generated/prisma/models`
+- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `1275e78106621f8f8cd95a372a678729`
+- **SHA256**: `339c329e65f698fa177281c4876a12732968c4e5fdaf03c4b1f35061aa2a3ac2`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * This file exports the `Bill` model and its related types.
+ *
+ * 🟢 You can import this file directly.
+ */
+import type * as runtime from "@prisma/client/runtime/client"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
+
+/**
+ * Model Bill
+ * 
+ */
+export type BillModel = runtime.Types.Result.DefaultSelection<Prisma.$BillPayload>
+
+export type AggregateBill = {
+  _count: BillCountAggregateOutputType | null
+  _avg: BillAvgAggregateOutputType | null
+  _sum: BillSumAggregateOutputType | null
+  _min: BillMinAggregateOutputType | null
+  _max: BillMaxAggregateOutputType | null
+}
+
+export type BillAvgAggregateOutputType = {
+  billNumber: number | null
+  total: runtime.Decimal | null
+  discount: runtime.Decimal | null
+  finalBillAmount: runtime.Decimal | null
+}
+
+export type BillSumAggregateOutputType = {
+  billNumber: number | null
+  total: runtime.Decimal | null
+  discount: runtime.Decimal | null
+  finalBillAmount: runtime.Decimal | null
+}
+
+export type BillMinAggregateOutputType = {
+  id: string | null
+  billNumber: number | null
+  userId: string | null
+  total: runtime.Decimal | null
+  discountType: $Enums.DiscountType | null
+  discount: runtime.Decimal | null
+  finalBillAmount: runtime.Decimal | null
+  createdAt: Date | null
+  updatedAt: Date | null
+}
+
+export type BillMaxAggregateOutputType = {
+  id: string | null
+  billNumber: number | null
+  userId: string | null
+  total: runtime.Decimal | null
+  discountType: $Enums.DiscountType | null
+  discount: runtime.Decimal | null
+  finalBillAmount: runtime.Decimal | null
+  createdAt: Date | null
+  updatedAt: Date | null
+}
+
+export type BillCountAggregateOutputType = {
+  id: number
+  billNumber: number
+  userId: number
+  total: number
+  discountType: number
+  discount: number
+  finalBillAmount: number
+  createdAt: number
+  updatedAt: number
+  _all: number
+}
+
+
+export type BillAvgAggregateInputType = {
+  billNumber?: true
+  total?: true
+  discount?: true
+  finalBillAmount?: true
+}
+
+export type BillSumAggregateInputType = {
+  billNumber?: true
+  total?: true
+  discount?: true
+  finalBillAmount?: true
+}
+
+export type BillMinAggregateInputType = {
+  id?: true
+  billNumber?: true
+  userId?: true
+  total?: true
+  discountType?: true
+  discount?: true
+  finalBillAmount?: true
+  createdAt?: true
+  updatedAt?: true
+}
+
+export type BillMaxAggregateInputType = {
+  id?: true
+  billNumber?: true
+  userId?: true
+  total?: true
+  discountType?: true
+  discount?: true
+  finalBillAmount?: true
+  createdAt?: true
+  updatedAt?: true
+}
+
+export type BillCountAggregateInputType = {
+  id?: true
+  billNumber?: true
+  userId?: true
+  total?: true
+  discountType?: true
+  discount?: true
+  finalBillAmount?: true
+  createdAt?: true
+  updatedAt?: true
+  _all?: true
+}
+
+export type BillAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Filter which Bill to aggregate.
+   */
+  where?: Prisma.BillWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Bills to fetch.
+   */
+  orderBy?: Prisma.BillOrderByWithRelationInput | Prisma.BillOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the start position
+   */
+  cursor?: Prisma.BillWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Bills from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Bills.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Count returned Bills
+  **/
+  _count?: true | BillCountAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to average
+  **/
+  _avg?: BillAvgAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to sum
+  **/
+  _sum?: BillSumAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to find the minimum value
+  **/
+  _min?: BillMinAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to find the maximum value
+  **/
+  _max?: BillMaxAggregateInputType
+}
+
+export type GetBillAggregateType<T extends BillAggregateArgs> = {
+      [P in keyof T & keyof AggregateBill]: P extends '_count' | 'count'
+    ? T[P] extends true
+      ? number
+      : Prisma.GetScalarType<T[P], AggregateBill[P]>
+    : Prisma.GetScalarType<T[P], AggregateBill[P]>
+}
+
+
+
+
+export type BillGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BillWhereInput
+  orderBy?: Prisma.BillOrderByWithAggregationInput | Prisma.BillOrderByWithAggregationInput[]
+  by: Prisma.BillScalarFieldEnum[] | Prisma.BillScalarFieldEnum
+  having?: Prisma.BillScalarWhereWithAggregatesInput
+  take?: number
+  skip?: number
+  _count?: BillCountAggregateInputType | true
+  _avg?: BillAvgAggregateInputType
+  _sum?: BillSumAggregateInputType
+  _min?: BillMinAggregateInputType
+  _max?: BillMaxAggregateInputType
+}
+
+export type BillGroupByOutputType = {
+  id: string
+  billNumber: number
+  userId: string
+  total: runtime.Decimal
+  discountType: $Enums.DiscountType
+  discount: runtime.Decimal
+  finalBillAmount: runtime.Decimal
+  createdAt: Date
+  updatedAt: Date
+  _count: BillCountAggregateOutputType | null
+  _avg: BillAvgAggregateOutputType | null
+  _sum: BillSumAggregateOutputType | null
+  _min: BillMinAggregateOutputType | null
+  _max: BillMaxAggregateOutputType | null
+}
+
+export type GetBillGroupByPayload<T extends BillGroupByArgs> = Prisma.PrismaPromise<
+  Array<
+    Prisma.PickEnumerable<BillGroupByOutputType, T['by']> &
+      {
+        [P in ((keyof T) & (keyof BillGroupByOutputType))]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : Prisma.GetScalarType<T[P], BillGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], BillGroupByOutputType[P]>
+      }
+    >
+  >
+
+
+
+export type BillWhereInput = {
+  AND?: Prisma.BillWhereInput | Prisma.BillWhereInput[]
+  OR?: Prisma.BillWhereInput[]
+  NOT?: Prisma.BillWhereInput | Prisma.BillWhereInput[]
+  id?: Prisma.StringFilter<"Bill"> | string
+  billNumber?: Prisma.IntFilter<"Bill"> | number
+  userId?: Prisma.StringFilter<"Bill"> | string
+  total?: Prisma.DecimalFilter<"Bill"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeFilter<"Bill"> | $Enums.DiscountType
+  discount?: Prisma.DecimalFilter<"Bill"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalFilter<"Bill"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeFilter<"Bill"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Bill"> | Date | string
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  billItems?: Prisma.BillItemListRelationFilter
+}
+
+export type BillOrderByWithRelationInput = {
+  id?: Prisma.SortOrder
+  billNumber?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+  discountType?: Prisma.SortOrder
+  discount?: Prisma.SortOrder
+  finalBillAmount?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  user?: Prisma.UserOrderByWithRelationInput
+  billItems?: Prisma.BillItemOrderByRelationAggregateInput
+}
+
+export type BillWhereUniqueInput = Prisma.AtLeast<{
+  id?: string
+  billNumber?: number
+  AND?: Prisma.BillWhereInput | Prisma.BillWhereInput[]
+  OR?: Prisma.BillWhereInput[]
+  NOT?: Prisma.BillWhereInput | Prisma.BillWhereInput[]
+  userId?: Prisma.StringFilter<"Bill"> | string
+  total?: Prisma.DecimalFilter<"Bill"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeFilter<"Bill"> | $Enums.DiscountType
+  discount?: Prisma.DecimalFilter<"Bill"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalFilter<"Bill"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeFilter<"Bill"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Bill"> | Date | string
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  billItems?: Prisma.BillItemListRelationFilter
+}, "id" | "billNumber">
+
+export type BillOrderByWithAggregationInput = {
+  id?: Prisma.SortOrder
+  billNumber?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+  discountType?: Prisma.SortOrder
+  discount?: Prisma.SortOrder
+  finalBillAmount?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  _count?: Prisma.BillCountOrderByAggregateInput
+  _avg?: Prisma.BillAvgOrderByAggregateInput
+  _max?: Prisma.BillMaxOrderByAggregateInput
+  _min?: Prisma.BillMinOrderByAggregateInput
+  _sum?: Prisma.BillSumOrderByAggregateInput
+}
+
+export type BillScalarWhereWithAggregatesInput = {
+  AND?: Prisma.BillScalarWhereWithAggregatesInput | Prisma.BillScalarWhereWithAggregatesInput[]
+  OR?: Prisma.BillScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.BillScalarWhereWithAggregatesInput | Prisma.BillScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"Bill"> | string
+  billNumber?: Prisma.IntWithAggregatesFilter<"Bill"> | number
+  userId?: Prisma.StringWithAggregatesFilter<"Bill"> | string
+  total?: Prisma.DecimalWithAggregatesFilter<"Bill"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeWithAggregatesFilter<"Bill"> | $Enums.DiscountType
+  discount?: Prisma.DecimalWithAggregatesFilter<"Bill"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalWithAggregatesFilter<"Bill"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Bill"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Bill"> | Date | string
+}
+
+export type BillCreateInput = {
+  id?: string
+  billNumber?: number
+  total?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType: $Enums.DiscountType
+  discount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  user: Prisma.UserCreateNestedOneWithoutBillsInput
+  billItems?: Prisma.BillItemCreateNestedManyWithoutBillInput
+}
+
+export type BillUncheckedCreateInput = {
+  id?: string
+  billNumber?: number
+  userId: string
+  total?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType: $Enums.DiscountType
+  discount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  billItems?: Prisma.BillItemUncheckedCreateNestedManyWithoutBillInput
+}
+
+export type BillUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  total?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeFieldUpdateOperationsInput | $Enums.DiscountType
+  discount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateOneRequiredWithoutBillsNestedInput
+  billItems?: Prisma.BillItemUpdateManyWithoutBillNestedInput
+}
+
+export type BillUncheckedUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  billNumber?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  total?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeFieldUpdateOperationsInput | $Enums.DiscountType
+  discount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  billItems?: Prisma.BillItemUncheckedUpdateManyWithoutBillNestedInput
+}
+
+export type BillCreateManyInput = {
+  id?: string
+  billNumber?: number
+  userId: string
+  total?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType: $Enums.DiscountType
+  discount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BillUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  total?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeFieldUpdateOperationsInput | $Enums.DiscountType
+  discount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BillUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  billNumber?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  total?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeFieldUpdateOperationsInput | $Enums.DiscountType
+  discount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BillListRelationFilter = {
+  every?: Prisma.BillWhereInput
+  some?: Prisma.BillWhereInput
+  none?: Prisma.BillWhereInput
+}
+
+export type BillOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
+}
+
+export type BillCountOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  billNumber?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+  discountType?: Prisma.SortOrder
+  discount?: Prisma.SortOrder
+  finalBillAmount?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type BillAvgOrderByAggregateInput = {
+  billNumber?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+  discount?: Prisma.SortOrder
+  finalBillAmount?: Prisma.SortOrder
+}
+
+export type BillMaxOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  billNumber?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+  discountType?: Prisma.SortOrder
+  discount?: Prisma.SortOrder
+  finalBillAmount?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type BillMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  billNumber?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+  discountType?: Prisma.SortOrder
+  discount?: Prisma.SortOrder
+  finalBillAmount?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type BillSumOrderByAggregateInput = {
+  billNumber?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+  discount?: Prisma.SortOrder
+  finalBillAmount?: Prisma.SortOrder
+}
+
+export type BillScalarRelationFilter = {
+  is?: Prisma.BillWhereInput
+  isNot?: Prisma.BillWhereInput
+}
+
+export type BillCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.BillCreateWithoutUserInput, Prisma.BillUncheckedCreateWithoutUserInput> | Prisma.BillCreateWithoutUserInput[] | Prisma.BillUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.BillCreateOrConnectWithoutUserInput | Prisma.BillCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.BillCreateManyUserInputEnvelope
+  connect?: Prisma.BillWhereUniqueInput | Prisma.BillWhereUniqueInput[]
+}
+
+export type BillUncheckedCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.BillCreateWithoutUserInput, Prisma.BillUncheckedCreateWithoutUserInput> | Prisma.BillCreateWithoutUserInput[] | Prisma.BillUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.BillCreateOrConnectWithoutUserInput | Prisma.BillCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.BillCreateManyUserInputEnvelope
+  connect?: Prisma.BillWhereUniqueInput | Prisma.BillWhereUniqueInput[]
+}
+
+export type BillUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.BillCreateWithoutUserInput, Prisma.BillUncheckedCreateWithoutUserInput> | Prisma.BillCreateWithoutUserInput[] | Prisma.BillUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.BillCreateOrConnectWithoutUserInput | Prisma.BillCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.BillUpsertWithWhereUniqueWithoutUserInput | Prisma.BillUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.BillCreateManyUserInputEnvelope
+  set?: Prisma.BillWhereUniqueInput | Prisma.BillWhereUniqueInput[]
+  disconnect?: Prisma.BillWhereUniqueInput | Prisma.BillWhereUniqueInput[]
+  delete?: Prisma.BillWhereUniqueInput | Prisma.BillWhereUniqueInput[]
+  connect?: Prisma.BillWhereUniqueInput | Prisma.BillWhereUniqueInput[]
+  update?: Prisma.BillUpdateWithWhereUniqueWithoutUserInput | Prisma.BillUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.BillUpdateManyWithWhereWithoutUserInput | Prisma.BillUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.BillScalarWhereInput | Prisma.BillScalarWhereInput[]
+}
+
+export type BillUncheckedUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.BillCreateWithoutUserInput, Prisma.BillUncheckedCreateWithoutUserInput> | Prisma.BillCreateWithoutUserInput[] | Prisma.BillUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.BillCreateOrConnectWithoutUserInput | Prisma.BillCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.BillUpsertWithWhereUniqueWithoutUserInput | Prisma.BillUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.BillCreateManyUserInputEnvelope
+  set?: Prisma.BillWhereUniqueInput | Prisma.BillWhereUniqueInput[]
+  disconnect?: Prisma.BillWhereUniqueInput | Prisma.BillWhereUniqueInput[]
+  delete?: Prisma.BillWhereUniqueInput | Prisma.BillWhereUniqueInput[]
+  connect?: Prisma.BillWhereUniqueInput | Prisma.BillWhereUniqueInput[]
+  update?: Prisma.BillUpdateWithWhereUniqueWithoutUserInput | Prisma.BillUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.BillUpdateManyWithWhereWithoutUserInput | Prisma.BillUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.BillScalarWhereInput | Prisma.BillScalarWhereInput[]
+}
+
+export type EnumDiscountTypeFieldUpdateOperationsInput = {
+  set?: $Enums.DiscountType
+}
+
+export type BillCreateNestedOneWithoutBillItemsInput = {
+  create?: Prisma.XOR<Prisma.BillCreateWithoutBillItemsInput, Prisma.BillUncheckedCreateWithoutBillItemsInput>
+  connectOrCreate?: Prisma.BillCreateOrConnectWithoutBillItemsInput
+  connect?: Prisma.BillWhereUniqueInput
+}
+
+export type BillUpdateOneRequiredWithoutBillItemsNestedInput = {
+  create?: Prisma.XOR<Prisma.BillCreateWithoutBillItemsInput, Prisma.BillUncheckedCreateWithoutBillItemsInput>
+  connectOrCreate?: Prisma.BillCreateOrConnectWithoutBillItemsInput
+  upsert?: Prisma.BillUpsertWithoutBillItemsInput
+  connect?: Prisma.BillWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.BillUpdateToOneWithWhereWithoutBillItemsInput, Prisma.BillUpdateWithoutBillItemsInput>, Prisma.BillUncheckedUpdateWithoutBillItemsInput>
+}
+
+export type BillCreateWithoutUserInput = {
+  id?: string
+  billNumber?: number
+  total?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType: $Enums.DiscountType
+  discount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  billItems?: Prisma.BillItemCreateNestedManyWithoutBillInput
+}
+
+export type BillUncheckedCreateWithoutUserInput = {
+  id?: string
+  billNumber?: number
+  total?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType: $Enums.DiscountType
+  discount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  billItems?: Prisma.BillItemUncheckedCreateNestedManyWithoutBillInput
+}
+
+export type BillCreateOrConnectWithoutUserInput = {
+  where: Prisma.BillWhereUniqueInput
+  create: Prisma.XOR<Prisma.BillCreateWithoutUserInput, Prisma.BillUncheckedCreateWithoutUserInput>
+}
+
+export type BillCreateManyUserInputEnvelope = {
+  data: Prisma.BillCreateManyUserInput | Prisma.BillCreateManyUserInput[]
+  skipDuplicates?: boolean
+}
+
+export type BillUpsertWithWhereUniqueWithoutUserInput = {
+  where: Prisma.BillWhereUniqueInput
+  update: Prisma.XOR<Prisma.BillUpdateWithoutUserInput, Prisma.BillUncheckedUpdateWithoutUserInput>
+  create: Prisma.XOR<Prisma.BillCreateWithoutUserInput, Prisma.BillUncheckedCreateWithoutUserInput>
+}
+
+export type BillUpdateWithWhereUniqueWithoutUserInput = {
+  where: Prisma.BillWhereUniqueInput
+  data: Prisma.XOR<Prisma.BillUpdateWithoutUserInput, Prisma.BillUncheckedUpdateWithoutUserInput>
+}
+
+export type BillUpdateManyWithWhereWithoutUserInput = {
+  where: Prisma.BillScalarWhereInput
+  data: Prisma.XOR<Prisma.BillUpdateManyMutationInput, Prisma.BillUncheckedUpdateManyWithoutUserInput>
+}
+
+export type BillScalarWhereInput = {
+  AND?: Prisma.BillScalarWhereInput | Prisma.BillScalarWhereInput[]
+  OR?: Prisma.BillScalarWhereInput[]
+  NOT?: Prisma.BillScalarWhereInput | Prisma.BillScalarWhereInput[]
+  id?: Prisma.StringFilter<"Bill"> | string
+  billNumber?: Prisma.IntFilter<"Bill"> | number
+  userId?: Prisma.StringFilter<"Bill"> | string
+  total?: Prisma.DecimalFilter<"Bill"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeFilter<"Bill"> | $Enums.DiscountType
+  discount?: Prisma.DecimalFilter<"Bill"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalFilter<"Bill"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeFilter<"Bill"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Bill"> | Date | string
+}
+
+export type BillCreateWithoutBillItemsInput = {
+  id?: string
+  billNumber?: number
+  total?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType: $Enums.DiscountType
+  discount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  user: Prisma.UserCreateNestedOneWithoutBillsInput
+}
+
+export type BillUncheckedCreateWithoutBillItemsInput = {
+  id?: string
+  billNumber?: number
+  userId: string
+  total?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType: $Enums.DiscountType
+  discount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BillCreateOrConnectWithoutBillItemsInput = {
+  where: Prisma.BillWhereUniqueInput
+  create: Prisma.XOR<Prisma.BillCreateWithoutBillItemsInput, Prisma.BillUncheckedCreateWithoutBillItemsInput>
+}
+
+export type BillUpsertWithoutBillItemsInput = {
+  update: Prisma.XOR<Prisma.BillUpdateWithoutBillItemsInput, Prisma.BillUncheckedUpdateWithoutBillItemsInput>
+  create: Prisma.XOR<Prisma.BillCreateWithoutBillItemsInput, Prisma.BillUncheckedCreateWithoutBillItemsInput>
+  where?: Prisma.BillWhereInput
+}
+
+export type BillUpdateToOneWithWhereWithoutBillItemsInput = {
+  where?: Prisma.BillWhereInput
+  data: Prisma.XOR<Prisma.BillUpdateWithoutBillItemsInput, Prisma.BillUncheckedUpdateWithoutBillItemsInput>
+}
+
+export type BillUpdateWithoutBillItemsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  total?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeFieldUpdateOperationsInput | $Enums.DiscountType
+  discount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateOneRequiredWithoutBillsNestedInput
+}
+
+export type BillUncheckedUpdateWithoutBillItemsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  billNumber?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  total?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeFieldUpdateOperationsInput | $Enums.DiscountType
+  discount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BillCreateManyUserInput = {
+  id?: string
+  billNumber?: number
+  total?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType: $Enums.DiscountType
+  discount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BillUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  total?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeFieldUpdateOperationsInput | $Enums.DiscountType
+  discount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  billItems?: Prisma.BillItemUpdateManyWithoutBillNestedInput
+}
+
+export type BillUncheckedUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  billNumber?: Prisma.IntFieldUpdateOperationsInput | number
+  total?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeFieldUpdateOperationsInput | $Enums.DiscountType
+  discount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  billItems?: Prisma.BillItemUncheckedUpdateManyWithoutBillNestedInput
+}
+
+export type BillUncheckedUpdateManyWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  billNumber?: Prisma.IntFieldUpdateOperationsInput | number
+  total?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  discountType?: Prisma.EnumDiscountTypeFieldUpdateOperationsInput | $Enums.DiscountType
+  discount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  finalBillAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+
+/**
+ * Count Type BillCountOutputType
+ */
+
+export type BillCountOutputType = {
+  billItems: number
+}
+
+export type BillCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  billItems?: boolean | BillCountOutputTypeCountBillItemsArgs
+}
+
+/**
+ * BillCountOutputType without action
+ */
+export type BillCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillCountOutputType
+   */
+  select?: Prisma.BillCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * BillCountOutputType without action
+ */
+export type BillCountOutputTypeCountBillItemsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BillItemWhereInput
+}
+
+
+export type BillSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  billNumber?: boolean
+  userId?: boolean
+  total?: boolean
+  discountType?: boolean
+  discount?: boolean
+  finalBillAmount?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  billItems?: boolean | Prisma.Bill$billItemsArgs<ExtArgs>
+  _count?: boolean | Prisma.BillCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["bill"]>
+
+export type BillSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  billNumber?: boolean
+  userId?: boolean
+  total?: boolean
+  discountType?: boolean
+  discount?: boolean
+  finalBillAmount?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["bill"]>
+
+export type BillSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  billNumber?: boolean
+  userId?: boolean
+  total?: boolean
+  discountType?: boolean
+  discount?: boolean
+  finalBillAmount?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["bill"]>
+
+export type BillSelectScalar = {
+  id?: boolean
+  billNumber?: boolean
+  userId?: boolean
+  total?: boolean
+  discountType?: boolean
+  discount?: boolean
+  finalBillAmount?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+}
+
+export type BillOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "billNumber" | "userId" | "total" | "discountType" | "discount" | "finalBillAmount" | "createdAt" | "updatedAt", ExtArgs["result"]["bill"]>
+export type BillInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  billItems?: boolean | Prisma.Bill$billItemsArgs<ExtArgs>
+  _count?: boolean | Prisma.BillCountOutputTypeDefaultArgs<ExtArgs>
+}
+export type BillIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+}
+export type BillIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+}
+
+export type $BillPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Bill"
+  objects: {
+    user: Prisma.$UserPayload<ExtArgs>
+    billItems: Prisma.$BillItemPayload<ExtArgs>[]
+  }
+  scalars: runtime.Types.Extensions.GetPayloadResult<{
+    id: string
+    billNumber: number
+    userId: string
+    total: runtime.Decimal
+    discountType: $Enums.DiscountType
+    discount: runtime.Decimal
+    finalBillAmount: runtime.Decimal
+    createdAt: Date
+    updatedAt: Date
+  }, ExtArgs["result"]["bill"]>
+  composites: {}
+}
+
+export type BillGetPayload<S extends boolean | null | undefined | BillDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$BillPayload, S>
+
+export type BillCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<BillFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: BillCountAggregateInputType | true
+  }
+
+export interface BillDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Bill'], meta: { name: 'Bill' } }
+  /**
+   * Find zero or one Bill that matches the filter.
+   * @param {BillFindUniqueArgs} args - Arguments to find a Bill
+   * @example
+   * // Get one Bill
+   * const bill = await prisma.bill.findUnique({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findUnique<T extends BillFindUniqueArgs>(args: Prisma.SelectSubset<T, BillFindUniqueArgs<ExtArgs>>): Prisma.Prisma__BillClient<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find one Bill that matches the filter or throw an error with `error.code='P2025'`
+   * if no matches were found.
+   * @param {BillFindUniqueOrThrowArgs} args - Arguments to find a Bill
+   * @example
+   * // Get one Bill
+   * const bill = await prisma.bill.findUniqueOrThrow({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findUniqueOrThrow<T extends BillFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, BillFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__BillClient<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find the first Bill that matches the filter.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillFindFirstArgs} args - Arguments to find a Bill
+   * @example
+   * // Get one Bill
+   * const bill = await prisma.bill.findFirst({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findFirst<T extends BillFindFirstArgs>(args?: Prisma.SelectSubset<T, BillFindFirstArgs<ExtArgs>>): Prisma.Prisma__BillClient<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find the first Bill that matches the filter or
+   * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillFindFirstOrThrowArgs} args - Arguments to find a Bill
+   * @example
+   * // Get one Bill
+   * const bill = await prisma.bill.findFirstOrThrow({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findFirstOrThrow<T extends BillFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, BillFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__BillClient<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find zero or more Bills that matches the filter.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @example
+   * // Get all Bills
+   * const bills = await prisma.bill.findMany()
+   * 
+   * // Get first 10 Bills
+   * const bills = await prisma.bill.findMany({ take: 10 })
+   * 
+   * // Only select the `id`
+   * const billWithIdOnly = await prisma.bill.findMany({ select: { id: true } })
+   * 
+   */
+  findMany<T extends BillFindManyArgs>(args?: Prisma.SelectSubset<T, BillFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+  /**
+   * Create a Bill.
+   * @param {BillCreateArgs} args - Arguments to create a Bill.
+   * @example
+   * // Create one Bill
+   * const Bill = await prisma.bill.create({
+   *   data: {
+   *     // ... data to create a Bill
+   *   }
+   * })
+   * 
+   */
+  create<T extends BillCreateArgs>(args: Prisma.SelectSubset<T, BillCreateArgs<ExtArgs>>): Prisma.Prisma__BillClient<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Create many Bills.
+   * @param {BillCreateManyArgs} args - Arguments to create many Bills.
+   * @example
+   * // Create many Bills
+   * const bill = await prisma.bill.createMany({
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   *     
+   */
+  createMany<T extends BillCreateManyArgs>(args?: Prisma.SelectSubset<T, BillCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Create many Bills and returns the data saved in the database.
+   * @param {BillCreateManyAndReturnArgs} args - Arguments to create many Bills.
+   * @example
+   * // Create many Bills
+   * const bill = await prisma.bill.createManyAndReturn({
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * 
+   * // Create many Bills and only return the `id`
+   * const billWithIdOnly = await prisma.bill.createManyAndReturn({
+   *   select: { id: true },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * 
+   */
+  createManyAndReturn<T extends BillCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, BillCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+  /**
+   * Delete a Bill.
+   * @param {BillDeleteArgs} args - Arguments to delete one Bill.
+   * @example
+   * // Delete one Bill
+   * const Bill = await prisma.bill.delete({
+   *   where: {
+   *     // ... filter to delete one Bill
+   *   }
+   * })
+   * 
+   */
+  delete<T extends BillDeleteArgs>(args: Prisma.SelectSubset<T, BillDeleteArgs<ExtArgs>>): Prisma.Prisma__BillClient<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Update one Bill.
+   * @param {BillUpdateArgs} args - Arguments to update one Bill.
+   * @example
+   * // Update one Bill
+   * const bill = await prisma.bill.update({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: {
+   *     // ... provide data here
+   *   }
+   * })
+   * 
+   */
+  update<T extends BillUpdateArgs>(args: Prisma.SelectSubset<T, BillUpdateArgs<ExtArgs>>): Prisma.Prisma__BillClient<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Delete zero or more Bills.
+   * @param {BillDeleteManyArgs} args - Arguments to filter Bills to delete.
+   * @example
+   * // Delete a few Bills
+   * const { count } = await prisma.bill.deleteMany({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   * 
+   */
+  deleteMany<T extends BillDeleteManyArgs>(args?: Prisma.SelectSubset<T, BillDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Update zero or more Bills.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillUpdateManyArgs} args - Arguments to update one or more rows.
+   * @example
+   * // Update many Bills
+   * const bill = await prisma.bill.updateMany({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: {
+   *     // ... provide data here
+   *   }
+   * })
+   * 
+   */
+  updateMany<T extends BillUpdateManyArgs>(args: Prisma.SelectSubset<T, BillUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Update zero or more Bills and returns the data updated in the database.
+   * @param {BillUpdateManyAndReturnArgs} args - Arguments to update many Bills.
+   * @example
+   * // Update many Bills
+   * const bill = await prisma.bill.updateManyAndReturn({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * 
+   * // Update zero or more Bills and only return the `id`
+   * const billWithIdOnly = await prisma.bill.updateManyAndReturn({
+   *   select: { id: true },
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * 
+   */
+  updateManyAndReturn<T extends BillUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, BillUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+  /**
+   * Create or update one Bill.
+   * @param {BillUpsertArgs} args - Arguments to update or create a Bill.
+   * @example
+   * // Update or create a Bill
+   * const bill = await prisma.bill.upsert({
+   *   create: {
+   *     // ... data to create a Bill
+   *   },
+   *   update: {
+   *     // ... in case it already exists, update
+   *   },
+   *   where: {
+   *     // ... the filter for the Bill we want to update
+   *   }
+   * })
+   */
+  upsert<T extends BillUpsertArgs>(args: Prisma.SelectSubset<T, BillUpsertArgs<ExtArgs>>): Prisma.Prisma__BillClient<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+  /**
+   * Count the number of Bills.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillCountArgs} args - Arguments to filter Bills to count.
+   * @example
+   * // Count the number of Bills
+   * const count = await prisma.bill.count({
+   *   where: {
+   *     // ... the filter for the Bills we want to count
+   *   }
+   * })
+  **/
+  count<T extends BillCountArgs>(
+    args?: Prisma.Subset<T, BillCountArgs>,
+  ): Prisma.PrismaPromise<
+    T extends runtime.Types.Utils.Record<'select', any>
+      ? T['select'] extends true
+        ? number
+        : Prisma.GetScalarType<T['select'], BillCountAggregateOutputType>
+      : number
+  >
+
+  /**
+   * Allows you to perform aggregations operations on a Bill.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @example
+   * // Ordered by age ascending
+   * // Where email contains prisma.io
+   * // Limited to the 10 users
+   * const aggregations = await prisma.user.aggregate({
+   *   _avg: {
+   *     age: true,
+   *   },
+   *   where: {
+   *     email: {
+   *       contains: "prisma.io",
+   *     },
+   *   },
+   *   orderBy: {
+   *     age: "asc",
+   *   },
+   *   take: 10,
+   * })
+  **/
+  aggregate<T extends BillAggregateArgs>(args: Prisma.Subset<T, BillAggregateArgs>): Prisma.PrismaPromise<GetBillAggregateType<T>>
+
+  /**
+   * Group by Bill.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillGroupByArgs} args - Group by arguments.
+   * @example
+   * // Group by city, order by createdAt, get count
+   * const result = await prisma.user.groupBy({
+   *   by: ['city', 'createdAt'],
+   *   orderBy: {
+   *     createdAt: true
+   *   },
+   *   _count: {
+   *     _all: true
+   *   },
+   * })
+   * 
+  **/
+  groupBy<
+    T extends BillGroupByArgs,
+    HasSelectOrTake extends Prisma.Or<
+      Prisma.Extends<'skip', Prisma.Keys<T>>,
+      Prisma.Extends<'take', Prisma.Keys<T>>
+    >,
+    OrderByArg extends Prisma.True extends HasSelectOrTake
+      ? { orderBy: BillGroupByArgs['orderBy'] }
+      : { orderBy?: BillGroupByArgs['orderBy'] },
+    OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
+    ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
+    ByValid extends Prisma.Has<ByFields, OrderFields>,
+    HavingFields extends Prisma.GetHavingFields<T['having']>,
+    HavingValid extends Prisma.Has<ByFields, HavingFields>,
+    ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False,
+    InputErrors extends ByEmpty extends Prisma.True
+    ? `Error: "by" must not be empty.`
+    : HavingValid extends Prisma.False
+    ? {
+        [P in HavingFields]: P extends ByFields
+          ? never
+          : P extends string
+          ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+          : [
+              Error,
+              'Field ',
+              P,
+              ` in "having" needs to be provided in "by"`,
+            ]
+      }[HavingFields]
+    : 'take' extends Prisma.Keys<T>
+    ? 'orderBy' extends Prisma.Keys<T>
+      ? ByValid extends Prisma.True
+        ? {}
+        : {
+            [P in OrderFields]: P extends ByFields
+              ? never
+              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+          }[OrderFields]
+      : 'Error: If you provide "take", you also need to provide "orderBy"'
+    : 'skip' extends Prisma.Keys<T>
+    ? 'orderBy' extends Prisma.Keys<T>
+      ? ByValid extends Prisma.True
+        ? {}
+        : {
+            [P in OrderFields]: P extends ByFields
+              ? never
+              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+          }[OrderFields]
+      : 'Error: If you provide "skip", you also need to provide "orderBy"'
+    : ByValid extends Prisma.True
+    ? {}
+    : {
+        [P in OrderFields]: P extends ByFields
+          ? never
+          : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+      }[OrderFields]
+  >(args: Prisma.SubsetIntersection<T, BillGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBillGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+/**
+ * Fields of the Bill model
+ */
+readonly fields: BillFieldRefs;
+}
+
+/**
+ * The delegate class that acts as a "Promise-like" for Bill.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__BillClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  readonly [Symbol.toStringTag]: "PrismaPromise"
+  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  billItems<T extends Prisma.Bill$billItemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Bill$billItemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  /**
+   * Attaches callbacks for the resolution and/or rejection of the Promise.
+   * @param onfulfilled The callback to execute when the Promise is resolved.
+   * @param onrejected The callback to execute when the Promise is rejected.
+   * @returns A Promise for the completion of which ever callback is executed.
+   */
+  then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>
+  /**
+   * Attaches a callback for only the rejection of the Promise.
+   * @param onrejected The callback to execute when the Promise is rejected.
+   * @returns A Promise for the completion of the callback.
+   */
+  catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>
+  /**
+   * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+   * resolved value cannot be modified from the callback.
+   * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+   * @returns A Promise for the completion of the callback.
+   */
+  finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>
+}
+
+
+
+
+/**
+ * Fields of the Bill model
+ */
+export interface BillFieldRefs {
+  readonly id: Prisma.FieldRef<"Bill", 'String'>
+  readonly billNumber: Prisma.FieldRef<"Bill", 'Int'>
+  readonly userId: Prisma.FieldRef<"Bill", 'String'>
+  readonly total: Prisma.FieldRef<"Bill", 'Decimal'>
+  readonly discountType: Prisma.FieldRef<"Bill", 'DiscountType'>
+  readonly discount: Prisma.FieldRef<"Bill", 'Decimal'>
+  readonly finalBillAmount: Prisma.FieldRef<"Bill", 'Decimal'>
+  readonly createdAt: Prisma.FieldRef<"Bill", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"Bill", 'DateTime'>
+}
+    
+
+// Custom InputTypes
+/**
+ * Bill findUnique
+ */
+export type BillFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillInclude<ExtArgs> | null
+  /**
+   * Filter, which Bill to fetch.
+   */
+  where: Prisma.BillWhereUniqueInput
+}
+
+/**
+ * Bill findUniqueOrThrow
+ */
+export type BillFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillInclude<ExtArgs> | null
+  /**
+   * Filter, which Bill to fetch.
+   */
+  where: Prisma.BillWhereUniqueInput
+}
+
+/**
+ * Bill findFirst
+ */
+export type BillFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillInclude<ExtArgs> | null
+  /**
+   * Filter, which Bill to fetch.
+   */
+  where?: Prisma.BillWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Bills to fetch.
+   */
+  orderBy?: Prisma.BillOrderByWithRelationInput | Prisma.BillOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for searching for Bills.
+   */
+  cursor?: Prisma.BillWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Bills from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Bills.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Bills.
+   */
+  distinct?: Prisma.BillScalarFieldEnum | Prisma.BillScalarFieldEnum[]
+}
+
+/**
+ * Bill findFirstOrThrow
+ */
+export type BillFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillInclude<ExtArgs> | null
+  /**
+   * Filter, which Bill to fetch.
+   */
+  where?: Prisma.BillWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Bills to fetch.
+   */
+  orderBy?: Prisma.BillOrderByWithRelationInput | Prisma.BillOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for searching for Bills.
+   */
+  cursor?: Prisma.BillWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Bills from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Bills.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Bills.
+   */
+  distinct?: Prisma.BillScalarFieldEnum | Prisma.BillScalarFieldEnum[]
+}
+
+/**
+ * Bill findMany
+ */
+export type BillFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillInclude<ExtArgs> | null
+  /**
+   * Filter, which Bills to fetch.
+   */
+  where?: Prisma.BillWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Bills to fetch.
+   */
+  orderBy?: Prisma.BillOrderByWithRelationInput | Prisma.BillOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for listing Bills.
+   */
+  cursor?: Prisma.BillWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Bills from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Bills.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Bills.
+   */
+  distinct?: Prisma.BillScalarFieldEnum | Prisma.BillScalarFieldEnum[]
+}
+
+/**
+ * Bill create
+ */
+export type BillCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillInclude<ExtArgs> | null
+  /**
+   * The data needed to create a Bill.
+   */
+  data: Prisma.XOR<Prisma.BillCreateInput, Prisma.BillUncheckedCreateInput>
+}
+
+/**
+ * Bill createMany
+ */
+export type BillCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * The data used to create many Bills.
+   */
+  data: Prisma.BillCreateManyInput | Prisma.BillCreateManyInput[]
+  skipDuplicates?: boolean
+}
+
+/**
+ * Bill createManyAndReturn
+ */
+export type BillCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelectCreateManyAndReturn<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * The data used to create many Bills.
+   */
+  data: Prisma.BillCreateManyInput | Prisma.BillCreateManyInput[]
+  skipDuplicates?: boolean
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillIncludeCreateManyAndReturn<ExtArgs> | null
+}
+
+/**
+ * Bill update
+ */
+export type BillUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillInclude<ExtArgs> | null
+  /**
+   * The data needed to update a Bill.
+   */
+  data: Prisma.XOR<Prisma.BillUpdateInput, Prisma.BillUncheckedUpdateInput>
+  /**
+   * Choose, which Bill to update.
+   */
+  where: Prisma.BillWhereUniqueInput
+}
+
+/**
+ * Bill updateMany
+ */
+export type BillUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * The data used to update Bills.
+   */
+  data: Prisma.XOR<Prisma.BillUpdateManyMutationInput, Prisma.BillUncheckedUpdateManyInput>
+  /**
+   * Filter which Bills to update
+   */
+  where?: Prisma.BillWhereInput
+  /**
+   * Limit how many Bills to update.
+   */
+  limit?: number
+}
+
+/**
+ * Bill updateManyAndReturn
+ */
+export type BillUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelectUpdateManyAndReturn<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * The data used to update Bills.
+   */
+  data: Prisma.XOR<Prisma.BillUpdateManyMutationInput, Prisma.BillUncheckedUpdateManyInput>
+  /**
+   * Filter which Bills to update
+   */
+  where?: Prisma.BillWhereInput
+  /**
+   * Limit how many Bills to update.
+   */
+  limit?: number
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillIncludeUpdateManyAndReturn<ExtArgs> | null
+}
+
+/**
+ * Bill upsert
+ */
+export type BillUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillInclude<ExtArgs> | null
+  /**
+   * The filter to search for the Bill to update in case it exists.
+   */
+  where: Prisma.BillWhereUniqueInput
+  /**
+   * In case the Bill found by the `where` argument doesn't exist, create a new Bill with this data.
+   */
+  create: Prisma.XOR<Prisma.BillCreateInput, Prisma.BillUncheckedCreateInput>
+  /**
+   * In case the Bill was found with the provided `where` argument, update it with this data.
+   */
+  update: Prisma.XOR<Prisma.BillUpdateInput, Prisma.BillUncheckedUpdateInput>
+}
+
+/**
+ * Bill delete
+ */
+export type BillDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillInclude<ExtArgs> | null
+  /**
+   * Filter which Bill to delete.
+   */
+  where: Prisma.BillWhereUniqueInput
+}
+
+/**
+ * Bill deleteMany
+ */
+export type BillDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Filter which Bills to delete
+   */
+  where?: Prisma.BillWhereInput
+  /**
+   * Limit how many Bills to delete.
+   */
+  limit?: number
+}
+
+/**
+ * Bill.billItems
+ */
+export type Bill$billItemsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+  where?: Prisma.BillItemWhereInput
+  orderBy?: Prisma.BillItemOrderByWithRelationInput | Prisma.BillItemOrderByWithRelationInput[]
+  cursor?: Prisma.BillItemWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BillItemScalarFieldEnum | Prisma.BillItemScalarFieldEnum[]
+}
+
+/**
+ * Bill without action
+ */
+export type BillDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillInclude<ExtArgs> | null
+}
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-models-billitem-ts"></a>📄 `src/generated/prisma/models/BillItem.ts`
+
+**File Info:**
+- **Size**: 69.87 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/models/BillItem.ts`
+- **Relative Path**: `src/generated/prisma/models`
+- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `befb02f6779f583f355df4180622e4aa`
+- **SHA256**: `dfc97f441980d188268044a33413895ac9b7a7fe359b0407b8948ea708aa5b53`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * This file exports the `BillItem` model and its related types.
+ *
+ * 🟢 You can import this file directly.
+ */
+import type * as runtime from "@prisma/client/runtime/client"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
+
+/**
+ * Model BillItem
+ * 
+ */
+export type BillItemModel = runtime.Types.Result.DefaultSelection<Prisma.$BillItemPayload>
+
+export type AggregateBillItem = {
+  _count: BillItemCountAggregateOutputType | null
+  _avg: BillItemAvgAggregateOutputType | null
+  _sum: BillItemSumAggregateOutputType | null
+  _min: BillItemMinAggregateOutputType | null
+  _max: BillItemMaxAggregateOutputType | null
+}
+
+export type BillItemAvgAggregateOutputType = {
+  quantity: number | null
+  unitPrice: number | null
+  total: number | null
+}
+
+export type BillItemSumAggregateOutputType = {
+  quantity: number | null
+  unitPrice: number | null
+  total: number | null
+}
+
+export type BillItemMinAggregateOutputType = {
+  id: string | null
+  billId: string | null
+  productId: string | null
+  batchId: string | null
+  quantity: number | null
+  unitPrice: number | null
+  total: number | null
+  createdAt: Date | null
+  updatedAt: Date | null
+}
+
+export type BillItemMaxAggregateOutputType = {
+  id: string | null
+  billId: string | null
+  productId: string | null
+  batchId: string | null
+  quantity: number | null
+  unitPrice: number | null
+  total: number | null
+  createdAt: Date | null
+  updatedAt: Date | null
+}
+
+export type BillItemCountAggregateOutputType = {
+  id: number
+  billId: number
+  productId: number
+  batchId: number
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt: number
+  updatedAt: number
+  _all: number
+}
+
+
+export type BillItemAvgAggregateInputType = {
+  quantity?: true
+  unitPrice?: true
+  total?: true
+}
+
+export type BillItemSumAggregateInputType = {
+  quantity?: true
+  unitPrice?: true
+  total?: true
+}
+
+export type BillItemMinAggregateInputType = {
+  id?: true
+  billId?: true
+  productId?: true
+  batchId?: true
+  quantity?: true
+  unitPrice?: true
+  total?: true
+  createdAt?: true
+  updatedAt?: true
+}
+
+export type BillItemMaxAggregateInputType = {
+  id?: true
+  billId?: true
+  productId?: true
+  batchId?: true
+  quantity?: true
+  unitPrice?: true
+  total?: true
+  createdAt?: true
+  updatedAt?: true
+}
+
+export type BillItemCountAggregateInputType = {
+  id?: true
+  billId?: true
+  productId?: true
+  batchId?: true
+  quantity?: true
+  unitPrice?: true
+  total?: true
+  createdAt?: true
+  updatedAt?: true
+  _all?: true
+}
+
+export type BillItemAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Filter which BillItem to aggregate.
+   */
+  where?: Prisma.BillItemWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of BillItems to fetch.
+   */
+  orderBy?: Prisma.BillItemOrderByWithRelationInput | Prisma.BillItemOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the start position
+   */
+  cursor?: Prisma.BillItemWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` BillItems from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` BillItems.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Count returned BillItems
+  **/
+  _count?: true | BillItemCountAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to average
+  **/
+  _avg?: BillItemAvgAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to sum
+  **/
+  _sum?: BillItemSumAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to find the minimum value
+  **/
+  _min?: BillItemMinAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to find the maximum value
+  **/
+  _max?: BillItemMaxAggregateInputType
+}
+
+export type GetBillItemAggregateType<T extends BillItemAggregateArgs> = {
+      [P in keyof T & keyof AggregateBillItem]: P extends '_count' | 'count'
+    ? T[P] extends true
+      ? number
+      : Prisma.GetScalarType<T[P], AggregateBillItem[P]>
+    : Prisma.GetScalarType<T[P], AggregateBillItem[P]>
+}
+
+
+
+
+export type BillItemGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BillItemWhereInput
+  orderBy?: Prisma.BillItemOrderByWithAggregationInput | Prisma.BillItemOrderByWithAggregationInput[]
+  by: Prisma.BillItemScalarFieldEnum[] | Prisma.BillItemScalarFieldEnum
+  having?: Prisma.BillItemScalarWhereWithAggregatesInput
+  take?: number
+  skip?: number
+  _count?: BillItemCountAggregateInputType | true
+  _avg?: BillItemAvgAggregateInputType
+  _sum?: BillItemSumAggregateInputType
+  _min?: BillItemMinAggregateInputType
+  _max?: BillItemMaxAggregateInputType
+}
+
+export type BillItemGroupByOutputType = {
+  id: string
+  billId: string
+  productId: string
+  batchId: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt: Date
+  updatedAt: Date
+  _count: BillItemCountAggregateOutputType | null
+  _avg: BillItemAvgAggregateOutputType | null
+  _sum: BillItemSumAggregateOutputType | null
+  _min: BillItemMinAggregateOutputType | null
+  _max: BillItemMaxAggregateOutputType | null
+}
+
+export type GetBillItemGroupByPayload<T extends BillItemGroupByArgs> = Prisma.PrismaPromise<
+  Array<
+    Prisma.PickEnumerable<BillItemGroupByOutputType, T['by']> &
+      {
+        [P in ((keyof T) & (keyof BillItemGroupByOutputType))]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : Prisma.GetScalarType<T[P], BillItemGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], BillItemGroupByOutputType[P]>
+      }
+    >
+  >
+
+
+
+export type BillItemWhereInput = {
+  AND?: Prisma.BillItemWhereInput | Prisma.BillItemWhereInput[]
+  OR?: Prisma.BillItemWhereInput[]
+  NOT?: Prisma.BillItemWhereInput | Prisma.BillItemWhereInput[]
+  id?: Prisma.StringFilter<"BillItem"> | string
+  billId?: Prisma.StringFilter<"BillItem"> | string
+  productId?: Prisma.StringFilter<"BillItem"> | string
+  batchId?: Prisma.StringFilter<"BillItem"> | string
+  quantity?: Prisma.IntFilter<"BillItem"> | number
+  unitPrice?: Prisma.FloatFilter<"BillItem"> | number
+  total?: Prisma.FloatFilter<"BillItem"> | number
+  createdAt?: Prisma.DateTimeFilter<"BillItem"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"BillItem"> | Date | string
+  bill?: Prisma.XOR<Prisma.BillScalarRelationFilter, Prisma.BillWhereInput>
+  product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
+  batch?: Prisma.XOR<Prisma.BatchScalarRelationFilter, Prisma.BatchWhereInput>
+}
+
+export type BillItemOrderByWithRelationInput = {
+  id?: Prisma.SortOrder
+  billId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  batchId?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  unitPrice?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  bill?: Prisma.BillOrderByWithRelationInput
+  product?: Prisma.ProductOrderByWithRelationInput
+  batch?: Prisma.BatchOrderByWithRelationInput
+}
+
+export type BillItemWhereUniqueInput = Prisma.AtLeast<{
+  id?: string
+  AND?: Prisma.BillItemWhereInput | Prisma.BillItemWhereInput[]
+  OR?: Prisma.BillItemWhereInput[]
+  NOT?: Prisma.BillItemWhereInput | Prisma.BillItemWhereInput[]
+  billId?: Prisma.StringFilter<"BillItem"> | string
+  productId?: Prisma.StringFilter<"BillItem"> | string
+  batchId?: Prisma.StringFilter<"BillItem"> | string
+  quantity?: Prisma.IntFilter<"BillItem"> | number
+  unitPrice?: Prisma.FloatFilter<"BillItem"> | number
+  total?: Prisma.FloatFilter<"BillItem"> | number
+  createdAt?: Prisma.DateTimeFilter<"BillItem"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"BillItem"> | Date | string
+  bill?: Prisma.XOR<Prisma.BillScalarRelationFilter, Prisma.BillWhereInput>
+  product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
+  batch?: Prisma.XOR<Prisma.BatchScalarRelationFilter, Prisma.BatchWhereInput>
+}, "id">
+
+export type BillItemOrderByWithAggregationInput = {
+  id?: Prisma.SortOrder
+  billId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  batchId?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  unitPrice?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  _count?: Prisma.BillItemCountOrderByAggregateInput
+  _avg?: Prisma.BillItemAvgOrderByAggregateInput
+  _max?: Prisma.BillItemMaxOrderByAggregateInput
+  _min?: Prisma.BillItemMinOrderByAggregateInput
+  _sum?: Prisma.BillItemSumOrderByAggregateInput
+}
+
+export type BillItemScalarWhereWithAggregatesInput = {
+  AND?: Prisma.BillItemScalarWhereWithAggregatesInput | Prisma.BillItemScalarWhereWithAggregatesInput[]
+  OR?: Prisma.BillItemScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.BillItemScalarWhereWithAggregatesInput | Prisma.BillItemScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"BillItem"> | string
+  billId?: Prisma.StringWithAggregatesFilter<"BillItem"> | string
+  productId?: Prisma.StringWithAggregatesFilter<"BillItem"> | string
+  batchId?: Prisma.StringWithAggregatesFilter<"BillItem"> | string
+  quantity?: Prisma.IntWithAggregatesFilter<"BillItem"> | number
+  unitPrice?: Prisma.FloatWithAggregatesFilter<"BillItem"> | number
+  total?: Prisma.FloatWithAggregatesFilter<"BillItem"> | number
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"BillItem"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"BillItem"> | Date | string
+}
+
+export type BillItemCreateInput = {
+  id?: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  bill: Prisma.BillCreateNestedOneWithoutBillItemsInput
+  product: Prisma.ProductCreateNestedOneWithoutBillItemsInput
+  batch: Prisma.BatchCreateNestedOneWithoutBillItemsInput
+}
+
+export type BillItemUncheckedCreateInput = {
+  id?: string
+  billId: string
+  productId: string
+  batchId: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BillItemUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bill?: Prisma.BillUpdateOneRequiredWithoutBillItemsNestedInput
+  product?: Prisma.ProductUpdateOneRequiredWithoutBillItemsNestedInput
+  batch?: Prisma.BatchUpdateOneRequiredWithoutBillItemsNestedInput
+}
+
+export type BillItemUncheckedUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  billId?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.StringFieldUpdateOperationsInput | string
+  batchId?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BillItemCreateManyInput = {
+  id?: string
+  billId: string
+  productId: string
+  batchId: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BillItemUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BillItemUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  billId?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.StringFieldUpdateOperationsInput | string
+  batchId?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BillItemListRelationFilter = {
+  every?: Prisma.BillItemWhereInput
+  some?: Prisma.BillItemWhereInput
+  none?: Prisma.BillItemWhereInput
+}
+
+export type BillItemOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
+}
+
+export type BillItemCountOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  billId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  batchId?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  unitPrice?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type BillItemAvgOrderByAggregateInput = {
+  quantity?: Prisma.SortOrder
+  unitPrice?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+}
+
+export type BillItemMaxOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  billId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  batchId?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  unitPrice?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type BillItemMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  billId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  batchId?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  unitPrice?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type BillItemSumOrderByAggregateInput = {
+  quantity?: Prisma.SortOrder
+  unitPrice?: Prisma.SortOrder
+  total?: Prisma.SortOrder
+}
+
+export type BillItemCreateNestedManyWithoutProductInput = {
+  create?: Prisma.XOR<Prisma.BillItemCreateWithoutProductInput, Prisma.BillItemUncheckedCreateWithoutProductInput> | Prisma.BillItemCreateWithoutProductInput[] | Prisma.BillItemUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.BillItemCreateOrConnectWithoutProductInput | Prisma.BillItemCreateOrConnectWithoutProductInput[]
+  createMany?: Prisma.BillItemCreateManyProductInputEnvelope
+  connect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+}
+
+export type BillItemUncheckedCreateNestedManyWithoutProductInput = {
+  create?: Prisma.XOR<Prisma.BillItemCreateWithoutProductInput, Prisma.BillItemUncheckedCreateWithoutProductInput> | Prisma.BillItemCreateWithoutProductInput[] | Prisma.BillItemUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.BillItemCreateOrConnectWithoutProductInput | Prisma.BillItemCreateOrConnectWithoutProductInput[]
+  createMany?: Prisma.BillItemCreateManyProductInputEnvelope
+  connect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+}
+
+export type BillItemUpdateManyWithoutProductNestedInput = {
+  create?: Prisma.XOR<Prisma.BillItemCreateWithoutProductInput, Prisma.BillItemUncheckedCreateWithoutProductInput> | Prisma.BillItemCreateWithoutProductInput[] | Prisma.BillItemUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.BillItemCreateOrConnectWithoutProductInput | Prisma.BillItemCreateOrConnectWithoutProductInput[]
+  upsert?: Prisma.BillItemUpsertWithWhereUniqueWithoutProductInput | Prisma.BillItemUpsertWithWhereUniqueWithoutProductInput[]
+  createMany?: Prisma.BillItemCreateManyProductInputEnvelope
+  set?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  disconnect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  delete?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  connect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  update?: Prisma.BillItemUpdateWithWhereUniqueWithoutProductInput | Prisma.BillItemUpdateWithWhereUniqueWithoutProductInput[]
+  updateMany?: Prisma.BillItemUpdateManyWithWhereWithoutProductInput | Prisma.BillItemUpdateManyWithWhereWithoutProductInput[]
+  deleteMany?: Prisma.BillItemScalarWhereInput | Prisma.BillItemScalarWhereInput[]
+}
+
+export type BillItemUncheckedUpdateManyWithoutProductNestedInput = {
+  create?: Prisma.XOR<Prisma.BillItemCreateWithoutProductInput, Prisma.BillItemUncheckedCreateWithoutProductInput> | Prisma.BillItemCreateWithoutProductInput[] | Prisma.BillItemUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.BillItemCreateOrConnectWithoutProductInput | Prisma.BillItemCreateOrConnectWithoutProductInput[]
+  upsert?: Prisma.BillItemUpsertWithWhereUniqueWithoutProductInput | Prisma.BillItemUpsertWithWhereUniqueWithoutProductInput[]
+  createMany?: Prisma.BillItemCreateManyProductInputEnvelope
+  set?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  disconnect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  delete?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  connect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  update?: Prisma.BillItemUpdateWithWhereUniqueWithoutProductInput | Prisma.BillItemUpdateWithWhereUniqueWithoutProductInput[]
+  updateMany?: Prisma.BillItemUpdateManyWithWhereWithoutProductInput | Prisma.BillItemUpdateManyWithWhereWithoutProductInput[]
+  deleteMany?: Prisma.BillItemScalarWhereInput | Prisma.BillItemScalarWhereInput[]
+}
+
+export type BillItemCreateNestedManyWithoutBatchInput = {
+  create?: Prisma.XOR<Prisma.BillItemCreateWithoutBatchInput, Prisma.BillItemUncheckedCreateWithoutBatchInput> | Prisma.BillItemCreateWithoutBatchInput[] | Prisma.BillItemUncheckedCreateWithoutBatchInput[]
+  connectOrCreate?: Prisma.BillItemCreateOrConnectWithoutBatchInput | Prisma.BillItemCreateOrConnectWithoutBatchInput[]
+  createMany?: Prisma.BillItemCreateManyBatchInputEnvelope
+  connect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+}
+
+export type BillItemUncheckedCreateNestedManyWithoutBatchInput = {
+  create?: Prisma.XOR<Prisma.BillItemCreateWithoutBatchInput, Prisma.BillItemUncheckedCreateWithoutBatchInput> | Prisma.BillItemCreateWithoutBatchInput[] | Prisma.BillItemUncheckedCreateWithoutBatchInput[]
+  connectOrCreate?: Prisma.BillItemCreateOrConnectWithoutBatchInput | Prisma.BillItemCreateOrConnectWithoutBatchInput[]
+  createMany?: Prisma.BillItemCreateManyBatchInputEnvelope
+  connect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+}
+
+export type BillItemUpdateManyWithoutBatchNestedInput = {
+  create?: Prisma.XOR<Prisma.BillItemCreateWithoutBatchInput, Prisma.BillItemUncheckedCreateWithoutBatchInput> | Prisma.BillItemCreateWithoutBatchInput[] | Prisma.BillItemUncheckedCreateWithoutBatchInput[]
+  connectOrCreate?: Prisma.BillItemCreateOrConnectWithoutBatchInput | Prisma.BillItemCreateOrConnectWithoutBatchInput[]
+  upsert?: Prisma.BillItemUpsertWithWhereUniqueWithoutBatchInput | Prisma.BillItemUpsertWithWhereUniqueWithoutBatchInput[]
+  createMany?: Prisma.BillItemCreateManyBatchInputEnvelope
+  set?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  disconnect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  delete?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  connect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  update?: Prisma.BillItemUpdateWithWhereUniqueWithoutBatchInput | Prisma.BillItemUpdateWithWhereUniqueWithoutBatchInput[]
+  updateMany?: Prisma.BillItemUpdateManyWithWhereWithoutBatchInput | Prisma.BillItemUpdateManyWithWhereWithoutBatchInput[]
+  deleteMany?: Prisma.BillItemScalarWhereInput | Prisma.BillItemScalarWhereInput[]
+}
+
+export type BillItemUncheckedUpdateManyWithoutBatchNestedInput = {
+  create?: Prisma.XOR<Prisma.BillItemCreateWithoutBatchInput, Prisma.BillItemUncheckedCreateWithoutBatchInput> | Prisma.BillItemCreateWithoutBatchInput[] | Prisma.BillItemUncheckedCreateWithoutBatchInput[]
+  connectOrCreate?: Prisma.BillItemCreateOrConnectWithoutBatchInput | Prisma.BillItemCreateOrConnectWithoutBatchInput[]
+  upsert?: Prisma.BillItemUpsertWithWhereUniqueWithoutBatchInput | Prisma.BillItemUpsertWithWhereUniqueWithoutBatchInput[]
+  createMany?: Prisma.BillItemCreateManyBatchInputEnvelope
+  set?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  disconnect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  delete?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  connect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  update?: Prisma.BillItemUpdateWithWhereUniqueWithoutBatchInput | Prisma.BillItemUpdateWithWhereUniqueWithoutBatchInput[]
+  updateMany?: Prisma.BillItemUpdateManyWithWhereWithoutBatchInput | Prisma.BillItemUpdateManyWithWhereWithoutBatchInput[]
+  deleteMany?: Prisma.BillItemScalarWhereInput | Prisma.BillItemScalarWhereInput[]
+}
+
+export type BillItemCreateNestedManyWithoutBillInput = {
+  create?: Prisma.XOR<Prisma.BillItemCreateWithoutBillInput, Prisma.BillItemUncheckedCreateWithoutBillInput> | Prisma.BillItemCreateWithoutBillInput[] | Prisma.BillItemUncheckedCreateWithoutBillInput[]
+  connectOrCreate?: Prisma.BillItemCreateOrConnectWithoutBillInput | Prisma.BillItemCreateOrConnectWithoutBillInput[]
+  createMany?: Prisma.BillItemCreateManyBillInputEnvelope
+  connect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+}
+
+export type BillItemUncheckedCreateNestedManyWithoutBillInput = {
+  create?: Prisma.XOR<Prisma.BillItemCreateWithoutBillInput, Prisma.BillItemUncheckedCreateWithoutBillInput> | Prisma.BillItemCreateWithoutBillInput[] | Prisma.BillItemUncheckedCreateWithoutBillInput[]
+  connectOrCreate?: Prisma.BillItemCreateOrConnectWithoutBillInput | Prisma.BillItemCreateOrConnectWithoutBillInput[]
+  createMany?: Prisma.BillItemCreateManyBillInputEnvelope
+  connect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+}
+
+export type BillItemUpdateManyWithoutBillNestedInput = {
+  create?: Prisma.XOR<Prisma.BillItemCreateWithoutBillInput, Prisma.BillItemUncheckedCreateWithoutBillInput> | Prisma.BillItemCreateWithoutBillInput[] | Prisma.BillItemUncheckedCreateWithoutBillInput[]
+  connectOrCreate?: Prisma.BillItemCreateOrConnectWithoutBillInput | Prisma.BillItemCreateOrConnectWithoutBillInput[]
+  upsert?: Prisma.BillItemUpsertWithWhereUniqueWithoutBillInput | Prisma.BillItemUpsertWithWhereUniqueWithoutBillInput[]
+  createMany?: Prisma.BillItemCreateManyBillInputEnvelope
+  set?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  disconnect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  delete?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  connect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  update?: Prisma.BillItemUpdateWithWhereUniqueWithoutBillInput | Prisma.BillItemUpdateWithWhereUniqueWithoutBillInput[]
+  updateMany?: Prisma.BillItemUpdateManyWithWhereWithoutBillInput | Prisma.BillItemUpdateManyWithWhereWithoutBillInput[]
+  deleteMany?: Prisma.BillItemScalarWhereInput | Prisma.BillItemScalarWhereInput[]
+}
+
+export type BillItemUncheckedUpdateManyWithoutBillNestedInput = {
+  create?: Prisma.XOR<Prisma.BillItemCreateWithoutBillInput, Prisma.BillItemUncheckedCreateWithoutBillInput> | Prisma.BillItemCreateWithoutBillInput[] | Prisma.BillItemUncheckedCreateWithoutBillInput[]
+  connectOrCreate?: Prisma.BillItemCreateOrConnectWithoutBillInput | Prisma.BillItemCreateOrConnectWithoutBillInput[]
+  upsert?: Prisma.BillItemUpsertWithWhereUniqueWithoutBillInput | Prisma.BillItemUpsertWithWhereUniqueWithoutBillInput[]
+  createMany?: Prisma.BillItemCreateManyBillInputEnvelope
+  set?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  disconnect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  delete?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  connect?: Prisma.BillItemWhereUniqueInput | Prisma.BillItemWhereUniqueInput[]
+  update?: Prisma.BillItemUpdateWithWhereUniqueWithoutBillInput | Prisma.BillItemUpdateWithWhereUniqueWithoutBillInput[]
+  updateMany?: Prisma.BillItemUpdateManyWithWhereWithoutBillInput | Prisma.BillItemUpdateManyWithWhereWithoutBillInput[]
+  deleteMany?: Prisma.BillItemScalarWhereInput | Prisma.BillItemScalarWhereInput[]
+}
+
+export type FloatFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
+export type BillItemCreateWithoutProductInput = {
+  id?: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  bill: Prisma.BillCreateNestedOneWithoutBillItemsInput
+  batch: Prisma.BatchCreateNestedOneWithoutBillItemsInput
+}
+
+export type BillItemUncheckedCreateWithoutProductInput = {
+  id?: string
+  billId: string
+  batchId: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BillItemCreateOrConnectWithoutProductInput = {
+  where: Prisma.BillItemWhereUniqueInput
+  create: Prisma.XOR<Prisma.BillItemCreateWithoutProductInput, Prisma.BillItemUncheckedCreateWithoutProductInput>
+}
+
+export type BillItemCreateManyProductInputEnvelope = {
+  data: Prisma.BillItemCreateManyProductInput | Prisma.BillItemCreateManyProductInput[]
+  skipDuplicates?: boolean
+}
+
+export type BillItemUpsertWithWhereUniqueWithoutProductInput = {
+  where: Prisma.BillItemWhereUniqueInput
+  update: Prisma.XOR<Prisma.BillItemUpdateWithoutProductInput, Prisma.BillItemUncheckedUpdateWithoutProductInput>
+  create: Prisma.XOR<Prisma.BillItemCreateWithoutProductInput, Prisma.BillItemUncheckedCreateWithoutProductInput>
+}
+
+export type BillItemUpdateWithWhereUniqueWithoutProductInput = {
+  where: Prisma.BillItemWhereUniqueInput
+  data: Prisma.XOR<Prisma.BillItemUpdateWithoutProductInput, Prisma.BillItemUncheckedUpdateWithoutProductInput>
+}
+
+export type BillItemUpdateManyWithWhereWithoutProductInput = {
+  where: Prisma.BillItemScalarWhereInput
+  data: Prisma.XOR<Prisma.BillItemUpdateManyMutationInput, Prisma.BillItemUncheckedUpdateManyWithoutProductInput>
+}
+
+export type BillItemScalarWhereInput = {
+  AND?: Prisma.BillItemScalarWhereInput | Prisma.BillItemScalarWhereInput[]
+  OR?: Prisma.BillItemScalarWhereInput[]
+  NOT?: Prisma.BillItemScalarWhereInput | Prisma.BillItemScalarWhereInput[]
+  id?: Prisma.StringFilter<"BillItem"> | string
+  billId?: Prisma.StringFilter<"BillItem"> | string
+  productId?: Prisma.StringFilter<"BillItem"> | string
+  batchId?: Prisma.StringFilter<"BillItem"> | string
+  quantity?: Prisma.IntFilter<"BillItem"> | number
+  unitPrice?: Prisma.FloatFilter<"BillItem"> | number
+  total?: Prisma.FloatFilter<"BillItem"> | number
+  createdAt?: Prisma.DateTimeFilter<"BillItem"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"BillItem"> | Date | string
+}
+
+export type BillItemCreateWithoutBatchInput = {
+  id?: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  bill: Prisma.BillCreateNestedOneWithoutBillItemsInput
+  product: Prisma.ProductCreateNestedOneWithoutBillItemsInput
+}
+
+export type BillItemUncheckedCreateWithoutBatchInput = {
+  id?: string
+  billId: string
+  productId: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BillItemCreateOrConnectWithoutBatchInput = {
+  where: Prisma.BillItemWhereUniqueInput
+  create: Prisma.XOR<Prisma.BillItemCreateWithoutBatchInput, Prisma.BillItemUncheckedCreateWithoutBatchInput>
+}
+
+export type BillItemCreateManyBatchInputEnvelope = {
+  data: Prisma.BillItemCreateManyBatchInput | Prisma.BillItemCreateManyBatchInput[]
+  skipDuplicates?: boolean
+}
+
+export type BillItemUpsertWithWhereUniqueWithoutBatchInput = {
+  where: Prisma.BillItemWhereUniqueInput
+  update: Prisma.XOR<Prisma.BillItemUpdateWithoutBatchInput, Prisma.BillItemUncheckedUpdateWithoutBatchInput>
+  create: Prisma.XOR<Prisma.BillItemCreateWithoutBatchInput, Prisma.BillItemUncheckedCreateWithoutBatchInput>
+}
+
+export type BillItemUpdateWithWhereUniqueWithoutBatchInput = {
+  where: Prisma.BillItemWhereUniqueInput
+  data: Prisma.XOR<Prisma.BillItemUpdateWithoutBatchInput, Prisma.BillItemUncheckedUpdateWithoutBatchInput>
+}
+
+export type BillItemUpdateManyWithWhereWithoutBatchInput = {
+  where: Prisma.BillItemScalarWhereInput
+  data: Prisma.XOR<Prisma.BillItemUpdateManyMutationInput, Prisma.BillItemUncheckedUpdateManyWithoutBatchInput>
+}
+
+export type BillItemCreateWithoutBillInput = {
+  id?: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  product: Prisma.ProductCreateNestedOneWithoutBillItemsInput
+  batch: Prisma.BatchCreateNestedOneWithoutBillItemsInput
+}
+
+export type BillItemUncheckedCreateWithoutBillInput = {
+  id?: string
+  productId: string
+  batchId: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BillItemCreateOrConnectWithoutBillInput = {
+  where: Prisma.BillItemWhereUniqueInput
+  create: Prisma.XOR<Prisma.BillItemCreateWithoutBillInput, Prisma.BillItemUncheckedCreateWithoutBillInput>
+}
+
+export type BillItemCreateManyBillInputEnvelope = {
+  data: Prisma.BillItemCreateManyBillInput | Prisma.BillItemCreateManyBillInput[]
+  skipDuplicates?: boolean
+}
+
+export type BillItemUpsertWithWhereUniqueWithoutBillInput = {
+  where: Prisma.BillItemWhereUniqueInput
+  update: Prisma.XOR<Prisma.BillItemUpdateWithoutBillInput, Prisma.BillItemUncheckedUpdateWithoutBillInput>
+  create: Prisma.XOR<Prisma.BillItemCreateWithoutBillInput, Prisma.BillItemUncheckedCreateWithoutBillInput>
+}
+
+export type BillItemUpdateWithWhereUniqueWithoutBillInput = {
+  where: Prisma.BillItemWhereUniqueInput
+  data: Prisma.XOR<Prisma.BillItemUpdateWithoutBillInput, Prisma.BillItemUncheckedUpdateWithoutBillInput>
+}
+
+export type BillItemUpdateManyWithWhereWithoutBillInput = {
+  where: Prisma.BillItemScalarWhereInput
+  data: Prisma.XOR<Prisma.BillItemUpdateManyMutationInput, Prisma.BillItemUncheckedUpdateManyWithoutBillInput>
+}
+
+export type BillItemCreateManyProductInput = {
+  id?: string
+  billId: string
+  batchId: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BillItemUpdateWithoutProductInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bill?: Prisma.BillUpdateOneRequiredWithoutBillItemsNestedInput
+  batch?: Prisma.BatchUpdateOneRequiredWithoutBillItemsNestedInput
+}
+
+export type BillItemUncheckedUpdateWithoutProductInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  billId?: Prisma.StringFieldUpdateOperationsInput | string
+  batchId?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BillItemUncheckedUpdateManyWithoutProductInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  billId?: Prisma.StringFieldUpdateOperationsInput | string
+  batchId?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BillItemCreateManyBatchInput = {
+  id?: string
+  billId: string
+  productId: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BillItemUpdateWithoutBatchInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bill?: Prisma.BillUpdateOneRequiredWithoutBillItemsNestedInput
+  product?: Prisma.ProductUpdateOneRequiredWithoutBillItemsNestedInput
+}
+
+export type BillItemUncheckedUpdateWithoutBatchInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  billId?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BillItemUncheckedUpdateManyWithoutBatchInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  billId?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BillItemCreateManyBillInput = {
+  id?: string
+  productId: string
+  batchId: string
+  quantity: number
+  unitPrice: number
+  total: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type BillItemUpdateWithoutBillInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  product?: Prisma.ProductUpdateOneRequiredWithoutBillItemsNestedInput
+  batch?: Prisma.BatchUpdateOneRequiredWithoutBillItemsNestedInput
+}
+
+export type BillItemUncheckedUpdateWithoutBillInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.StringFieldUpdateOperationsInput | string
+  batchId?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type BillItemUncheckedUpdateManyWithoutBillInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.StringFieldUpdateOperationsInput | string
+  batchId?: Prisma.StringFieldUpdateOperationsInput | string
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number
+  total?: Prisma.FloatFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+
+
+export type BillItemSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  billId?: boolean
+  productId?: boolean
+  batchId?: boolean
+  quantity?: boolean
+  unitPrice?: boolean
+  total?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  bill?: boolean | Prisma.BillDefaultArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  batch?: boolean | Prisma.BatchDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["billItem"]>
+
+export type BillItemSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  billId?: boolean
+  productId?: boolean
+  batchId?: boolean
+  quantity?: boolean
+  unitPrice?: boolean
+  total?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  bill?: boolean | Prisma.BillDefaultArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  batch?: boolean | Prisma.BatchDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["billItem"]>
+
+export type BillItemSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  billId?: boolean
+  productId?: boolean
+  batchId?: boolean
+  quantity?: boolean
+  unitPrice?: boolean
+  total?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  bill?: boolean | Prisma.BillDefaultArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  batch?: boolean | Prisma.BatchDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["billItem"]>
+
+export type BillItemSelectScalar = {
+  id?: boolean
+  billId?: boolean
+  productId?: boolean
+  batchId?: boolean
+  quantity?: boolean
+  unitPrice?: boolean
+  total?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+}
+
+export type BillItemOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "billId" | "productId" | "batchId" | "quantity" | "unitPrice" | "total" | "createdAt" | "updatedAt", ExtArgs["result"]["billItem"]>
+export type BillItemInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  bill?: boolean | Prisma.BillDefaultArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  batch?: boolean | Prisma.BatchDefaultArgs<ExtArgs>
+}
+export type BillItemIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  bill?: boolean | Prisma.BillDefaultArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  batch?: boolean | Prisma.BatchDefaultArgs<ExtArgs>
+}
+export type BillItemIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  bill?: boolean | Prisma.BillDefaultArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  batch?: boolean | Prisma.BatchDefaultArgs<ExtArgs>
+}
+
+export type $BillItemPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "BillItem"
+  objects: {
+    bill: Prisma.$BillPayload<ExtArgs>
+    product: Prisma.$ProductPayload<ExtArgs>
+    batch: Prisma.$BatchPayload<ExtArgs>
+  }
+  scalars: runtime.Types.Extensions.GetPayloadResult<{
+    id: string
+    billId: string
+    productId: string
+    batchId: string
+    quantity: number
+    unitPrice: number
+    total: number
+    createdAt: Date
+    updatedAt: Date
+  }, ExtArgs["result"]["billItem"]>
+  composites: {}
+}
+
+export type BillItemGetPayload<S extends boolean | null | undefined | BillItemDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$BillItemPayload, S>
+
+export type BillItemCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<BillItemFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: BillItemCountAggregateInputType | true
+  }
+
+export interface BillItemDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BillItem'], meta: { name: 'BillItem' } }
+  /**
+   * Find zero or one BillItem that matches the filter.
+   * @param {BillItemFindUniqueArgs} args - Arguments to find a BillItem
+   * @example
+   * // Get one BillItem
+   * const billItem = await prisma.billItem.findUnique({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findUnique<T extends BillItemFindUniqueArgs>(args: Prisma.SelectSubset<T, BillItemFindUniqueArgs<ExtArgs>>): Prisma.Prisma__BillItemClient<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find one BillItem that matches the filter or throw an error with `error.code='P2025'`
+   * if no matches were found.
+   * @param {BillItemFindUniqueOrThrowArgs} args - Arguments to find a BillItem
+   * @example
+   * // Get one BillItem
+   * const billItem = await prisma.billItem.findUniqueOrThrow({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findUniqueOrThrow<T extends BillItemFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, BillItemFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__BillItemClient<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find the first BillItem that matches the filter.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillItemFindFirstArgs} args - Arguments to find a BillItem
+   * @example
+   * // Get one BillItem
+   * const billItem = await prisma.billItem.findFirst({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findFirst<T extends BillItemFindFirstArgs>(args?: Prisma.SelectSubset<T, BillItemFindFirstArgs<ExtArgs>>): Prisma.Prisma__BillItemClient<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find the first BillItem that matches the filter or
+   * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillItemFindFirstOrThrowArgs} args - Arguments to find a BillItem
+   * @example
+   * // Get one BillItem
+   * const billItem = await prisma.billItem.findFirstOrThrow({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findFirstOrThrow<T extends BillItemFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, BillItemFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__BillItemClient<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find zero or more BillItems that matches the filter.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillItemFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @example
+   * // Get all BillItems
+   * const billItems = await prisma.billItem.findMany()
+   * 
+   * // Get first 10 BillItems
+   * const billItems = await prisma.billItem.findMany({ take: 10 })
+   * 
+   * // Only select the `id`
+   * const billItemWithIdOnly = await prisma.billItem.findMany({ select: { id: true } })
+   * 
+   */
+  findMany<T extends BillItemFindManyArgs>(args?: Prisma.SelectSubset<T, BillItemFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+  /**
+   * Create a BillItem.
+   * @param {BillItemCreateArgs} args - Arguments to create a BillItem.
+   * @example
+   * // Create one BillItem
+   * const BillItem = await prisma.billItem.create({
+   *   data: {
+   *     // ... data to create a BillItem
+   *   }
+   * })
+   * 
+   */
+  create<T extends BillItemCreateArgs>(args: Prisma.SelectSubset<T, BillItemCreateArgs<ExtArgs>>): Prisma.Prisma__BillItemClient<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Create many BillItems.
+   * @param {BillItemCreateManyArgs} args - Arguments to create many BillItems.
+   * @example
+   * // Create many BillItems
+   * const billItem = await prisma.billItem.createMany({
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   *     
+   */
+  createMany<T extends BillItemCreateManyArgs>(args?: Prisma.SelectSubset<T, BillItemCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Create many BillItems and returns the data saved in the database.
+   * @param {BillItemCreateManyAndReturnArgs} args - Arguments to create many BillItems.
+   * @example
+   * // Create many BillItems
+   * const billItem = await prisma.billItem.createManyAndReturn({
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * 
+   * // Create many BillItems and only return the `id`
+   * const billItemWithIdOnly = await prisma.billItem.createManyAndReturn({
+   *   select: { id: true },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * 
+   */
+  createManyAndReturn<T extends BillItemCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, BillItemCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+  /**
+   * Delete a BillItem.
+   * @param {BillItemDeleteArgs} args - Arguments to delete one BillItem.
+   * @example
+   * // Delete one BillItem
+   * const BillItem = await prisma.billItem.delete({
+   *   where: {
+   *     // ... filter to delete one BillItem
+   *   }
+   * })
+   * 
+   */
+  delete<T extends BillItemDeleteArgs>(args: Prisma.SelectSubset<T, BillItemDeleteArgs<ExtArgs>>): Prisma.Prisma__BillItemClient<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Update one BillItem.
+   * @param {BillItemUpdateArgs} args - Arguments to update one BillItem.
+   * @example
+   * // Update one BillItem
+   * const billItem = await prisma.billItem.update({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: {
+   *     // ... provide data here
+   *   }
+   * })
+   * 
+   */
+  update<T extends BillItemUpdateArgs>(args: Prisma.SelectSubset<T, BillItemUpdateArgs<ExtArgs>>): Prisma.Prisma__BillItemClient<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Delete zero or more BillItems.
+   * @param {BillItemDeleteManyArgs} args - Arguments to filter BillItems to delete.
+   * @example
+   * // Delete a few BillItems
+   * const { count } = await prisma.billItem.deleteMany({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   * 
+   */
+  deleteMany<T extends BillItemDeleteManyArgs>(args?: Prisma.SelectSubset<T, BillItemDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Update zero or more BillItems.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillItemUpdateManyArgs} args - Arguments to update one or more rows.
+   * @example
+   * // Update many BillItems
+   * const billItem = await prisma.billItem.updateMany({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: {
+   *     // ... provide data here
+   *   }
+   * })
+   * 
+   */
+  updateMany<T extends BillItemUpdateManyArgs>(args: Prisma.SelectSubset<T, BillItemUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Update zero or more BillItems and returns the data updated in the database.
+   * @param {BillItemUpdateManyAndReturnArgs} args - Arguments to update many BillItems.
+   * @example
+   * // Update many BillItems
+   * const billItem = await prisma.billItem.updateManyAndReturn({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * 
+   * // Update zero or more BillItems and only return the `id`
+   * const billItemWithIdOnly = await prisma.billItem.updateManyAndReturn({
+   *   select: { id: true },
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * 
+   */
+  updateManyAndReturn<T extends BillItemUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, BillItemUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+  /**
+   * Create or update one BillItem.
+   * @param {BillItemUpsertArgs} args - Arguments to update or create a BillItem.
+   * @example
+   * // Update or create a BillItem
+   * const billItem = await prisma.billItem.upsert({
+   *   create: {
+   *     // ... data to create a BillItem
+   *   },
+   *   update: {
+   *     // ... in case it already exists, update
+   *   },
+   *   where: {
+   *     // ... the filter for the BillItem we want to update
+   *   }
+   * })
+   */
+  upsert<T extends BillItemUpsertArgs>(args: Prisma.SelectSubset<T, BillItemUpsertArgs<ExtArgs>>): Prisma.Prisma__BillItemClient<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+  /**
+   * Count the number of BillItems.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillItemCountArgs} args - Arguments to filter BillItems to count.
+   * @example
+   * // Count the number of BillItems
+   * const count = await prisma.billItem.count({
+   *   where: {
+   *     // ... the filter for the BillItems we want to count
+   *   }
+   * })
+  **/
+  count<T extends BillItemCountArgs>(
+    args?: Prisma.Subset<T, BillItemCountArgs>,
+  ): Prisma.PrismaPromise<
+    T extends runtime.Types.Utils.Record<'select', any>
+      ? T['select'] extends true
+        ? number
+        : Prisma.GetScalarType<T['select'], BillItemCountAggregateOutputType>
+      : number
+  >
+
+  /**
+   * Allows you to perform aggregations operations on a BillItem.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillItemAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @example
+   * // Ordered by age ascending
+   * // Where email contains prisma.io
+   * // Limited to the 10 users
+   * const aggregations = await prisma.user.aggregate({
+   *   _avg: {
+   *     age: true,
+   *   },
+   *   where: {
+   *     email: {
+   *       contains: "prisma.io",
+   *     },
+   *   },
+   *   orderBy: {
+   *     age: "asc",
+   *   },
+   *   take: 10,
+   * })
+  **/
+  aggregate<T extends BillItemAggregateArgs>(args: Prisma.Subset<T, BillItemAggregateArgs>): Prisma.PrismaPromise<GetBillItemAggregateType<T>>
+
+  /**
+   * Group by BillItem.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {BillItemGroupByArgs} args - Group by arguments.
+   * @example
+   * // Group by city, order by createdAt, get count
+   * const result = await prisma.user.groupBy({
+   *   by: ['city', 'createdAt'],
+   *   orderBy: {
+   *     createdAt: true
+   *   },
+   *   _count: {
+   *     _all: true
+   *   },
+   * })
+   * 
+  **/
+  groupBy<
+    T extends BillItemGroupByArgs,
+    HasSelectOrTake extends Prisma.Or<
+      Prisma.Extends<'skip', Prisma.Keys<T>>,
+      Prisma.Extends<'take', Prisma.Keys<T>>
+    >,
+    OrderByArg extends Prisma.True extends HasSelectOrTake
+      ? { orderBy: BillItemGroupByArgs['orderBy'] }
+      : { orderBy?: BillItemGroupByArgs['orderBy'] },
+    OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
+    ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
+    ByValid extends Prisma.Has<ByFields, OrderFields>,
+    HavingFields extends Prisma.GetHavingFields<T['having']>,
+    HavingValid extends Prisma.Has<ByFields, HavingFields>,
+    ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False,
+    InputErrors extends ByEmpty extends Prisma.True
+    ? `Error: "by" must not be empty.`
+    : HavingValid extends Prisma.False
+    ? {
+        [P in HavingFields]: P extends ByFields
+          ? never
+          : P extends string
+          ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+          : [
+              Error,
+              'Field ',
+              P,
+              ` in "having" needs to be provided in "by"`,
+            ]
+      }[HavingFields]
+    : 'take' extends Prisma.Keys<T>
+    ? 'orderBy' extends Prisma.Keys<T>
+      ? ByValid extends Prisma.True
+        ? {}
+        : {
+            [P in OrderFields]: P extends ByFields
+              ? never
+              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+          }[OrderFields]
+      : 'Error: If you provide "take", you also need to provide "orderBy"'
+    : 'skip' extends Prisma.Keys<T>
+    ? 'orderBy' extends Prisma.Keys<T>
+      ? ByValid extends Prisma.True
+        ? {}
+        : {
+            [P in OrderFields]: P extends ByFields
+              ? never
+              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+          }[OrderFields]
+      : 'Error: If you provide "skip", you also need to provide "orderBy"'
+    : ByValid extends Prisma.True
+    ? {}
+    : {
+        [P in OrderFields]: P extends ByFields
+          ? never
+          : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+      }[OrderFields]
+  >(args: Prisma.SubsetIntersection<T, BillItemGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBillItemGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+/**
+ * Fields of the BillItem model
+ */
+readonly fields: BillItemFieldRefs;
+}
+
+/**
+ * The delegate class that acts as a "Promise-like" for BillItem.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__BillItemClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  readonly [Symbol.toStringTag]: "PrismaPromise"
+  bill<T extends Prisma.BillDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.BillDefaultArgs<ExtArgs>>): Prisma.Prisma__BillClient<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  product<T extends Prisma.ProductDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProductDefaultArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  batch<T extends Prisma.BatchDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.BatchDefaultArgs<ExtArgs>>): Prisma.Prisma__BatchClient<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  /**
+   * Attaches callbacks for the resolution and/or rejection of the Promise.
+   * @param onfulfilled The callback to execute when the Promise is resolved.
+   * @param onrejected The callback to execute when the Promise is rejected.
+   * @returns A Promise for the completion of which ever callback is executed.
+   */
+  then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>
+  /**
+   * Attaches a callback for only the rejection of the Promise.
+   * @param onrejected The callback to execute when the Promise is rejected.
+   * @returns A Promise for the completion of the callback.
+   */
+  catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>
+  /**
+   * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+   * resolved value cannot be modified from the callback.
+   * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+   * @returns A Promise for the completion of the callback.
+   */
+  finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>
+}
+
+
+
+
+/**
+ * Fields of the BillItem model
+ */
+export interface BillItemFieldRefs {
+  readonly id: Prisma.FieldRef<"BillItem", 'String'>
+  readonly billId: Prisma.FieldRef<"BillItem", 'String'>
+  readonly productId: Prisma.FieldRef<"BillItem", 'String'>
+  readonly batchId: Prisma.FieldRef<"BillItem", 'String'>
+  readonly quantity: Prisma.FieldRef<"BillItem", 'Int'>
+  readonly unitPrice: Prisma.FieldRef<"BillItem", 'Float'>
+  readonly total: Prisma.FieldRef<"BillItem", 'Float'>
+  readonly createdAt: Prisma.FieldRef<"BillItem", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"BillItem", 'DateTime'>
+}
+    
+
+// Custom InputTypes
+/**
+ * BillItem findUnique
+ */
+export type BillItemFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+  /**
+   * Filter, which BillItem to fetch.
+   */
+  where: Prisma.BillItemWhereUniqueInput
+}
+
+/**
+ * BillItem findUniqueOrThrow
+ */
+export type BillItemFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+  /**
+   * Filter, which BillItem to fetch.
+   */
+  where: Prisma.BillItemWhereUniqueInput
+}
+
+/**
+ * BillItem findFirst
+ */
+export type BillItemFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+  /**
+   * Filter, which BillItem to fetch.
+   */
+  where?: Prisma.BillItemWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of BillItems to fetch.
+   */
+  orderBy?: Prisma.BillItemOrderByWithRelationInput | Prisma.BillItemOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for searching for BillItems.
+   */
+  cursor?: Prisma.BillItemWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` BillItems from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` BillItems.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of BillItems.
+   */
+  distinct?: Prisma.BillItemScalarFieldEnum | Prisma.BillItemScalarFieldEnum[]
+}
+
+/**
+ * BillItem findFirstOrThrow
+ */
+export type BillItemFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+  /**
+   * Filter, which BillItem to fetch.
+   */
+  where?: Prisma.BillItemWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of BillItems to fetch.
+   */
+  orderBy?: Prisma.BillItemOrderByWithRelationInput | Prisma.BillItemOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for searching for BillItems.
+   */
+  cursor?: Prisma.BillItemWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` BillItems from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` BillItems.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of BillItems.
+   */
+  distinct?: Prisma.BillItemScalarFieldEnum | Prisma.BillItemScalarFieldEnum[]
+}
+
+/**
+ * BillItem findMany
+ */
+export type BillItemFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+  /**
+   * Filter, which BillItems to fetch.
+   */
+  where?: Prisma.BillItemWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of BillItems to fetch.
+   */
+  orderBy?: Prisma.BillItemOrderByWithRelationInput | Prisma.BillItemOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for listing BillItems.
+   */
+  cursor?: Prisma.BillItemWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` BillItems from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` BillItems.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of BillItems.
+   */
+  distinct?: Prisma.BillItemScalarFieldEnum | Prisma.BillItemScalarFieldEnum[]
+}
+
+/**
+ * BillItem create
+ */
+export type BillItemCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+  /**
+   * The data needed to create a BillItem.
+   */
+  data: Prisma.XOR<Prisma.BillItemCreateInput, Prisma.BillItemUncheckedCreateInput>
+}
+
+/**
+ * BillItem createMany
+ */
+export type BillItemCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * The data used to create many BillItems.
+   */
+  data: Prisma.BillItemCreateManyInput | Prisma.BillItemCreateManyInput[]
+  skipDuplicates?: boolean
+}
+
+/**
+ * BillItem createManyAndReturn
+ */
+export type BillItemCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelectCreateManyAndReturn<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * The data used to create many BillItems.
+   */
+  data: Prisma.BillItemCreateManyInput | Prisma.BillItemCreateManyInput[]
+  skipDuplicates?: boolean
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemIncludeCreateManyAndReturn<ExtArgs> | null
+}
+
+/**
+ * BillItem update
+ */
+export type BillItemUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+  /**
+   * The data needed to update a BillItem.
+   */
+  data: Prisma.XOR<Prisma.BillItemUpdateInput, Prisma.BillItemUncheckedUpdateInput>
+  /**
+   * Choose, which BillItem to update.
+   */
+  where: Prisma.BillItemWhereUniqueInput
+}
+
+/**
+ * BillItem updateMany
+ */
+export type BillItemUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * The data used to update BillItems.
+   */
+  data: Prisma.XOR<Prisma.BillItemUpdateManyMutationInput, Prisma.BillItemUncheckedUpdateManyInput>
+  /**
+   * Filter which BillItems to update
+   */
+  where?: Prisma.BillItemWhereInput
+  /**
+   * Limit how many BillItems to update.
+   */
+  limit?: number
+}
+
+/**
+ * BillItem updateManyAndReturn
+ */
+export type BillItemUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelectUpdateManyAndReturn<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * The data used to update BillItems.
+   */
+  data: Prisma.XOR<Prisma.BillItemUpdateManyMutationInput, Prisma.BillItemUncheckedUpdateManyInput>
+  /**
+   * Filter which BillItems to update
+   */
+  where?: Prisma.BillItemWhereInput
+  /**
+   * Limit how many BillItems to update.
+   */
+  limit?: number
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemIncludeUpdateManyAndReturn<ExtArgs> | null
+}
+
+/**
+ * BillItem upsert
+ */
+export type BillItemUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+  /**
+   * The filter to search for the BillItem to update in case it exists.
+   */
+  where: Prisma.BillItemWhereUniqueInput
+  /**
+   * In case the BillItem found by the `where` argument doesn't exist, create a new BillItem with this data.
+   */
+  create: Prisma.XOR<Prisma.BillItemCreateInput, Prisma.BillItemUncheckedCreateInput>
+  /**
+   * In case the BillItem was found with the provided `where` argument, update it with this data.
+   */
+  update: Prisma.XOR<Prisma.BillItemUpdateInput, Prisma.BillItemUncheckedUpdateInput>
+}
+
+/**
+ * BillItem delete
+ */
+export type BillItemDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+  /**
+   * Filter which BillItem to delete.
+   */
+  where: Prisma.BillItemWhereUniqueInput
+}
+
+/**
+ * BillItem deleteMany
+ */
+export type BillItemDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Filter which BillItems to delete
+   */
+  where?: Prisma.BillItemWhereInput
+  /**
+   * Limit how many BillItems to delete.
+   */
+  limit?: number
+}
+
+/**
+ * BillItem without action
+ */
+export type BillItemDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+}
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-models-category-ts"></a>📄 `src/generated/prisma/models/Category.ts`
+
+**File Info:**
+- **Size**: 55.16 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/models/Category.ts`
+- **Relative Path**: `src/generated/prisma/models`
+- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `256faf5623b33d74c9da0bf3c75135a9`
+- **SHA256**: `b17026f6e340fffc367762a67352d2261b1fb1b0023dd13ba0c9ad4cdc791b8e`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * This file exports the `Category` model and its related types.
+ *
+ * 🟢 You can import this file directly.
+ */
+import type * as runtime from "@prisma/client/runtime/client"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
+
+/**
+ * Model Category
+ * 
+ */
+export type CategoryModel = runtime.Types.Result.DefaultSelection<Prisma.$CategoryPayload>
+
+export type AggregateCategory = {
+  _count: CategoryCountAggregateOutputType | null
+  _min: CategoryMinAggregateOutputType | null
+  _max: CategoryMaxAggregateOutputType | null
+}
+
+export type CategoryMinAggregateOutputType = {
+  id: string | null
+  name: string | null
+  shortName: string | null
+  userId: string | null
+  createdAt: Date | null
+  updatedAt: Date | null
+}
+
+export type CategoryMaxAggregateOutputType = {
+  id: string | null
+  name: string | null
+  shortName: string | null
+  userId: string | null
+  createdAt: Date | null
+  updatedAt: Date | null
+}
+
+export type CategoryCountAggregateOutputType = {
+  id: number
+  name: number
+  shortName: number
+  userId: number
+  createdAt: number
+  updatedAt: number
+  _all: number
+}
+
+
+export type CategoryMinAggregateInputType = {
+  id?: true
+  name?: true
+  shortName?: true
+  userId?: true
+  createdAt?: true
+  updatedAt?: true
+}
+
+export type CategoryMaxAggregateInputType = {
+  id?: true
+  name?: true
+  shortName?: true
+  userId?: true
+  createdAt?: true
+  updatedAt?: true
+}
+
+export type CategoryCountAggregateInputType = {
+  id?: true
+  name?: true
+  shortName?: true
+  userId?: true
+  createdAt?: true
+  updatedAt?: true
+  _all?: true
+}
+
+export type CategoryAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Filter which Category to aggregate.
+   */
+  where?: Prisma.CategoryWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Categories to fetch.
+   */
+  orderBy?: Prisma.CategoryOrderByWithRelationInput | Prisma.CategoryOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the start position
+   */
+  cursor?: Prisma.CategoryWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Categories from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Categories.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Count returned Categories
+  **/
+  _count?: true | CategoryCountAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to find the minimum value
+  **/
+  _min?: CategoryMinAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to find the maximum value
+  **/
+  _max?: CategoryMaxAggregateInputType
+}
+
+export type GetCategoryAggregateType<T extends CategoryAggregateArgs> = {
+      [P in keyof T & keyof AggregateCategory]: P extends '_count' | 'count'
+    ? T[P] extends true
+      ? number
+      : Prisma.GetScalarType<T[P], AggregateCategory[P]>
+    : Prisma.GetScalarType<T[P], AggregateCategory[P]>
+}
+
+
+
+
+export type CategoryGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CategoryWhereInput
+  orderBy?: Prisma.CategoryOrderByWithAggregationInput | Prisma.CategoryOrderByWithAggregationInput[]
+  by: Prisma.CategoryScalarFieldEnum[] | Prisma.CategoryScalarFieldEnum
+  having?: Prisma.CategoryScalarWhereWithAggregatesInput
+  take?: number
+  skip?: number
+  _count?: CategoryCountAggregateInputType | true
+  _min?: CategoryMinAggregateInputType
+  _max?: CategoryMaxAggregateInputType
+}
+
+export type CategoryGroupByOutputType = {
+  id: string
+  name: string
+  shortName: string
+  userId: string
+  createdAt: Date
+  updatedAt: Date
+  _count: CategoryCountAggregateOutputType | null
+  _min: CategoryMinAggregateOutputType | null
+  _max: CategoryMaxAggregateOutputType | null
+}
+
+export type GetCategoryGroupByPayload<T extends CategoryGroupByArgs> = Prisma.PrismaPromise<
+  Array<
+    Prisma.PickEnumerable<CategoryGroupByOutputType, T['by']> &
+      {
+        [P in ((keyof T) & (keyof CategoryGroupByOutputType))]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : Prisma.GetScalarType<T[P], CategoryGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], CategoryGroupByOutputType[P]>
+      }
+    >
+  >
+
+
+
+export type CategoryWhereInput = {
+  AND?: Prisma.CategoryWhereInput | Prisma.CategoryWhereInput[]
+  OR?: Prisma.CategoryWhereInput[]
+  NOT?: Prisma.CategoryWhereInput | Prisma.CategoryWhereInput[]
+  id?: Prisma.StringFilter<"Category"> | string
+  name?: Prisma.StringFilter<"Category"> | string
+  shortName?: Prisma.StringFilter<"Category"> | string
+  userId?: Prisma.StringFilter<"Category"> | string
+  createdAt?: Prisma.DateTimeFilter<"Category"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Category"> | Date | string
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  products?: Prisma.ProductListRelationFilter
+}
+
+export type CategoryOrderByWithRelationInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  shortName?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  user?: Prisma.UserOrderByWithRelationInput
+  products?: Prisma.ProductOrderByRelationAggregateInput
+}
+
+export type CategoryWhereUniqueInput = Prisma.AtLeast<{
+  id?: string
+  userId_name?: Prisma.CategoryUserIdNameCompoundUniqueInput
+  userId_shortName?: Prisma.CategoryUserIdShortNameCompoundUniqueInput
+  AND?: Prisma.CategoryWhereInput | Prisma.CategoryWhereInput[]
+  OR?: Prisma.CategoryWhereInput[]
+  NOT?: Prisma.CategoryWhereInput | Prisma.CategoryWhereInput[]
+  name?: Prisma.StringFilter<"Category"> | string
+  shortName?: Prisma.StringFilter<"Category"> | string
+  userId?: Prisma.StringFilter<"Category"> | string
+  createdAt?: Prisma.DateTimeFilter<"Category"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Category"> | Date | string
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  products?: Prisma.ProductListRelationFilter
+}, "id" | "userId_name" | "userId_shortName">
+
+export type CategoryOrderByWithAggregationInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  shortName?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  _count?: Prisma.CategoryCountOrderByAggregateInput
+  _max?: Prisma.CategoryMaxOrderByAggregateInput
+  _min?: Prisma.CategoryMinOrderByAggregateInput
+}
+
+export type CategoryScalarWhereWithAggregatesInput = {
+  AND?: Prisma.CategoryScalarWhereWithAggregatesInput | Prisma.CategoryScalarWhereWithAggregatesInput[]
+  OR?: Prisma.CategoryScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.CategoryScalarWhereWithAggregatesInput | Prisma.CategoryScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"Category"> | string
+  name?: Prisma.StringWithAggregatesFilter<"Category"> | string
+  shortName?: Prisma.StringWithAggregatesFilter<"Category"> | string
+  userId?: Prisma.StringWithAggregatesFilter<"Category"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Category"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Category"> | Date | string
+}
+
+export type CategoryCreateInput = {
+  id?: string
+  name: string
+  shortName: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  user: Prisma.UserCreateNestedOneWithoutCategoriesInput
+  products?: Prisma.ProductCreateNestedManyWithoutCategoryInput
+}
+
+export type CategoryUncheckedCreateInput = {
+  id?: string
+  name: string
+  shortName: string
+  userId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutCategoryInput
+}
+
+export type CategoryUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateOneRequiredWithoutCategoriesNestedInput
+  products?: Prisma.ProductUpdateManyWithoutCategoryNestedInput
+}
+
+export type CategoryUncheckedUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  products?: Prisma.ProductUncheckedUpdateManyWithoutCategoryNestedInput
+}
+
+export type CategoryCreateManyInput = {
+  id?: string
+  name: string
+  shortName: string
+  userId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type CategoryUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type CategoryUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type CategoryListRelationFilter = {
+  every?: Prisma.CategoryWhereInput
+  some?: Prisma.CategoryWhereInput
+  none?: Prisma.CategoryWhereInput
+}
+
+export type CategoryOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
+}
+
+export type CategoryUserIdNameCompoundUniqueInput = {
+  userId: string
+  name: string
+}
+
+export type CategoryUserIdShortNameCompoundUniqueInput = {
+  userId: string
+  shortName: string
+}
+
+export type CategoryCountOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  shortName?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type CategoryMaxOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  shortName?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type CategoryMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  shortName?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type CategoryScalarRelationFilter = {
+  is?: Prisma.CategoryWhereInput
+  isNot?: Prisma.CategoryWhereInput
+}
+
+export type CategoryCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.CategoryCreateWithoutUserInput, Prisma.CategoryUncheckedCreateWithoutUserInput> | Prisma.CategoryCreateWithoutUserInput[] | Prisma.CategoryUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.CategoryCreateOrConnectWithoutUserInput | Prisma.CategoryCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.CategoryCreateManyUserInputEnvelope
+  connect?: Prisma.CategoryWhereUniqueInput | Prisma.CategoryWhereUniqueInput[]
+}
+
+export type CategoryUncheckedCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.CategoryCreateWithoutUserInput, Prisma.CategoryUncheckedCreateWithoutUserInput> | Prisma.CategoryCreateWithoutUserInput[] | Prisma.CategoryUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.CategoryCreateOrConnectWithoutUserInput | Prisma.CategoryCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.CategoryCreateManyUserInputEnvelope
+  connect?: Prisma.CategoryWhereUniqueInput | Prisma.CategoryWhereUniqueInput[]
+}
+
+export type CategoryUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.CategoryCreateWithoutUserInput, Prisma.CategoryUncheckedCreateWithoutUserInput> | Prisma.CategoryCreateWithoutUserInput[] | Prisma.CategoryUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.CategoryCreateOrConnectWithoutUserInput | Prisma.CategoryCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.CategoryUpsertWithWhereUniqueWithoutUserInput | Prisma.CategoryUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.CategoryCreateManyUserInputEnvelope
+  set?: Prisma.CategoryWhereUniqueInput | Prisma.CategoryWhereUniqueInput[]
+  disconnect?: Prisma.CategoryWhereUniqueInput | Prisma.CategoryWhereUniqueInput[]
+  delete?: Prisma.CategoryWhereUniqueInput | Prisma.CategoryWhereUniqueInput[]
+  connect?: Prisma.CategoryWhereUniqueInput | Prisma.CategoryWhereUniqueInput[]
+  update?: Prisma.CategoryUpdateWithWhereUniqueWithoutUserInput | Prisma.CategoryUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.CategoryUpdateManyWithWhereWithoutUserInput | Prisma.CategoryUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.CategoryScalarWhereInput | Prisma.CategoryScalarWhereInput[]
+}
+
+export type CategoryUncheckedUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.CategoryCreateWithoutUserInput, Prisma.CategoryUncheckedCreateWithoutUserInput> | Prisma.CategoryCreateWithoutUserInput[] | Prisma.CategoryUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.CategoryCreateOrConnectWithoutUserInput | Prisma.CategoryCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.CategoryUpsertWithWhereUniqueWithoutUserInput | Prisma.CategoryUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.CategoryCreateManyUserInputEnvelope
+  set?: Prisma.CategoryWhereUniqueInput | Prisma.CategoryWhereUniqueInput[]
+  disconnect?: Prisma.CategoryWhereUniqueInput | Prisma.CategoryWhereUniqueInput[]
+  delete?: Prisma.CategoryWhereUniqueInput | Prisma.CategoryWhereUniqueInput[]
+  connect?: Prisma.CategoryWhereUniqueInput | Prisma.CategoryWhereUniqueInput[]
+  update?: Prisma.CategoryUpdateWithWhereUniqueWithoutUserInput | Prisma.CategoryUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.CategoryUpdateManyWithWhereWithoutUserInput | Prisma.CategoryUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.CategoryScalarWhereInput | Prisma.CategoryScalarWhereInput[]
+}
+
+export type CategoryCreateNestedOneWithoutProductsInput = {
+  create?: Prisma.XOR<Prisma.CategoryCreateWithoutProductsInput, Prisma.CategoryUncheckedCreateWithoutProductsInput>
+  connectOrCreate?: Prisma.CategoryCreateOrConnectWithoutProductsInput
+  connect?: Prisma.CategoryWhereUniqueInput
+}
+
+export type CategoryUpdateOneRequiredWithoutProductsNestedInput = {
+  create?: Prisma.XOR<Prisma.CategoryCreateWithoutProductsInput, Prisma.CategoryUncheckedCreateWithoutProductsInput>
+  connectOrCreate?: Prisma.CategoryCreateOrConnectWithoutProductsInput
+  upsert?: Prisma.CategoryUpsertWithoutProductsInput
+  connect?: Prisma.CategoryWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.CategoryUpdateToOneWithWhereWithoutProductsInput, Prisma.CategoryUpdateWithoutProductsInput>, Prisma.CategoryUncheckedUpdateWithoutProductsInput>
+}
+
+export type CategoryCreateWithoutUserInput = {
+  id?: string
+  name: string
+  shortName: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  products?: Prisma.ProductCreateNestedManyWithoutCategoryInput
+}
+
+export type CategoryUncheckedCreateWithoutUserInput = {
+  id?: string
+  name: string
+  shortName: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutCategoryInput
+}
+
+export type CategoryCreateOrConnectWithoutUserInput = {
+  where: Prisma.CategoryWhereUniqueInput
+  create: Prisma.XOR<Prisma.CategoryCreateWithoutUserInput, Prisma.CategoryUncheckedCreateWithoutUserInput>
+}
+
+export type CategoryCreateManyUserInputEnvelope = {
+  data: Prisma.CategoryCreateManyUserInput | Prisma.CategoryCreateManyUserInput[]
+  skipDuplicates?: boolean
+}
+
+export type CategoryUpsertWithWhereUniqueWithoutUserInput = {
+  where: Prisma.CategoryWhereUniqueInput
+  update: Prisma.XOR<Prisma.CategoryUpdateWithoutUserInput, Prisma.CategoryUncheckedUpdateWithoutUserInput>
+  create: Prisma.XOR<Prisma.CategoryCreateWithoutUserInput, Prisma.CategoryUncheckedCreateWithoutUserInput>
+}
+
+export type CategoryUpdateWithWhereUniqueWithoutUserInput = {
+  where: Prisma.CategoryWhereUniqueInput
+  data: Prisma.XOR<Prisma.CategoryUpdateWithoutUserInput, Prisma.CategoryUncheckedUpdateWithoutUserInput>
+}
+
+export type CategoryUpdateManyWithWhereWithoutUserInput = {
+  where: Prisma.CategoryScalarWhereInput
+  data: Prisma.XOR<Prisma.CategoryUpdateManyMutationInput, Prisma.CategoryUncheckedUpdateManyWithoutUserInput>
+}
+
+export type CategoryScalarWhereInput = {
+  AND?: Prisma.CategoryScalarWhereInput | Prisma.CategoryScalarWhereInput[]
+  OR?: Prisma.CategoryScalarWhereInput[]
+  NOT?: Prisma.CategoryScalarWhereInput | Prisma.CategoryScalarWhereInput[]
+  id?: Prisma.StringFilter<"Category"> | string
+  name?: Prisma.StringFilter<"Category"> | string
+  shortName?: Prisma.StringFilter<"Category"> | string
+  userId?: Prisma.StringFilter<"Category"> | string
+  createdAt?: Prisma.DateTimeFilter<"Category"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Category"> | Date | string
+}
+
+export type CategoryCreateWithoutProductsInput = {
+  id?: string
+  name: string
+  shortName: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  user: Prisma.UserCreateNestedOneWithoutCategoriesInput
+}
+
+export type CategoryUncheckedCreateWithoutProductsInput = {
+  id?: string
+  name: string
+  shortName: string
+  userId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type CategoryCreateOrConnectWithoutProductsInput = {
+  where: Prisma.CategoryWhereUniqueInput
+  create: Prisma.XOR<Prisma.CategoryCreateWithoutProductsInput, Prisma.CategoryUncheckedCreateWithoutProductsInput>
+}
+
+export type CategoryUpsertWithoutProductsInput = {
+  update: Prisma.XOR<Prisma.CategoryUpdateWithoutProductsInput, Prisma.CategoryUncheckedUpdateWithoutProductsInput>
+  create: Prisma.XOR<Prisma.CategoryCreateWithoutProductsInput, Prisma.CategoryUncheckedCreateWithoutProductsInput>
+  where?: Prisma.CategoryWhereInput
+}
+
+export type CategoryUpdateToOneWithWhereWithoutProductsInput = {
+  where?: Prisma.CategoryWhereInput
+  data: Prisma.XOR<Prisma.CategoryUpdateWithoutProductsInput, Prisma.CategoryUncheckedUpdateWithoutProductsInput>
+}
+
+export type CategoryUpdateWithoutProductsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateOneRequiredWithoutCategoriesNestedInput
+}
+
+export type CategoryUncheckedUpdateWithoutProductsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type CategoryCreateManyUserInput = {
+  id?: string
+  name: string
+  shortName: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type CategoryUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  products?: Prisma.ProductUpdateManyWithoutCategoryNestedInput
+}
+
+export type CategoryUncheckedUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  products?: Prisma.ProductUncheckedUpdateManyWithoutCategoryNestedInput
+}
+
+export type CategoryUncheckedUpdateManyWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+
+/**
+ * Count Type CategoryCountOutputType
+ */
+
+export type CategoryCountOutputType = {
+  products: number
+}
+
+export type CategoryCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  products?: boolean | CategoryCountOutputTypeCountProductsArgs
+}
+
+/**
+ * CategoryCountOutputType without action
+ */
+export type CategoryCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the CategoryCountOutputType
+   */
+  select?: Prisma.CategoryCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * CategoryCountOutputType without action
+ */
+export type CategoryCountOutputTypeCountProductsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProductWhereInput
+}
+
+
+export type CategorySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  name?: boolean
+  shortName?: boolean
+  userId?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  products?: boolean | Prisma.Category$productsArgs<ExtArgs>
+  _count?: boolean | Prisma.CategoryCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["category"]>
+
+export type CategorySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  name?: boolean
+  shortName?: boolean
+  userId?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["category"]>
+
+export type CategorySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  name?: boolean
+  shortName?: boolean
+  userId?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["category"]>
+
+export type CategorySelectScalar = {
+  id?: boolean
+  name?: boolean
+  shortName?: boolean
+  userId?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+}
+
+export type CategoryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "shortName" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["category"]>
+export type CategoryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  products?: boolean | Prisma.Category$productsArgs<ExtArgs>
+  _count?: boolean | Prisma.CategoryCountOutputTypeDefaultArgs<ExtArgs>
+}
+export type CategoryIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+}
+export type CategoryIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+}
+
+export type $CategoryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Category"
+  objects: {
+    user: Prisma.$UserPayload<ExtArgs>
+    products: Prisma.$ProductPayload<ExtArgs>[]
+  }
+  scalars: runtime.Types.Extensions.GetPayloadResult<{
+    id: string
+    name: string
+    shortName: string
+    userId: string
+    createdAt: Date
+    updatedAt: Date
+  }, ExtArgs["result"]["category"]>
+  composites: {}
+}
+
+export type CategoryGetPayload<S extends boolean | null | undefined | CategoryDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$CategoryPayload, S>
+
+export type CategoryCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<CategoryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: CategoryCountAggregateInputType | true
+  }
+
+export interface CategoryDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Category'], meta: { name: 'Category' } }
+  /**
+   * Find zero or one Category that matches the filter.
+   * @param {CategoryFindUniqueArgs} args - Arguments to find a Category
+   * @example
+   * // Get one Category
+   * const category = await prisma.category.findUnique({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findUnique<T extends CategoryFindUniqueArgs>(args: Prisma.SelectSubset<T, CategoryFindUniqueArgs<ExtArgs>>): Prisma.Prisma__CategoryClient<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find one Category that matches the filter or throw an error with `error.code='P2025'`
+   * if no matches were found.
+   * @param {CategoryFindUniqueOrThrowArgs} args - Arguments to find a Category
+   * @example
+   * // Get one Category
+   * const category = await prisma.category.findUniqueOrThrow({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findUniqueOrThrow<T extends CategoryFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, CategoryFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__CategoryClient<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find the first Category that matches the filter.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {CategoryFindFirstArgs} args - Arguments to find a Category
+   * @example
+   * // Get one Category
+   * const category = await prisma.category.findFirst({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findFirst<T extends CategoryFindFirstArgs>(args?: Prisma.SelectSubset<T, CategoryFindFirstArgs<ExtArgs>>): Prisma.Prisma__CategoryClient<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find the first Category that matches the filter or
+   * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {CategoryFindFirstOrThrowArgs} args - Arguments to find a Category
+   * @example
+   * // Get one Category
+   * const category = await prisma.category.findFirstOrThrow({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findFirstOrThrow<T extends CategoryFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, CategoryFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__CategoryClient<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find zero or more Categories that matches the filter.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {CategoryFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @example
+   * // Get all Categories
+   * const categories = await prisma.category.findMany()
+   * 
+   * // Get first 10 Categories
+   * const categories = await prisma.category.findMany({ take: 10 })
+   * 
+   * // Only select the `id`
+   * const categoryWithIdOnly = await prisma.category.findMany({ select: { id: true } })
+   * 
+   */
+  findMany<T extends CategoryFindManyArgs>(args?: Prisma.SelectSubset<T, CategoryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+  /**
+   * Create a Category.
+   * @param {CategoryCreateArgs} args - Arguments to create a Category.
+   * @example
+   * // Create one Category
+   * const Category = await prisma.category.create({
+   *   data: {
+   *     // ... data to create a Category
+   *   }
+   * })
+   * 
+   */
+  create<T extends CategoryCreateArgs>(args: Prisma.SelectSubset<T, CategoryCreateArgs<ExtArgs>>): Prisma.Prisma__CategoryClient<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Create many Categories.
+   * @param {CategoryCreateManyArgs} args - Arguments to create many Categories.
+   * @example
+   * // Create many Categories
+   * const category = await prisma.category.createMany({
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   *     
+   */
+  createMany<T extends CategoryCreateManyArgs>(args?: Prisma.SelectSubset<T, CategoryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Create many Categories and returns the data saved in the database.
+   * @param {CategoryCreateManyAndReturnArgs} args - Arguments to create many Categories.
+   * @example
+   * // Create many Categories
+   * const category = await prisma.category.createManyAndReturn({
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * 
+   * // Create many Categories and only return the `id`
+   * const categoryWithIdOnly = await prisma.category.createManyAndReturn({
+   *   select: { id: true },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * 
+   */
+  createManyAndReturn<T extends CategoryCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, CategoryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+  /**
+   * Delete a Category.
+   * @param {CategoryDeleteArgs} args - Arguments to delete one Category.
+   * @example
+   * // Delete one Category
+   * const Category = await prisma.category.delete({
+   *   where: {
+   *     // ... filter to delete one Category
+   *   }
+   * })
+   * 
+   */
+  delete<T extends CategoryDeleteArgs>(args: Prisma.SelectSubset<T, CategoryDeleteArgs<ExtArgs>>): Prisma.Prisma__CategoryClient<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Update one Category.
+   * @param {CategoryUpdateArgs} args - Arguments to update one Category.
+   * @example
+   * // Update one Category
+   * const category = await prisma.category.update({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: {
+   *     // ... provide data here
+   *   }
+   * })
+   * 
+   */
+  update<T extends CategoryUpdateArgs>(args: Prisma.SelectSubset<T, CategoryUpdateArgs<ExtArgs>>): Prisma.Prisma__CategoryClient<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Delete zero or more Categories.
+   * @param {CategoryDeleteManyArgs} args - Arguments to filter Categories to delete.
+   * @example
+   * // Delete a few Categories
+   * const { count } = await prisma.category.deleteMany({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   * 
+   */
+  deleteMany<T extends CategoryDeleteManyArgs>(args?: Prisma.SelectSubset<T, CategoryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Update zero or more Categories.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {CategoryUpdateManyArgs} args - Arguments to update one or more rows.
+   * @example
+   * // Update many Categories
+   * const category = await prisma.category.updateMany({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: {
+   *     // ... provide data here
+   *   }
+   * })
+   * 
+   */
+  updateMany<T extends CategoryUpdateManyArgs>(args: Prisma.SelectSubset<T, CategoryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Update zero or more Categories and returns the data updated in the database.
+   * @param {CategoryUpdateManyAndReturnArgs} args - Arguments to update many Categories.
+   * @example
+   * // Update many Categories
+   * const category = await prisma.category.updateManyAndReturn({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * 
+   * // Update zero or more Categories and only return the `id`
+   * const categoryWithIdOnly = await prisma.category.updateManyAndReturn({
+   *   select: { id: true },
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * 
+   */
+  updateManyAndReturn<T extends CategoryUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, CategoryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+  /**
+   * Create or update one Category.
+   * @param {CategoryUpsertArgs} args - Arguments to update or create a Category.
+   * @example
+   * // Update or create a Category
+   * const category = await prisma.category.upsert({
+   *   create: {
+   *     // ... data to create a Category
+   *   },
+   *   update: {
+   *     // ... in case it already exists, update
+   *   },
+   *   where: {
+   *     // ... the filter for the Category we want to update
+   *   }
+   * })
+   */
+  upsert<T extends CategoryUpsertArgs>(args: Prisma.SelectSubset<T, CategoryUpsertArgs<ExtArgs>>): Prisma.Prisma__CategoryClient<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+  /**
+   * Count the number of Categories.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {CategoryCountArgs} args - Arguments to filter Categories to count.
+   * @example
+   * // Count the number of Categories
+   * const count = await prisma.category.count({
+   *   where: {
+   *     // ... the filter for the Categories we want to count
+   *   }
+   * })
+  **/
+  count<T extends CategoryCountArgs>(
+    args?: Prisma.Subset<T, CategoryCountArgs>,
+  ): Prisma.PrismaPromise<
+    T extends runtime.Types.Utils.Record<'select', any>
+      ? T['select'] extends true
+        ? number
+        : Prisma.GetScalarType<T['select'], CategoryCountAggregateOutputType>
+      : number
+  >
+
+  /**
+   * Allows you to perform aggregations operations on a Category.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {CategoryAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @example
+   * // Ordered by age ascending
+   * // Where email contains prisma.io
+   * // Limited to the 10 users
+   * const aggregations = await prisma.user.aggregate({
+   *   _avg: {
+   *     age: true,
+   *   },
+   *   where: {
+   *     email: {
+   *       contains: "prisma.io",
+   *     },
+   *   },
+   *   orderBy: {
+   *     age: "asc",
+   *   },
+   *   take: 10,
+   * })
+  **/
+  aggregate<T extends CategoryAggregateArgs>(args: Prisma.Subset<T, CategoryAggregateArgs>): Prisma.PrismaPromise<GetCategoryAggregateType<T>>
+
+  /**
+   * Group by Category.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {CategoryGroupByArgs} args - Group by arguments.
+   * @example
+   * // Group by city, order by createdAt, get count
+   * const result = await prisma.user.groupBy({
+   *   by: ['city', 'createdAt'],
+   *   orderBy: {
+   *     createdAt: true
+   *   },
+   *   _count: {
+   *     _all: true
+   *   },
+   * })
+   * 
+  **/
+  groupBy<
+    T extends CategoryGroupByArgs,
+    HasSelectOrTake extends Prisma.Or<
+      Prisma.Extends<'skip', Prisma.Keys<T>>,
+      Prisma.Extends<'take', Prisma.Keys<T>>
+    >,
+    OrderByArg extends Prisma.True extends HasSelectOrTake
+      ? { orderBy: CategoryGroupByArgs['orderBy'] }
+      : { orderBy?: CategoryGroupByArgs['orderBy'] },
+    OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
+    ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
+    ByValid extends Prisma.Has<ByFields, OrderFields>,
+    HavingFields extends Prisma.GetHavingFields<T['having']>,
+    HavingValid extends Prisma.Has<ByFields, HavingFields>,
+    ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False,
+    InputErrors extends ByEmpty extends Prisma.True
+    ? `Error: "by" must not be empty.`
+    : HavingValid extends Prisma.False
+    ? {
+        [P in HavingFields]: P extends ByFields
+          ? never
+          : P extends string
+          ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+          : [
+              Error,
+              'Field ',
+              P,
+              ` in "having" needs to be provided in "by"`,
+            ]
+      }[HavingFields]
+    : 'take' extends Prisma.Keys<T>
+    ? 'orderBy' extends Prisma.Keys<T>
+      ? ByValid extends Prisma.True
+        ? {}
+        : {
+            [P in OrderFields]: P extends ByFields
+              ? never
+              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+          }[OrderFields]
+      : 'Error: If you provide "take", you also need to provide "orderBy"'
+    : 'skip' extends Prisma.Keys<T>
+    ? 'orderBy' extends Prisma.Keys<T>
+      ? ByValid extends Prisma.True
+        ? {}
+        : {
+            [P in OrderFields]: P extends ByFields
+              ? never
+              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+          }[OrderFields]
+      : 'Error: If you provide "skip", you also need to provide "orderBy"'
+    : ByValid extends Prisma.True
+    ? {}
+    : {
+        [P in OrderFields]: P extends ByFields
+          ? never
+          : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+      }[OrderFields]
+  >(args: Prisma.SubsetIntersection<T, CategoryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCategoryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+/**
+ * Fields of the Category model
+ */
+readonly fields: CategoryFieldRefs;
+}
+
+/**
+ * The delegate class that acts as a "Promise-like" for Category.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__CategoryClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  readonly [Symbol.toStringTag]: "PrismaPromise"
+  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  products<T extends Prisma.Category$productsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Category$productsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  /**
+   * Attaches callbacks for the resolution and/or rejection of the Promise.
+   * @param onfulfilled The callback to execute when the Promise is resolved.
+   * @param onrejected The callback to execute when the Promise is rejected.
+   * @returns A Promise for the completion of which ever callback is executed.
+   */
+  then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>
+  /**
+   * Attaches a callback for only the rejection of the Promise.
+   * @param onrejected The callback to execute when the Promise is rejected.
+   * @returns A Promise for the completion of the callback.
+   */
+  catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>
+  /**
+   * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+   * resolved value cannot be modified from the callback.
+   * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+   * @returns A Promise for the completion of the callback.
+   */
+  finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>
+}
+
+
+
+
+/**
+ * Fields of the Category model
+ */
+export interface CategoryFieldRefs {
+  readonly id: Prisma.FieldRef<"Category", 'String'>
+  readonly name: Prisma.FieldRef<"Category", 'String'>
+  readonly shortName: Prisma.FieldRef<"Category", 'String'>
+  readonly userId: Prisma.FieldRef<"Category", 'String'>
+  readonly createdAt: Prisma.FieldRef<"Category", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"Category", 'DateTime'>
+}
+    
+
+// Custom InputTypes
+/**
+ * Category findUnique
+ */
+export type CategoryFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryInclude<ExtArgs> | null
+  /**
+   * Filter, which Category to fetch.
+   */
+  where: Prisma.CategoryWhereUniqueInput
+}
+
+/**
+ * Category findUniqueOrThrow
+ */
+export type CategoryFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryInclude<ExtArgs> | null
+  /**
+   * Filter, which Category to fetch.
+   */
+  where: Prisma.CategoryWhereUniqueInput
+}
+
+/**
+ * Category findFirst
+ */
+export type CategoryFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryInclude<ExtArgs> | null
+  /**
+   * Filter, which Category to fetch.
+   */
+  where?: Prisma.CategoryWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Categories to fetch.
+   */
+  orderBy?: Prisma.CategoryOrderByWithRelationInput | Prisma.CategoryOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for searching for Categories.
+   */
+  cursor?: Prisma.CategoryWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Categories from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Categories.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Categories.
+   */
+  distinct?: Prisma.CategoryScalarFieldEnum | Prisma.CategoryScalarFieldEnum[]
+}
+
+/**
+ * Category findFirstOrThrow
+ */
+export type CategoryFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryInclude<ExtArgs> | null
+  /**
+   * Filter, which Category to fetch.
+   */
+  where?: Prisma.CategoryWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Categories to fetch.
+   */
+  orderBy?: Prisma.CategoryOrderByWithRelationInput | Prisma.CategoryOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for searching for Categories.
+   */
+  cursor?: Prisma.CategoryWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Categories from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Categories.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Categories.
+   */
+  distinct?: Prisma.CategoryScalarFieldEnum | Prisma.CategoryScalarFieldEnum[]
+}
+
+/**
+ * Category findMany
+ */
+export type CategoryFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryInclude<ExtArgs> | null
+  /**
+   * Filter, which Categories to fetch.
+   */
+  where?: Prisma.CategoryWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Categories to fetch.
+   */
+  orderBy?: Prisma.CategoryOrderByWithRelationInput | Prisma.CategoryOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for listing Categories.
+   */
+  cursor?: Prisma.CategoryWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Categories from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Categories.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Categories.
+   */
+  distinct?: Prisma.CategoryScalarFieldEnum | Prisma.CategoryScalarFieldEnum[]
+}
+
+/**
+ * Category create
+ */
+export type CategoryCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryInclude<ExtArgs> | null
+  /**
+   * The data needed to create a Category.
+   */
+  data: Prisma.XOR<Prisma.CategoryCreateInput, Prisma.CategoryUncheckedCreateInput>
+}
+
+/**
+ * Category createMany
+ */
+export type CategoryCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * The data used to create many Categories.
+   */
+  data: Prisma.CategoryCreateManyInput | Prisma.CategoryCreateManyInput[]
+  skipDuplicates?: boolean
+}
+
+/**
+ * Category createManyAndReturn
+ */
+export type CategoryCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelectCreateManyAndReturn<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * The data used to create many Categories.
+   */
+  data: Prisma.CategoryCreateManyInput | Prisma.CategoryCreateManyInput[]
+  skipDuplicates?: boolean
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryIncludeCreateManyAndReturn<ExtArgs> | null
+}
+
+/**
+ * Category update
+ */
+export type CategoryUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryInclude<ExtArgs> | null
+  /**
+   * The data needed to update a Category.
+   */
+  data: Prisma.XOR<Prisma.CategoryUpdateInput, Prisma.CategoryUncheckedUpdateInput>
+  /**
+   * Choose, which Category to update.
+   */
+  where: Prisma.CategoryWhereUniqueInput
+}
+
+/**
+ * Category updateMany
+ */
+export type CategoryUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * The data used to update Categories.
+   */
+  data: Prisma.XOR<Prisma.CategoryUpdateManyMutationInput, Prisma.CategoryUncheckedUpdateManyInput>
+  /**
+   * Filter which Categories to update
+   */
+  where?: Prisma.CategoryWhereInput
+  /**
+   * Limit how many Categories to update.
+   */
+  limit?: number
+}
+
+/**
+ * Category updateManyAndReturn
+ */
+export type CategoryUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelectUpdateManyAndReturn<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * The data used to update Categories.
+   */
+  data: Prisma.XOR<Prisma.CategoryUpdateManyMutationInput, Prisma.CategoryUncheckedUpdateManyInput>
+  /**
+   * Filter which Categories to update
+   */
+  where?: Prisma.CategoryWhereInput
+  /**
+   * Limit how many Categories to update.
+   */
+  limit?: number
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryIncludeUpdateManyAndReturn<ExtArgs> | null
+}
+
+/**
+ * Category upsert
+ */
+export type CategoryUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryInclude<ExtArgs> | null
+  /**
+   * The filter to search for the Category to update in case it exists.
+   */
+  where: Prisma.CategoryWhereUniqueInput
+  /**
+   * In case the Category found by the `where` argument doesn't exist, create a new Category with this data.
+   */
+  create: Prisma.XOR<Prisma.CategoryCreateInput, Prisma.CategoryUncheckedCreateInput>
+  /**
+   * In case the Category was found with the provided `where` argument, update it with this data.
+   */
+  update: Prisma.XOR<Prisma.CategoryUpdateInput, Prisma.CategoryUncheckedUpdateInput>
+}
+
+/**
+ * Category delete
+ */
+export type CategoryDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryInclude<ExtArgs> | null
+  /**
+   * Filter which Category to delete.
+   */
+  where: Prisma.CategoryWhereUniqueInput
+}
+
+/**
+ * Category deleteMany
+ */
+export type CategoryDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Filter which Categories to delete
+   */
+  where?: Prisma.CategoryWhereInput
+  /**
+   * Limit how many Categories to delete.
+   */
+  limit?: number
+}
+
+/**
+ * Category.products
+ */
+export type Category$productsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  where?: Prisma.ProductWhereInput
+  orderBy?: Prisma.ProductOrderByWithRelationInput | Prisma.ProductOrderByWithRelationInput[]
+  cursor?: Prisma.ProductWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ProductScalarFieldEnum | Prisma.ProductScalarFieldEnum[]
+}
+
+/**
+ * Category without action
+ */
+export type CategoryDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryInclude<ExtArgs> | null
+}
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-models-product-ts"></a>📄 `src/generated/prisma/models/Product.ts`
+
+**File Info:**
+- **Size**: 69.55 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/models/Product.ts`
+- **Relative Path**: `src/generated/prisma/models`
+- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `658ef9e10f325462b911bc26f5c77710`
+- **SHA256**: `2a3d051311f6fd38c117fe184483630b4716464fd356877360b407f665c13a14`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * This file exports the `Product` model and its related types.
+ *
+ * 🟢 You can import this file directly.
+ */
+import type * as runtime from "@prisma/client/runtime/client"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
+
+/**
+ * Model Product
+ * 
+ */
+export type ProductModel = runtime.Types.Result.DefaultSelection<Prisma.$ProductPayload>
+
+export type AggregateProduct = {
+  _count: ProductCountAggregateOutputType | null
+  _min: ProductMinAggregateOutputType | null
+  _max: ProductMaxAggregateOutputType | null
+}
+
+export type ProductMinAggregateOutputType = {
+  id: string | null
+  name: string | null
+  shortName: string | null
+  userId: string | null
+  categoryId: string | null
+  createdAt: Date | null
+  updatedAt: Date | null
+}
+
+export type ProductMaxAggregateOutputType = {
+  id: string | null
+  name: string | null
+  shortName: string | null
+  userId: string | null
+  categoryId: string | null
+  createdAt: Date | null
+  updatedAt: Date | null
+}
+
+export type ProductCountAggregateOutputType = {
+  id: number
+  name: number
+  shortName: number
+  userId: number
+  categoryId: number
+  createdAt: number
+  updatedAt: number
+  _all: number
+}
+
+
+export type ProductMinAggregateInputType = {
+  id?: true
+  name?: true
+  shortName?: true
+  userId?: true
+  categoryId?: true
+  createdAt?: true
+  updatedAt?: true
+}
+
+export type ProductMaxAggregateInputType = {
+  id?: true
+  name?: true
+  shortName?: true
+  userId?: true
+  categoryId?: true
+  createdAt?: true
+  updatedAt?: true
+}
+
+export type ProductCountAggregateInputType = {
+  id?: true
+  name?: true
+  shortName?: true
+  userId?: true
+  categoryId?: true
+  createdAt?: true
+  updatedAt?: true
+  _all?: true
+}
+
+export type ProductAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Filter which Product to aggregate.
+   */
+  where?: Prisma.ProductWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Products to fetch.
+   */
+  orderBy?: Prisma.ProductOrderByWithRelationInput | Prisma.ProductOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the start position
+   */
+  cursor?: Prisma.ProductWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Products from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Products.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Count returned Products
+  **/
+  _count?: true | ProductCountAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to find the minimum value
+  **/
+  _min?: ProductMinAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to find the maximum value
+  **/
+  _max?: ProductMaxAggregateInputType
+}
+
+export type GetProductAggregateType<T extends ProductAggregateArgs> = {
+      [P in keyof T & keyof AggregateProduct]: P extends '_count' | 'count'
+    ? T[P] extends true
+      ? number
+      : Prisma.GetScalarType<T[P], AggregateProduct[P]>
+    : Prisma.GetScalarType<T[P], AggregateProduct[P]>
+}
+
+
+
+
+export type ProductGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProductWhereInput
+  orderBy?: Prisma.ProductOrderByWithAggregationInput | Prisma.ProductOrderByWithAggregationInput[]
+  by: Prisma.ProductScalarFieldEnum[] | Prisma.ProductScalarFieldEnum
+  having?: Prisma.ProductScalarWhereWithAggregatesInput
+  take?: number
+  skip?: number
+  _count?: ProductCountAggregateInputType | true
+  _min?: ProductMinAggregateInputType
+  _max?: ProductMaxAggregateInputType
+}
+
+export type ProductGroupByOutputType = {
+  id: string
+  name: string
+  shortName: string
+  userId: string
+  categoryId: string
+  createdAt: Date
+  updatedAt: Date
+  _count: ProductCountAggregateOutputType | null
+  _min: ProductMinAggregateOutputType | null
+  _max: ProductMaxAggregateOutputType | null
+}
+
+export type GetProductGroupByPayload<T extends ProductGroupByArgs> = Prisma.PrismaPromise<
+  Array<
+    Prisma.PickEnumerable<ProductGroupByOutputType, T['by']> &
+      {
+        [P in ((keyof T) & (keyof ProductGroupByOutputType))]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : Prisma.GetScalarType<T[P], ProductGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], ProductGroupByOutputType[P]>
+      }
+    >
+  >
+
+
+
+export type ProductWhereInput = {
+  AND?: Prisma.ProductWhereInput | Prisma.ProductWhereInput[]
+  OR?: Prisma.ProductWhereInput[]
+  NOT?: Prisma.ProductWhereInput | Prisma.ProductWhereInput[]
+  id?: Prisma.StringFilter<"Product"> | string
+  name?: Prisma.StringFilter<"Product"> | string
+  shortName?: Prisma.StringFilter<"Product"> | string
+  userId?: Prisma.StringFilter<"Product"> | string
+  categoryId?: Prisma.StringFilter<"Product"> | string
+  createdAt?: Prisma.DateTimeFilter<"Product"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Product"> | Date | string
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  category?: Prisma.XOR<Prisma.CategoryScalarRelationFilter, Prisma.CategoryWhereInput>
+  batches?: Prisma.BatchListRelationFilter
+  billItems?: Prisma.BillItemListRelationFilter
+}
+
+export type ProductOrderByWithRelationInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  shortName?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  categoryId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  user?: Prisma.UserOrderByWithRelationInput
+  category?: Prisma.CategoryOrderByWithRelationInput
+  batches?: Prisma.BatchOrderByRelationAggregateInput
+  billItems?: Prisma.BillItemOrderByRelationAggregateInput
+}
+
+export type ProductWhereUniqueInput = Prisma.AtLeast<{
+  id?: string
+  userId_name?: Prisma.ProductUserIdNameCompoundUniqueInput
+  userId_shortName?: Prisma.ProductUserIdShortNameCompoundUniqueInput
+  AND?: Prisma.ProductWhereInput | Prisma.ProductWhereInput[]
+  OR?: Prisma.ProductWhereInput[]
+  NOT?: Prisma.ProductWhereInput | Prisma.ProductWhereInput[]
+  name?: Prisma.StringFilter<"Product"> | string
+  shortName?: Prisma.StringFilter<"Product"> | string
+  userId?: Prisma.StringFilter<"Product"> | string
+  categoryId?: Prisma.StringFilter<"Product"> | string
+  createdAt?: Prisma.DateTimeFilter<"Product"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Product"> | Date | string
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  category?: Prisma.XOR<Prisma.CategoryScalarRelationFilter, Prisma.CategoryWhereInput>
+  batches?: Prisma.BatchListRelationFilter
+  billItems?: Prisma.BillItemListRelationFilter
+}, "id" | "userId_name" | "userId_shortName">
+
+export type ProductOrderByWithAggregationInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  shortName?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  categoryId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  _count?: Prisma.ProductCountOrderByAggregateInput
+  _max?: Prisma.ProductMaxOrderByAggregateInput
+  _min?: Prisma.ProductMinOrderByAggregateInput
+}
+
+export type ProductScalarWhereWithAggregatesInput = {
+  AND?: Prisma.ProductScalarWhereWithAggregatesInput | Prisma.ProductScalarWhereWithAggregatesInput[]
+  OR?: Prisma.ProductScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.ProductScalarWhereWithAggregatesInput | Prisma.ProductScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  name?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  shortName?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  userId?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  categoryId?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Product"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Product"> | Date | string
+}
+
+export type ProductCreateInput = {
+  id?: string
+  name: string
+  shortName: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  user: Prisma.UserCreateNestedOneWithoutProductsInput
+  category: Prisma.CategoryCreateNestedOneWithoutProductsInput
+  batches?: Prisma.BatchCreateNestedManyWithoutProductInput
+  billItems?: Prisma.BillItemCreateNestedManyWithoutProductInput
+}
+
+export type ProductUncheckedCreateInput = {
+  id?: string
+  name: string
+  shortName: string
+  userId: string
+  categoryId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  batches?: Prisma.BatchUncheckedCreateNestedManyWithoutProductInput
+  billItems?: Prisma.BillItemUncheckedCreateNestedManyWithoutProductInput
+}
+
+export type ProductUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateOneRequiredWithoutProductsNestedInput
+  category?: Prisma.CategoryUpdateOneRequiredWithoutProductsNestedInput
+  batches?: Prisma.BatchUpdateManyWithoutProductNestedInput
+  billItems?: Prisma.BillItemUpdateManyWithoutProductNestedInput
+}
+
+export type ProductUncheckedUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  categoryId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  batches?: Prisma.BatchUncheckedUpdateManyWithoutProductNestedInput
+  billItems?: Prisma.BillItemUncheckedUpdateManyWithoutProductNestedInput
+}
+
+export type ProductCreateManyInput = {
+  id?: string
+  name: string
+  shortName: string
+  userId: string
+  categoryId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type ProductUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type ProductUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  categoryId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type ProductListRelationFilter = {
+  every?: Prisma.ProductWhereInput
+  some?: Prisma.ProductWhereInput
+  none?: Prisma.ProductWhereInput
+}
+
+export type ProductOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
+}
+
+export type ProductUserIdNameCompoundUniqueInput = {
+  userId: string
+  name: string
+}
+
+export type ProductUserIdShortNameCompoundUniqueInput = {
+  userId: string
+  shortName: string
+}
+
+export type ProductCountOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  shortName?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  categoryId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type ProductMaxOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  shortName?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  categoryId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type ProductMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  shortName?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
+  categoryId?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type ProductScalarRelationFilter = {
+  is?: Prisma.ProductWhereInput
+  isNot?: Prisma.ProductWhereInput
+}
+
+export type ProductCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.ProductCreateWithoutUserInput, Prisma.ProductUncheckedCreateWithoutUserInput> | Prisma.ProductCreateWithoutUserInput[] | Prisma.ProductUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.ProductCreateOrConnectWithoutUserInput | Prisma.ProductCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.ProductCreateManyUserInputEnvelope
+  connect?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+}
+
+export type ProductUncheckedCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.ProductCreateWithoutUserInput, Prisma.ProductUncheckedCreateWithoutUserInput> | Prisma.ProductCreateWithoutUserInput[] | Prisma.ProductUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.ProductCreateOrConnectWithoutUserInput | Prisma.ProductCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.ProductCreateManyUserInputEnvelope
+  connect?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+}
+
+export type ProductUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.ProductCreateWithoutUserInput, Prisma.ProductUncheckedCreateWithoutUserInput> | Prisma.ProductCreateWithoutUserInput[] | Prisma.ProductUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.ProductCreateOrConnectWithoutUserInput | Prisma.ProductCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.ProductUpsertWithWhereUniqueWithoutUserInput | Prisma.ProductUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.ProductCreateManyUserInputEnvelope
+  set?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  disconnect?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  delete?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  connect?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  update?: Prisma.ProductUpdateWithWhereUniqueWithoutUserInput | Prisma.ProductUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.ProductUpdateManyWithWhereWithoutUserInput | Prisma.ProductUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.ProductScalarWhereInput | Prisma.ProductScalarWhereInput[]
+}
+
+export type ProductUncheckedUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.ProductCreateWithoutUserInput, Prisma.ProductUncheckedCreateWithoutUserInput> | Prisma.ProductCreateWithoutUserInput[] | Prisma.ProductUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.ProductCreateOrConnectWithoutUserInput | Prisma.ProductCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.ProductUpsertWithWhereUniqueWithoutUserInput | Prisma.ProductUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.ProductCreateManyUserInputEnvelope
+  set?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  disconnect?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  delete?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  connect?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  update?: Prisma.ProductUpdateWithWhereUniqueWithoutUserInput | Prisma.ProductUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.ProductUpdateManyWithWhereWithoutUserInput | Prisma.ProductUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.ProductScalarWhereInput | Prisma.ProductScalarWhereInput[]
+}
+
+export type ProductCreateNestedManyWithoutCategoryInput = {
+  create?: Prisma.XOR<Prisma.ProductCreateWithoutCategoryInput, Prisma.ProductUncheckedCreateWithoutCategoryInput> | Prisma.ProductCreateWithoutCategoryInput[] | Prisma.ProductUncheckedCreateWithoutCategoryInput[]
+  connectOrCreate?: Prisma.ProductCreateOrConnectWithoutCategoryInput | Prisma.ProductCreateOrConnectWithoutCategoryInput[]
+  createMany?: Prisma.ProductCreateManyCategoryInputEnvelope
+  connect?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+}
+
+export type ProductUncheckedCreateNestedManyWithoutCategoryInput = {
+  create?: Prisma.XOR<Prisma.ProductCreateWithoutCategoryInput, Prisma.ProductUncheckedCreateWithoutCategoryInput> | Prisma.ProductCreateWithoutCategoryInput[] | Prisma.ProductUncheckedCreateWithoutCategoryInput[]
+  connectOrCreate?: Prisma.ProductCreateOrConnectWithoutCategoryInput | Prisma.ProductCreateOrConnectWithoutCategoryInput[]
+  createMany?: Prisma.ProductCreateManyCategoryInputEnvelope
+  connect?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+}
+
+export type ProductUpdateManyWithoutCategoryNestedInput = {
+  create?: Prisma.XOR<Prisma.ProductCreateWithoutCategoryInput, Prisma.ProductUncheckedCreateWithoutCategoryInput> | Prisma.ProductCreateWithoutCategoryInput[] | Prisma.ProductUncheckedCreateWithoutCategoryInput[]
+  connectOrCreate?: Prisma.ProductCreateOrConnectWithoutCategoryInput | Prisma.ProductCreateOrConnectWithoutCategoryInput[]
+  upsert?: Prisma.ProductUpsertWithWhereUniqueWithoutCategoryInput | Prisma.ProductUpsertWithWhereUniqueWithoutCategoryInput[]
+  createMany?: Prisma.ProductCreateManyCategoryInputEnvelope
+  set?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  disconnect?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  delete?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  connect?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  update?: Prisma.ProductUpdateWithWhereUniqueWithoutCategoryInput | Prisma.ProductUpdateWithWhereUniqueWithoutCategoryInput[]
+  updateMany?: Prisma.ProductUpdateManyWithWhereWithoutCategoryInput | Prisma.ProductUpdateManyWithWhereWithoutCategoryInput[]
+  deleteMany?: Prisma.ProductScalarWhereInput | Prisma.ProductScalarWhereInput[]
+}
+
+export type ProductUncheckedUpdateManyWithoutCategoryNestedInput = {
+  create?: Prisma.XOR<Prisma.ProductCreateWithoutCategoryInput, Prisma.ProductUncheckedCreateWithoutCategoryInput> | Prisma.ProductCreateWithoutCategoryInput[] | Prisma.ProductUncheckedCreateWithoutCategoryInput[]
+  connectOrCreate?: Prisma.ProductCreateOrConnectWithoutCategoryInput | Prisma.ProductCreateOrConnectWithoutCategoryInput[]
+  upsert?: Prisma.ProductUpsertWithWhereUniqueWithoutCategoryInput | Prisma.ProductUpsertWithWhereUniqueWithoutCategoryInput[]
+  createMany?: Prisma.ProductCreateManyCategoryInputEnvelope
+  set?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  disconnect?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  delete?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  connect?: Prisma.ProductWhereUniqueInput | Prisma.ProductWhereUniqueInput[]
+  update?: Prisma.ProductUpdateWithWhereUniqueWithoutCategoryInput | Prisma.ProductUpdateWithWhereUniqueWithoutCategoryInput[]
+  updateMany?: Prisma.ProductUpdateManyWithWhereWithoutCategoryInput | Prisma.ProductUpdateManyWithWhereWithoutCategoryInput[]
+  deleteMany?: Prisma.ProductScalarWhereInput | Prisma.ProductScalarWhereInput[]
+}
+
+export type ProductCreateNestedOneWithoutBatchesInput = {
+  create?: Prisma.XOR<Prisma.ProductCreateWithoutBatchesInput, Prisma.ProductUncheckedCreateWithoutBatchesInput>
+  connectOrCreate?: Prisma.ProductCreateOrConnectWithoutBatchesInput
+  connect?: Prisma.ProductWhereUniqueInput
+}
+
+export type ProductUpdateOneRequiredWithoutBatchesNestedInput = {
+  create?: Prisma.XOR<Prisma.ProductCreateWithoutBatchesInput, Prisma.ProductUncheckedCreateWithoutBatchesInput>
+  connectOrCreate?: Prisma.ProductCreateOrConnectWithoutBatchesInput
+  upsert?: Prisma.ProductUpsertWithoutBatchesInput
+  connect?: Prisma.ProductWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ProductUpdateToOneWithWhereWithoutBatchesInput, Prisma.ProductUpdateWithoutBatchesInput>, Prisma.ProductUncheckedUpdateWithoutBatchesInput>
+}
+
+export type ProductCreateNestedOneWithoutBillItemsInput = {
+  create?: Prisma.XOR<Prisma.ProductCreateWithoutBillItemsInput, Prisma.ProductUncheckedCreateWithoutBillItemsInput>
+  connectOrCreate?: Prisma.ProductCreateOrConnectWithoutBillItemsInput
+  connect?: Prisma.ProductWhereUniqueInput
+}
+
+export type ProductUpdateOneRequiredWithoutBillItemsNestedInput = {
+  create?: Prisma.XOR<Prisma.ProductCreateWithoutBillItemsInput, Prisma.ProductUncheckedCreateWithoutBillItemsInput>
+  connectOrCreate?: Prisma.ProductCreateOrConnectWithoutBillItemsInput
+  upsert?: Prisma.ProductUpsertWithoutBillItemsInput
+  connect?: Prisma.ProductWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ProductUpdateToOneWithWhereWithoutBillItemsInput, Prisma.ProductUpdateWithoutBillItemsInput>, Prisma.ProductUncheckedUpdateWithoutBillItemsInput>
+}
+
+export type ProductCreateWithoutUserInput = {
+  id?: string
+  name: string
+  shortName: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  category: Prisma.CategoryCreateNestedOneWithoutProductsInput
+  batches?: Prisma.BatchCreateNestedManyWithoutProductInput
+  billItems?: Prisma.BillItemCreateNestedManyWithoutProductInput
+}
+
+export type ProductUncheckedCreateWithoutUserInput = {
+  id?: string
+  name: string
+  shortName: string
+  categoryId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  batches?: Prisma.BatchUncheckedCreateNestedManyWithoutProductInput
+  billItems?: Prisma.BillItemUncheckedCreateNestedManyWithoutProductInput
+}
+
+export type ProductCreateOrConnectWithoutUserInput = {
+  where: Prisma.ProductWhereUniqueInput
+  create: Prisma.XOR<Prisma.ProductCreateWithoutUserInput, Prisma.ProductUncheckedCreateWithoutUserInput>
+}
+
+export type ProductCreateManyUserInputEnvelope = {
+  data: Prisma.ProductCreateManyUserInput | Prisma.ProductCreateManyUserInput[]
+  skipDuplicates?: boolean
+}
+
+export type ProductUpsertWithWhereUniqueWithoutUserInput = {
+  where: Prisma.ProductWhereUniqueInput
+  update: Prisma.XOR<Prisma.ProductUpdateWithoutUserInput, Prisma.ProductUncheckedUpdateWithoutUserInput>
+  create: Prisma.XOR<Prisma.ProductCreateWithoutUserInput, Prisma.ProductUncheckedCreateWithoutUserInput>
+}
+
+export type ProductUpdateWithWhereUniqueWithoutUserInput = {
+  where: Prisma.ProductWhereUniqueInput
+  data: Prisma.XOR<Prisma.ProductUpdateWithoutUserInput, Prisma.ProductUncheckedUpdateWithoutUserInput>
+}
+
+export type ProductUpdateManyWithWhereWithoutUserInput = {
+  where: Prisma.ProductScalarWhereInput
+  data: Prisma.XOR<Prisma.ProductUpdateManyMutationInput, Prisma.ProductUncheckedUpdateManyWithoutUserInput>
+}
+
+export type ProductScalarWhereInput = {
+  AND?: Prisma.ProductScalarWhereInput | Prisma.ProductScalarWhereInput[]
+  OR?: Prisma.ProductScalarWhereInput[]
+  NOT?: Prisma.ProductScalarWhereInput | Prisma.ProductScalarWhereInput[]
+  id?: Prisma.StringFilter<"Product"> | string
+  name?: Prisma.StringFilter<"Product"> | string
+  shortName?: Prisma.StringFilter<"Product"> | string
+  userId?: Prisma.StringFilter<"Product"> | string
+  categoryId?: Prisma.StringFilter<"Product"> | string
+  createdAt?: Prisma.DateTimeFilter<"Product"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Product"> | Date | string
+}
+
+export type ProductCreateWithoutCategoryInput = {
+  id?: string
+  name: string
+  shortName: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  user: Prisma.UserCreateNestedOneWithoutProductsInput
+  batches?: Prisma.BatchCreateNestedManyWithoutProductInput
+  billItems?: Prisma.BillItemCreateNestedManyWithoutProductInput
+}
+
+export type ProductUncheckedCreateWithoutCategoryInput = {
+  id?: string
+  name: string
+  shortName: string
+  userId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  batches?: Prisma.BatchUncheckedCreateNestedManyWithoutProductInput
+  billItems?: Prisma.BillItemUncheckedCreateNestedManyWithoutProductInput
+}
+
+export type ProductCreateOrConnectWithoutCategoryInput = {
+  where: Prisma.ProductWhereUniqueInput
+  create: Prisma.XOR<Prisma.ProductCreateWithoutCategoryInput, Prisma.ProductUncheckedCreateWithoutCategoryInput>
+}
+
+export type ProductCreateManyCategoryInputEnvelope = {
+  data: Prisma.ProductCreateManyCategoryInput | Prisma.ProductCreateManyCategoryInput[]
+  skipDuplicates?: boolean
+}
+
+export type ProductUpsertWithWhereUniqueWithoutCategoryInput = {
+  where: Prisma.ProductWhereUniqueInput
+  update: Prisma.XOR<Prisma.ProductUpdateWithoutCategoryInput, Prisma.ProductUncheckedUpdateWithoutCategoryInput>
+  create: Prisma.XOR<Prisma.ProductCreateWithoutCategoryInput, Prisma.ProductUncheckedCreateWithoutCategoryInput>
+}
+
+export type ProductUpdateWithWhereUniqueWithoutCategoryInput = {
+  where: Prisma.ProductWhereUniqueInput
+  data: Prisma.XOR<Prisma.ProductUpdateWithoutCategoryInput, Prisma.ProductUncheckedUpdateWithoutCategoryInput>
+}
+
+export type ProductUpdateManyWithWhereWithoutCategoryInput = {
+  where: Prisma.ProductScalarWhereInput
+  data: Prisma.XOR<Prisma.ProductUpdateManyMutationInput, Prisma.ProductUncheckedUpdateManyWithoutCategoryInput>
+}
+
+export type ProductCreateWithoutBatchesInput = {
+  id?: string
+  name: string
+  shortName: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  user: Prisma.UserCreateNestedOneWithoutProductsInput
+  category: Prisma.CategoryCreateNestedOneWithoutProductsInput
+  billItems?: Prisma.BillItemCreateNestedManyWithoutProductInput
+}
+
+export type ProductUncheckedCreateWithoutBatchesInput = {
+  id?: string
+  name: string
+  shortName: string
+  userId: string
+  categoryId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  billItems?: Prisma.BillItemUncheckedCreateNestedManyWithoutProductInput
+}
+
+export type ProductCreateOrConnectWithoutBatchesInput = {
+  where: Prisma.ProductWhereUniqueInput
+  create: Prisma.XOR<Prisma.ProductCreateWithoutBatchesInput, Prisma.ProductUncheckedCreateWithoutBatchesInput>
+}
+
+export type ProductUpsertWithoutBatchesInput = {
+  update: Prisma.XOR<Prisma.ProductUpdateWithoutBatchesInput, Prisma.ProductUncheckedUpdateWithoutBatchesInput>
+  create: Prisma.XOR<Prisma.ProductCreateWithoutBatchesInput, Prisma.ProductUncheckedCreateWithoutBatchesInput>
+  where?: Prisma.ProductWhereInput
+}
+
+export type ProductUpdateToOneWithWhereWithoutBatchesInput = {
+  where?: Prisma.ProductWhereInput
+  data: Prisma.XOR<Prisma.ProductUpdateWithoutBatchesInput, Prisma.ProductUncheckedUpdateWithoutBatchesInput>
+}
+
+export type ProductUpdateWithoutBatchesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateOneRequiredWithoutProductsNestedInput
+  category?: Prisma.CategoryUpdateOneRequiredWithoutProductsNestedInput
+  billItems?: Prisma.BillItemUpdateManyWithoutProductNestedInput
+}
+
+export type ProductUncheckedUpdateWithoutBatchesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  categoryId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  billItems?: Prisma.BillItemUncheckedUpdateManyWithoutProductNestedInput
+}
+
+export type ProductCreateWithoutBillItemsInput = {
+  id?: string
+  name: string
+  shortName: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  user: Prisma.UserCreateNestedOneWithoutProductsInput
+  category: Prisma.CategoryCreateNestedOneWithoutProductsInput
+  batches?: Prisma.BatchCreateNestedManyWithoutProductInput
+}
+
+export type ProductUncheckedCreateWithoutBillItemsInput = {
+  id?: string
+  name: string
+  shortName: string
+  userId: string
+  categoryId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  batches?: Prisma.BatchUncheckedCreateNestedManyWithoutProductInput
+}
+
+export type ProductCreateOrConnectWithoutBillItemsInput = {
+  where: Prisma.ProductWhereUniqueInput
+  create: Prisma.XOR<Prisma.ProductCreateWithoutBillItemsInput, Prisma.ProductUncheckedCreateWithoutBillItemsInput>
+}
+
+export type ProductUpsertWithoutBillItemsInput = {
+  update: Prisma.XOR<Prisma.ProductUpdateWithoutBillItemsInput, Prisma.ProductUncheckedUpdateWithoutBillItemsInput>
+  create: Prisma.XOR<Prisma.ProductCreateWithoutBillItemsInput, Prisma.ProductUncheckedCreateWithoutBillItemsInput>
+  where?: Prisma.ProductWhereInput
+}
+
+export type ProductUpdateToOneWithWhereWithoutBillItemsInput = {
+  where?: Prisma.ProductWhereInput
+  data: Prisma.XOR<Prisma.ProductUpdateWithoutBillItemsInput, Prisma.ProductUncheckedUpdateWithoutBillItemsInput>
+}
+
+export type ProductUpdateWithoutBillItemsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateOneRequiredWithoutProductsNestedInput
+  category?: Prisma.CategoryUpdateOneRequiredWithoutProductsNestedInput
+  batches?: Prisma.BatchUpdateManyWithoutProductNestedInput
+}
+
+export type ProductUncheckedUpdateWithoutBillItemsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  categoryId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  batches?: Prisma.BatchUncheckedUpdateManyWithoutProductNestedInput
+}
+
+export type ProductCreateManyUserInput = {
+  id?: string
+  name: string
+  shortName: string
+  categoryId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type ProductUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  category?: Prisma.CategoryUpdateOneRequiredWithoutProductsNestedInput
+  batches?: Prisma.BatchUpdateManyWithoutProductNestedInput
+  billItems?: Prisma.BillItemUpdateManyWithoutProductNestedInput
+}
+
+export type ProductUncheckedUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  categoryId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  batches?: Prisma.BatchUncheckedUpdateManyWithoutProductNestedInput
+  billItems?: Prisma.BillItemUncheckedUpdateManyWithoutProductNestedInput
+}
+
+export type ProductUncheckedUpdateManyWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  categoryId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type ProductCreateManyCategoryInput = {
+  id?: string
+  name: string
+  shortName: string
+  userId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type ProductUpdateWithoutCategoryInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateOneRequiredWithoutProductsNestedInput
+  batches?: Prisma.BatchUpdateManyWithoutProductNestedInput
+  billItems?: Prisma.BillItemUpdateManyWithoutProductNestedInput
+}
+
+export type ProductUncheckedUpdateWithoutCategoryInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  batches?: Prisma.BatchUncheckedUpdateManyWithoutProductNestedInput
+  billItems?: Prisma.BillItemUncheckedUpdateManyWithoutProductNestedInput
+}
+
+export type ProductUncheckedUpdateManyWithoutCategoryInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  shortName?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+
+/**
+ * Count Type ProductCountOutputType
+ */
+
+export type ProductCountOutputType = {
+  batches: number
+  billItems: number
+}
+
+export type ProductCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  batches?: boolean | ProductCountOutputTypeCountBatchesArgs
+  billItems?: boolean | ProductCountOutputTypeCountBillItemsArgs
+}
+
+/**
+ * ProductCountOutputType without action
+ */
+export type ProductCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ProductCountOutputType
+   */
+  select?: Prisma.ProductCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * ProductCountOutputType without action
+ */
+export type ProductCountOutputTypeCountBatchesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BatchWhereInput
+}
+
+/**
+ * ProductCountOutputType without action
+ */
+export type ProductCountOutputTypeCountBillItemsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BillItemWhereInput
+}
+
+
+export type ProductSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  name?: boolean
+  shortName?: boolean
+  userId?: boolean
+  categoryId?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
+  batches?: boolean | Prisma.Product$batchesArgs<ExtArgs>
+  billItems?: boolean | Prisma.Product$billItemsArgs<ExtArgs>
+  _count?: boolean | Prisma.ProductCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["product"]>
+
+export type ProductSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  name?: boolean
+  shortName?: boolean
+  userId?: boolean
+  categoryId?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["product"]>
+
+export type ProductSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  name?: boolean
+  shortName?: boolean
+  userId?: boolean
+  categoryId?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["product"]>
+
+export type ProductSelectScalar = {
+  id?: boolean
+  name?: boolean
+  shortName?: boolean
+  userId?: boolean
+  categoryId?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+}
+
+export type ProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "shortName" | "userId" | "categoryId" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
+export type ProductInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
+  batches?: boolean | Prisma.Product$batchesArgs<ExtArgs>
+  billItems?: boolean | Prisma.Product$billItemsArgs<ExtArgs>
+  _count?: boolean | Prisma.ProductCountOutputTypeDefaultArgs<ExtArgs>
+}
+export type ProductIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
+}
+export type ProductIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
+}
+
+export type $ProductPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Product"
+  objects: {
+    user: Prisma.$UserPayload<ExtArgs>
+    category: Prisma.$CategoryPayload<ExtArgs>
+    batches: Prisma.$BatchPayload<ExtArgs>[]
+    billItems: Prisma.$BillItemPayload<ExtArgs>[]
+  }
+  scalars: runtime.Types.Extensions.GetPayloadResult<{
+    id: string
+    name: string
+    shortName: string
+    userId: string
+    categoryId: string
+    createdAt: Date
+    updatedAt: Date
+  }, ExtArgs["result"]["product"]>
+  composites: {}
+}
+
+export type ProductGetPayload<S extends boolean | null | undefined | ProductDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ProductPayload, S>
+
+export type ProductCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<ProductFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: ProductCountAggregateInputType | true
+  }
+
+export interface ProductDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Product'], meta: { name: 'Product' } }
+  /**
+   * Find zero or one Product that matches the filter.
+   * @param {ProductFindUniqueArgs} args - Arguments to find a Product
+   * @example
+   * // Get one Product
+   * const product = await prisma.product.findUnique({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findUnique<T extends ProductFindUniqueArgs>(args: Prisma.SelectSubset<T, ProductFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find one Product that matches the filter or throw an error with `error.code='P2025'`
+   * if no matches were found.
+   * @param {ProductFindUniqueOrThrowArgs} args - Arguments to find a Product
+   * @example
+   * // Get one Product
+   * const product = await prisma.product.findUniqueOrThrow({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findUniqueOrThrow<T extends ProductFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ProductFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find the first Product that matches the filter.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {ProductFindFirstArgs} args - Arguments to find a Product
+   * @example
+   * // Get one Product
+   * const product = await prisma.product.findFirst({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findFirst<T extends ProductFindFirstArgs>(args?: Prisma.SelectSubset<T, ProductFindFirstArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find the first Product that matches the filter or
+   * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {ProductFindFirstOrThrowArgs} args - Arguments to find a Product
+   * @example
+   * // Get one Product
+   * const product = await prisma.product.findFirstOrThrow({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findFirstOrThrow<T extends ProductFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ProductFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find zero or more Products that matches the filter.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {ProductFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @example
+   * // Get all Products
+   * const products = await prisma.product.findMany()
+   * 
+   * // Get first 10 Products
+   * const products = await prisma.product.findMany({ take: 10 })
+   * 
+   * // Only select the `id`
+   * const productWithIdOnly = await prisma.product.findMany({ select: { id: true } })
+   * 
+   */
+  findMany<T extends ProductFindManyArgs>(args?: Prisma.SelectSubset<T, ProductFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+  /**
+   * Create a Product.
+   * @param {ProductCreateArgs} args - Arguments to create a Product.
+   * @example
+   * // Create one Product
+   * const Product = await prisma.product.create({
+   *   data: {
+   *     // ... data to create a Product
+   *   }
+   * })
+   * 
+   */
+  create<T extends ProductCreateArgs>(args: Prisma.SelectSubset<T, ProductCreateArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Create many Products.
+   * @param {ProductCreateManyArgs} args - Arguments to create many Products.
+   * @example
+   * // Create many Products
+   * const product = await prisma.product.createMany({
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   *     
+   */
+  createMany<T extends ProductCreateManyArgs>(args?: Prisma.SelectSubset<T, ProductCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Create many Products and returns the data saved in the database.
+   * @param {ProductCreateManyAndReturnArgs} args - Arguments to create many Products.
+   * @example
+   * // Create many Products
+   * const product = await prisma.product.createManyAndReturn({
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * 
+   * // Create many Products and only return the `id`
+   * const productWithIdOnly = await prisma.product.createManyAndReturn({
+   *   select: { id: true },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * 
+   */
+  createManyAndReturn<T extends ProductCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, ProductCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+  /**
+   * Delete a Product.
+   * @param {ProductDeleteArgs} args - Arguments to delete one Product.
+   * @example
+   * // Delete one Product
+   * const Product = await prisma.product.delete({
+   *   where: {
+   *     // ... filter to delete one Product
+   *   }
+   * })
+   * 
+   */
+  delete<T extends ProductDeleteArgs>(args: Prisma.SelectSubset<T, ProductDeleteArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Update one Product.
+   * @param {ProductUpdateArgs} args - Arguments to update one Product.
+   * @example
+   * // Update one Product
+   * const product = await prisma.product.update({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: {
+   *     // ... provide data here
+   *   }
+   * })
+   * 
+   */
+  update<T extends ProductUpdateArgs>(args: Prisma.SelectSubset<T, ProductUpdateArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Delete zero or more Products.
+   * @param {ProductDeleteManyArgs} args - Arguments to filter Products to delete.
+   * @example
+   * // Delete a few Products
+   * const { count } = await prisma.product.deleteMany({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   * 
+   */
+  deleteMany<T extends ProductDeleteManyArgs>(args?: Prisma.SelectSubset<T, ProductDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Update zero or more Products.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {ProductUpdateManyArgs} args - Arguments to update one or more rows.
+   * @example
+   * // Update many Products
+   * const product = await prisma.product.updateMany({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: {
+   *     // ... provide data here
+   *   }
+   * })
+   * 
+   */
+  updateMany<T extends ProductUpdateManyArgs>(args: Prisma.SelectSubset<T, ProductUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Update zero or more Products and returns the data updated in the database.
+   * @param {ProductUpdateManyAndReturnArgs} args - Arguments to update many Products.
+   * @example
+   * // Update many Products
+   * const product = await prisma.product.updateManyAndReturn({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * 
+   * // Update zero or more Products and only return the `id`
+   * const productWithIdOnly = await prisma.product.updateManyAndReturn({
+   *   select: { id: true },
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * 
+   */
+  updateManyAndReturn<T extends ProductUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, ProductUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+  /**
+   * Create or update one Product.
+   * @param {ProductUpsertArgs} args - Arguments to update or create a Product.
+   * @example
+   * // Update or create a Product
+   * const product = await prisma.product.upsert({
+   *   create: {
+   *     // ... data to create a Product
+   *   },
+   *   update: {
+   *     // ... in case it already exists, update
+   *   },
+   *   where: {
+   *     // ... the filter for the Product we want to update
+   *   }
+   * })
+   */
+  upsert<T extends ProductUpsertArgs>(args: Prisma.SelectSubset<T, ProductUpsertArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+  /**
+   * Count the number of Products.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {ProductCountArgs} args - Arguments to filter Products to count.
+   * @example
+   * // Count the number of Products
+   * const count = await prisma.product.count({
+   *   where: {
+   *     // ... the filter for the Products we want to count
+   *   }
+   * })
+  **/
+  count<T extends ProductCountArgs>(
+    args?: Prisma.Subset<T, ProductCountArgs>,
+  ): Prisma.PrismaPromise<
+    T extends runtime.Types.Utils.Record<'select', any>
+      ? T['select'] extends true
+        ? number
+        : Prisma.GetScalarType<T['select'], ProductCountAggregateOutputType>
+      : number
+  >
+
+  /**
+   * Allows you to perform aggregations operations on a Product.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {ProductAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @example
+   * // Ordered by age ascending
+   * // Where email contains prisma.io
+   * // Limited to the 10 users
+   * const aggregations = await prisma.user.aggregate({
+   *   _avg: {
+   *     age: true,
+   *   },
+   *   where: {
+   *     email: {
+   *       contains: "prisma.io",
+   *     },
+   *   },
+   *   orderBy: {
+   *     age: "asc",
+   *   },
+   *   take: 10,
+   * })
+  **/
+  aggregate<T extends ProductAggregateArgs>(args: Prisma.Subset<T, ProductAggregateArgs>): Prisma.PrismaPromise<GetProductAggregateType<T>>
+
+  /**
+   * Group by Product.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {ProductGroupByArgs} args - Group by arguments.
+   * @example
+   * // Group by city, order by createdAt, get count
+   * const result = await prisma.user.groupBy({
+   *   by: ['city', 'createdAt'],
+   *   orderBy: {
+   *     createdAt: true
+   *   },
+   *   _count: {
+   *     _all: true
+   *   },
+   * })
+   * 
+  **/
+  groupBy<
+    T extends ProductGroupByArgs,
+    HasSelectOrTake extends Prisma.Or<
+      Prisma.Extends<'skip', Prisma.Keys<T>>,
+      Prisma.Extends<'take', Prisma.Keys<T>>
+    >,
+    OrderByArg extends Prisma.True extends HasSelectOrTake
+      ? { orderBy: ProductGroupByArgs['orderBy'] }
+      : { orderBy?: ProductGroupByArgs['orderBy'] },
+    OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
+    ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
+    ByValid extends Prisma.Has<ByFields, OrderFields>,
+    HavingFields extends Prisma.GetHavingFields<T['having']>,
+    HavingValid extends Prisma.Has<ByFields, HavingFields>,
+    ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False,
+    InputErrors extends ByEmpty extends Prisma.True
+    ? `Error: "by" must not be empty.`
+    : HavingValid extends Prisma.False
+    ? {
+        [P in HavingFields]: P extends ByFields
+          ? never
+          : P extends string
+          ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+          : [
+              Error,
+              'Field ',
+              P,
+              ` in "having" needs to be provided in "by"`,
+            ]
+      }[HavingFields]
+    : 'take' extends Prisma.Keys<T>
+    ? 'orderBy' extends Prisma.Keys<T>
+      ? ByValid extends Prisma.True
+        ? {}
+        : {
+            [P in OrderFields]: P extends ByFields
+              ? never
+              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+          }[OrderFields]
+      : 'Error: If you provide "take", you also need to provide "orderBy"'
+    : 'skip' extends Prisma.Keys<T>
+    ? 'orderBy' extends Prisma.Keys<T>
+      ? ByValid extends Prisma.True
+        ? {}
+        : {
+            [P in OrderFields]: P extends ByFields
+              ? never
+              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+          }[OrderFields]
+      : 'Error: If you provide "skip", you also need to provide "orderBy"'
+    : ByValid extends Prisma.True
+    ? {}
+    : {
+        [P in OrderFields]: P extends ByFields
+          ? never
+          : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+      }[OrderFields]
+  >(args: Prisma.SubsetIntersection<T, ProductGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProductGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+/**
+ * Fields of the Product model
+ */
+readonly fields: ProductFieldRefs;
+}
+
+/**
+ * The delegate class that acts as a "Promise-like" for Product.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__ProductClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  readonly [Symbol.toStringTag]: "PrismaPromise"
+  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  category<T extends Prisma.CategoryDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CategoryDefaultArgs<ExtArgs>>): Prisma.Prisma__CategoryClient<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  batches<T extends Prisma.Product$batchesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Product$batchesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  billItems<T extends Prisma.Product$billItemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Product$billItemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BillItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  /**
+   * Attaches callbacks for the resolution and/or rejection of the Promise.
+   * @param onfulfilled The callback to execute when the Promise is resolved.
+   * @param onrejected The callback to execute when the Promise is rejected.
+   * @returns A Promise for the completion of which ever callback is executed.
+   */
+  then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>
+  /**
+   * Attaches a callback for only the rejection of the Promise.
+   * @param onrejected The callback to execute when the Promise is rejected.
+   * @returns A Promise for the completion of the callback.
+   */
+  catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>
+  /**
+   * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+   * resolved value cannot be modified from the callback.
+   * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+   * @returns A Promise for the completion of the callback.
+   */
+  finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>
+}
+
+
+
+
+/**
+ * Fields of the Product model
+ */
+export interface ProductFieldRefs {
+  readonly id: Prisma.FieldRef<"Product", 'String'>
+  readonly name: Prisma.FieldRef<"Product", 'String'>
+  readonly shortName: Prisma.FieldRef<"Product", 'String'>
+  readonly userId: Prisma.FieldRef<"Product", 'String'>
+  readonly categoryId: Prisma.FieldRef<"Product", 'String'>
+  readonly createdAt: Prisma.FieldRef<"Product", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"Product", 'DateTime'>
+}
+    
+
+// Custom InputTypes
+/**
+ * Product findUnique
+ */
+export type ProductFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  /**
+   * Filter, which Product to fetch.
+   */
+  where: Prisma.ProductWhereUniqueInput
+}
+
+/**
+ * Product findUniqueOrThrow
+ */
+export type ProductFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  /**
+   * Filter, which Product to fetch.
+   */
+  where: Prisma.ProductWhereUniqueInput
+}
+
+/**
+ * Product findFirst
+ */
+export type ProductFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  /**
+   * Filter, which Product to fetch.
+   */
+  where?: Prisma.ProductWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Products to fetch.
+   */
+  orderBy?: Prisma.ProductOrderByWithRelationInput | Prisma.ProductOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for searching for Products.
+   */
+  cursor?: Prisma.ProductWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Products from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Products.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Products.
+   */
+  distinct?: Prisma.ProductScalarFieldEnum | Prisma.ProductScalarFieldEnum[]
+}
+
+/**
+ * Product findFirstOrThrow
+ */
+export type ProductFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  /**
+   * Filter, which Product to fetch.
+   */
+  where?: Prisma.ProductWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Products to fetch.
+   */
+  orderBy?: Prisma.ProductOrderByWithRelationInput | Prisma.ProductOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for searching for Products.
+   */
+  cursor?: Prisma.ProductWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Products from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Products.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Products.
+   */
+  distinct?: Prisma.ProductScalarFieldEnum | Prisma.ProductScalarFieldEnum[]
+}
+
+/**
+ * Product findMany
+ */
+export type ProductFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  /**
+   * Filter, which Products to fetch.
+   */
+  where?: Prisma.ProductWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Products to fetch.
+   */
+  orderBy?: Prisma.ProductOrderByWithRelationInput | Prisma.ProductOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for listing Products.
+   */
+  cursor?: Prisma.ProductWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Products from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Products.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Products.
+   */
+  distinct?: Prisma.ProductScalarFieldEnum | Prisma.ProductScalarFieldEnum[]
+}
+
+/**
+ * Product create
+ */
+export type ProductCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  /**
+   * The data needed to create a Product.
+   */
+  data: Prisma.XOR<Prisma.ProductCreateInput, Prisma.ProductUncheckedCreateInput>
+}
+
+/**
+ * Product createMany
+ */
+export type ProductCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * The data used to create many Products.
+   */
+  data: Prisma.ProductCreateManyInput | Prisma.ProductCreateManyInput[]
+  skipDuplicates?: boolean
+}
+
+/**
+ * Product createManyAndReturn
+ */
+export type ProductCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelectCreateManyAndReturn<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * The data used to create many Products.
+   */
+  data: Prisma.ProductCreateManyInput | Prisma.ProductCreateManyInput[]
+  skipDuplicates?: boolean
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductIncludeCreateManyAndReturn<ExtArgs> | null
+}
+
+/**
+ * Product update
+ */
+export type ProductUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  /**
+   * The data needed to update a Product.
+   */
+  data: Prisma.XOR<Prisma.ProductUpdateInput, Prisma.ProductUncheckedUpdateInput>
+  /**
+   * Choose, which Product to update.
+   */
+  where: Prisma.ProductWhereUniqueInput
+}
+
+/**
+ * Product updateMany
+ */
+export type ProductUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * The data used to update Products.
+   */
+  data: Prisma.XOR<Prisma.ProductUpdateManyMutationInput, Prisma.ProductUncheckedUpdateManyInput>
+  /**
+   * Filter which Products to update
+   */
+  where?: Prisma.ProductWhereInput
+  /**
+   * Limit how many Products to update.
+   */
+  limit?: number
+}
+
+/**
+ * Product updateManyAndReturn
+ */
+export type ProductUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelectUpdateManyAndReturn<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * The data used to update Products.
+   */
+  data: Prisma.XOR<Prisma.ProductUpdateManyMutationInput, Prisma.ProductUncheckedUpdateManyInput>
+  /**
+   * Filter which Products to update
+   */
+  where?: Prisma.ProductWhereInput
+  /**
+   * Limit how many Products to update.
+   */
+  limit?: number
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductIncludeUpdateManyAndReturn<ExtArgs> | null
+}
+
+/**
+ * Product upsert
+ */
+export type ProductUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  /**
+   * The filter to search for the Product to update in case it exists.
+   */
+  where: Prisma.ProductWhereUniqueInput
+  /**
+   * In case the Product found by the `where` argument doesn't exist, create a new Product with this data.
+   */
+  create: Prisma.XOR<Prisma.ProductCreateInput, Prisma.ProductUncheckedCreateInput>
+  /**
+   * In case the Product was found with the provided `where` argument, update it with this data.
+   */
+  update: Prisma.XOR<Prisma.ProductUpdateInput, Prisma.ProductUncheckedUpdateInput>
+}
+
+/**
+ * Product delete
+ */
+export type ProductDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  /**
+   * Filter which Product to delete.
+   */
+  where: Prisma.ProductWhereUniqueInput
+}
+
+/**
+ * Product deleteMany
+ */
+export type ProductDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Filter which Products to delete
+   */
+  where?: Prisma.ProductWhereInput
+  /**
+   * Limit how many Products to delete.
+   */
+  limit?: number
+}
+
+/**
+ * Product.batches
+ */
+export type Product$batchesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Batch
+   */
+  select?: Prisma.BatchSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Batch
+   */
+  omit?: Prisma.BatchOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BatchInclude<ExtArgs> | null
+  where?: Prisma.BatchWhereInput
+  orderBy?: Prisma.BatchOrderByWithRelationInput | Prisma.BatchOrderByWithRelationInput[]
+  cursor?: Prisma.BatchWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BatchScalarFieldEnum | Prisma.BatchScalarFieldEnum[]
+}
+
+/**
+ * Product.billItems
+ */
+export type Product$billItemsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BillItem
+   */
+  select?: Prisma.BillItemSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BillItem
+   */
+  omit?: Prisma.BillItemOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillItemInclude<ExtArgs> | null
+  where?: Prisma.BillItemWhereInput
+  orderBy?: Prisma.BillItemOrderByWithRelationInput | Prisma.BillItemOrderByWithRelationInput[]
+  cursor?: Prisma.BillItemWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BillItemScalarFieldEnum | Prisma.BillItemScalarFieldEnum[]
+}
+
+/**
+ * Product without action
+ */
+export type ProductDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+}
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-models-user-ts"></a>📄 `src/generated/prisma/models/User.ts`
+
+**File Info:**
+- **Size**: 56.53 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/models/User.ts`
+- **Relative Path**: `src/generated/prisma/models`
+- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `9d4b619a03a64b8345bfbb8bd51d5250`
+- **SHA256**: `692e2f2aaa6569206e536e4397f2e93807029987dc87f24fa8044dd753ab4093`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * This file exports the `User` model and its related types.
+ *
+ * 🟢 You can import this file directly.
+ */
+import type * as runtime from "@prisma/client/runtime/client"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
+
+/**
+ * Model User
+ * 
+ */
+export type UserModel = runtime.Types.Result.DefaultSelection<Prisma.$UserPayload>
+
+export type AggregateUser = {
+  _count: UserCountAggregateOutputType | null
+  _min: UserMinAggregateOutputType | null
+  _max: UserMaxAggregateOutputType | null
+}
+
+export type UserMinAggregateOutputType = {
+  id: string | null
+  email: string | null
+  username: string | null
+  password: string | null
+  role: $Enums.Role | null
+  createdAt: Date | null
+  updatedAt: Date | null
+}
+
+export type UserMaxAggregateOutputType = {
+  id: string | null
+  email: string | null
+  username: string | null
+  password: string | null
+  role: $Enums.Role | null
+  createdAt: Date | null
+  updatedAt: Date | null
+}
+
+export type UserCountAggregateOutputType = {
+  id: number
+  email: number
+  username: number
+  password: number
+  role: number
+  createdAt: number
+  updatedAt: number
+  _all: number
+}
+
+
+export type UserMinAggregateInputType = {
+  id?: true
+  email?: true
+  username?: true
+  password?: true
+  role?: true
+  createdAt?: true
+  updatedAt?: true
+}
+
+export type UserMaxAggregateInputType = {
+  id?: true
+  email?: true
+  username?: true
+  password?: true
+  role?: true
+  createdAt?: true
+  updatedAt?: true
+}
+
+export type UserCountAggregateInputType = {
+  id?: true
+  email?: true
+  username?: true
+  password?: true
+  role?: true
+  createdAt?: true
+  updatedAt?: true
+  _all?: true
+}
+
+export type UserAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Filter which User to aggregate.
+   */
+  where?: Prisma.UserWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Users to fetch.
+   */
+  orderBy?: Prisma.UserOrderByWithRelationInput | Prisma.UserOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the start position
+   */
+  cursor?: Prisma.UserWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Users from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Users.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Count returned Users
+  **/
+  _count?: true | UserCountAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to find the minimum value
+  **/
+  _min?: UserMinAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to find the maximum value
+  **/
+  _max?: UserMaxAggregateInputType
+}
+
+export type GetUserAggregateType<T extends UserAggregateArgs> = {
+      [P in keyof T & keyof AggregateUser]: P extends '_count' | 'count'
+    ? T[P] extends true
+      ? number
+      : Prisma.GetScalarType<T[P], AggregateUser[P]>
+    : Prisma.GetScalarType<T[P], AggregateUser[P]>
+}
+
+
+
+
+export type UserGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UserWhereInput
+  orderBy?: Prisma.UserOrderByWithAggregationInput | Prisma.UserOrderByWithAggregationInput[]
+  by: Prisma.UserScalarFieldEnum[] | Prisma.UserScalarFieldEnum
+  having?: Prisma.UserScalarWhereWithAggregatesInput
+  take?: number
+  skip?: number
+  _count?: UserCountAggregateInputType | true
+  _min?: UserMinAggregateInputType
+  _max?: UserMaxAggregateInputType
+}
+
+export type UserGroupByOutputType = {
+  id: string
+  email: string
+  username: string
+  password: string
+  role: $Enums.Role
+  createdAt: Date
+  updatedAt: Date
+  _count: UserCountAggregateOutputType | null
+  _min: UserMinAggregateOutputType | null
+  _max: UserMaxAggregateOutputType | null
+}
+
+export type GetUserGroupByPayload<T extends UserGroupByArgs> = Prisma.PrismaPromise<
+  Array<
+    Prisma.PickEnumerable<UserGroupByOutputType, T['by']> &
+      {
+        [P in ((keyof T) & (keyof UserGroupByOutputType))]: P extends '_count'
+          ? T[P] extends boolean
+            ? number
+            : Prisma.GetScalarType<T[P], UserGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], UserGroupByOutputType[P]>
+      }
+    >
+  >
+
+
+
+export type UserWhereInput = {
+  AND?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
+  OR?: Prisma.UserWhereInput[]
+  NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
+  id?: Prisma.StringFilter<"User"> | string
+  email?: Prisma.StringFilter<"User"> | string
+  username?: Prisma.StringFilter<"User"> | string
+  password?: Prisma.StringFilter<"User"> | string
+  role?: Prisma.EnumRoleFilter<"User"> | $Enums.Role
+  createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
+  categories?: Prisma.CategoryListRelationFilter
+  products?: Prisma.ProductListRelationFilter
+  bills?: Prisma.BillListRelationFilter
+}
+
+export type UserOrderByWithRelationInput = {
+  id?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  username?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  role?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  categories?: Prisma.CategoryOrderByRelationAggregateInput
+  products?: Prisma.ProductOrderByRelationAggregateInput
+  bills?: Prisma.BillOrderByRelationAggregateInput
+}
+
+export type UserWhereUniqueInput = Prisma.AtLeast<{
+  id?: string
+  email?: string
+  username?: string
+  AND?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
+  OR?: Prisma.UserWhereInput[]
+  NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
+  password?: Prisma.StringFilter<"User"> | string
+  role?: Prisma.EnumRoleFilter<"User"> | $Enums.Role
+  createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
+  categories?: Prisma.CategoryListRelationFilter
+  products?: Prisma.ProductListRelationFilter
+  bills?: Prisma.BillListRelationFilter
+}, "id" | "email" | "username">
+
+export type UserOrderByWithAggregationInput = {
+  id?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  username?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  role?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+  _count?: Prisma.UserCountOrderByAggregateInput
+  _max?: Prisma.UserMaxOrderByAggregateInput
+  _min?: Prisma.UserMinOrderByAggregateInput
+}
+
+export type UserScalarWhereWithAggregatesInput = {
+  AND?: Prisma.UserScalarWhereWithAggregatesInput | Prisma.UserScalarWhereWithAggregatesInput[]
+  OR?: Prisma.UserScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.UserScalarWhereWithAggregatesInput | Prisma.UserScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"User"> | string
+  email?: Prisma.StringWithAggregatesFilter<"User"> | string
+  username?: Prisma.StringWithAggregatesFilter<"User"> | string
+  password?: Prisma.StringWithAggregatesFilter<"User"> | string
+  role?: Prisma.EnumRoleWithAggregatesFilter<"User"> | $Enums.Role
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
+}
+
+export type UserCreateInput = {
+  id?: string
+  email: string
+  username: string
+  password: string
+  role?: $Enums.Role
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  categories?: Prisma.CategoryCreateNestedManyWithoutUserInput
+  products?: Prisma.ProductCreateNestedManyWithoutUserInput
+  bills?: Prisma.BillCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateInput = {
+  id?: string
+  email: string
+  username: string
+  password: string
+  role?: $Enums.Role
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutUserInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutUserInput
+  bills?: Prisma.BillUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  categories?: Prisma.CategoryUpdateManyWithoutUserNestedInput
+  products?: Prisma.ProductUpdateManyWithoutUserNestedInput
+  bills?: Prisma.BillUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  categories?: Prisma.CategoryUncheckedUpdateManyWithoutUserNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutUserNestedInput
+  bills?: Prisma.BillUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateManyInput = {
+  id?: string
+  email: string
+  username: string
+  password: string
+  role?: $Enums.Role
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type UserUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type UserUncheckedUpdateManyInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type UserCountOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  username?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  role?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type UserMaxOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  username?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  role?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type UserMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  username?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  role?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type UserScalarRelationFilter = {
+  is?: Prisma.UserWhereInput
+  isNot?: Prisma.UserWhereInput
+}
+
+export type StringFieldUpdateOperationsInput = {
+  set?: string
+}
+
+export type EnumRoleFieldUpdateOperationsInput = {
+  set?: $Enums.Role
+}
+
+export type DateTimeFieldUpdateOperationsInput = {
+  set?: Date | string
+}
+
+export type UserCreateNestedOneWithoutCategoriesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCategoriesInput, Prisma.UserUncheckedCreateWithoutCategoriesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCategoriesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutCategoriesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCategoriesInput, Prisma.UserUncheckedCreateWithoutCategoriesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCategoriesInput
+  upsert?: Prisma.UserUpsertWithoutCategoriesInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutCategoriesInput, Prisma.UserUpdateWithoutCategoriesInput>, Prisma.UserUncheckedUpdateWithoutCategoriesInput>
+}
+
+export type UserCreateNestedOneWithoutProductsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutProductsInput, Prisma.UserUncheckedCreateWithoutProductsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutProductsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutProductsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutProductsInput, Prisma.UserUncheckedCreateWithoutProductsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutProductsInput
+  upsert?: Prisma.UserUpsertWithoutProductsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutProductsInput, Prisma.UserUpdateWithoutProductsInput>, Prisma.UserUncheckedUpdateWithoutProductsInput>
+}
+
+export type UserCreateNestedOneWithoutBillsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBillsInput, Prisma.UserUncheckedCreateWithoutBillsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBillsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutBillsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBillsInput, Prisma.UserUncheckedCreateWithoutBillsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBillsInput
+  upsert?: Prisma.UserUpsertWithoutBillsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBillsInput, Prisma.UserUpdateWithoutBillsInput>, Prisma.UserUncheckedUpdateWithoutBillsInput>
+}
+
+export type UserCreateWithoutCategoriesInput = {
+  id?: string
+  email: string
+  username: string
+  password: string
+  role?: $Enums.Role
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  products?: Prisma.ProductCreateNestedManyWithoutUserInput
+  bills?: Prisma.BillCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutCategoriesInput = {
+  id?: string
+  email: string
+  username: string
+  password: string
+  role?: $Enums.Role
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutUserInput
+  bills?: Prisma.BillUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutCategoriesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutCategoriesInput, Prisma.UserUncheckedCreateWithoutCategoriesInput>
+}
+
+export type UserUpsertWithoutCategoriesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutCategoriesInput, Prisma.UserUncheckedUpdateWithoutCategoriesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutCategoriesInput, Prisma.UserUncheckedCreateWithoutCategoriesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutCategoriesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutCategoriesInput, Prisma.UserUncheckedUpdateWithoutCategoriesInput>
+}
+
+export type UserUpdateWithoutCategoriesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  products?: Prisma.ProductUpdateManyWithoutUserNestedInput
+  bills?: Prisma.BillUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutCategoriesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  products?: Prisma.ProductUncheckedUpdateManyWithoutUserNestedInput
+  bills?: Prisma.BillUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutProductsInput = {
+  id?: string
+  email: string
+  username: string
+  password: string
+  role?: $Enums.Role
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  categories?: Prisma.CategoryCreateNestedManyWithoutUserInput
+  bills?: Prisma.BillCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutProductsInput = {
+  id?: string
+  email: string
+  username: string
+  password: string
+  role?: $Enums.Role
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutUserInput
+  bills?: Prisma.BillUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutProductsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutProductsInput, Prisma.UserUncheckedCreateWithoutProductsInput>
+}
+
+export type UserUpsertWithoutProductsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutProductsInput, Prisma.UserUncheckedUpdateWithoutProductsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutProductsInput, Prisma.UserUncheckedCreateWithoutProductsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutProductsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutProductsInput, Prisma.UserUncheckedUpdateWithoutProductsInput>
+}
+
+export type UserUpdateWithoutProductsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  categories?: Prisma.CategoryUpdateManyWithoutUserNestedInput
+  bills?: Prisma.BillUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutProductsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  categories?: Prisma.CategoryUncheckedUpdateManyWithoutUserNestedInput
+  bills?: Prisma.BillUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutBillsInput = {
+  id?: string
+  email: string
+  username: string
+  password: string
+  role?: $Enums.Role
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  categories?: Prisma.CategoryCreateNestedManyWithoutUserInput
+  products?: Prisma.ProductCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutBillsInput = {
+  id?: string
+  email: string
+  username: string
+  password: string
+  role?: $Enums.Role
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutUserInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutBillsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBillsInput, Prisma.UserUncheckedCreateWithoutBillsInput>
+}
+
+export type UserUpsertWithoutBillsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBillsInput, Prisma.UserUncheckedUpdateWithoutBillsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBillsInput, Prisma.UserUncheckedCreateWithoutBillsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBillsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBillsInput, Prisma.UserUncheckedUpdateWithoutBillsInput>
+}
+
+export type UserUpdateWithoutBillsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  categories?: Prisma.CategoryUpdateManyWithoutUserNestedInput
+  products?: Prisma.ProductUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBillsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  categories?: Prisma.CategoryUncheckedUpdateManyWithoutUserNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutUserNestedInput
+}
+
+
+/**
+ * Count Type UserCountOutputType
+ */
+
+export type UserCountOutputType = {
+  categories: number
+  products: number
+  bills: number
+}
+
+export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  categories?: boolean | UserCountOutputTypeCountCategoriesArgs
+  products?: boolean | UserCountOutputTypeCountProductsArgs
+  bills?: boolean | UserCountOutputTypeCountBillsArgs
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UserCountOutputType
+   */
+  select?: Prisma.UserCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountCategoriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CategoryWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountProductsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProductWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountBillsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BillWhereInput
+}
+
+
+export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  email?: boolean
+  username?: boolean
+  password?: boolean
+  role?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+  categories?: boolean | Prisma.User$categoriesArgs<ExtArgs>
+  products?: boolean | Prisma.User$productsArgs<ExtArgs>
+  bills?: boolean | Prisma.User$billsArgs<ExtArgs>
+  _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["user"]>
+
+export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  email?: boolean
+  username?: boolean
+  password?: boolean
+  role?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+}, ExtArgs["result"]["user"]>
+
+export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  id?: boolean
+  email?: boolean
+  username?: boolean
+  password?: boolean
+  role?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+}, ExtArgs["result"]["user"]>
+
+export type UserSelectScalar = {
+  id?: boolean
+  email?: boolean
+  username?: boolean
+  password?: boolean
+  role?: boolean
+  createdAt?: boolean
+  updatedAt?: boolean
+}
+
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "username" | "password" | "role" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  categories?: boolean | Prisma.User$categoriesArgs<ExtArgs>
+  products?: boolean | Prisma.User$productsArgs<ExtArgs>
+  bills?: boolean | Prisma.User$billsArgs<ExtArgs>
+  _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
+}
+export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+export type UserIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+
+export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "User"
+  objects: {
+    categories: Prisma.$CategoryPayload<ExtArgs>[]
+    products: Prisma.$ProductPayload<ExtArgs>[]
+    bills: Prisma.$BillPayload<ExtArgs>[]
+  }
+  scalars: runtime.Types.Extensions.GetPayloadResult<{
+    id: string
+    email: string
+    username: string
+    password: string
+    role: $Enums.Role
+    createdAt: Date
+    updatedAt: Date
+  }, ExtArgs["result"]["user"]>
+  composites: {}
+}
+
+export type UserGetPayload<S extends boolean | null | undefined | UserDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$UserPayload, S>
+
+export type UserCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<UserFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: UserCountAggregateInputType | true
+  }
+
+export interface UserDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['User'], meta: { name: 'User' } }
+  /**
+   * Find zero or one User that matches the filter.
+   * @param {UserFindUniqueArgs} args - Arguments to find a User
+   * @example
+   * // Get one User
+   * const user = await prisma.user.findUnique({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findUnique<T extends UserFindUniqueArgs>(args: Prisma.SelectSubset<T, UserFindUniqueArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find one User that matches the filter or throw an error with `error.code='P2025'`
+   * if no matches were found.
+   * @param {UserFindUniqueOrThrowArgs} args - Arguments to find a User
+   * @example
+   * // Get one User
+   * const user = await prisma.user.findUniqueOrThrow({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findUniqueOrThrow<T extends UserFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, UserFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find the first User that matches the filter.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {UserFindFirstArgs} args - Arguments to find a User
+   * @example
+   * // Get one User
+   * const user = await prisma.user.findFirst({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findFirst<T extends UserFindFirstArgs>(args?: Prisma.SelectSubset<T, UserFindFirstArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find the first User that matches the filter or
+   * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {UserFindFirstOrThrowArgs} args - Arguments to find a User
+   * @example
+   * // Get one User
+   * const user = await prisma.user.findFirstOrThrow({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   */
+  findFirstOrThrow<T extends UserFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, UserFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Find zero or more Users that matches the filter.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {UserFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @example
+   * // Get all Users
+   * const users = await prisma.user.findMany()
+   * 
+   * // Get first 10 Users
+   * const users = await prisma.user.findMany({ take: 10 })
+   * 
+   * // Only select the `id`
+   * const userWithIdOnly = await prisma.user.findMany({ select: { id: true } })
+   * 
+   */
+  findMany<T extends UserFindManyArgs>(args?: Prisma.SelectSubset<T, UserFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+  /**
+   * Create a User.
+   * @param {UserCreateArgs} args - Arguments to create a User.
+   * @example
+   * // Create one User
+   * const User = await prisma.user.create({
+   *   data: {
+   *     // ... data to create a User
+   *   }
+   * })
+   * 
+   */
+  create<T extends UserCreateArgs>(args: Prisma.SelectSubset<T, UserCreateArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Create many Users.
+   * @param {UserCreateManyArgs} args - Arguments to create many Users.
+   * @example
+   * // Create many Users
+   * const user = await prisma.user.createMany({
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   *     
+   */
+  createMany<T extends UserCreateManyArgs>(args?: Prisma.SelectSubset<T, UserCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Create many Users and returns the data saved in the database.
+   * @param {UserCreateManyAndReturnArgs} args - Arguments to create many Users.
+   * @example
+   * // Create many Users
+   * const user = await prisma.user.createManyAndReturn({
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * 
+   * // Create many Users and only return the `id`
+   * const userWithIdOnly = await prisma.user.createManyAndReturn({
+   *   select: { id: true },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * 
+   */
+  createManyAndReturn<T extends UserCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, UserCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+  /**
+   * Delete a User.
+   * @param {UserDeleteArgs} args - Arguments to delete one User.
+   * @example
+   * // Delete one User
+   * const User = await prisma.user.delete({
+   *   where: {
+   *     // ... filter to delete one User
+   *   }
+   * })
+   * 
+   */
+  delete<T extends UserDeleteArgs>(args: Prisma.SelectSubset<T, UserDeleteArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Update one User.
+   * @param {UserUpdateArgs} args - Arguments to update one User.
+   * @example
+   * // Update one User
+   * const user = await prisma.user.update({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: {
+   *     // ... provide data here
+   *   }
+   * })
+   * 
+   */
+  update<T extends UserUpdateArgs>(args: Prisma.SelectSubset<T, UserUpdateArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+  /**
+   * Delete zero or more Users.
+   * @param {UserDeleteManyArgs} args - Arguments to filter Users to delete.
+   * @example
+   * // Delete a few Users
+   * const { count } = await prisma.user.deleteMany({
+   *   where: {
+   *     // ... provide filter here
+   *   }
+   * })
+   * 
+   */
+  deleteMany<T extends UserDeleteManyArgs>(args?: Prisma.SelectSubset<T, UserDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Update zero or more Users.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {UserUpdateManyArgs} args - Arguments to update one or more rows.
+   * @example
+   * // Update many Users
+   * const user = await prisma.user.updateMany({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: {
+   *     // ... provide data here
+   *   }
+   * })
+   * 
+   */
+  updateMany<T extends UserUpdateManyArgs>(args: Prisma.SelectSubset<T, UserUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+
+  /**
+   * Update zero or more Users and returns the data updated in the database.
+   * @param {UserUpdateManyAndReturnArgs} args - Arguments to update many Users.
+   * @example
+   * // Update many Users
+   * const user = await prisma.user.updateManyAndReturn({
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * 
+   * // Update zero or more Users and only return the `id`
+   * const userWithIdOnly = await prisma.user.updateManyAndReturn({
+   *   select: { id: true },
+   *   where: {
+   *     // ... provide filter here
+   *   },
+   *   data: [
+   *     // ... provide data here
+   *   ]
+   * })
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * 
+   */
+  updateManyAndReturn<T extends UserUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, UserUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+  /**
+   * Create or update one User.
+   * @param {UserUpsertArgs} args - Arguments to update or create a User.
+   * @example
+   * // Update or create a User
+   * const user = await prisma.user.upsert({
+   *   create: {
+   *     // ... data to create a User
+   *   },
+   *   update: {
+   *     // ... in case it already exists, update
+   *   },
+   *   where: {
+   *     // ... the filter for the User we want to update
+   *   }
+   * })
+   */
+  upsert<T extends UserUpsertArgs>(args: Prisma.SelectSubset<T, UserUpsertArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+  /**
+   * Count the number of Users.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {UserCountArgs} args - Arguments to filter Users to count.
+   * @example
+   * // Count the number of Users
+   * const count = await prisma.user.count({
+   *   where: {
+   *     // ... the filter for the Users we want to count
+   *   }
+   * })
+  **/
+  count<T extends UserCountArgs>(
+    args?: Prisma.Subset<T, UserCountArgs>,
+  ): Prisma.PrismaPromise<
+    T extends runtime.Types.Utils.Record<'select', any>
+      ? T['select'] extends true
+        ? number
+        : Prisma.GetScalarType<T['select'], UserCountAggregateOutputType>
+      : number
+  >
+
+  /**
+   * Allows you to perform aggregations operations on a User.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {UserAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @example
+   * // Ordered by age ascending
+   * // Where email contains prisma.io
+   * // Limited to the 10 users
+   * const aggregations = await prisma.user.aggregate({
+   *   _avg: {
+   *     age: true,
+   *   },
+   *   where: {
+   *     email: {
+   *       contains: "prisma.io",
+   *     },
+   *   },
+   *   orderBy: {
+   *     age: "asc",
+   *   },
+   *   take: 10,
+   * })
+  **/
+  aggregate<T extends UserAggregateArgs>(args: Prisma.Subset<T, UserAggregateArgs>): Prisma.PrismaPromise<GetUserAggregateType<T>>
+
+  /**
+   * Group by User.
+   * Note, that providing `undefined` is treated as the value not being there.
+   * Read more here: https://pris.ly/d/null-undefined
+   * @param {UserGroupByArgs} args - Group by arguments.
+   * @example
+   * // Group by city, order by createdAt, get count
+   * const result = await prisma.user.groupBy({
+   *   by: ['city', 'createdAt'],
+   *   orderBy: {
+   *     createdAt: true
+   *   },
+   *   _count: {
+   *     _all: true
+   *   },
+   * })
+   * 
+  **/
+  groupBy<
+    T extends UserGroupByArgs,
+    HasSelectOrTake extends Prisma.Or<
+      Prisma.Extends<'skip', Prisma.Keys<T>>,
+      Prisma.Extends<'take', Prisma.Keys<T>>
+    >,
+    OrderByArg extends Prisma.True extends HasSelectOrTake
+      ? { orderBy: UserGroupByArgs['orderBy'] }
+      : { orderBy?: UserGroupByArgs['orderBy'] },
+    OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
+    ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
+    ByValid extends Prisma.Has<ByFields, OrderFields>,
+    HavingFields extends Prisma.GetHavingFields<T['having']>,
+    HavingValid extends Prisma.Has<ByFields, HavingFields>,
+    ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False,
+    InputErrors extends ByEmpty extends Prisma.True
+    ? `Error: "by" must not be empty.`
+    : HavingValid extends Prisma.False
+    ? {
+        [P in HavingFields]: P extends ByFields
+          ? never
+          : P extends string
+          ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+          : [
+              Error,
+              'Field ',
+              P,
+              ` in "having" needs to be provided in "by"`,
+            ]
+      }[HavingFields]
+    : 'take' extends Prisma.Keys<T>
+    ? 'orderBy' extends Prisma.Keys<T>
+      ? ByValid extends Prisma.True
+        ? {}
+        : {
+            [P in OrderFields]: P extends ByFields
+              ? never
+              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+          }[OrderFields]
+      : 'Error: If you provide "take", you also need to provide "orderBy"'
+    : 'skip' extends Prisma.Keys<T>
+    ? 'orderBy' extends Prisma.Keys<T>
+      ? ByValid extends Prisma.True
+        ? {}
+        : {
+            [P in OrderFields]: P extends ByFields
+              ? never
+              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+          }[OrderFields]
+      : 'Error: If you provide "skip", you also need to provide "orderBy"'
+    : ByValid extends Prisma.True
+    ? {}
+    : {
+        [P in OrderFields]: P extends ByFields
+          ? never
+          : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+      }[OrderFields]
+  >(args: Prisma.SubsetIntersection<T, UserGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+/**
+ * Fields of the User model
+ */
+readonly fields: UserFieldRefs;
+}
+
+/**
+ * The delegate class that acts as a "Promise-like" for User.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  readonly [Symbol.toStringTag]: "PrismaPromise"
+  categories<T extends Prisma.User$categoriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$categoriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  products<T extends Prisma.User$productsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$productsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  bills<T extends Prisma.User$billsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$billsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BillPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  /**
+   * Attaches callbacks for the resolution and/or rejection of the Promise.
+   * @param onfulfilled The callback to execute when the Promise is resolved.
+   * @param onrejected The callback to execute when the Promise is rejected.
+   * @returns A Promise for the completion of which ever callback is executed.
+   */
+  then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>
+  /**
+   * Attaches a callback for only the rejection of the Promise.
+   * @param onrejected The callback to execute when the Promise is rejected.
+   * @returns A Promise for the completion of the callback.
+   */
+  catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>
+  /**
+   * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+   * resolved value cannot be modified from the callback.
+   * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+   * @returns A Promise for the completion of the callback.
+   */
+  finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>
+}
+
+
+
+
+/**
+ * Fields of the User model
+ */
+export interface UserFieldRefs {
+  readonly id: Prisma.FieldRef<"User", 'String'>
+  readonly email: Prisma.FieldRef<"User", 'String'>
+  readonly username: Prisma.FieldRef<"User", 'String'>
+  readonly password: Prisma.FieldRef<"User", 'String'>
+  readonly role: Prisma.FieldRef<"User", 'Role'>
+  readonly createdAt: Prisma.FieldRef<"User", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"User", 'DateTime'>
+}
+    
+
+// Custom InputTypes
+/**
+ * User findUnique
+ */
+export type UserFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  /**
+   * Filter, which User to fetch.
+   */
+  where: Prisma.UserWhereUniqueInput
+}
+
+/**
+ * User findUniqueOrThrow
+ */
+export type UserFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  /**
+   * Filter, which User to fetch.
+   */
+  where: Prisma.UserWhereUniqueInput
+}
+
+/**
+ * User findFirst
+ */
+export type UserFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  /**
+   * Filter, which User to fetch.
+   */
+  where?: Prisma.UserWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Users to fetch.
+   */
+  orderBy?: Prisma.UserOrderByWithRelationInput | Prisma.UserOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for searching for Users.
+   */
+  cursor?: Prisma.UserWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Users from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Users.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Users.
+   */
+  distinct?: Prisma.UserScalarFieldEnum | Prisma.UserScalarFieldEnum[]
+}
+
+/**
+ * User findFirstOrThrow
+ */
+export type UserFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  /**
+   * Filter, which User to fetch.
+   */
+  where?: Prisma.UserWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Users to fetch.
+   */
+  orderBy?: Prisma.UserOrderByWithRelationInput | Prisma.UserOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for searching for Users.
+   */
+  cursor?: Prisma.UserWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Users from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Users.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Users.
+   */
+  distinct?: Prisma.UserScalarFieldEnum | Prisma.UserScalarFieldEnum[]
+}
+
+/**
+ * User findMany
+ */
+export type UserFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  /**
+   * Filter, which Users to fetch.
+   */
+  where?: Prisma.UserWhereInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+   * 
+   * Determine the order of Users to fetch.
+   */
+  orderBy?: Prisma.UserOrderByWithRelationInput | Prisma.UserOrderByWithRelationInput[]
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+   * 
+   * Sets the position for listing Users.
+   */
+  cursor?: Prisma.UserWhereUniqueInput
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Take `±n` Users from the position of the cursor.
+   */
+  take?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+   * 
+   * Skip the first `n` Users.
+   */
+  skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Users.
+   */
+  distinct?: Prisma.UserScalarFieldEnum | Prisma.UserScalarFieldEnum[]
+}
+
+/**
+ * User create
+ */
+export type UserCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  /**
+   * The data needed to create a User.
+   */
+  data: Prisma.XOR<Prisma.UserCreateInput, Prisma.UserUncheckedCreateInput>
+}
+
+/**
+ * User createMany
+ */
+export type UserCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * The data used to create many Users.
+   */
+  data: Prisma.UserCreateManyInput | Prisma.UserCreateManyInput[]
+  skipDuplicates?: boolean
+}
+
+/**
+ * User createManyAndReturn
+ */
+export type UserCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelectCreateManyAndReturn<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * The data used to create many Users.
+   */
+  data: Prisma.UserCreateManyInput | Prisma.UserCreateManyInput[]
+  skipDuplicates?: boolean
+}
+
+/**
+ * User update
+ */
+export type UserUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  /**
+   * The data needed to update a User.
+   */
+  data: Prisma.XOR<Prisma.UserUpdateInput, Prisma.UserUncheckedUpdateInput>
+  /**
+   * Choose, which User to update.
+   */
+  where: Prisma.UserWhereUniqueInput
+}
+
+/**
+ * User updateMany
+ */
+export type UserUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * The data used to update Users.
+   */
+  data: Prisma.XOR<Prisma.UserUpdateManyMutationInput, Prisma.UserUncheckedUpdateManyInput>
+  /**
+   * Filter which Users to update
+   */
+  where?: Prisma.UserWhereInput
+  /**
+   * Limit how many Users to update.
+   */
+  limit?: number
+}
+
+/**
+ * User updateManyAndReturn
+ */
+export type UserUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelectUpdateManyAndReturn<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * The data used to update Users.
+   */
+  data: Prisma.XOR<Prisma.UserUpdateManyMutationInput, Prisma.UserUncheckedUpdateManyInput>
+  /**
+   * Filter which Users to update
+   */
+  where?: Prisma.UserWhereInput
+  /**
+   * Limit how many Users to update.
+   */
+  limit?: number
+}
+
+/**
+ * User upsert
+ */
+export type UserUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  /**
+   * The filter to search for the User to update in case it exists.
+   */
+  where: Prisma.UserWhereUniqueInput
+  /**
+   * In case the User found by the `where` argument doesn't exist, create a new User with this data.
+   */
+  create: Prisma.XOR<Prisma.UserCreateInput, Prisma.UserUncheckedCreateInput>
+  /**
+   * In case the User was found with the provided `where` argument, update it with this data.
+   */
+  update: Prisma.XOR<Prisma.UserUpdateInput, Prisma.UserUncheckedUpdateInput>
+}
+
+/**
+ * User delete
+ */
+export type UserDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  /**
+   * Filter which User to delete.
+   */
+  where: Prisma.UserWhereUniqueInput
+}
+
+/**
+ * User deleteMany
+ */
+export type UserDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Filter which Users to delete
+   */
+  where?: Prisma.UserWhereInput
+  /**
+   * Limit how many Users to delete.
+   */
+  limit?: number
+}
+
+/**
+ * User.categories
+ */
+export type User$categoriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Category
+   */
+  select?: Prisma.CategorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Category
+   */
+  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CategoryInclude<ExtArgs> | null
+  where?: Prisma.CategoryWhereInput
+  orderBy?: Prisma.CategoryOrderByWithRelationInput | Prisma.CategoryOrderByWithRelationInput[]
+  cursor?: Prisma.CategoryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.CategoryScalarFieldEnum | Prisma.CategoryScalarFieldEnum[]
+}
+
+/**
+ * User.products
+ */
+export type User$productsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  where?: Prisma.ProductWhereInput
+  orderBy?: Prisma.ProductOrderByWithRelationInput | Prisma.ProductOrderByWithRelationInput[]
+  cursor?: Prisma.ProductWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ProductScalarFieldEnum | Prisma.ProductScalarFieldEnum[]
+}
+
+/**
+ * User.bills
+ */
+export type User$billsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Bill
+   */
+  select?: Prisma.BillSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Bill
+   */
+  omit?: Prisma.BillOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BillInclude<ExtArgs> | null
+  where?: Prisma.BillWhereInput
+  orderBy?: Prisma.BillOrderByWithRelationInput | Prisma.BillOrderByWithRelationInput[]
+  cursor?: Prisma.BillWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BillScalarFieldEnum | Prisma.BillScalarFieldEnum[]
+}
+
+/**
+ * User without action
+ */
+export type UserDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+}
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-browser-ts"></a>📄 `src/generated/prisma/browser.ts`
+
+**File Info:**
+- **Size**: 1.06 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/browser.ts`
+- **Relative Path**: `src/generated/prisma`
+- **Created**: 2026-10-13 11:48:04 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `737eefbc78dae290353854be08bb20fc`
+- **SHA256**: `1846403f80e2db6542fbf427b650184943d70456ad13dd12791a0c57be31dd18`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * This file should be your main import to use Prisma-related types and utilities in a browser. 
+ * Use it to get access to models, enums, and input types.
+ * 
+ * This file does not contain a `PrismaClient` class, nor several other helpers that are intended as server-side only.
+ * See `client.ts` for the standard, server-side entry point.
+ *
+ * 🟢 You can import this file directly.
+ */
+
+import * as Prisma from './internal/prismaNamespaceBrowser'
+export { Prisma }
+export * as $Enums from './enums'
+export * from './enums';
+/**
+ * Model User
+ * 
+ */
+export type User = Prisma.UserModel
+/**
+ * Model Category
+ * 
+ */
+export type Category = Prisma.CategoryModel
+/**
+ * Model Product
+ * 
+ */
+export type Product = Prisma.ProductModel
+/**
+ * Model Batch
+ * 
+ */
+export type Batch = Prisma.BatchModel
+/**
+ * Model Bill
+ * 
+ */
+export type Bill = Prisma.BillModel
+/**
+ * Model BillItem
+ * 
+ */
+export type BillItem = Prisma.BillItemModel
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-client-ts"></a>📄 `src/generated/prisma/client.ts`
+
+**File Info:**
+- **Size**: 1.88 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/client.ts`
+- **Relative Path**: `src/generated/prisma`
+- **Created**: 2026-10-13 11:48:04 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `1db20a30600eb4203bd6d9c4a5d34c59`
+- **SHA256**: `25243e24ed126bc5b8e61cfc814df63a6236b791e611ac9e76be1785f872d35d`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * This file should be your main import to use Prisma. Through it you get access to all the models, enums, and input types.
+ * If you're looking for something you can import in the client-side of your application, please refer to the `browser.ts` file instead.
+ *
+ * 🟢 You can import this file directly.
+ */
+
+import * as process from 'node:process'
+import * as path from 'node:path'
+
+import * as runtime from "@prisma/client/runtime/client"
+import * as $Enums from "./enums"
+import * as $Class from "./internal/class"
+import * as Prisma from "./internal/prismaNamespace"
+
+export * as $Enums from './enums'
+export * from "./enums"
+/**
+ * ## Prisma Client
+ * 
+ * Type-safe database client for TypeScript
+ * @example
+ * ```
+ * const prisma = new PrismaClient({
+ *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
+ * })
+ * // Fetch zero or more Users
+ * const users = await prisma.user.findMany()
+ * ```
+ * 
+ * Read more in our [docs](https://pris.ly/d/client).
+ */
+export const PrismaClient = $Class.getPrismaClientClass()
+export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts extends Prisma.PrismaClientOptions["omit"] = Prisma.PrismaClientOptions["omit"], ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = $Class.PrismaClient<LogOpts, OmitOpts, ExtArgs>
+export { Prisma }
+
+/**
+ * Model User
+ * 
+ */
+export type User = Prisma.UserModel
+/**
+ * Model Category
+ * 
+ */
+export type Category = Prisma.CategoryModel
+/**
+ * Model Product
+ * 
+ */
+export type Product = Prisma.ProductModel
+/**
+ * Model Batch
+ * 
+ */
+export type Batch = Prisma.BatchModel
+/**
+ * Model Bill
+ * 
+ */
+export type Bill = Prisma.BillModel
+/**
+ * Model BillItem
+ * 
+ */
+export type BillItem = Prisma.BillItemModel
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-commoninputtypes-ts"></a>📄 `src/generated/prisma/commonInputTypes.ts`
+
+**File Info:**
+- **Size**: 19.41 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/commonInputTypes.ts`
+- **Relative Path**: `src/generated/prisma`
+- **Created**: 2026-10-13 11:48:04 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `2cb571f689418f81d06e94171db7d85d`
+- **SHA256**: `a9a6cc377000f8b2242ee4a8d899a6616bf21988f514e8fa4e7f61bf30e64f3d`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * This file exports various common sort, input & filter types that are not directly linked to a particular model.
+ *
+ * 🟢 You can import this file directly.
+ */
+
+import type * as runtime from "@prisma/client/runtime/client"
+import * as $Enums from "./enums"
+import type * as Prisma from "./internal/prismaNamespace"
+
+
+export type StringFilter<$PrismaModel = never> = {
+  equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  notIn?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  lt?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  lte?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  gt?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  gte?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  contains?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  startsWith?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  endsWith?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  mode?: Prisma.QueryMode
+  not?: Prisma.NestedStringFilter<$PrismaModel> | string
+}
+
+export type EnumRoleFilter<$PrismaModel = never> = {
+  equals?: $Enums.Role | Prisma.EnumRoleFieldRefInput<$PrismaModel>
+  in?: $Enums.Role[] | Prisma.ListEnumRoleFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Role[] | Prisma.ListEnumRoleFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
+}
+
+export type DateTimeFilter<$PrismaModel = never> = {
+  equals?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  in?: Date[] | string[] | Prisma.ListDateTimeFieldRefInput<$PrismaModel>
+  notIn?: Date[] | string[] | Prisma.ListDateTimeFieldRefInput<$PrismaModel>
+  lt?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  lte?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  gt?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  gte?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedDateTimeFilter<$PrismaModel> | Date | string
+}
+
+export type StringWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  notIn?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  lt?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  lte?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  gt?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  gte?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  contains?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  startsWith?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  endsWith?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  mode?: Prisma.QueryMode
+  not?: Prisma.NestedStringWithAggregatesFilter<$PrismaModel> | string
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedStringFilter<$PrismaModel>
+  _max?: Prisma.NestedStringFilter<$PrismaModel>
+}
+
+export type EnumRoleWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Role | Prisma.EnumRoleFieldRefInput<$PrismaModel>
+  in?: $Enums.Role[] | Prisma.ListEnumRoleFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Role[] | Prisma.ListEnumRoleFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumRoleWithAggregatesFilter<$PrismaModel> | $Enums.Role
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumRoleFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumRoleFilter<$PrismaModel>
+}
+
+export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  in?: Date[] | string[] | Prisma.ListDateTimeFieldRefInput<$PrismaModel>
+  notIn?: Date[] | string[] | Prisma.ListDateTimeFieldRefInput<$PrismaModel>
+  lt?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  lte?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  gt?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  gte?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedDateTimeFilter<$PrismaModel>
+  _max?: Prisma.NestedDateTimeFilter<$PrismaModel>
+}
+
+export type DecimalFilter<$PrismaModel = never> = {
+  equals?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  in?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  notIn?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  lt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  lte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedDecimalFilter<$PrismaModel> | runtime.Decimal | runtime.DecimalJsLike | number | string
+}
+
+export type IntFilter<$PrismaModel = never> = {
+  equals?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  in?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
+  notIn?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
+  lt?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  lte?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  gt?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  gte?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedIntFilter<$PrismaModel> | number
+}
+
+export type DecimalWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  in?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  notIn?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  lt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  lte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedDecimalWithAggregatesFilter<$PrismaModel> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _avg?: Prisma.NestedDecimalFilter<$PrismaModel>
+  _sum?: Prisma.NestedDecimalFilter<$PrismaModel>
+  _min?: Prisma.NestedDecimalFilter<$PrismaModel>
+  _max?: Prisma.NestedDecimalFilter<$PrismaModel>
+}
+
+export type IntWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  in?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
+  notIn?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
+  lt?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  lte?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  gt?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  gte?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedIntWithAggregatesFilter<$PrismaModel> | number
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _avg?: Prisma.NestedFloatFilter<$PrismaModel>
+  _sum?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedIntFilter<$PrismaModel>
+  _max?: Prisma.NestedIntFilter<$PrismaModel>
+}
+
+export type EnumDiscountTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.DiscountType | Prisma.EnumDiscountTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.DiscountType[] | Prisma.ListEnumDiscountTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DiscountType[] | Prisma.ListEnumDiscountTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDiscountTypeFilter<$PrismaModel> | $Enums.DiscountType
+}
+
+export type EnumDiscountTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.DiscountType | Prisma.EnumDiscountTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.DiscountType[] | Prisma.ListEnumDiscountTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DiscountType[] | Prisma.ListEnumDiscountTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDiscountTypeWithAggregatesFilter<$PrismaModel> | $Enums.DiscountType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumDiscountTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumDiscountTypeFilter<$PrismaModel>
+}
+
+export type FloatFilter<$PrismaModel = never> = {
+  equals?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  in?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel>
+  notIn?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel>
+  lt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  lte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedFloatFilter<$PrismaModel> | number
+}
+
+export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  in?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel>
+  notIn?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel>
+  lt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  lte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedFloatWithAggregatesFilter<$PrismaModel> | number
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _avg?: Prisma.NestedFloatFilter<$PrismaModel>
+  _sum?: Prisma.NestedFloatFilter<$PrismaModel>
+  _min?: Prisma.NestedFloatFilter<$PrismaModel>
+  _max?: Prisma.NestedFloatFilter<$PrismaModel>
+}
+
+export type NestedStringFilter<$PrismaModel = never> = {
+  equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  notIn?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  lt?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  lte?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  gt?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  gte?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  contains?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  startsWith?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  endsWith?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedStringFilter<$PrismaModel> | string
+}
+
+export type NestedEnumRoleFilter<$PrismaModel = never> = {
+  equals?: $Enums.Role | Prisma.EnumRoleFieldRefInput<$PrismaModel>
+  in?: $Enums.Role[] | Prisma.ListEnumRoleFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Role[] | Prisma.ListEnumRoleFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
+}
+
+export type NestedDateTimeFilter<$PrismaModel = never> = {
+  equals?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  in?: Date[] | string[] | Prisma.ListDateTimeFieldRefInput<$PrismaModel>
+  notIn?: Date[] | string[] | Prisma.ListDateTimeFieldRefInput<$PrismaModel>
+  lt?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  lte?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  gt?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  gte?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedDateTimeFilter<$PrismaModel> | Date | string
+}
+
+export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  notIn?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  lt?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  lte?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  gt?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  gte?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  contains?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  startsWith?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  endsWith?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedStringWithAggregatesFilter<$PrismaModel> | string
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedStringFilter<$PrismaModel>
+  _max?: Prisma.NestedStringFilter<$PrismaModel>
+}
+
+export type NestedIntFilter<$PrismaModel = never> = {
+  equals?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  in?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
+  notIn?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
+  lt?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  lte?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  gt?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  gte?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedIntFilter<$PrismaModel> | number
+}
+
+export type NestedEnumRoleWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Role | Prisma.EnumRoleFieldRefInput<$PrismaModel>
+  in?: $Enums.Role[] | Prisma.ListEnumRoleFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Role[] | Prisma.ListEnumRoleFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumRoleWithAggregatesFilter<$PrismaModel> | $Enums.Role
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumRoleFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumRoleFilter<$PrismaModel>
+}
+
+export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  in?: Date[] | string[] | Prisma.ListDateTimeFieldRefInput<$PrismaModel>
+  notIn?: Date[] | string[] | Prisma.ListDateTimeFieldRefInput<$PrismaModel>
+  lt?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  lte?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  gt?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  gte?: Date | string | Prisma.DateTimeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedDateTimeFilter<$PrismaModel>
+  _max?: Prisma.NestedDateTimeFilter<$PrismaModel>
+}
+
+export type NestedDecimalFilter<$PrismaModel = never> = {
+  equals?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  in?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  notIn?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  lt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  lte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedDecimalFilter<$PrismaModel> | runtime.Decimal | runtime.DecimalJsLike | number | string
+}
+
+export type NestedDecimalWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  in?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  notIn?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  lt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  lte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedDecimalWithAggregatesFilter<$PrismaModel> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _avg?: Prisma.NestedDecimalFilter<$PrismaModel>
+  _sum?: Prisma.NestedDecimalFilter<$PrismaModel>
+  _min?: Prisma.NestedDecimalFilter<$PrismaModel>
+  _max?: Prisma.NestedDecimalFilter<$PrismaModel>
+}
+
+export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  in?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
+  notIn?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
+  lt?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  lte?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  gt?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  gte?: number | Prisma.IntFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedIntWithAggregatesFilter<$PrismaModel> | number
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _avg?: Prisma.NestedFloatFilter<$PrismaModel>
+  _sum?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedIntFilter<$PrismaModel>
+  _max?: Prisma.NestedIntFilter<$PrismaModel>
+}
+
+export type NestedFloatFilter<$PrismaModel = never> = {
+  equals?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  in?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel>
+  notIn?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel>
+  lt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  lte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedFloatFilter<$PrismaModel> | number
+}
+
+export type NestedEnumDiscountTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.DiscountType | Prisma.EnumDiscountTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.DiscountType[] | Prisma.ListEnumDiscountTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DiscountType[] | Prisma.ListEnumDiscountTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDiscountTypeFilter<$PrismaModel> | $Enums.DiscountType
+}
+
+export type NestedEnumDiscountTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.DiscountType | Prisma.EnumDiscountTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.DiscountType[] | Prisma.ListEnumDiscountTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DiscountType[] | Prisma.ListEnumDiscountTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDiscountTypeWithAggregatesFilter<$PrismaModel> | $Enums.DiscountType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumDiscountTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumDiscountTypeFilter<$PrismaModel>
+}
+
+export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  in?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel>
+  notIn?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel>
+  lt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  lte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedFloatWithAggregatesFilter<$PrismaModel> | number
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _avg?: Prisma.NestedFloatFilter<$PrismaModel>
+  _sum?: Prisma.NestedFloatFilter<$PrismaModel>
+  _min?: Prisma.NestedFloatFilter<$PrismaModel>
+  _max?: Prisma.NestedFloatFilter<$PrismaModel>
+}
+
+
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-enums-ts"></a>📄 `src/generated/prisma/enums.ts`
+
+**File Info:**
+- **Size**: 544 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/enums.ts`
+- **Relative Path**: `src/generated/prisma`
+- **Created**: 2026-10-13 11:48:04 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `fd2c162cdd55d202300531b84a66bae1`
+- **SHA256**: `31fe3549447b9c7d169bda4b83da22735e6e1a5030a5807192c89a8a688116d5`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+* This file exports all enum related types from the schema.
+*
+* 🟢 You can import this file directly.
+*/
+
+export const Role = {
+  ADMIN: 'ADMIN',
+  USER: 'USER'
+} as const
+
+export type Role = (typeof Role)[keyof typeof Role]
+
+
+export const DiscountType = {
+  Exact: 'Exact',
+  Percentage: 'Percentage'
+} as const
+
+export type DiscountType = (typeof DiscountType)[keyof typeof DiscountType]
+
+```
+
+---
+
+### <a id="📄-src-generated-prisma-models-ts"></a>📄 `src/generated/prisma/models.ts`
+
+**File Info:**
+- **Size**: 535 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/generated/prisma/models.ts`
+- **Relative Path**: `src/generated/prisma`
+- **Created**: 2026-10-13 11:48:04 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `9a9060d9ea06c4052a3dab03120b1d1d`
+- **SHA256**: `37c1a5bbd1e4e93d1adfc45c8bb3f5a7bfa65c54b2a2b294bf7138c91beeb9d2`
+- **Encoding**: UTF-8
+
+**File code content:**
+
+```typescript
+
+/* !!! This is code generated by Prisma. Do not edit directly. !!! */
+/* eslint-disable */
+// biome-ignore-all lint: generated file
+// @ts-nocheck 
+/*
+ * This is a barrel export file for all models and their related types.
+ *
+ * 🟢 You can import this file directly.
+ */
+export type * from './models/User'
+export type * from './models/Category'
+export type * from './models/Product'
+export type * from './models/Batch'
+export type * from './models/Bill'
+export type * from './models/BillItem'
+export type * from './commonInputTypes'
+```
+
+---
+
+### <a id="📄-src-lib-prismaclient-ts"></a>📄 `src/lib/prismaClient.ts`
+
+**File Info:**
+- **Size**: 398 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/lib/prismaClient.ts`
+- **Relative Path**: `src/lib`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:52:51 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `d40f52cc742b5fccdf6a0df947e5aa49`
+- **SHA256**: `7285b4c8947a740c7a710684d0dd2e16b5646fed0142bd14b1955c506a403ae9`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import "dotenv/config";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "@/generated/prisma/client";
+
+const connectionString = process.env.DATABASE_URL;
+if (!connectionString) throw new Error("DATABASE_URL is not defined in .env");
+
+const adapter = new PrismaPg({ connectionString });
+const prismaMain = new PrismaClient({ adapter });
+
+export { prismaMain };
+
+```
+
+---
+
+### <a id="📄-src-middlewares-isuser-ts"></a>📄 `src/middlewares/isUser.ts`
+
+**File Info:**
+- **Size**: 2.32 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/middlewares/isUser.ts`
+- **Relative Path**: `src/middlewares`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:47:09 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `c6f7a48655a2311301688ec12fb9dd0d`
+- **SHA256**: `9798c038fd191db9c98982c6aae309234ece278075d7de319a79a40164391c8f`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import { Request, Response, NextFunction } from "express";
+import { AuthService } from "@/modules/auth/service";
+import { CustomError } from "@/errors/CustomError";
+import { T_Context } from "@/@types/type";
+import { CookieManager } from "@/utils/cookies";
+import { ErrorHandler } from "@/utils/error";
+import { prismaMain } from "@/lib/prismaClient";
+
+const getBearerToken = (req: Request) => {
+  const header = req.headers.authorization;
+  if (!header) return undefined;
+  const [scheme, token] = header.split(" ");
+  return scheme?.toLowerCase() === "bearer" ? token : undefined;
+};
+
+const resolveContext = async (
+  req: Request,
+  res: Response,
+): Promise<T_Context> => {
+  const token = req.cookies?.token || getBearerToken(req);
+  const access = token ? AuthService.verifyToken(token, "access") : null;
+  if (access && access.role) {
+    return { userId: access.userId, role: access.role };
+  }
+
+  // Access token missing/expired: try the refresh token
+  const refreshToken = req.cookies?.refreshToken;
+  const refresh = refreshToken
+    ? AuthService.verifyToken(refreshToken, "refresh")
+    : null;
+  if (!refresh) throw new CustomError("Unauthorized", 401);
+
+  // Re-read the user so the role is always current (and deleted users are rejected)
+  const user = await prismaMain.user.findUnique({
+    where: { id: refresh.userId },
+    select: { id: true, role: true },
+  });
+  if (!user) throw new CustomError("Unauthorized", 401);
+
+  const newToken = AuthService.generateToken(user.id, user.role);
+  res.cookie("token", newToken, CookieManager.accessToken());
+  res.setHeader("X-New-Token", newToken);
+  return { userId: user.id, role: user.role };
+};
+
+export const isUser = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    res.locals.context = await resolveContext(req, res);
+    return next();
+  } catch (error) {
+    return ErrorHandler.handleError(res, error);
+  }
+};
+
+export const isAdmin = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const context = await resolveContext(req, res);
+    if (context.role !== "ADMIN")
+      throw new CustomError("Forbidden: Admin access required", 403);
+    res.locals.context = context;
+    return next();
+  } catch (error) {
+    return ErrorHandler.handleError(res, error);
+  }
+};
+
+```
+
+---
+
+### <a id="📄-src-middlewares-trimbody-ts"></a>📄 `src/middlewares/trimBody.ts`
+
+**File Info:**
+- **Size**: 610 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/middlewares/trimBody.ts`
+- **Relative Path**: `src/middlewares`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `fc310ad6c02931acfe886e6c69f6ab29`
+- **SHA256**: `2a0d475c43eb964d2845da9922cd75654690094208d1192fb8ab16bca81fbe37`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import { NextFunction, Request, Response } from "express";
+
+export const trimBody = function (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
+  try {
+    if (req.body && req.body !== undefined && typeof req.body === "object") {
+      for (const [key, value] of Object.entries(req.body)) {
+        if (typeof value === "string") req.body[key] = value.trim();
+      }
+    }
+
+    next();
+  } catch (error) {
+    // If any error occurs, handle the error
+    return res.status(500).send({
+      success: false,
+      message: "Internal Server Error",
+      error,
+    });
+  }
+};
+
+```
+
+---
+
+### <a id="📄-src-modules-auth-controller-ts"></a>📄 `src/modules/auth/controller.ts`
+
+**File Info:**
+- **Size**: 3.91 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/auth/controller.ts`
+- **Relative Path**: `src/modules/auth`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:48:59 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `c7c95304ec18fa08edd0a0e1dab56cb0`
+- **SHA256**: `6395b55e2f6a59b3e17ab9d06c00d8c9f876a995be748740aae476f11fb7b464`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import { prismaMain } from "../../lib/prismaClient";
+import { ResponseHandler } from "../../utils/response";
+import { ValidateLogin, ValidateRegister } from "./validator";
+import type { Request, Response } from "express";
+import bcrypt from "bcrypt";
+import { ErrorHandler } from "@/utils/error";
+import { AuthService } from "./service";
+import { CookieManager } from "@/utils/cookies";
+
+// Compared against when the user doesn't exist, so response time doesn't reveal valid emails
+const DUMMY_HASH = bcrypt.hashSync("dummy-password", 10);
+
+export const AuthController = {
+  login: async (req: Request, res: Response) => {
+    try {
+      const { email, password } = ValidateLogin(req.body);
+
+      const user = await prismaMain.user.findUnique({ where: { email } });
+      const isPasswordValid = await bcrypt.compare(
+        password,
+        user?.password ?? DUMMY_HASH,
+      );
+
+      if (!user || !isPasswordValid)
+        return ResponseHandler.error({
+          res,
+          code: 401,
+          message: "Invalid Credentials",
+          error: null,
+        });
+
+      const token = AuthService.generateToken(user.id, user.role);
+      const refreshToken = AuthService.generateRefreshToken(user.id);
+
+      res.cookie("token", token, CookieManager.accessToken());
+      res.cookie("refreshToken", refreshToken, CookieManager.refreshToken());
+
+      // Tokens live in httpOnly cookies only; they are not returned in the body
+      return res.status(200).json({
+        message: "Login successful!",
+        user: {
+          id: user.id,
+          username: user.username,
+          email: user.email,
+          role: user.role,
+        },
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  register: async (req: Request, res: Response) => {
+    try {
+      const { username, email, password } = ValidateRegister(req.body);
+
+      const existingEmail = await prismaMain.user.findFirst({
+        where: { email },
+      });
+      if (existingEmail)
+        return ResponseHandler.error({
+          res,
+          code: 409,
+          message: "Email is already taken.",
+          error: null,
+        });
+
+      const existingUsername = await prismaMain.user.findFirst({
+        where: { username },
+      });
+      if (existingUsername)
+        return ResponseHandler.error({
+          res,
+          code: 409,
+          message: "Username is already taken.",
+          error: null,
+        });
+
+      const hashedPassword = await bcrypt.hash(password, 10);
+      // Unique-constraint races fall through to ErrorHandler (P2002 -> 409)
+      await prismaMain.user.create({
+        data: { email, username, password: hashedPassword },
+      });
+
+      return res.status(201).json({ message: "Registered successfully!" });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  me: async (req: Request, res: Response) => {
+    try {
+      const context = res.locals.context;
+      const user = await prismaMain.user.findUnique({
+        where: { id: context.userId },
+        select: { id: true, email: true, username: true, role: true },
+      });
+
+      if (!user)
+        return ResponseHandler.error({
+          res,
+          code: 401,
+          message: "Unauthorized",
+          error: null,
+        });
+
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "User fetched successfully!",
+        data: user,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  logout: async (_req: Request, res: Response) => {
+    try {
+      res.clearCookie("token", CookieManager.clear());
+      res.clearCookie("refreshToken", CookieManager.clear());
+      return res.status(200).json({ message: "Logged out successfully!" });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+};
+
+```
+
+---
+
+### <a id="📄-src-modules-auth-routes-ts"></a>📄 `src/modules/auth/routes.ts`
+
+**File Info:**
+- **Size**: 717 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/auth/routes.ts`
+- **Relative Path**: `src/modules/auth`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:50:37 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `ac125654da4f1ceb2625efebe6a427cf`
+- **SHA256**: `50934d140469e243bbdef3d2fc2939a6038ca763558d2de75fcf60bc150f67e8`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import { Router } from "express";
+
+import { AuthController } from "./controller";
+import { isUser } from "@/middlewares/isUser";
+import rateLimit from "express-rate-limit";
+
+const authRouter: Router = Router();
+
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    success: false,
+    code: 429,
+    message: "Too many attempts, try again later",
+  },
+});
+
+authRouter.post("/login", loginLimiter, AuthController.login);
+authRouter.post("/register", AuthController.register);
+authRouter.get("/me", isUser, AuthController.me);
+authRouter.post("/logout", AuthController.logout);
+
+export default authRouter;
+
+```
+
+---
+
+### <a id="📄-src-modules-auth-service-ts"></a>📄 `src/modules/auth/service.ts`
+
+**File Info:**
+- **Size**: 1.28 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/auth/service.ts`
+- **Relative Path**: `src/modules/auth`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:46:43 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `0af972b060256b814b32681a4ea55e8f`
+- **SHA256**: `efcdb58f7646c6a5adf04e735aad34b4cc432277ab85343df0a517f3fa2ce4dc`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import jwt from "jsonwebtoken";
+import "dotenv/config";
+
+type TokenType = "access" | "refresh";
+
+export type TokenPayload = {
+  userId: string;
+  role?: "USER" | "ADMIN";
+  type: TokenType;
+};
+
+const getSecret = () => {
+  const secret = process.env.JWT_SECRET;
+  if (!secret) throw new Error("JWT_SECRET is not defined in .env");
+  return secret;
+};
+
+export const AuthService = {
+  generateToken: (userId: string, role: string): string =>
+    jwt.sign({ userId, role, type: "access" }, getSecret(), {
+      algorithm: "HS256",
+      expiresIn: Number(process.env.JWT_EXPIRES_IN) || 900,
+    }),
+
+  generateRefreshToken: (userId: string): string =>
+    jwt.sign({ userId, type: "refresh" }, getSecret(), {
+      algorithm: "HS256",
+      expiresIn: Number(process.env.JWT_REFRESH_EXPIRES_IN) || 86400,
+    }),
+
+  // Only accepts a token of the expected type, so a refresh token
+  // can't be used as an access token (and vice versa)
+  verifyToken: (token: string, type: TokenType): TokenPayload | null => {
+    try {
+      const decoded = jwt.verify(token, getSecret(), { algorithms: ["HS256"] });
+      if (typeof decoded === "string" || decoded.type !== type) return null;
+      return decoded as unknown as TokenPayload;
+    } catch {
+      return null;
+    }
+  },
+};
+
+```
+
+---
+
+### <a id="📄-src-modules-auth-validator-ts"></a>📄 `src/modules/auth/validator.ts`
+
+**File Info:**
+- **Size**: 1.16 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/auth/validator.ts`
+- **Relative Path**: `src/modules/auth`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:48:22 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `f087cba215d693882c02e3e993825213`
+- **SHA256**: `3a357638cdb803c57fe059a86d3118a1e5535eef60ac4882710fe273fb88d376`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import z from "zod";
+
+const emailField = z
+  .string({ message: "Email is required" })
+  .trim()
+  .toLowerCase()
+  .pipe(z.email({ message: "A valid email is required" }));
+
+const LoginSchema = z.object({
+  email: emailField,
+  password: z
+    .string({ message: "Password is required" })
+    .min(1, "Password is required")
+    .max(72, "Password is too long"),
+});
+
+export type T_LoginSchema = z.infer<typeof LoginSchema>;
+export function ValidateLogin(data: unknown): T_LoginSchema {
+  return LoginSchema.parse(data);
+}
+
+const RegisterSchema = z.object({
+  username: z
+    .string({ message: "Username is required" })
+    .trim()
+    .min(1, { message: "Username cannot be empty" })
+    .max(50, { message: "Username must be at most 50 characters" }),
+  email: emailField,
+  password: z
+    .string({ message: "Password is required" })
+    .min(6, { message: "Password must be at least 6 characters" })
+    .max(72, { message: "Password must be at most 72 characters" }),
+});
+
+export type T_RegisterSchema = z.infer<typeof RegisterSchema>;
+export function ValidateRegister(data: unknown): T_RegisterSchema {
+  return RegisterSchema.parse(data);
+}
+
+```
+
+---
+
+### <a id="📄-src-modules-batch-controller-ts"></a>📄 `src/modules/batch/controller.ts`
+
+**File Info:**
+- **Size**: 2.73 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/batch/controller.ts`
+- **Relative Path**: `src/modules/batch`
+- **Created**: 2026-10-13 12:30:06 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:30:10 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `553de05c6065b9af5a810df783e5647f`
+- **SHA256**: `39265a91cef6cd65631bf4cf190f73cd7cb720e5523c4081a1e9044f67b439d9`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+// batch/controller.ts
+import { ErrorHandler } from "@/utils/error";
+import { ResponseHandler } from "@/utils/response";
+import { Request, Response } from "express";
+import { validateBatchCreate, validateBatchUpdate } from "./validator";
+import { BatchService } from "./service";
+
+const BatchController = {
+  getByProductId: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const productId = req.params.productId as string;
+
+      const batches = await BatchService.getByProductId(productId, userId);
+
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Batches fetched successfully",
+        data: batches,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  getById: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const batchId = req.params.id as string;
+
+      const batch = await BatchService.getById(batchId, userId);
+
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Batch fetched successfully",
+        data: batch,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  create: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const data = validateBatchCreate(req.body);
+
+      const batch = await BatchService.create(data, userId);
+
+      return ResponseHandler.success({
+        res,
+        code: 201,
+        message: "Batch created successfully",
+        data: batch,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  update: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const batchId = req.params.id as string;
+      const data = validateBatchUpdate(req.body);
+
+      const batch = await BatchService.update(batchId, data, userId);
+
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Batch updated successfully",
+        data: batch,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  delete: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const batchId = req.params.id as string;
+
+      await BatchService.delete(batchId, userId);
+
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Batch deleted successfully",
+        data: null,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+};
+
+export default BatchController;
+
+```
+
+---
+
+### <a id="📄-src-modules-batch-routes-ts"></a>📄 `src/modules/batch/routes.ts`
+
+**File Info:**
+- **Size**: 529 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/batch/routes.ts`
+- **Relative Path**: `src/modules/batch`
+- **Created**: 2026-10-13 12:30:26 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:30:31 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `085d8080c45e3185b7e5b22ceb113446`
+- **SHA256**: `6da8cda980c8cb6c8e50d395f240fab78bf549676758a86da82c090dac29222f`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import { Router } from "express";
+import BatchController from "./controller";
+import { isAdmin, isUser } from "@/middlewares/isUser";
+
+const batchRouter: Router = Router();
+
+batchRouter.get("/product/:productId", isUser, BatchController.getByProductId);
+batchRouter.post("/", isUser, BatchController.create);
+batchRouter.get("/:id", isUser, BatchController.getById);
+batchRouter.patch("/:id", isUser, BatchController.update);
+batchRouter.delete("/:id", isAdmin, BatchController.delete);
+
+export default batchRouter;
+
+```
+
+---
+
+### <a id="📄-src-modules-batch-service-ts"></a>📄 `src/modules/batch/service.ts`
+
+**File Info:**
+- **Size**: 3.58 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/batch/service.ts`
+- **Relative Path**: `src/modules/batch`
+- **Created**: 2026-10-13 12:29:46 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:29:47 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `650e1521eeeab736aa5b6408c58070f4`
+- **SHA256**: `bc7602181a800aefce1a7f8ff1832ec81fd396a11ac030acbeeb21643dc27dd6`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+// batch/service.ts
+import { prismaMain } from "@/lib/prismaClient";
+import { Prisma } from "@/generated/prisma/client";
+import { CustomError, ValidationError } from "@/errors/CustomError";
+import { dateStamp, startOfToday } from "@/utils/batchNumber";
+import { T_BatchCreateInput, T_BatchUpdateInput } from "./validator";
+
+export const BatchService = {
+  getByProductId: async (productId: string, userId: string) => {
+    return await prismaMain.batch.findMany({
+      where: { productId, product: { userId } },
+      orderBy: { createdAt: "asc" },
+    });
+  },
+
+  getById: async (batchId: string, userId: string) => {
+    const batch = await prismaMain.batch.findFirst({
+      where: { id: batchId, product: { userId } },
+    });
+    if (!batch) throw new CustomError("Batch not found", 404);
+    return batch;
+  },
+
+  create: async (data: T_BatchCreateInput, userId: string) => {
+    const product = await prismaMain.product.findFirst({
+      where: { id: data.productId, userId },
+    });
+    if (!product) throw new CustomError("Product not found", 404);
+
+    for (let attempt = 0; attempt < 5; attempt++) {
+      let batchNumber = data.batchNumber;
+
+      if (!batchNumber) {
+        const todayCount = await prismaMain.batch.count({
+          where: {
+            productId: data.productId,
+            createdAt: { gte: startOfToday() },
+          },
+        });
+        batchNumber = `${dateStamp()}-${String(todayCount + 1 + attempt).padStart(2, "0")}`;
+      }
+
+      try {
+        return await prismaMain.batch.create({
+          data: {
+            productId: data.productId,
+            batchNumber,
+            costPrice: data.costPrice,
+            price: data.price,
+            quantity: data.quantity,
+          },
+        });
+      } catch (error) {
+        const isDuplicate =
+          error instanceof Prisma.PrismaClientKnownRequestError &&
+          error.code === "P2002";
+        if (!isDuplicate) throw error;
+
+        if (data.batchNumber)
+          throw new ValidationError({
+            batchNumber: "Batch number already exists for this product",
+          });
+        // Auto number collided, try the next number
+      }
+    }
+
+    throw new CustomError("Could not generate a batch number", 500);
+  },
+
+  update: async (batchId: string, data: T_BatchUpdateInput, userId: string) => {
+    const batch = await prismaMain.batch.findFirst({
+      where: { id: batchId, product: { userId } },
+    });
+    if (!batch) throw new CustomError("Batch not found", 404);
+
+    if (data.batchNumber && data.batchNumber !== batch.batchNumber) {
+      const duplicate = await prismaMain.batch.findFirst({
+        where: { productId: batch.productId, batchNumber: data.batchNumber },
+      });
+      if (duplicate)
+        throw new ValidationError({
+          batchNumber: "Batch number already exists for this product",
+        });
+    }
+
+    return await prismaMain.batch.update({
+      where: { id: batchId },
+      data,
+    });
+  },
+
+  delete: async (batchId: string, userId: string) => {
+    const batch = await prismaMain.batch.findFirst({
+      where: { id: batchId, product: { userId } },
+    });
+    if (!batch) throw new CustomError("Batch not found", 404);
+
+    try {
+      return await prismaMain.batch.delete({ where: { id: batchId } });
+    } catch (error) {
+      if (
+        error instanceof Prisma.PrismaClientKnownRequestError &&
+        error.code === "P2003"
+      )
+        throw new CustomError(
+          "This batch is used in bills and can't be deleted",
+          400,
+        );
+      throw error;
+    }
+  },
+};
+
+```
+
+---
+
+### <a id="📄-src-modules-batch-validator-ts"></a>📄 `src/modules/batch/validator.ts`
+
+**File Info:**
+- **Size**: 1.59 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/batch/validator.ts`
+- **Relative Path**: `src/modules/batch`
+- **Created**: 2026-10-13 12:29:28 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:29:30 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `01c53e331bd9035769ce67a81992b803`
+- **SHA256**: `f38b6ead01e8c8ee1a53c3656248b8e361102add6069ffd2cc678b50f97ef375`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import z from "zod";
+
+export const batchCreateInputSchema = z.object({
+  productId: z
+    .string({ message: "Product ID is required" })
+    .min(1, "Product ID is required"),
+  // Leave empty to auto-generate, e.g. 20261013-01
+  batchNumber: z
+    .string()
+    .min(1, "Batch number cannot be empty")
+    .max(50, "Batch number must be at most 50 characters")
+    .optional(),
+  costPrice: z
+    .number({ message: "Cost price is required" })
+    .positive("Cost price must be a positive number"),
+  price: z
+    .number({ message: "Price is required" })
+    .positive("Price must be a positive number"),
+  quantity: z
+    .number({ message: "Quantity is required" })
+    .int("Quantity must be an integer")
+    .nonnegative("Quantity cannot be negative")
+    .default(0),
+});
+
+export type T_BatchCreateInput = z.infer<typeof batchCreateInputSchema>;
+
+export const batchUpdateInputSchema = z.object({
+  batchNumber: z.string().min(1).max(50).optional(),
+  costPrice: z
+    .number()
+    .positive("Cost price must be a positive number")
+    .optional(),
+  price: z.number().positive("Price must be a positive number").optional(),
+  quantity: z
+    .number()
+    .int("Quantity must be an integer")
+    .nonnegative("Quantity cannot be negative")
+    .optional(),
+});
+
+export type T_BatchUpdateInput = z.infer<typeof batchUpdateInputSchema>;
+
+export const validateBatchCreate = (data: T_BatchCreateInput) => {
+  return batchCreateInputSchema.parse(data);
+};
+
+export const validateBatchUpdate = (data: T_BatchUpdateInput) => {
+  return batchUpdateInputSchema.parse(data);
+};
+
+```
+
+---
+
+### <a id="📄-src-modules-bill-controller-ts"></a>📄 `src/modules/bill/controller.ts`
+
+**File Info:**
+- **Size**: 5.45 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/bill/controller.ts`
+- **Relative Path**: `src/modules/bill`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 13:13:10 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `cda4b5651bf4e192e806913e70095516`
+- **SHA256**: `aed76b98b5d2be2be69655454b5357ac76d4c05e49c9988e9c70482dbdbc602b`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+// bill/controller.ts
+import { ErrorHandler } from "@/utils/error";
+import { queryFilters } from "@/utils/queryFilters";
+import { ResponseHandler } from "@/utils/response";
+import { Request, Response } from "express";
+import { validateBillCreate } from "./validator";
+import { BillService } from "./service";
+// "2026-10-13" as endDate means the whole day, not midnight
+const parseDay = (value: unknown, endOfDay: boolean) => {
+  if (typeof value !== "string") return null;
+  const dateOnly = /^\d{4}-\d{2}-\d{2}$/.test(value);
+  const date = new Date(
+    dateOnly ? `${value}T${endOfDay ? "23:59:59.999" : "00:00:00.000"}` : value,
+  );
+  return Number.isNaN(date.getTime()) ? null : date;
+};
+const BillController = {
+  index: async (req: Request, res: Response) => {
+    try {
+      const context = res.locals.context;
+      const userId = context.userId;
+
+      const { limit, page } = queryFilters(req);
+      const pageNumber = Number(page) || 1;
+      const limitNumber = Number(limit) || 10;
+
+      const result = await BillService.index(pageNumber, limitNumber, userId);
+
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Bills fetched successfully!",
+        data: {
+          data: result.bills,
+          pagination: result.pagination,
+        },
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  create: async (req: Request, res: Response) => {
+    try {
+      const context = res.locals.context;
+      const userId = context.userId;
+
+      const data = validateBillCreate(req.body);
+
+      const bill = await BillService.create(data, userId);
+
+      return ResponseHandler.success({
+        res,
+        code: 201,
+        message: "Bill created successfully",
+        data: bill,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  getById: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const billId = req.params.id as string;
+      const bill = await BillService.getById(billId, userId);
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Bill fetched successfully",
+        data: bill,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  update: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const billId = req.params.id as string;
+      const data = validateBillCreate(req.body);
+      const bill = await BillService.update(billId, data, userId);
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Bill updated successfully",
+        data: bill,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  delete: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const billId = req.params.id as string;
+      await BillService.delete(billId, userId);
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Bill deleted successfully",
+        data: null,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  getBillsByDateRange: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const start = parseDay(req.query.startDate, false);
+      const end = parseDay(req.query.endDate, true);
+
+      if (!start || !end)
+        return ResponseHandler.error({
+          res,
+          code: 400,
+          message: "startDate and endDate are required and must be valid dates",
+          error: null,
+        });
+
+      const { page, limit } = queryFilters(req);
+      const result = await BillService.getBillsByDateRange(
+        userId,
+        start,
+        end,
+        page,
+        limit,
+      );
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Bills fetched successfully!",
+        data: { data: result.bills, pagination: result.pagination },
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  getTotalSales: async (req: Request, res: Response) => {
+    try {
+      const context = res.locals.context;
+      const userId = context.userId;
+
+      const result = await BillService.getTotalSales(userId);
+
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Total sales fetched successfully",
+        data: result,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  getBillsByCategory: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      // the route is /category/:categoryId, so read it from params
+      const categoryId = req.params.categoryId as string;
+      const { page, limit } = queryFilters(req);
+
+      const result = await BillService.getBillsByCategory(
+        userId,
+        categoryId,
+        page,
+        limit,
+      );
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Bills fetched successfully!",
+        data: { data: result.bills, pagination: result.pagination },
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+};
+
+export default BillController;
+
+```
+
+---
+
+### <a id="📄-src-modules-bill-routes-ts"></a>📄 `src/modules/bill/routes.ts`
+
+**File Info:**
+- **Size**: 750 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/bill/routes.ts`
+- **Relative Path**: `src/modules/bill`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `9d65eddc1509ca49bef34bf1ff28afb1`
+- **SHA256**: `494511b8d07212cb7eae7e1b2dbaf85c145ac588bc88d4f00b252e7eaa1f3e84`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+// bill/routes.ts
+import { Router } from "express";
+import BillController from "./controller";
+import { isUser } from "@/middlewares/isUser";
+
+const billRouter: Router = Router();
+
+// Basic CRUD routes
+billRouter.get("/", isUser, BillController.index);
+billRouter.post("/", isUser, BillController.create);
+billRouter.get("/sales/total", isUser, BillController.getTotalSales);
+billRouter.get("/date-range", isUser, BillController.getBillsByDateRange);
+billRouter.get("/category/:categoryId", isUser, BillController.getBillsByCategory);
+billRouter.get("/:id", isUser, BillController.getById);
+billRouter.patch("/:id", isUser, BillController.update);
+billRouter.delete("/:id", isUser, BillController.delete);
+
+export default billRouter;
+```
+
+---
+
+### <a id="📄-src-modules-bill-service-ts"></a>📄 `src/modules/bill/service.ts`
+
+**File Info:**
+- **Size**: 8.56 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/bill/service.ts`
+- **Relative Path**: `src/modules/bill`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 13:09:41 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `3351f397f4a75bcb2062060348ad679f`
+- **SHA256**: `762c6172218bf06a3165e472c252635fbb4895b6029b8612d79795f31ac9f246`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+// bill/service.ts
+import { prismaMain } from "@/lib/prismaClient";
+import { Prisma } from "@/generated/prisma/client";
+import { CustomError, ValidationError } from "@/errors/CustomError";
+import { T_BillCreateInput } from "./validator";
+
+const billInclude = {
+  billItems: {
+    include: {
+      product: { include: { category: true } },
+      batch: true,
+    },
+  },
+  user: {
+    select: { id: true, username: true, email: true },
+  },
+} satisfies Prisma.BillInclude;
+
+const round2 = (n: number) => Math.round(n * 100) / 100;
+
+const calcFinalAmount = (
+  total: number,
+  discountType: "Exact" | "Percentage",
+  discount: number,
+) => {
+  if (discountType === "Percentage") {
+    if (discount > 100)
+      throw new ValidationError({
+        discount: "Percentage discount cannot exceed 100",
+      });
+    return round2(total - (total * discount) / 100);
+  }
+  if (discount > total)
+    throw new ValidationError({
+      discount: "Discount cannot be greater than the bill total",
+    });
+  return round2(total - discount);
+};
+
+// Validates the batches and prepares bill item rows (price comes from the batch)
+const buildBillItems = async (
+  lines: T_BillCreateInput["products"],
+  userId: string,
+) => {
+  // Merge duplicate batches into one line
+  const merged = new Map<string, number>();
+  for (const line of lines) {
+    merged.set(line.batchId, (merged.get(line.batchId) ?? 0) + line.quantity);
+  }
+
+  const batchIds = [...merged.keys()];
+  const dbBatches = await prismaMain.batch.findMany({
+    where: { id: { in: batchIds }, product: { userId } },
+  });
+
+  if (dbBatches.length !== batchIds.length)
+    throw new ValidationError({
+      products: "One or more batches not found or don't belong to this user",
+    });
+
+  let total = 0;
+  const items = batchIds.map((batchId) => {
+    const batch = dbBatches.find((b) => b.id === batchId);
+    if (!batch) throw new CustomError("Batch not found", 404);
+
+    const quantity = merged.get(batchId) ?? 0;
+    const unitPrice = batch.price.toNumber();
+    const itemTotal = round2(unitPrice * quantity);
+    total += itemTotal;
+
+    return {
+      productId: batch.productId,
+      batchId,
+      quantity,
+      unitPrice,
+      total: itemTotal,
+    };
+  });
+
+  return { items, total: round2(total) };
+};
+
+// Decrease batch stock, fails if a batch doesn't have enough quantity
+const takeStock = async (
+  tx: Prisma.TransactionClient,
+  items: { batchId: string; quantity: number }[],
+) => {
+  for (const item of items) {
+    const result = await tx.batch.updateMany({
+      where: { id: item.batchId, quantity: { gte: item.quantity } },
+      data: { quantity: { decrement: item.quantity } },
+    });
+
+    if (result.count === 0) {
+      const batch = await tx.batch.findUnique({
+        where: { id: item.batchId },
+        select: {
+          batchNumber: true,
+          quantity: true,
+          product: { select: { name: true } },
+        },
+      });
+      throw new ValidationError({
+        quantity: `Insufficient quantity in batch ${batch?.batchNumber} of ${batch?.product.name}. Available: ${batch?.quantity ?? 0}`,
+      });
+    }
+  }
+};
+
+// Put sold quantities back into their batches
+const returnStock = async (
+  tx: Prisma.TransactionClient,
+  items: { batchId: string; quantity: number }[],
+) => {
+  for (const item of items) {
+    await tx.batch.update({
+      where: { id: item.batchId },
+      data: { quantity: { increment: item.quantity } },
+    });
+  }
+};
+
+export const BillService = {
+  index: async (pageNumber: number, limitNumber: number, userId: string) => {
+    const skip = (pageNumber - 1) * limitNumber;
+    const take = limitNumber;
+
+    const bills = await prismaMain.bill.findMany({
+      where: { userId },
+      include: billInclude,
+      skip,
+      take,
+      orderBy: { createdAt: "desc" },
+    });
+
+    const totalBills = await prismaMain.bill.count({ where: { userId } });
+
+    return {
+      bills,
+      pagination: {
+        page: pageNumber,
+        limit: limitNumber,
+        total: totalBills,
+      },
+    };
+  },
+
+  create: async (data: T_BillCreateInput, userId: string) => {
+    const { discountType, discount, products } = data;
+
+    const { items, total } = await buildBillItems(products, userId);
+    const finalBillAmount = calcFinalAmount(total, discountType, discount);
+
+    return await prismaMain.$transaction(async (tx) => {
+      await takeStock(tx, items);
+
+      return await tx.bill.create({
+        data: {
+          userId,
+          discountType,
+          discount,
+          total,
+          finalBillAmount,
+          billItems: { createMany: { data: items } },
+        },
+        include: billInclude,
+      });
+    });
+  },
+
+  getById: async (billId: string, userId: string) => {
+    const bill = await prismaMain.bill.findFirst({
+      where: { id: billId, userId },
+      include: billInclude,
+    });
+    if (!bill) throw new CustomError("Bill not found", 404);
+    return bill;
+  },
+
+  update: async (billId: string, data: T_BillCreateInput, userId: string) => {
+    const existingBill = await prismaMain.bill.findFirst({
+      where: { id: billId, userId },
+      include: { billItems: true },
+    });
+    if (!existingBill) throw new CustomError("Bill not found", 404);
+
+    const { discountType, discount, products } = data;
+    const { items, total } = await buildBillItems(products, userId);
+    const finalBillAmount = calcFinalAmount(total, discountType, discount);
+
+    return await prismaMain.$transaction(async (tx) => {
+      // Restore old quantities first, then take the new ones
+      await returnStock(tx, existingBill.billItems);
+      await tx.billItem.deleteMany({ where: { billId } });
+      await takeStock(tx, items);
+
+      return await tx.bill.update({
+        where: { id: billId },
+        data: {
+          discountType,
+          discount,
+          total,
+          finalBillAmount,
+          billItems: { createMany: { data: items } },
+        },
+        include: billInclude,
+      });
+    });
+  },
+
+  delete: async (billId: string, userId: string) => {
+    const bill = await prismaMain.bill.findFirst({
+      where: { id: billId, userId },
+      include: { billItems: true },
+    });
+    if (!bill) throw new CustomError("Bill not found", 404);
+
+    return await prismaMain.$transaction(async (tx) => {
+      await returnStock(tx, bill.billItems);
+      await tx.billItem.deleteMany({ where: { billId } });
+      return await tx.bill.delete({ where: { id: billId } });
+    });
+  },
+
+  getBillsByDateRange: async (
+    userId: string,
+    startDate: Date,
+    endDate: Date,
+    pageNumber: number,
+    limitNumber: number,
+  ) => {
+    const skip = (pageNumber - 1) * limitNumber;
+    const take = limitNumber;
+
+    const where: Prisma.BillWhereInput = {
+      userId,
+      createdAt: { gte: startDate, lte: endDate },
+    };
+
+    const bills = await prismaMain.bill.findMany({
+      where,
+      include: billInclude,
+      skip,
+      take,
+      orderBy: { createdAt: "desc" },
+    });
+
+    const total = await prismaMain.bill.count({ where });
+
+    return {
+      bills,
+      pagination: {
+        page: pageNumber,
+        limit: limitNumber,
+        total,
+      },
+    };
+  },
+
+  getTotalSales: async (userId: string) => {
+    const result = await prismaMain.bill.aggregate({
+      where: { userId },
+      _sum: { finalBillAmount: true },
+      _count: true,
+    });
+
+    return {
+      totalBills: result._count,
+      totalSales: result._sum.finalBillAmount?.toNumber() ?? 0,
+    };
+  },
+
+  getBillsByCategory: async (
+    userId: string,
+    categoryId: string,
+    pageNumber: number,
+    limitNumber: number,
+  ) => {
+    const skip = (pageNumber - 1) * limitNumber;
+    const take = limitNumber;
+
+    const where: Prisma.BillWhereInput = {
+      userId,
+      billItems: { some: { product: { categoryId } } },
+    };
+
+    const bills = await prismaMain.bill.findMany({
+      where,
+      include: {
+        billItems: {
+          where: { product: { categoryId } },
+          include: {
+            product: { include: { category: true } },
+            batch: true,
+          },
+        },
+        user: {
+          select: { id: true, username: true, email: true },
+        },
+      },
+      skip,
+      take,
+      orderBy: { createdAt: "desc" },
+    });
+
+    const total = await prismaMain.bill.count({ where });
+
+    return {
+      bills,
+      pagination: {
+        page: pageNumber,
+        limit: limitNumber,
+        total,
+      },
+    };
+  },
+};
+
+```
+
+---
+
+### <a id="📄-src-modules-bill-validator-ts"></a>📄 `src/modules/bill/validator.ts`
+
+**File Info:**
+- **Size**: 1.19 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/bill/validator.ts`
+- **Relative Path**: `src/modules/bill`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 13:03:54 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `55c1a85f487fb8c0fc96f3b66e1707dc`
+- **SHA256**: `2af95568ca4e74089196630c601f7d9e393040e6dae9a986e8c6fb4b1f8ba902`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import z from "zod";
+
+export const billCreateInputSchema = z
+  .object({
+    discountType: z.enum(["Exact", "Percentage"], {
+      message: "Discount type must be Exact or Percentage",
+    }),
+    discount: z
+      .number({ message: "Discount is required" })
+      .nonnegative("Discount cannot be negative")
+      .default(0),
+    products: z
+      .array(
+        z.object({
+          batchId: z
+            .string({ message: "Batch ID is required" })
+            .min(1, "Batch ID is required"),
+          quantity: z
+            .number({ message: "Quantity is required" })
+            .int("Quantity must be an integer")
+            .positive("Quantity must be greater than 0"),
+        }),
+      )
+      .min(1, "At least one product is required"),
+  })
+  .superRefine((val, ctx) => {
+    if (val.discountType === "Percentage" && val.discount > 100) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["discount"],
+        message: "Percentage discount cannot exceed 100",
+      });
+    }
+  });
+
+export type T_BillCreateInput = z.infer<typeof billCreateInputSchema>;
+
+export const validateBillCreate = (data: unknown) =>
+  billCreateInputSchema.parse(data);
+
+```
+
+---
+
+### <a id="📄-src-modules-categories-controller-ts"></a>📄 `src/modules/categories/controller.ts`
+
+**File Info:**
+- **Size**: 3.28 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/categories/controller.ts`
+- **Relative Path**: `src/modules/categories`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:58:55 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `8983b8824e6831eaf5df951604d0d5dd`
+- **SHA256**: `9444e49286a2ab439f33a48cadcd5b22150563c226c4275aba9e6679b17f7103`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import { prismaMain } from "@/lib/prismaClient";
+import { ErrorHandler } from "@/utils/error";
+import { calculateSkipAndTake, queryFilters } from "@/utils/queryFilters";
+import { ResponseHandler } from "@/utils/response";
+import { Request, Response } from "express";
+import { validateCategoryCreate } from "./validator";
+import { CategoryService } from "./service";
+
+const CategoryController = {
+  index: async (req: Request, res: Response) => {
+    try {
+      // Get the user info from the response locals
+      const context = res.locals.context;
+
+      // Get the user id from the context
+      const userId = context.userId;
+
+      // Get the request query for pagination and search
+      const { limit, page, search } = queryFilters(req);
+
+      const pageNumber = Number(page) || 1;
+      const limitNumber = Number(limit) || 10;
+
+      const searchTerm = typeof search === "string" ? search : "";
+
+      // Call the service
+      const result = await CategoryService.index(
+        pageNumber,
+        limitNumber,
+        searchTerm,
+        userId,
+      );
+
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Categories fetched successfully!",
+        data: {
+          data: result.categories,
+          pagination: result.pagination,
+        },
+      });
+    } catch (error) {
+      // Handle errors
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+  create: async (req: Request, res: Response) => {
+    try {
+      // Get the user info from the response locals
+      const context = res.locals.context;
+
+      // Get the user id from the context
+      const userId = context.userId;
+
+      // Validated the data from the User
+      const { name, shortName } = validateCategoryCreate(req.body);
+
+      // Call the service
+      const category = await CategoryService.create(
+        { name, shortName },
+        userId,
+      );
+
+      // Return the response
+      return ResponseHandler.success({
+        res,
+        code: 201,
+        message: "Category created successfully",
+        data: category,
+      });
+    } catch (error) {
+      // If error occurs, handle the error
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+  retrieve: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const categoryId = req.params.id as string;
+      const category = await CategoryService.getById(categoryId, userId);
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Category fetched successfully",
+        data: category,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  update: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const categoryId = req.params.id as string;
+      const data = validateCategoryCreate(req.body);
+      const category = await CategoryService.update(categoryId, data, userId);
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Category updated successfully",
+        data: category,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+};
+
+export default CategoryController;
+
+```
+
+---
+
+### <a id="📄-src-modules-categories-routes-ts"></a>📄 `src/modules/categories/routes.ts`
+
+**File Info:**
+- **Size**: 465 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/categories/routes.ts`
+- **Relative Path**: `src/modules/categories`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `110540e2cd042129b44d5cd3aac32188`
+- **SHA256**: `cf00a007a355a459d1338df537b13ef550966085469d525a5ff44636be272657`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import { Router } from "express";
+import CategoryController from "./controller";
+import { isUser } from "@/middlewares/isUser";
+
+const categoryRouter: Router = Router();
+
+categoryRouter.get("/", isUser, CategoryController.index);
+categoryRouter.post("/", isUser, CategoryController.create);
+categoryRouter.get("/:id", isUser, CategoryController.retrieve);
+categoryRouter.patch("/:id", isUser, CategoryController.update);
+
+export default categoryRouter;
+
+```
+
+---
+
+### <a id="📄-src-modules-categories-service-ts"></a>📄 `src/modules/categories/service.ts`
+
+**File Info:**
+- **Size**: 3.21 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/categories/service.ts`
+- **Relative Path**: `src/modules/categories`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:57:57 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `2b71eba76f77d4d72ea76308d71cb541`
+- **SHA256**: `1ae39ac7ba38eca1dae8e549bb2c67de4448c50be209955f72bf2930ad435112`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import { prismaMain } from "@/lib/prismaClient";
+import { Prisma } from "@/generated/prisma/client";
+import { CustomError, ValidationError } from "@/errors/CustomError";
+import { T_CategoryCreateInput } from "./validator";
+
+const assertUnique = async (
+  userId: string,
+  data: T_CategoryCreateInput,
+  excludeId?: string,
+) => {
+  const clash = await prismaMain.category.findFirst({
+    where: {
+      userId,
+      ...(excludeId && { id: { not: excludeId } }),
+      OR: [{ name: data.name }, { shortName: data.shortName }],
+    },
+  });
+  if (!clash) return;
+
+  const fields: Record<string, string> = {};
+  if (clash.name === data.name)
+    fields.name = "Category with the same name already exists";
+  if (clash.shortName === data.shortName)
+    fields.shortName = "Category with the same short name already exists";
+  throw new ValidationError(fields);
+};
+
+const isUniqueError = (error: unknown) =>
+  error instanceof Prisma.PrismaClientKnownRequestError &&
+  error.code === "P2002";
+
+export const CategoryService = {
+  index: async (
+    page: number,
+    limit: number,
+    search: string,
+    userId: string,
+  ) => {
+    const skip = (page - 1) * limit;
+    const where: Prisma.CategoryWhereInput = {
+      userId,
+      ...(search && { name: { contains: search, mode: "insensitive" } }),
+    };
+
+    const categories = await prismaMain.category.findMany({
+      where,
+      skip,
+      take: limit,
+      orderBy: { name: "asc" },
+    });
+    const total = await prismaMain.category.count({ where });
+
+    return { categories, pagination: { page, limit, total } };
+  },
+
+  create: async (data: T_CategoryCreateInput, userId: string) => {
+    await assertUnique(userId, data);
+    try {
+      return await prismaMain.category.create({
+        data: { name: data.name, shortName: data.shortName, userId },
+      });
+    } catch (error) {
+      if (isUniqueError(error))
+        throw new ValidationError({
+          name: "Category with the same name or short name already exists",
+        });
+      throw error;
+    }
+  },
+
+  getById: async (id: string, userId: string) => {
+    const category = await prismaMain.category.findFirst({
+      where: { id, userId },
+    });
+    if (!category) throw new CustomError("Category not found", 404);
+    return category;
+  },
+
+  update: async (id: string, data: T_CategoryCreateInput, userId: string) => {
+    const existing = await prismaMain.category.findFirst({
+      where: { id, userId },
+    });
+    if (!existing) throw new CustomError("Category not found", 404);
+
+    await assertUnique(userId, data, id);
+    try {
+      return await prismaMain.category.update({
+        where: { id },
+        data: { name: data.name, shortName: data.shortName },
+      });
+    } catch (error) {
+      if (isUniqueError(error))
+        throw new ValidationError({
+          name: "Category with the same name or short name already exists",
+        });
+      throw error;
+    }
+  },
+
+  getByName: async (name: string, userId: string) =>
+    prismaMain.category.findFirst({ where: { name, userId } }),
+
+  getByShortName: async (shortName: string, userId: string) =>
+    prismaMain.category.findFirst({ where: { shortName, userId } }),
+};
+
+```
+
+---
+
+### <a id="📄-src-modules-categories-validator-ts"></a>📄 `src/modules/categories/validator.ts`
+
+**File Info:**
+- **Size**: 602 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/categories/validator.ts`
+- **Relative Path**: `src/modules/categories`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `e8a0ff12cb0a31ce1f82d1703b4583f5`
+- **SHA256**: `961d0d694ba065252a282074fc2687d54556c394ff17d4617550e086ef03a5de`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import z from "zod";
+
+export const categoryCreateInputSchema = z.object({
+  name: z
+    .string({ message: "Name is required" })
+    .min(1, "Name is required")
+    .max(100, "Name must be at most 100 characters"),
+  shortName: z
+    .string({ message: "Short name is required" })
+    .min(1, "Short name is required")
+    .max(3, "Short name must be at most 3 characters"),
+});
+
+export type T_CategoryCreateInput = z.infer<typeof categoryCreateInputSchema>;
+
+export const validateCategoryCreate = (data: T_CategoryCreateInput) => {
+  return categoryCreateInputSchema.parse(data);
+};
+
+```
+
+---
+
+### <a id="📄-src-modules-product-controller-ts"></a>📄 `src/modules/product/controller.ts`
+
+**File Info:**
+- **Size**: 4.37 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/product/controller.ts`
+- **Relative Path**: `src/modules/product`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 13:03:23 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `eb155535f48acfa82ace339729fada8c`
+- **SHA256**: `2165e717cc177dd6eb413fcf38556464e16556b532212b55b204914602859315`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+// product/controller.ts
+import { ErrorHandler } from "@/utils/error";
+import { queryFilters } from "@/utils/queryFilters";
+import { ResponseHandler } from "@/utils/response";
+import { Request, Response } from "express";
+import { validateProductCreate, validateProductUpdate } from "./validator";
+import { ProductService } from "./service";
+
+const ProductController = {
+  index: async (req: Request, res: Response) => {
+    try {
+      // Get the user info from the response locals
+      const context = res.locals.context;
+
+      // Get the user id from the context
+      const userId = context.userId;
+
+      // Get the request query for pagination and search
+      const { limit, page, search } = queryFilters(req);
+
+      const pageNumber = Number(page) || 1;
+      const limitNumber = Number(limit) || 10;
+
+      const searchTerm = typeof search === "string" ? search : "";
+
+      // Call the service
+      const result = await ProductService.index(
+        pageNumber,
+        limitNumber,
+        searchTerm,
+        userId,
+      );
+
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Products fetched successfully!",
+        data: {
+          data: result.products,
+          pagination: result.pagination,
+        },
+      });
+    } catch (error) {
+      // Handle errors
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  create: async (req: Request, res: Response) => {
+    try {
+      // Get the user info from the response locals
+      const context = res.locals.context;
+
+      // Get the user id from the context
+      const userId = context.userId;
+
+      // Validate the data from the User
+      const data = validateProductCreate(req.body);
+
+      // Call the service
+      const product = await ProductService.create(data, userId);
+
+      // Return the response
+      return ResponseHandler.success({
+        res,
+        code: 201,
+        message: "Product created successfully",
+        data: product,
+      });
+    } catch (error) {
+      // If error occurs, handle the error
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  getById: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const productId = req.params.id as string;
+      const product = await ProductService.getById(productId, userId);
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Product fetched successfully",
+        data: product,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  update: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const productId = req.params.id as string;
+      const data = validateProductUpdate(req.body);
+      const product = await ProductService.update(productId, data, userId);
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Product updated successfully",
+        data: product,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+
+  getByCategoryId: async (req: Request, res: Response) => {
+    try {
+      // Get the user info from the response locals
+      const context = res.locals.context;
+
+      // Get the user id from the context
+      const userId = context.userId;
+
+      // Get the category id from params
+      const categoryId = req.params.categoryId as string;
+
+      // Call the service
+      const products = await ProductService.getByCategoryId(categoryId, userId);
+
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Products fetched successfully",
+        data: products,
+      });
+    } catch (error) {
+      // If error occurs, handle the error
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+  delete: async (req: Request, res: Response) => {
+    try {
+      const userId = res.locals.context.userId;
+      const productId = req.params.id as string;
+      await ProductService.delete(productId, userId);
+      return ResponseHandler.success({
+        res,
+        code: 200,
+        message: "Product deleted successfully",
+        data: null,
+      });
+    } catch (error) {
+      return ErrorHandler.handleError(res, error);
+    }
+  },
+};
+
+export default ProductController;
+
+```
+
+---
+
+### <a id="📄-src-modules-product-routes-ts"></a>📄 `src/modules/product/routes.ts`
+
+**File Info:**
+- **Size**: 629 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/product/routes.ts`
+- **Relative Path**: `src/modules/product`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `7d01a359968ec8b23326a2feb2a476ff`
+- **SHA256**: `1a499d2ec06ab3d97f7312d1227b37c24125ea13527de5e76f858b6ba0fa85af`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import { Router } from "express";
+import ProductController from "./controller";
+import { isAdmin, isUser } from "@/middlewares/isUser";
+
+const productRouter: Router = Router();
+
+productRouter.get("/", isUser, ProductController.index);
+productRouter.post("/", isUser, ProductController.create);
+productRouter.get("/:id", isUser, ProductController.getById);
+productRouter.patch("/:id", isUser, ProductController.update);
+productRouter.get(
+  "/category/:categoryId",
+  isUser,
+  ProductController.getByCategoryId,
+);
+productRouter.delete("/:id", isAdmin, ProductController.delete);
+
+export default productRouter;
+
+```
+
+---
+
+### <a id="📄-src-modules-product-service-ts"></a>📄 `src/modules/product/service.ts`
+
+**File Info:**
+- **Size**: 4.95 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/product/service.ts`
+- **Relative Path**: `src/modules/product`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 13:00:55 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `f52721755d47023442df224fd51b79ac`
+- **SHA256**: `49c94b96305ef056c0766af6e27cd21660bc9970ce41a2c3ee287300f5abe0a1`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import { prismaMain } from "@/lib/prismaClient";
+import { Prisma } from "@/generated/prisma/client";
+import { CustomError, ValidationError } from "@/errors/CustomError";
+import { dateStamp } from "@/utils/batchNumber";
+import { T_ProductCreateInput, T_ProductUpdateInput } from "./validator";
+
+const productInclude = {
+  category: true,
+  batches: { orderBy: { createdAt: "asc" } },
+} satisfies Prisma.ProductInclude;
+
+const assertUnique = async (
+  userId: string,
+  data: { name: string; shortName: string },
+  excludeId?: string,
+) => {
+  const clash = await prismaMain.product.findFirst({
+    where: {
+      userId,
+      ...(excludeId && { id: { not: excludeId } }),
+      OR: [{ name: data.name }, { shortName: data.shortName }],
+    },
+  });
+  if (!clash) return;
+
+  const fields: Record<string, string> = {};
+  if (clash.name === data.name)
+    fields.name = "Product with the same name already exists";
+  if (clash.shortName === data.shortName)
+    fields.shortName = "Product with the same short name already exists";
+  throw new ValidationError(fields);
+};
+
+const assertCategory = async (categoryId: string, userId: string) => {
+  const category = await prismaMain.category.findFirst({
+    where: { id: categoryId, userId },
+  });
+  if (!category) throw new CustomError("Category not found", 404);
+};
+
+export const ProductService = {
+  index: async (
+    pageNumber: number,
+    limitNumber: number,
+    searchTerm: string,
+    userId: string,
+  ) => {
+    const skip = (pageNumber - 1) * limitNumber;
+    const where: Prisma.ProductWhereInput = {
+      userId,
+      ...(searchTerm && {
+        OR: [
+          { name: { contains: searchTerm, mode: "insensitive" } },
+          { category: { name: { contains: searchTerm, mode: "insensitive" } } },
+        ],
+      }),
+    };
+
+    const products = await prismaMain.product.findMany({
+      where,
+      include: productInclude,
+      skip,
+      take: limitNumber,
+      orderBy: { createdAt: "desc" },
+    });
+    const total = await prismaMain.product.count({ where });
+
+    return {
+      products,
+      pagination: { page: pageNumber, limit: limitNumber, total },
+    };
+  },
+
+  create: async (data: T_ProductCreateInput, userId: string) => {
+    const { name, shortName, categoryId, batch } = data;
+
+    await assertUnique(userId, { name, shortName });
+    await assertCategory(categoryId, userId);
+
+    return await prismaMain.product.create({
+      data: {
+        name,
+        shortName,
+        categoryId,
+        userId,
+        ...(batch && {
+          batches: {
+            create: {
+              batchNumber: `${dateStamp()}-01`,
+              costPrice: batch.costPrice,
+              price: batch.price,
+              quantity: batch.quantity,
+            },
+          },
+        }),
+      },
+      include: productInclude,
+    });
+  },
+
+  getById: async (productId: string, userId: string) => {
+    const product = await prismaMain.product.findFirst({
+      where: { id: productId, userId },
+      include: productInclude,
+    });
+    if (!product) throw new CustomError("Product not found", 404);
+    return product;
+  },
+
+  update: async (
+    productId: string,
+    data: T_ProductUpdateInput,
+    userId: string,
+  ) => {
+    const existing = await prismaMain.product.findFirst({
+      where: { id: productId, userId },
+    });
+    if (!existing) throw new CustomError("Product not found", 404);
+
+    await assertCategory(data.categoryId, userId);
+    await assertUnique(userId, data, productId);
+
+    return await prismaMain.product.update({
+      where: { id: productId },
+      data: {
+        name: data.name,
+        shortName: data.shortName,
+        categoryId: data.categoryId,
+      },
+      include: productInclude,
+    });
+  },
+
+  getByName: async (name: string, userId: string) =>
+    prismaMain.product.findFirst({
+      where: { name, userId },
+      include: productInclude,
+    }),
+
+  getByShortName: async (shortName: string, userId: string) =>
+    prismaMain.product.findFirst({
+      where: { shortName, userId },
+      include: productInclude,
+    }),
+
+  getByCategoryId: async (categoryId: string, userId: string) =>
+    prismaMain.product.findMany({
+      where: { categoryId, userId },
+      include: productInclude,
+      orderBy: { createdAt: "desc" },
+    }),
+
+  delete: async (productId: string, userId: string) => {
+    const product = await prismaMain.product.findFirst({
+      where: { id: productId, userId },
+    });
+    if (!product) throw new CustomError("Product not found", 404);
+
+    try {
+      return await prismaMain.product.delete({ where: { id: productId } });
+    } catch (error) {
+      if (
+        error instanceof Prisma.PrismaClientKnownRequestError &&
+        error.code === "P2003"
+      )
+        throw new CustomError(
+          "This product has sold batches in bills and can't be deleted",
+          400,
+        );
+      throw error;
+    }
+  },
+};
+
+```
+
+---
+
+### <a id="📄-src-modules-product-validator-ts"></a>📄 `src/modules/product/validator.ts`
+
+**File Info:**
+- **Size**: 1.5 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/modules/product/validator.ts`
+- **Relative Path**: `src/modules/product`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:59:32 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `eabdceb606b0d244af04c3557cef9817`
+- **SHA256**: `d598e10f647a15cfd5b1048a5d876cd23da70388847970cfd3d30cfbef12663a`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import z from "zod";
+
+export const productCreateInputSchema = z.object({
+  name: z
+    .string({ message: "Name is required" })
+    .min(1, "Name is required")
+    .max(100, "Name must be at most 100 characters"),
+  shortName: z
+    .string({ message: "Short name is required" })
+    .min(1, "Short name is required")
+    .max(50, "Short name must be at most 50 characters"),
+  categoryId: z
+    .string({ message: "Category ID is required" })
+    .min(1, "Category ID is required"),
+  batch: z
+    .object({
+      costPrice: z
+        .number({ message: "Cost price is required" })
+        .positive("Cost price must be a positive number"),
+      price: z
+        .number({ message: "Price is required" })
+        .positive("Price must be a positive number"),
+      quantity: z
+        .number({ message: "Quantity is required" })
+        .int("Quantity must be an integer")
+        .nonnegative("Quantity cannot be negative")
+        .default(0),
+    })
+    .optional(),
+});
+
+// Updates can't carry a batch (use the /batch endpoints for stock and prices)
+export const productUpdateInputSchema = productCreateInputSchema.omit({
+  batch: true,
+});
+
+export type T_ProductCreateInput = z.infer<typeof productCreateInputSchema>;
+export type T_ProductUpdateInput = z.infer<typeof productUpdateInputSchema>;
+
+export const validateProductCreate = (data: unknown) =>
+  productCreateInputSchema.parse(data);
+export const validateProductUpdate = (data: unknown) =>
+  productUpdateInputSchema.parse(data);
+```
+
+---
+
+### <a id="📄-src-utils-batchnumber-ts"></a>📄 `src/utils/batchNumber.ts`
+
+**File Info:**
+- **Size**: 268 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/utils/batchNumber.ts`
+- **Relative Path**: `src/utils`
+- **Created**: 2026-10-13 12:27:44 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:27:50 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `3f9ac266df2ac3f3fc2513860b56aa6d`
+- **SHA256**: `773f02afce649aa88f3ef9549cd9ea7c39d40c6b7512039dbcc80a831635210d`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+export const dateStamp = (d: Date = new Date()) =>
+  `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}`;
+
+export const startOfToday = () => {
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+  return d;
+};
+
+```
+
+---
+
+### <a id="📄-src-utils-cookies-ts"></a>📄 `src/utils/cookies.ts`
+
+**File Info:**
+- **Size**: 1.17 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/utils/cookies.ts`
+- **Relative Path**: `src/utils`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:48:05 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `e34dc46334148c4b5788ffbf64d4db9c`
+- **SHA256**: `a52cf0f84ac4ddd1a0027de0b4c262752cb4647f327b6cf83721f028164077a6`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import "dotenv/config";
+import type { CookieOptions } from "express";
+
+const parseSeconds = (value: string | undefined, fallback: number): number => {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+};
+
+const defaultAccessTtl = parseSeconds(process.env.JWT_EXPIRES_IN, 900);
+const defaultRefreshTtl = parseSeconds(
+  process.env.JWT_REFRESH_EXPIRES_IN,
+  86400,
+);
+
+// Use COOKIE_SAME_SITE=none only if your frontend is on a different site than the API
+const requested = process.env.COOKIE_SAME_SITE;
+const sameSite = (
+  requested === "none" || requested === "strict" ? requested : "lax"
+) as "lax" | "strict" | "none";
+
+const baseCookieOptions: CookieOptions = {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production" || sameSite === "none",
+  sameSite,
+};
+
+const buildCookieOptions = (ttlSeconds: number): CookieOptions => ({
+  ...baseCookieOptions,
+  maxAge: ttlSeconds * 1000,
+});
+
+export const CookieManager = {
+  accessToken: () => buildCookieOptions(defaultAccessTtl),
+  refreshToken: () => buildCookieOptions(defaultRefreshTtl),
+  clear: (): CookieOptions => ({ ...baseCookieOptions }),
+};
+
+```
+
+---
+
+### <a id="📄-src-utils-error-ts"></a>📄 `src/utils/error.ts`
+
+**File Info:**
+- **Size**: 3.72 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/utils/error.ts`
+- **Relative Path**: `src/utils`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:52:10 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `be776a28be12a2ab4e307fac5e0c247e`
+- **SHA256**: `c3ad6d6c08c06d0d0ffb7714b7a568b0ac745f280f6637740c5d2baf2bea9eaf`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import { CustomError, ValidationError } from "@/errors/CustomError";
+import { Prisma } from "@/generated/prisma/client";
+import { AxiosError } from "axios";
+import { Response } from "express";
+import { z, ZodError } from "zod";
+import { ResponseHandler } from "./response";
+
+export const ErrorHandler = {
+  handleError: function (res: Response, error: unknown) {
+    if (error instanceof ValidationError)
+      return ErrorHandler.handleValidationError(res, error);
+    if (error instanceof CustomError)
+      return ErrorHandler.handleCustomError(res, error);
+    if (error instanceof ZodError)
+      return ErrorHandler.handleZodError(res, error);
+    if (error instanceof Prisma.PrismaClientKnownRequestError)
+      return ErrorHandler.handlePrismaError(res, error);
+    if (error instanceof Prisma.PrismaClientValidationError)
+      return ResponseHandler.error({
+        res,
+        code: 400,
+        message: "Invalid request data",
+        error: null,
+      });
+    if (error instanceof AxiosError)
+      return ErrorHandler.handleAxiosError(res, error);
+
+    // Log the real error server-side, never send internals to the client
+    console.error("Unhandled error:", error);
+    return ResponseHandler.error({
+      res,
+      code: 500,
+      message: "Internal Server Error",
+      error: null,
+    });
+  },
+
+  handleCustomError: function (res: Response, error: CustomError) {
+    return ResponseHandler.error({
+      res,
+      code: error.status || 500,
+      message: error.message || "Internal Server Error",
+      error: null,
+    });
+  },
+
+  handleValidationError: function (res: Response, error: ValidationError) {
+    return res.status(422).send({
+      success: false,
+      status: 422,
+      message: "Validation Error",
+      data: error.fields,
+    });
+  },
+
+  handlePrismaError: function (
+    res: Response,
+    error: Prisma.PrismaClientKnownRequestError,
+  ) {
+    switch (error.code) {
+      case "P2002":
+        return ResponseHandler.error({
+          res,
+          code: 409,
+          message: "A record with the same unique value already exists",
+          error: null,
+        });
+      case "P2003":
+        return ResponseHandler.error({
+          res,
+          code: 409,
+          message: "This record is referenced by other records",
+          error: null,
+        });
+      case "P2025":
+        return ResponseHandler.error({
+          res,
+          code: 404,
+          message: "Record not found",
+          error: null,
+        });
+      default:
+        console.error("Prisma error:", error);
+        return ResponseHandler.error({
+          res,
+          code: 500,
+          message: "Internal Server Error",
+          error: null,
+        });
+    }
+  },
+
+  handleZodError: function (res: Response, error: ZodError) {
+    const flattenedErrors: Record<string, unknown> = z.flattenError(error)
+      .fieldErrors as Record<string, unknown>;
+
+    // Respect custom data thrown via zod's params
+    for (const issue of error.issues) {
+      for (const path of issue.path) {
+        if ("params" in issue && issue.params) {
+          flattenedErrors[String(path)] = issue.params;
+        }
+      }
+    }
+
+    return res.status(422).send({
+      success: false,
+      status: 422,
+      message: "Validation Error",
+      data: flattenedErrors,
+    });
+  },
+
+  handleAxiosError: function (res: Response, error: AxiosError) {
+    const status = error.response?.status || 500;
+    const responseData = error.response?.data as
+      | { message?: string }
+      | undefined;
+    const message = responseData?.message || error.message || "Request failed";
+    return ResponseHandler.error({ res, code: status, message, error: null });
+  },
+};
+
+```
+
+---
+
+### <a id="📄-src-utils-queryfilters-ts"></a>📄 `src/utils/queryFilters.ts`
+
+**File Info:**
+- **Size**: 888 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/utils/queryFilters.ts`
+- **Relative Path**: `src/utils`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:52:35 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `e12de7e9e2f698035cb71c5e760a8660`
+- **SHA256**: `b58555deac73026615276dee971f1bc49f1952e1e26593725fafcc0e05ca30fd`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import type { Request } from "express";
+
+type Query = {
+  limit?: unknown;
+  page?: unknown;
+  search?: unknown;
+};
+
+const toInt = (value: unknown, fallback: number) => {
+  const n = Math.floor(Number(value));
+  return Number.isFinite(n) ? n : fallback;
+};
+
+export function queryFilters(req: Request) {
+  const source = (req.query ?? {}) as Query;
+  const page = Math.min(1_000_000, Math.max(1, toInt(source.page, 1)));
+  const limit = Math.min(100, Math.max(1, toInt(source.limit, 10)));
+  const search = typeof source.search === "string" ? source.search.trim() : "";
+  return { limit, page, search };
+}
+
+export const calculateSkipAndTake = (
+  page: number,
+  limit: number,
+): { skip: number; take: number | undefined } => {
+  const skip = limit === -1 ? 0 : (page - 1) * limit;
+  const take = limit !== -1 ? limit : undefined;
+  return { skip, take };
+};
+
+```
+
+---
+
+### <a id="📄-src-utils-response-ts"></a>📄 `src/utils/response.ts`
+
+**File Info:**
+- **Size**: 1.2 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/utils/response.ts`
+- **Relative Path**: `src/utils`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `5a7788ec45a0f687b18c7291ca3bb626`
+- **SHA256**: `186078c0debde1397cdd5abfd20456b0c41498fe4a479ab6d12202d5cce62d3a`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import type { Request, Response } from "express";
+import moment from "moment";
+
+export const ResponseHandler = {
+  success: (args: {
+    res: Response;
+    code: number;
+    message: string;
+    data: unknown;
+  }) => {
+    const { res, code, message, data } = args;
+    return res.status(code).json({
+      success: true,
+      code,
+      message,
+      data,
+      meta: ResponseHandler.meta({ res }),
+    });
+  },
+
+  error: (args: {
+    res: Response;
+    code: number;
+    message: string;
+    error: unknown;
+  }) => {
+    const { res, code, message, error } = args;
+    return res.status(code).send({
+      success: false,
+      code,
+      message,
+      error,
+      meta: ResponseHandler.meta({ res }),
+    });
+  },
+
+  notfound: (args: { res: Response }) => {
+    const { res } = args;
+    return res.status(404).json({
+      success: false,
+      code: 404,
+      message: "Not Found",
+      data: null,
+      meta: ResponseHandler.meta({ res }),
+    });
+  },
+
+  meta: (args: { res: Response }) => {
+    const { res } = args;
+    return {
+      requestId: res.locals.requestId,
+      timestamp: moment().toISOString(),
+      unix: moment().unix(),
+    };
+  },
+};
+
+```
+
+---
+
+### <a id="📄-src-index-ts"></a>📄 `src/index.ts`
+
+**File Info:**
+- **Size**: 1.97 KB
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/index.ts`
+- **Relative Path**: `src`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:54:03 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `fb2a52927045f352951a1a20aef9b489`
+- **SHA256**: `c829a949a19bf91ab8e054daa50c2104d70c1b9cdbf91743383889c392fad4e6`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import "dotenv/config";
+import express, { NextFunction, Request, Response } from "express";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import helmet from "helmet";
+import { randomUUID } from "crypto";
+import { trimBody } from "./middlewares/trimBody";
+import appRoutes from "./router";
+import { prismaMain } from "./lib/prismaClient";
+import { seedDefaultAdmin } from "./dev/seed-default-admin";
+import { ErrorHandler } from "./utils/error";
+import { ResponseHandler } from "./utils/response";
+
+const app = express();
+
+app.use(helmet());
+app.use(
+  cors({
+    origin: (process.env.CORS_ORIGIN ?? "http://localhost:5173").split(","),
+    credentials: true,
+    exposedHeaders: ["X-New-Token", "X-Request-Id"],
+  }),
+);
+app.use((_req: Request, res: Response, next: NextFunction) => {
+  res.locals.requestId = randomUUID();
+  res.setHeader("X-Request-Id", res.locals.requestId);
+  next();
+});
+app.use(express.json({ limit: "100kb" }));
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
+app.use("/api", [trimBody], appRoutes);
+
+// 404
+app.use((_req: Request, res: Response) => ResponseHandler.notfound({ res }));
+
+// Global error handler (malformed JSON, anything uncaught)
+app.use((err: unknown, _req: Request, res: Response, _next: NextFunction) => {
+  if (
+    (err as { status?: number })?.status === 400 &&
+    err instanceof SyntaxError
+  )
+    return ResponseHandler.error({
+      res,
+      code: 400,
+      message: "Malformed JSON body",
+      error: null,
+    });
+  return ErrorHandler.handleError(res, err);
+});
+
+async function main() {
+  try {
+    await prismaMain.$connect();
+    console.log("Database connected");
+    await seedDefaultAdmin();
+    app.listen(process.env.PORT || 8000, () => {
+      console.log(`Server is running at PORT:${process.env.PORT || 8000}`);
+    });
+  } catch (error) {
+    console.error("Database connection failed:", error);
+    process.exit(1);
+  }
+}
+
+main();
+
+```
+
+---
+
+### <a id="📄-src-router-ts"></a>📄 `src/router.ts`
+
+**File Info:**
+- **Size**: 565 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `src/router.ts`
+- **Relative Path**: `src`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:30:48 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `7b75c0da51f49b46fe60b9e1f259534d`
+- **SHA256**: `1eef4df2c2c3f54decd0aebe6543bf64e02daecc9c6061c860f469790194a327`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+import express, { Router } from "express";
+import authRouter from "./modules/auth/routes";
+import categoryRouter from "./modules/categories/routes";
+import productRouter from "./modules/product/routes";
+import batchRouter from "./modules/batch/routes";
+import billRouter from "./modules/bill/routes";
+
+const router: Router = express.Router();
+
+router.use("/auth", authRouter);
+router.use("/category", categoryRouter);
+router.use("/product", productRouter);
+router.use("/batch", batchRouter);
+router.use("/bill", billRouter);
+
+export default router;
+
+```
+
+---
+
+### <a id="📄-package-json"></a>📄 `package.json`
+
+**File Info:**
+- **Size**: 1.27 KB
+- **Extension**: `.json`
+- **Language**: `json`
+- **Location**: `package.json`
+- **Relative Path**: `root`
+- **Created**: 2026-10-13 12:50:31 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:50:31 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `5d2cef5666a24068b529696b7511c450`
+- **SHA256**: `6af867e095e1dfe266f51f1cce516f289c6848de19bbfb147ddba50680a9ae66`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```json
+{
+  "name": "PosBackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec \"pnpm exec tsx\" src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "db:migrate": "prisma migrate dev",
+    "db:generate": "prisma generate",
+    "db:studio": "prisma studio",
+    "db:push": "prisma db push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.24.0",
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/client": "^7.8.0",
+    "@types/cors": "^2.8.19",
+    "axios": "^1.16.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "moment": "^2.30.1",
+    "morgan": "^1.10.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.7.0",
+    "bcrypt": "^6.0.0",
+    "nodemon": "^3.1.14",
+    "prisma": "^7.8.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.22.1",
+    "typescript": "^6.0.3"
+  }
+}
+
+```
+
+---
+
+### <a id="📄-pnpm-lock-yaml"></a>📄 `pnpm-lock.yaml`
+
+**File Info:**
+- **Size**: 81.56 KB
+- **Extension**: `.yaml`
+- **Language**: `yaml`
+- **Location**: `pnpm-lock.yaml`
+- **Relative Path**: `root`
+- **Created**: 2026-10-13 12:50:31 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 12:50:31 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `eac2fe61f6bd416d2d849552a3dc0c7f`
+- **SHA256**: `dd28ea9cfa6c17c6e5d2e588525cabc2c3cb1930841d3cff52eea29f8b5d2bd8`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```yaml
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@prisma/adapter-pg':
+        specifier: ^7.8.0
+        version: 7.8.0
+      '@prisma/client':
+        specifier: ^7.8.0
+        version: 7.8.0(prisma@7.8.0(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(typescript@6.0.3))(typescript@6.0.3)
+      '@types/cors':
+        specifier: ^2.8.19
+        version: 2.8.19
+      axios:
+        specifier: ^1.16.1
+        version: 1.16.1
+      cookie-parser:
+        specifier: ^1.4.7
+        version: 1.4.7
+      cors:
+        specifier: ^2.8.6
+        version: 2.8.6
+      dotenv:
+        specifier: ^17.4.2
+        version: 17.4.2
+      express:
+        specifier: ^5.2.1
+        version: 5.2.1
+      express-rate-limit:
+        specifier: ^8.7.1
+        version: 8.7.1(express@5.2.1)
+      helmet:
+        specifier: ^8.1.0
+        version: 8.1.0
+      jsonwebtoken:
+        specifier: ^9.0.3
+        version: 9.0.3
+      moment:
+        specifier: ^2.30.1
+        version: 2.30.1
+      morgan:
+        specifier: ^1.10.1
+        version: 1.10.1
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@types/bcrypt':
+        specifier: ^6.0.0
+        version: 6.0.0
+      '@types/cookie-parser':
+        specifier: ^1.4.10
+        version: 1.4.10(@types/express@5.0.6)
+      '@types/express':
+        specifier: ^5.0.6
+        version: 5.0.6
+      '@types/jsonwebtoken':
+        specifier: ^9.0.10
+        version: 9.0.10
+      '@types/node':
+        specifier: ^25.7.0
+        version: 25.7.0
+      bcrypt:
+        specifier: ^6.0.0
+        version: 6.0.0
+      nodemon:
+        specifier: ^3.1.14
+        version: 3.1.14
+      prisma:
+        specifier: ^7.8.0
+        version: 7.8.0(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(typescript@6.0.3)
+      ts-node:
+        specifier: ^10.9.2
+        version: 10.9.2(@types/node@25.7.0)(typescript@6.0.3)
+      tsx:
+        specifier: ^4.22.1
+        version: 4.22.1
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
+
+packages:
+
+  '@cspotcode/source-map-support@0.8.1':
+    resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
+    engines: {node: '>=12'}
+
+  '@electric-sql/pglite-socket@0.1.1':
+    resolution: {integrity: sha512-p2hoXw3Z3LQHwTeikdZNsFBOvXGqKY2hk51BBw+8NKND8eoH+8LFOtW9Z8CQKmTJ2qqGYu82ipqiyFZOTTXNfw==}
+    hasBin: true
+    peerDependencies:
+      '@electric-sql/pglite': 0.4.1
+
+  '@electric-sql/pglite-tools@0.3.1':
+    resolution: {integrity: sha512-C+T3oivmy9bpQvSxVqXA1UDY8cB9Eb9vZHL9zxWwEUfDixbXv4G3r2LjoTdR33LD8aomR3O9ZXEO3XEwr/cUCA==}
+    peerDependencies:
+      '@electric-sql/pglite': 0.4.1
+
+  '@electric-sql/pglite@0.4.1':
+    resolution: {integrity: sha512-mZ9NzzUSYPOCnxHH1oAHPRzoMFJHY472raDKwXl/+6oPbpdJ7g8LsCN4FSaIIfkiCKHhb3iF/Zqo3NYxaIhU7Q==}
+
+  '@esbuild/aix-ppc64@0.28.0':
+    resolution: {integrity: sha512-lhRUCeuOyJQURhTxl4WkpFTjIsbDayJHih5kZC1giwE+MhIzAb7mEsQMqMf18rHLsrb5qI1tafG20mLxEWcWlA==}
+    engines: {node: '>=18'}
+    cpu: [ppc64]
+    os: [aix]
+
+  '@esbuild/android-arm64@0.28.0':
+    resolution: {integrity: sha512-+WzIXQOSaGs33tLEgYPYe/yQHf0WTU0X42Jca3y8NWMbUVhp7rUnw+vAsRC/QiDrdD31IszMrZy+qwPOPjd+rw==}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [android]
+
+  '@esbuild/android-arm@0.28.0':
+    resolution: {integrity: sha512-wqh0ByljabXLKHeWXYLqoJ5jKC4XBaw6Hk08OfMrCRd2nP2ZQ5eleDZC41XHyCNgktBGYMbqnrJKq/K/lzPMSQ==}
+    engines: {node: '>=18'}
+    cpu: [arm]
+    os: [android]
+
+  '@esbuild/android-x64@0.28.0':
+    resolution: {integrity: sha512-+VJggoaKhk2VNNqVL7f6S189UzShHC/mR9EE8rDdSkdpN0KflSwWY/gWjDrNxxisg8Fp1ZCD9jLMo4m0OUfeUA==}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [android]
+
+  '@esbuild/darwin-arm64@0.28.0':
+    resolution: {integrity: sha512-0T+A9WZm+bZ84nZBtk1ckYsOvyA3x7e2Acj1KdVfV4/2tdG4fzUp91YHx+GArWLtwqp77pBXVCPn2We7Letr0Q==}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@esbuild/darwin-x64@0.28.0':
+    resolution: {integrity: sha512-fyzLm/DLDl/84OCfp2f/XQ4flmORsjU7VKt8HLjvIXChJoFFOIL6pLJPH4Yhd1n1gGFF9mPwtlN5Wf82DZs+LQ==}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@esbuild/freebsd-arm64@0.28.0':
+    resolution: {integrity: sha512-l9GeW5UZBT9k9brBYI+0WDffcRxgHQD8ShN2Ur4xWq/NFzUKm3k5lsH4PdaRgb2w7mI9u61nr2gI2mLI27Nh3Q==}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [freebsd]
+
+  '@esbuild/freebsd-x64@0.28.0':
+    resolution: {integrity: sha512-BXoQai/A0wPO6Es3yFJ7APCiKGc1tdAEOgeTNy3SsB491S3aHn4S4r3e976eUnPdU+NbdtmBuLncYir2tMU9Nw==}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@esbuild/linux-arm64@0.28.0':
+    resolution: {integrity: sha512-RVyzfb3FWsGA55n6WY0MEIEPURL1FcbhFE6BffZEMEekfCzCIMtB5yyDcFnVbTnwk+CLAgTujmV/Lgvih56W+A==}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@esbuild/linux-arm@0.28.0':
+    resolution: {integrity: sha512-CjaaREJagqJp7iTaNQjjidaNbCKYcd4IDkzbwwxtSvjI7NZm79qiHc8HqciMddQ6CKvJT6aBd8lO9kN/ZudLlw==}
+    engines: {node: '>=18'}
+    cpu: [arm]
+    os: [linux]
+
+  '@esbuild/linux-ia32@0.28.0':
+    resolution: {integrity: sha512-KBnSTt1kxl9x70q+ydterVdl+Cn0H18ngRMRCEQfrbqdUuntQQ0LoMZv47uB97NljZFzY6HcfqEZ2SAyIUTQBQ==}
+    engines: {node: '>=18'}
+    cpu: [ia32]
+    os: [linux]
+
+  '@esbuild/linux-loong64@0.28.0':
+    resolution: {integrity: sha512-zpSlUce1mnxzgBADvxKXX5sl8aYQHo2ezvMNI8I0lbblJtp8V4odlm3Yzlj7gPyt3T8ReksE6bK+pT3WD+aJRg==}
+    engines: {node: '>=18'}
+    cpu: [loong64]
+    os: [linux]
+
+  '@esbuild/linux-mips64el@0.28.0':
+    resolution: {integrity: sha512-2jIfP6mmjkdmeTlsX/9vmdmhBmKADrWqN7zcdtHIeNSCH1SqIoNI63cYsjQR8J+wGa4Y5izRcSHSm8K3QWmk3w==}
+    engines: {node: '>=18'}
+    cpu: [mips64el]
+    os: [linux]
+
+  '@esbuild/linux-ppc64@0.28.0':
+    resolution: {integrity: sha512-bc0FE9wWeC0WBm49IQMPSPILRocGTQt3j5KPCA8os6VprfuJ7KD+5PzESSrJ6GmPIPJK965ZJHTUlSA6GNYEhg==}
+    engines: {node: '>=18'}
+    cpu: [ppc64]
+    os: [linux]
+
+  '@esbuild/linux-riscv64@0.28.0':
+    resolution: {integrity: sha512-SQPZOwoTTT/HXFXQJG/vBX8sOFagGqvZyXcgLA3NhIqcBv1BJU1d46c0rGcrij2B56Z2rNiSLaZOYW5cUk7yLQ==}
+    engines: {node: '>=18'}
+    cpu: [riscv64]
+    os: [linux]
+
+  '@esbuild/linux-s390x@0.28.0':
+    resolution: {integrity: sha512-SCfR0HN8CEEjnYnySJTd2cw0k9OHB/YFzt5zgJEwa+wL/T/raGWYMBqwDNAC6dqFKmJYZoQBRfHjgwLHGSrn3Q==}
+    engines: {node: '>=18'}
+    cpu: [s390x]
+    os: [linux]
+
+  '@esbuild/linux-x64@0.28.0':
+    resolution: {integrity: sha512-us0dSb9iFxIi8srnpl931Nvs65it/Jd2a2K3qs7fz2WfGPHqzfzZTfec7oxZJRNPXPnNYZtanmRc4AL/JwVzHQ==}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [linux]
+
+  '@esbuild/netbsd-arm64@0.28.0':
+    resolution: {integrity: sha512-CR/RYotgtCKwtftMwJlUU7xCVNg3lMYZ0RzTmAHSfLCXw3NtZtNpswLEj/Kkf6kEL3Gw+BpOekRX0BYCtklhUw==}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [netbsd]
+
+  '@esbuild/netbsd-x64@0.28.0':
+    resolution: {integrity: sha512-nU1yhmYutL+fQ71Kxnhg8uEOdC0pwEW9entHykTgEbna2pw2dkbFSMeqjjyHZoCmt8SBkOSvV+yNmm94aUrrqw==}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [netbsd]
+
+  '@esbuild/openbsd-arm64@0.28.0':
+    resolution: {integrity: sha512-cXb5vApOsRsxsEl4mcZ1XY3D4DzcoMxR/nnc4IyqYs0rTI8ZKmW6kyyg+11Z8yvgMfAEldKzP7AdP64HnSC/6g==}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [openbsd]
+
+  '@esbuild/openbsd-x64@0.28.0':
+    resolution: {integrity: sha512-8wZM2qqtv9UP3mzy7HiGYNH/zjTA355mpeuA+859TyR+e+Tc08IHYpLJuMsfpDJwoLo1ikIJI8jC3GFjnRClzA==}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [openbsd]
+
+  '@esbuild/openharmony-arm64@0.28.0':
+    resolution: {integrity: sha512-FLGfyizszcef5C3YtoyQDACyg95+dndv79i2EekILBofh5wpCa1KuBqOWKrEHZg3zrL3t5ouE5jgr94vA+Wb2w==}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [openharmony]
+
+  '@esbuild/sunos-x64@0.28.0':
+    resolution: {integrity: sha512-1ZgjUoEdHZZl/YlV76TSCz9Hqj9h9YmMGAgAPYd+q4SicWNX3G5GCyx9uhQWSLcbvPW8Ni7lj4gDa1T40akdlw==}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [sunos]
+
+  '@esbuild/win32-arm64@0.28.0':
+    resolution: {integrity: sha512-Q9StnDmQ/enxnpxCCLSg0oo4+34B9TdXpuyPeTedN/6+iXBJ4J+zwfQI28u/Jl40nOYAxGoNi7mFP40RUtkmUA==}
+    engines: {node: '>=18'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@esbuild/win32-ia32@0.28.0':
+    resolution: {integrity: sha512-zF3ag/gfiCe6U2iczcRzSYJKH1DCI+ByzSENHlM2FcDbEeo5Zd2C86Aq0tKUYAJJ1obRP84ymxIAksZUcdztHA==}
+    engines: {node: '>=18'}
+    cpu: [ia32]
+    os: [win32]
+
+  '@esbuild/win32-x64@0.28.0':
+    resolution: {integrity: sha512-pEl1bO9mfAmIC+tW5btTmrKaujg3zGtUmWNdCw/xs70FBjwAL3o9OEKNHvNmnyylD6ubxUERiEhdsL0xBQ9efw==}
+    engines: {node: '>=18'}
+    cpu: [x64]
+    os: [win32]
+
+  '@hono/node-server@1.19.11':
+    resolution: {integrity: sha512-dr8/3zEaB+p0D2n/IUrlPF1HZm586qgJNXK1a9fhg/PzdtkK7Ksd5l312tJX2yBuALqDYBlG20QEbayqPyxn+g==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      hono: ^4
+
+  '@jridgewell/resolve-uri@3.1.2':
+    resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
+    engines: {node: '>=6.0.0'}
+
+  '@jridgewell/sourcemap-codec@1.5.5':
+    resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
+
+  '@jridgewell/trace-mapping@0.3.9':
+    resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
+
+  '@kurkle/color@0.3.4':
+    resolution: {integrity: sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w==}
+
+  '@prisma/adapter-pg@7.8.0':
+    resolution: {integrity: sha512-ygb3UkerK3v8MDpXVgCISdRNDozpxh6+JVJgiIGbSr5KBgz10LLf5ejUskPGoXlsIjxsOu6nuy1JVQr2EKGSlg==}
+
+  '@prisma/client-runtime-utils@7.8.0':
+    resolution: {integrity: sha512-5NQZztQ0oY/ADFkmd9gPuweH5A1/CCY8YQPorLLO0Mu6a87mY5gsnDkzmFmIHs9NFaLnZojzgddFVN4RpKYrdw==}
+
+  '@prisma/client@7.8.0':
+    resolution: {integrity: sha512-HFp3Dawv/3sU3JtlPha90IB+48lS7zHiH4LKZPjmcE8YH5P9DOXGPvo8dqOtO7MqLDd1p2hOWMcFlRT1DMblHw==}
+    engines: {node: ^20.19 || ^22.12 || >=24.0}
+    peerDependencies:
+      prisma: '*'
+      typescript: '>=5.4.0'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+      typescript:
+        optional: true
+
+  '@prisma/config@7.8.0':
+    resolution: {integrity: sha512-HFESzd9rx2ZQxlK+TL7tu1HPvCqrHiL6LCxYykI2c34mvaUuIVVl3lYuicJD/MNnzgPnyeBEMlK4WTomJCV5jw==}
+
+  '@prisma/debug@7.2.0':
+    resolution: {integrity: sha512-YSGTiSlBAVJPzX4ONZmMotL+ozJwQjRmZweQNIq/ER0tQJKJynNkRB3kyvt37eOfsbMCXk3gnLF6J9OJ4QWftw==}
+
+  '@prisma/debug@7.8.0':
+    resolution: {integrity: sha512-p+QZReysDUqXC+mk17q9a+Y/qzh4c2KYliDK30buYUyfrGeTGSyfmc0AIrJRhZJrLHhRiJa9Au/J72h3C+szvA==}
+
+  '@prisma/dev@0.24.3':
+    resolution: {integrity: sha512-ffHlQuKXZiaDt9Go0OnCTdJZrHxK0k7omJKNV86/VjpsXu5EIHZLK0T7JSWgvNlJwh56kW9JFu9v0qJciFzepg==}
+
+  '@prisma/driver-adapter-utils@7.8.0':
+    resolution: {integrity: sha512-/Q13o0ZT0rjc1Xk0Q9KhZYwuq2EW/vSbWUBKfgEKkaCuB/Sg6bqnjmTZqC5cD4d6y1vfFAEwBRzfzoSMIVJ55A==}
+
+  '@prisma/engines-version@7.8.0-6.3c6e192761c0362d496ed980de936e2f3cebcd3a':
+    resolution: {integrity: sha512-fJPQxCkLgA5EayWaW8eArgCvjJ+N+Kz3VyeNKMEeYiQC4alNkxRKFVAGxv/ZUzuJISKqdw+zGeDbS6mn6RCPOA==}
+
+  '@prisma/engines@7.8.0':
+    resolution: {integrity: sha512-jx3rCnNNrt5uzbkKlegtQ2GZHxSlihMCzutgT/BP6UIDF1r9tDI39hV/0T/cHZgzJ3ELbuQPXlVZy+Y1n0pcgw==}
+
+  '@prisma/fetch-engine@7.8.0':
+    resolution: {integrity: sha512-gwB0Euiz/DDRyxFRpLXYlK3RfaZUj1c5dAYMuhZYfApg7arknJlcb9bIsOHDppJmbqYaVA+yBIiFMDBfprsNPQ==}
+
+  '@prisma/get-platform@7.2.0':
+    resolution: {integrity: sha512-k1V0l0Td1732EHpAfi2eySTezyllok9dXb6UQanajkJQzPUGi3vO2z7jdkz67SypFTdmbnyGYxvEvYZdZsMAVA==}
+
+  '@prisma/get-platform@7.8.0':
+    resolution: {integrity: sha512-WlxgRGnolL8VH2EmkH1R/DkKNr/mVdS3G2h42IZFFZ3eUrH9OT6t73kIOSlkkrv50wG123Iq8d96ufv5LlZktw==}
+
+  '@prisma/query-plan-executor@7.2.0':
+    resolution: {integrity: sha512-EOZmNzcV8uJ0mae3DhTsiHgoNCuu1J9mULQpGCh62zN3PxPTd+qI9tJvk5jOst8WHKQNwJWR3b39t0XvfBB0WQ==}
+
+  '@prisma/streams-local@0.1.2':
+    resolution: {integrity: sha512-l49yTxKKF2odFxaAXTmwmkBKL3+bVQ1tFOooGifu4xkdb9NMNLxHj27XAhTylWZod8I+ISGM5erU1xcl/oBCtg==}
+    engines: {bun: '>=1.3.6', node: '>=22.0.0'}
+
+  '@prisma/studio-core@0.27.3':
+    resolution: {integrity: sha512-AADjNFPdsrglxHQVTmHFqv6DuKQZ5WY4p5/gVFY017twvNrSwpLJ9lqUbYYxEu2W7nbvVxTZA8deJ8LseNALsw==}
+    engines: {node: ^20.19 || ^22.12 || >=24.0, pnpm: '8'}
+    peerDependencies:
+      '@types/react': ^18.0.0 || ^19.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+
+  '@radix-ui/primitive@1.1.3':
+    resolution: {integrity: sha512-JTF99U/6XIjCBo0wqkU5sK10glYe27MRRsfwoiq5zzOEZLHU3A3KCMa5X/azekYRCJ0HlwI0crAXS/5dEHTzDg==}
+
+  '@radix-ui/react-compose-refs@1.1.2':
+    resolution: {integrity: sha512-z4eqJvfiNnFMHIIvXP3CY57y2WJs5g2v3X0zm9mEJkrkNv4rDxu+sg9Jh8EkXyeqBkB7SOcboo9dMVqhyrACIg==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@radix-ui/react-primitive@2.1.3':
+    resolution: {integrity: sha512-m9gTwRkhy2lvCPe6QJp4d3G1TYEUHn/FzJUtq9MjH46an1wJU+GdoGC5VLof8RX8Ft/DlpshApkhswDLZzHIcQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
+  '@radix-ui/react-slot@1.2.3':
+    resolution: {integrity: sha512-aeNmHnBxbi2St0au6VBVC7JXFlhLlOnvIIlePNniyUNAClzmtAUEY8/pBiK3iHjufOlwA+c20/8jngo7xcrg8A==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@radix-ui/react-toggle@1.1.10':
+    resolution: {integrity: sha512-lS1odchhFTeZv3xwHH31YPObmJn8gOg7Lq12inrr0+BH/l3Tsq32VfjqH1oh80ARM3mlkfMic15n0kg4sD1poQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
+  '@radix-ui/react-use-controllable-state@1.2.2':
+    resolution: {integrity: sha512-BjasUjixPFdS+NKkypcyyN5Pmg83Olst0+c6vGov0diwTEo6mgdqVR6hxcEgFuh4QrAs7Rc+9KuGJ9TVCj0Zzg==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@radix-ui/react-use-effect-event@0.0.2':
+    resolution: {integrity: sha512-Qp8WbZOBe+blgpuUT+lw2xheLP8q0oatc9UpmiemEICxGvFLYmHm9QowVZGHtJlGbS6A6yJ3iViad/2cVjnOiA==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@radix-ui/react-use-layout-effect@1.1.1':
+    resolution: {integrity: sha512-RbJRS4UWQFkzHTTwVymMTUv8EqYhOp8dOOviLj2ugtTiXRaRQS7GLGxZTLL1jWhMeoSCf5zmcZkqTl9IiYfXcQ==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@standard-schema/spec@1.1.0':
+    resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
+
+  '@tsconfig/node10@1.0.12':
+    resolution: {integrity: sha512-UCYBaeFvM11aU2y3YPZ//O5Rhj+xKyzy7mvcIoAjASbigy8mHMryP5cK7dgjlz2hWxh1g5pLw084E0a/wlUSFQ==}
+
+  '@tsconfig/node12@1.0.11':
+    resolution: {integrity: sha512-cqefuRsh12pWyGsIoBKJA9luFu3mRxCA+ORZvA4ktLSzIuCUtWVxGIuXigEwO5/ywWFMZ2QEGKWvkZG1zDMTag==}
+
+  '@tsconfig/node14@1.0.3':
+    resolution: {integrity: sha512-ysT8mhdixWK6Hw3i1V2AeRqZ5WfXg1G43mqoYlM2nc6388Fq5jcXyr5mRsqViLx/GJYdoL0bfXD8nmF+Zn/Iow==}
+
+  '@tsconfig/node16@1.0.4':
+    resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
+
+  '@types/bcrypt@6.0.0':
+    resolution: {integrity: sha512-/oJGukuH3D2+D+3H4JWLaAsJ/ji86dhRidzZ/Od7H/i8g+aCmvkeCc6Ni/f9uxGLSQVCRZkX2/lqEFG2BvWtlQ==}
+
+  '@types/body-parser@1.19.6':
+    resolution: {integrity: sha512-HLFeCYgz89uk22N5Qg3dvGvsv46B8GLvKKo1zKG4NybA8U2DiEO3w9lqGg29t/tfLRJpJ6iQxnVw4OnB7MoM9g==}
+
+  '@types/connect@3.4.38':
+    resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
+
+  '@types/cookie-parser@1.4.10':
+    resolution: {integrity: sha512-B4xqkqfZ8Wek+rCOeRxsjMS9OgvzebEzzLYw7NHYuvzb7IdxOkI0ZHGgeEBX4PUM7QGVvNSK60T3OvWj3YfBRg==}
+    peerDependencies:
+      '@types/express': '*'
+
+  '@types/cors@2.8.19':
+    resolution: {integrity: sha512-mFNylyeyqN93lfe/9CSxOGREz8cpzAhH+E93xJ4xWQf62V8sQ/24reV2nyzUWM6H6Xji+GGHpkbLe7pVoUEskg==}
+
+  '@types/express-serve-static-core@5.1.1':
+    resolution: {integrity: sha512-v4zIMr/cX7/d2BpAEX3KNKL/JrT1s43s96lLvvdTmza1oEvDudCqK9aF/djc/SWgy8Yh0h30TZx5VpzqFCxk5A==}
+
+  '@types/express@5.0.6':
+    resolution: {integrity: sha512-sKYVuV7Sv9fbPIt/442koC7+IIwK5olP1KWeD88e/idgoJqDm3JV/YUiPwkoKK92ylff2MGxSz1CSjsXelx0YA==}
+
+  '@types/http-errors@2.0.5':
+    resolution: {integrity: sha512-r8Tayk8HJnX0FztbZN7oVqGccWgw98T/0neJphO91KkmOzug1KkofZURD4UaD5uH8AqcFLfdPErnBod0u71/qg==}
+
+  '@types/jsonwebtoken@9.0.10':
+    resolution: {integrity: sha512-asx5hIG9Qmf/1oStypjanR7iKTv0gXQ1Ov/jfrX6kS/EO0OFni8orbmGCn0672NHR3kXHwpAwR+B368ZGN/2rA==}
+
+  '@types/ms@2.1.0':
+    resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
+
+  '@types/node@25.7.0':
+    resolution: {integrity: sha512-z+pdZyxE+RTQE9AcboAZCb4otwcrvgHD+GlBpPgn0emDVt0ohrTMhAwlr2Wd9nZ+nihhYFxO2pThz3C5qSu2Eg==}
+
+  '@types/pg@8.20.0':
+    resolution: {integrity: sha512-bEPFOaMAHTEP1EzpvHTbmwR8UsFyHSKsRisLIHVMXnpNefSbGA1bD6CVy+qKjGSqmZqNqBDV2azOBo8TgkcVow==}
+
+  '@types/qs@6.15.1':
+    resolution: {integrity: sha512-GZHUBZR9hckSUhrxmp1nG6NwdpM9fCunJwyThLW1X3AyHgd9IlHb6VANpQQqDr2o/qQp6McZ3y/IA2rVzKzSbw==}
+
+  '@types/range-parser@1.2.7':
+    resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
+
+  '@types/react@19.2.14':
+    resolution: {integrity: sha512-ilcTH/UniCkMdtexkoCN0bI7pMcJDvmQFPvuPvmEaYA/NSfFTAgdUSLAoVjaRJm7+6PvcM+q1zYOwS4wTYMF9w==}
+
+  '@types/send@1.2.1':
+    resolution: {integrity: sha512-arsCikDvlU99zl1g69TcAB3mzZPpxgw0UQnaHeC1Nwb015xp8bknZv5rIfri9xTOcMuaVgvabfIRA7PSZVuZIQ==}
+
+  '@types/serve-static@2.2.0':
+    resolution: {integrity: sha512-8mam4H1NHLtu7nmtalF7eyBH14QyOASmcxHhSfEoRyr0nP/YdoesEtU+uSRvMe96TW/HPTtkoKqQLl53N7UXMQ==}
+
+  accepts@2.0.0:
+    resolution: {integrity: sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng==}
+    engines: {node: '>= 0.6'}
+
+  acorn-walk@8.3.5:
+    resolution: {integrity: sha512-HEHNfbars9v4pgpW6SO1KSPkfoS0xVOM/9UzkJltjlsHZmJasxg8aXkuZa7SMf8vKGIBhpUsPluQSqhJFCqebw==}
+    engines: {node: '>=0.4.0'}
+
+  acorn@8.16.0:
+    resolution: {integrity: sha512-UVJyE9MttOsBQIDKw1skb9nAwQuR5wuGD3+82K6JgJlm/Y+KI92oNsMNGZCYdDsVtRHSak0pcV5Dno5+4jh9sw==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+
+  agent-base@6.0.2:
+    resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
+    engines: {node: '>= 6.0.0'}
+
+  ajv@8.20.0:
+    resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
+
+  anymatch@3.1.3:
+    resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
+    engines: {node: '>= 8'}
+
+  arg@4.1.3:
+    resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==}
+
+  asynckit@0.4.0:
+    resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
+
+  aws-ssl-profiles@1.1.2:
+    resolution: {integrity: sha512-NZKeq9AfyQvEeNlN0zSYAaWrmBffJh3IELMZfRpJVWgrpEbtEpnjvzqBPf+mxoI287JohRDoa+/nsfqqiZmF6g==}
+    engines: {node: '>= 6.0.0'}
+
+  axios@1.16.1:
+    resolution: {integrity: sha512-caYkukvroVPO8KrzuJEb50Hm07KwfBZPEC3VeFHTsqWHvKTsy54hjJz9BS/cdaypROE2rH6xvm9mHX4fgWkr3A==}
+
+  balanced-match@4.0.4:
+    resolution: {integrity: sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==}
+    engines: {node: 18 || 20 || >=22}
+
+  basic-auth@2.0.1:
+    resolution: {integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==}
+    engines: {node: '>= 0.8'}
+
+  bcrypt@6.0.0:
+    resolution: {integrity: sha512-cU8v/EGSrnH+HnxV2z0J7/blxH8gq7Xh2JFT6Aroax7UohdmiJJlxApMxtKfuI7z68NvvVcmR78k2LbT6efhRg==}
+    engines: {node: '>= 18'}
+
+  better-result@2.9.2:
+    resolution: {integrity: sha512-WIFoBPCdnTOdk9inkE1ZRvCZ4P0CpSkAiLlchC65N7n9DcjZ3NhqkBOlafzpOVnO8ixyi37kicmSJ3ENhPZl7Q==}
+
+  binary-extensions@2.3.0:
+    resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
+    engines: {node: '>=8'}
+
+  body-parser@2.2.2:
+    resolution: {integrity: sha512-oP5VkATKlNwcgvxi0vM0p/D3n2C3EReYVX+DNYs5TjZFn/oQt2j+4sVJtSMr18pdRr8wjTcBl6LoV+FUwzPmNA==}
+    engines: {node: '>=18'}
+
+  brace-expansion@5.0.6:
+    resolution: {integrity: sha512-kLpxurY4Z4r9sgMsyG0Z9uzsBlgiU/EFKhj/h91/8yHu0edo7XuixOIH3VcJ8kkxs6/jPzoI6U9Vj3WqbMQ94g==}
+    engines: {node: 18 || 20 || >=22}
+
+  braces@3.0.3:
+    resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
+    engines: {node: '>=8'}
+
+  buffer-equal-constant-time@1.0.1:
+    resolution: {integrity: sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==}
+
+  bytes@3.1.2:
+    resolution: {integrity: sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==}
+    engines: {node: '>= 0.8'}
+
+  c12@3.3.4:
+    resolution: {integrity: sha512-cM0ApFQSBXuourJejzwv/AuPRvAxordTyParRVcHjjtXirtkzM0uK2L9TTn9s0cXZbG7E55jCivRQzoxYmRAlA==}
+    peerDependencies:
+      magicast: '*'
+    peerDependenciesMeta:
+      magicast:
+        optional: true
+
+  call-bind-apply-helpers@1.0.2:
+    resolution: {integrity: sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==}
+    engines: {node: '>= 0.4'}
+
+  call-bound@1.0.4:
+    resolution: {integrity: sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==}
+    engines: {node: '>= 0.4'}
+
+  chart.js@4.5.1:
+    resolution: {integrity: sha512-GIjfiT9dbmHRiYi6Nl2yFCq7kkwdkp1W/lp2J99rX0yo9tgJGn3lKQATztIjb5tVtevcBtIdICNWqlq5+E8/Pw==}
+    engines: {pnpm: '>=8'}
+
+  chokidar@3.6.0:
+    resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
+    engines: {node: '>= 8.10.0'}
+
+  chokidar@5.0.0:
+    resolution: {integrity: sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==}
+    engines: {node: '>= 20.19.0'}
+
+  combined-stream@1.0.8:
+    resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
+    engines: {node: '>= 0.8'}
+
+  confbox@0.2.4:
+    resolution: {integrity: sha512-ysOGlgTFbN2/Y6Cg3Iye8YKulHw+R2fNXHrgSmXISQdMnomY6eNDprVdW9R5xBguEqI954+S6709UyiO7B+6OQ==}
+
+  content-disposition@1.1.0:
+    resolution: {integrity: sha512-5jRCH9Z/+DRP7rkvY83B+yGIGX96OYdJmzngqnw2SBSxqCFPd0w2km3s5iawpGX8krnwSGmF0FW5Nhr0Hfai3g==}
+    engines: {node: '>=18'}
+
+  content-type@1.0.5:
+    resolution: {integrity: sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA==}
+    engines: {node: '>= 0.6'}
+
+  cookie-parser@1.4.7:
+    resolution: {integrity: sha512-nGUvgXnotP3BsjiLX2ypbQnWoGUPIIfHQNZkkC668ntrzGWEZVW70HDEB1qnNGMicPje6EttlIgzo51YSwNQGw==}
+    engines: {node: '>= 0.8.0'}
+
+  cookie-signature@1.0.6:
+    resolution: {integrity: sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ==}
+
+  cookie-signature@1.2.2:
+    resolution: {integrity: sha512-D76uU73ulSXrD1UXF4KE2TMxVVwhsnCgfAyTg9k8P6KGZjlXKrOLe4dJQKI3Bxi5wjesZoFXJWElNWBjPZMbhg==}
+    engines: {node: '>=6.6.0'}
+
+  cookie@0.7.2:
+    resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
+    engines: {node: '>= 0.6'}
+
+  cors@2.8.6:
+    resolution: {integrity: sha512-tJtZBBHA6vjIAaF6EnIaq6laBBP9aq/Y3ouVJjEfoHbRBcHBAHYcMh/w8LDrk2PvIMMq8gmopa5D4V8RmbrxGw==}
+    engines: {node: '>= 0.10'}
+
+  create-require@1.1.1:
+    resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
+
+  cross-spawn@7.0.6:
+    resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
+    engines: {node: '>= 8'}
+
+  csstype@3.2.3:
+    resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
+
+  debug@2.6.9:
+    resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
+  debug@4.4.3:
+    resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
+  deepmerge-ts@7.1.5:
+    resolution: {integrity: sha512-HOJkrhaYsweh+W+e74Yn7YStZOilkoPb6fycpwNLKzSPtruFs48nYis0zy5yJz1+ktUhHxoRDJ27RQAWLIJVJw==}
+    engines: {node: '>=16.0.0'}
+
+  defu@6.1.7:
+    resolution: {integrity: sha512-7z22QmUWiQ/2d0KkdYmANbRUVABpZ9SNYyH5vx6PZ+nE5bcC0l7uFvEfHlyld/HcGBFTL536ClDt3DEcSlEJAQ==}
+
+  delayed-stream@1.0.0:
+    resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
+    engines: {node: '>=0.4.0'}
+
+  denque@2.1.0:
+    resolution: {integrity: sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw==}
+    engines: {node: '>=0.10'}
+
+  depd@2.0.0:
+    resolution: {integrity: sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==}
+    engines: {node: '>= 0.8'}
+
+  destr@2.0.5:
+    resolution: {integrity: sha512-ugFTXCtDZunbzasqBxrK93Ik/DRYsO6S/fedkWEMKqt04xZ4csmnmwGDBAb07QWNaGMAmnTIemsYZCksjATwsA==}
+
+  diff@4.0.4:
+    resolution: {integrity: sha512-X07nttJQkwkfKfvTPG/KSnE2OMdcUCao6+eXF3wmnIQRn2aPAHH3VxDbDOdegkd6JbPsXqShpvEOHfAT+nCNwQ==}
+    engines: {node: '>=0.3.1'}
+
+  dotenv@17.4.2:
+    resolution: {integrity: sha512-nI4U3TottKAcAD9LLud4Cb7b2QztQMUEfHbvhTH09bqXTxnSie8WnjPALV/WMCrJZ6UV/qHJ6L03OqO3LcdYZw==}
+    engines: {node: '>=12'}
+
+  dunder-proto@1.0.1:
+    resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
+    engines: {node: '>= 0.4'}
+
+  ecdsa-sig-formatter@1.0.11:
+    resolution: {integrity: sha512-nagl3RYrbNv6kQkeJIpt6NJZy8twLB/2vtz6yN9Z4vRKHN4/QZJIEbqohALSgwKdnksuY3k5Addp5lg8sVoVcQ==}
+
+  ee-first@1.1.1:
+    resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
+
+  effect@3.20.0:
+    resolution: {integrity: sha512-qMLfDJscrNG8p/aw+IkT9W7fgj50Z4wG5bLBy0Txsxz8iUHjDIkOgO3SV0WZfnQbNG2VJYb0b+rDLMrhM4+Krw==}
+
+  empathic@2.0.0:
+    resolution: {integrity: sha512-i6UzDscO/XfAcNYD75CfICkmfLedpyPDdozrLMmQc5ORaQcdMoc21OnlEylMIqI7U8eniKrPMxxtj8k0vhmJhA==}
+    engines: {node: '>=14'}
+
+  encodeurl@2.0.0:
+    resolution: {integrity: sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==}
+    engines: {node: '>= 0.8'}
+
+  env-paths@3.0.0:
+    resolution: {integrity: sha512-dtJUTepzMW3Lm/NPxRf3wP4642UWhjL2sQxc+ym2YMj1m/H2zDNQOlezafzkHwn6sMstjHTwG6iQQsctDW/b1A==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+
+  es-define-property@1.0.1:
+    resolution: {integrity: sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==}
+    engines: {node: '>= 0.4'}
+
+  es-errors@1.3.0:
+    resolution: {integrity: sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==}
+    engines: {node: '>= 0.4'}
+
+  es-object-atoms@1.1.1:
+    resolution: {integrity: sha512-FGgH2h8zKNim9ljj7dankFPcICIK9Cp5bm+c2gQSYePhpaG5+esrLODihIorn+Pe6FGJzWhXQotPv73jTaldXA==}
+    engines: {node: '>= 0.4'}
+
+  es-set-tostringtag@2.1.0:
+    resolution: {integrity: sha512-j6vWzfrGVfyXxge+O0x5sh6cvxAog0a/4Rdd2K36zCMV5eJ+/+tOAngRO8cODMNWbVRdVlmGZQL2YS3yR8bIUA==}
+    engines: {node: '>= 0.4'}
+
+  esbuild@0.28.0:
+    resolution: {integrity: sha512-sNR9MHpXSUV/XB4zmsFKN+QgVG82Cc7+/aaxJ8Adi8hyOac+EXptIp45QBPaVyX3N70664wRbTcLTOemCAnyqw==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+  escape-html@1.0.3:
+    resolution: {integrity: sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==}
+
+  etag@1.8.1:
+    resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
+    engines: {node: '>= 0.6'}
+
+  express-rate-limit@8.7.1:
+    resolution: {integrity: sha512-2FXbqkygil3mZiXzEtM0IjE/UBmBNot0J1GEVrJT4JbrvwOSoEtqtO+wHbiMQELWe1eNvHoYRg2dkjOid+6JkA==}
+    engines: {node: '>= 16'}
+    peerDependencies:
+      express: '>= 4.11'
+
+  express@5.2.1:
+    resolution: {integrity: sha512-hIS4idWWai69NezIdRt2xFVofaF4j+6INOpJlVOLDO8zXGpUVEVzIYk12UUi2JzjEzWL3IOAxcTubgz9Po0yXw==}
+    engines: {node: '>= 18'}
+
+  exsolve@1.0.8:
+    resolution: {integrity: sha512-LmDxfWXwcTArk8fUEnOfSZpHOJ6zOMUJKOtFLFqJLoKJetuQG874Uc7/Kki7zFLzYybmZhp1M7+98pfMqeX8yA==}
+
+  fast-check@3.23.2:
+    resolution: {integrity: sha512-h5+1OzzfCC3Ef7VbtKdcv7zsstUQwUDlYpUTvjeUsJAssPgLn7QzbboPtL5ro04Mq0rPOsMzl7q5hIbRs2wD1A==}
+    engines: {node: '>=8.0.0'}
+
+  fast-deep-equal@3.1.3:
+    resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
+
+  fast-uri@3.1.2:
+    resolution: {integrity: sha512-rVjf7ArG3LTk+FS6Yw81V1DLuZl1bRbNrev6Tmd/9RaroeeRRJhAt7jg/6YFxbvAQXUCavSoZhPPj6oOx+5KjQ==}
+
+  fill-range@7.1.1:
+    resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
+    engines: {node: '>=8'}
+
+  finalhandler@2.1.1:
+    resolution: {integrity: sha512-S8KoZgRZN+a5rNwqTxlZZePjT/4cnm0ROV70LedRHZ0p8u9fRID0hJUZQpkKLzro8LfmC8sx23bY6tVNxv8pQA==}
+    engines: {node: '>= 18.0.0'}
+
+  follow-redirects@1.16.0:
+    resolution: {integrity: sha512-y5rN/uOsadFT/JfYwhxRS5R7Qce+g3zG97+JrtFZlC9klX/W5hD7iiLzScI4nZqUS7DNUdhPgw4xI8W2LuXlUw==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+
+  foreground-child@3.3.1:
+    resolution: {integrity: sha512-gIXjKqtFuWEgzFRJA9WCQeSJLZDjgJUOMCMzxtvFq/37KojM1BFGufqsCy0r4qSQmYLsZYMeyRqzIWOMup03sw==}
+    engines: {node: '>=14'}
+
+  form-data@4.0.5:
+    resolution: {integrity: sha512-8RipRLol37bNs2bhoV67fiTEvdTrbMUYcFTiy3+wuuOnUog2QBHCZWXDRijWQfAkhBj2Uf5UnVaiWwA5vdd82w==}
+    engines: {node: '>= 6'}
+
+  forwarded@0.2.0:
+    resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
+    engines: {node: '>= 0.6'}
+
+  fresh@2.0.0:
+    resolution: {integrity: sha512-Rx/WycZ60HOaqLKAi6cHRKKI7zxWbJ31MhntmtwMoaTeF7XFH9hhBp8vITaMidfljRQ6eYWCKkaTK+ykVJHP2A==}
+    engines: {node: '>= 0.8'}
+
+  fsevents@2.3.3:
+    resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+
+  function-bind@1.1.2:
+    resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
+
+  generate-function@2.3.1:
+    resolution: {integrity: sha512-eeB5GfMNeevm/GRYq20ShmsaGcmI81kIX2K9XQx5miC8KdHaC6Jm0qQ8ZNeGOi7wYB8OsdxKs+Y2oVuTFuVwKQ==}
+
+  get-intrinsic@1.3.0:
+    resolution: {integrity: sha512-9fSjSaos/fRIVIp+xSJlE6lfwhES7LNtKaCBIamHsjr2na1BiABJPo0mOjjz8GJDURarmCPGqaiVg5mfjb98CQ==}
+    engines: {node: '>= 0.4'}
+
+  get-port-please@3.2.0:
+    resolution: {integrity: sha512-I9QVvBw5U/hw3RmWpYKRumUeaDgxTPd401x364rLmWBJcOQ753eov1eTgzDqRG9bqFIfDc7gfzcQEWrUri3o1A==}
+
+  get-proto@1.0.1:
+    resolution: {integrity: sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==}
+    engines: {node: '>= 0.4'}
+
+  giget@3.2.0:
+    resolution: {integrity: sha512-GvHTWcykIR/fP8cj8dMpuMMkvaeJfPvYnhq0oW+chSeIr+ldX21ifU2Ms6KBoyKZQZmVaUAAhQ2EZ68KJF8a7A==}
+    hasBin: true
+
+  glob-parent@5.1.2:
+    resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
+    engines: {node: '>= 6'}
+
+  gopd@1.2.0:
+    resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
+    engines: {node: '>= 0.4'}
+
+  graceful-fs@4.2.11:
+    resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+
+  grammex@3.1.12:
+    resolution: {integrity: sha512-6ufJOsSA7LcQehIJNCO7HIBykfM7DXQual0Ny780/DEcJIpBlHRvcqEBWGPYd7hrXL2GJ3oJI1MIhaXjWmLQOQ==}
+
+  graphmatch@1.1.1:
+    resolution: {integrity: sha512-5ykVn/EXM1hF0XCaWh05VbYvEiOL2lY1kBxZtaYsyvjp7cmWOU1XsAdfQBwClraEofXDT197lFbXOEVMHpvQOg==}
+
+  has-flag@3.0.0:
+    resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
+    engines: {node: '>=4'}
+
+  has-symbols@1.1.0:
+    resolution: {integrity: sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==}
+    engines: {node: '>= 0.4'}
+
+  has-tostringtag@1.0.2:
+    resolution: {integrity: sha512-NqADB8VjPFLM2V0VvHUewwwsw0ZWBaIdgo+ieHtK3hasLz4qeCRjYcqfB6AQrBggRKppKF8L52/VqdVsO47Dlw==}
+    engines: {node: '>= 0.4'}
+
+  hasown@2.0.3:
+    resolution: {integrity: sha512-ej4AhfhfL2Q2zpMmLo7U1Uv9+PyhIZpgQLGT1F9miIGmiCJIoCgSmczFdrc97mWT4kVY72KA+WnnhJ5pghSvSg==}
+    engines: {node: '>= 0.4'}
+
+  helmet@8.1.0:
+    resolution: {integrity: sha512-jOiHyAZsmnr8LqoPGmCjYAaiuWwjAPLgY8ZX2XrmHawt99/u1y6RgrZMTeoPfpUbV96HOalYgz1qzkRbw54Pmg==}
+    engines: {node: '>=18.0.0'}
+
+  hono@4.12.18:
+    resolution: {integrity: sha512-RWzP96k/yv0PQfyXnWjs6zot20TqfpfsNXhOnev8d1InAxubW93L11/oNUc3tQqn2G0bSdAOBpX+2uDFHV7kdQ==}
+    engines: {node: '>=16.9.0'}
+
+  http-errors@2.0.1:
+    resolution: {integrity: sha512-4FbRdAX+bSdmo4AUFuS0WNiPz8NgFt+r8ThgNWmlrjQjt1Q7ZR9+zTlce2859x4KSXrwIsaeTqDoKQmtP8pLmQ==}
+    engines: {node: '>= 0.8'}
+
+  http-status-codes@2.3.0:
+    resolution: {integrity: sha512-RJ8XvFvpPM/Dmc5SV+dC4y5PCeOhT3x1Hq0NU3rjGeg5a/CqlhZ7uudknPwZFz4aeAXDcbAyaeP7GAo9lvngtA==}
+
+  https-proxy-agent@5.0.1:
+    resolution: {integrity: sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==}
+    engines: {node: '>= 6'}
+
+  iconv-lite@0.7.2:
+    resolution: {integrity: sha512-im9DjEDQ55s9fL4EYzOAv0yMqmMBSZp6G0VvFyTMPKWxiSBHUj9NW/qqLmXUwXrrM7AvqSlTCfvqRb0cM8yYqw==}
+    engines: {node: '>=0.10.0'}
+
+  ignore-by-default@1.0.1:
+    resolution: {integrity: sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA==}
+
+  inherits@2.0.4:
+    resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
+
+  ip-address@10.7.4:
+    resolution: {integrity: sha512-DWBMKyeM25D70nrIiTkgQth59/G+naKOTep6huF9j+GmeK3DMD60Zvxg5d5qQnz+38AHgou6ean2LECX+lrKDg==}
+    engines: {node: '>= 12'}
+
+  ipaddr.js@1.9.1:
+    resolution: {integrity: sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==}
+    engines: {node: '>= 0.10'}
+
+  is-binary-path@2.1.0:
+    resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
+    engines: {node: '>=8'}
+
+  is-extglob@2.1.1:
+    resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
+    engines: {node: '>=0.10.0'}
+
+  is-glob@4.0.3:
+    resolution: {integrity: sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==}
+    engines: {node: '>=0.10.0'}
+
+  is-number@7.0.0:
+    resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
+    engines: {node: '>=0.12.0'}
+
+  is-promise@4.0.0:
+    resolution: {integrity: sha512-hvpoI6korhJMnej285dSg6nu1+e6uxs7zG3BYAm5byqDsgJNWwxzM6z6iZiAgQR4TJ30JmBTOwqZUw3WlyH3AQ==}
+
+  is-property@1.0.2:
+    resolution: {integrity: sha512-Ks/IoX00TtClbGQr4TWXemAnktAQvYB7HzcCxDGqEZU6oCmb2INHuOoKxbtR+HFkmYWBKv/dOZtGRiAjDhj92g==}
+
+  isexe@2.0.0:
+    resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
+
+  jiti@2.7.0:
+    resolution: {integrity: sha512-AC/7JofJvZGrrneWNaEnJeOLUx+JlGt7tNa0wZiRPT4MY1wmfKjt2+6O2p2uz2+skll8OZZmJMNqeke7kKbNgQ==}
+    hasBin: true
+
+  json-schema-traverse@1.0.0:
+    resolution: {integrity: sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==}
+
+  jsonwebtoken@9.0.3:
+    resolution: {integrity: sha512-MT/xP0CrubFRNLNKvxJ2BYfy53Zkm++5bX9dtuPbqAeQpTVe0MQTFhao8+Cp//EmJp244xt6Drw/GVEGCUj40g==}
+    engines: {node: '>=12', npm: '>=6'}
+
+  jwa@2.0.1:
+    resolution: {integrity: sha512-hRF04fqJIP8Abbkq5NKGN0Bbr3JxlQ+qhZufXVr0DvujKy93ZCbXZMHDL4EOtodSbCWxOqR8MS1tXA5hwqCXDg==}
+
+  jws@4.0.1:
+    resolution: {integrity: sha512-EKI/M/yqPncGUUh44xz0PxSidXFr/+r0pA70+gIYhjv+et7yxM+s29Y+VGDkovRofQem0fs7Uvf4+YmAdyRduA==}
+
+  lodash.includes@4.3.0:
+    resolution: {integrity: sha512-W3Bx6mdkRTGtlJISOvVD/lbqjTlPPUDTMnlXZFnVwi9NKJ6tiAk6LVdlhZMm17VZisqhKcgzpO5Wz91PCt5b0w==}
+
+  lodash.isboolean@3.0.3:
+    resolution: {integrity: sha512-Bz5mupy2SVbPHURB98VAcw+aHh4vRV5IPNhILUCsOzRmsTmSQ17jIuqopAentWoehktxGd9e/hbIXq980/1QJg==}
+
+  lodash.isinteger@4.0.4:
+    resolution: {integrity: sha512-DBwtEWN2caHQ9/imiNeEA5ys1JoRtRfY3d7V9wkqtbycnAmTvRRmbHKDV4a0EYc678/dia0jrte4tjYwVBaZUA==}
+
+  lodash.isnumber@3.0.3:
+    resolution: {integrity: sha512-QYqzpfwO3/CWf3XP+Z+tkQsfaLL/EnUlXWVkIk5FUPc4sBdTehEqZONuyRt2P67PXAk+NXmTBcc97zw9t1FQrw==}
+
+  lodash.isplainobject@4.0.6:
+    resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
+
+  lodash.isstring@4.0.1:
+    resolution: {integrity: sha512-0wJxfxH1wgO3GrbuP+dTTk7op+6L41QCXbGINEmD+ny/G/eCqGzxyCsh7159S+mgDDcoarnBw6PC1PS5+wUGgw==}
+
+  lodash.once@4.1.1:
+    resolution: {integrity: sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==}
+
+  long@5.3.2:
+    resolution: {integrity: sha512-mNAgZ1GmyNhD7AuqnTG3/VQ26o760+ZYBPKjPvugO8+nLbYfX6TVpJPseBvopbdY+qpZ/lKUnmEc1LeZYS3QAA==}
+
+  lru.min@1.1.4:
+    resolution: {integrity: sha512-DqC6n3QQ77zdFpCMASA1a3Jlb64Hv2N2DciFGkO/4L9+q/IpIAuRlKOvCXabtRW6cQf8usbmM6BE/TOPysCdIA==}
+    engines: {bun: '>=1.0.0', deno: '>=1.30.0', node: '>=8.0.0'}
+
+  make-error@1.3.6:
+    resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
+
+  math-intrinsics@1.1.0:
+    resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
+    engines: {node: '>= 0.4'}
+
+  media-typer@1.1.0:
+    resolution: {integrity: sha512-aisnrDP4GNe06UcKFnV5bfMNPBUw4jsLGaWwWfnH3v02GnBuXX2MCVn5RbrWo0j3pczUilYblq7fQ7Nw2t5XKw==}
+    engines: {node: '>= 0.8'}
+
+  merge-descriptors@2.0.0:
+    resolution: {integrity: sha512-Snk314V5ayFLhp3fkUREub6WtjBfPdCPY1Ln8/8munuLuiYhsABgBVWsozAG+MWMbVEvcdcpbi9R7ww22l9Q3g==}
+    engines: {node: '>=18'}
+
+  mime-db@1.52.0:
+    resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
+    engines: {node: '>= 0.6'}
+
+  mime-db@1.54.0:
+    resolution: {integrity: sha512-aU5EJuIN2WDemCcAp2vFBfp/m4EAhWJnUNSSw0ixs7/kXbd6Pg64EmwJkNdFhB8aWt1sH2CTXrLxo/iAGV3oPQ==}
+    engines: {node: '>= 0.6'}
+
+  mime-types@2.1.35:
+    resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
+    engines: {node: '>= 0.6'}
+
+  mime-types@3.0.2:
+    resolution: {integrity: sha512-Lbgzdk0h4juoQ9fCKXW4by0UJqj+nOOrI9MJ1sSj4nI8aI2eo1qmvQEie4VD1glsS250n15LsWsYtCugiStS5A==}
+    engines: {node: '>=18'}
+
+  minimatch@10.2.5:
+    resolution: {integrity: sha512-MULkVLfKGYDFYejP07QOurDLLQpcjk7Fw+7jXS2R2czRQzR56yHRveU5NDJEOviH+hETZKSkIk5c+T23GjFUMg==}
+    engines: {node: 18 || 20 || >=22}
+
+  moment@2.30.1:
+    resolution: {integrity: sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==}
+
+  morgan@1.10.1:
+    resolution: {integrity: sha512-223dMRJtI/l25dJKWpgij2cMtywuG/WiUKXdvwfbhGKBhy1puASqXwFzmWZ7+K73vUPoR7SS2Qz2cI/g9MKw0A==}
+    engines: {node: '>= 0.8.0'}
+
+  ms@2.0.0:
+    resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
+
+  ms@2.1.3:
+    resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
+
+  mysql2@3.15.3:
+    resolution: {integrity: sha512-FBrGau0IXmuqg4haEZRBfHNWB5mUARw6hNwPDXXGg0XzVJ50mr/9hb267lvpVMnhZ1FON3qNd4Xfcez1rbFwSg==}
+    engines: {node: '>= 8.0'}
+
+  named-placeholders@1.1.6:
+    resolution: {integrity: sha512-Tz09sEL2EEuv5fFowm419c1+a/jSMiBjI9gHxVLrVdbUkkNUUfjsVYs9pVZu5oCon/kmRh9TfLEObFtkVxmY0w==}
+    engines: {node: '>=8.0.0'}
+
+  negotiator@1.0.0:
+    resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
+    engines: {node: '>= 0.6'}
+
+  node-addon-api@8.7.0:
+    resolution: {integrity: sha512-9MdFxmkKaOYVTV+XVRG8ArDwwQ77XIgIPyKASB1k3JPq3M8fGQQQE3YpMOrKm6g//Ktx8ivZr8xo1Qmtqub+GA==}
+    engines: {node: ^18 || ^20 || >= 21}
+
+  node-gyp-build@4.8.4:
+    resolution: {integrity: sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==}
+    hasBin: true
+
+  nodemon@3.1.14:
+    resolution: {integrity: sha512-jakjZi93UtB3jHMWsXL68FXSAosbLfY0In5gtKq3niLSkrWznrVBzXFNOEMJUfc9+Ke7SHWoAZsiMkNP3vq6Jw==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  normalize-path@3.0.0:
+    resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
+    engines: {node: '>=0.10.0'}
+
+  object-assign@4.1.1:
+    resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
+    engines: {node: '>=0.10.0'}
+
+  object-inspect@1.13.4:
+    resolution: {integrity: sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==}
+    engines: {node: '>= 0.4'}
+
+  ohash@2.0.11:
+    resolution: {integrity: sha512-RdR9FQrFwNBNXAr4GixM8YaRZRJ5PUWbKYbE5eOsrwAjJW0q2REGcf79oYPsLyskQCZG1PLN+S/K1V00joZAoQ==}
+
+  on-finished@2.3.0:
+    resolution: {integrity: sha512-ikqdkGAAyf/X/gPhXGvfgAytDZtDbr+bkNUJ0N9h5MI/dmdgCs3l6hoHrcUv41sRKew3jIwrp4qQDXiK99Utww==}
+    engines: {node: '>= 0.8'}
+
+  on-finished@2.4.1:
+    resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
+    engines: {node: '>= 0.8'}
+
+  on-headers@1.1.0:
+    resolution: {integrity: sha512-737ZY3yNnXy37FHkQxPzt4UZ2UWPWiCZWLvFZ4fu5cueciegX0zGPnrlY6bwRg4FdQOe9YU8MkmJwGhoMybl8A==}
+    engines: {node: '>= 0.8'}
+
+  once@1.4.0:
+    resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
+
+  parseurl@1.3.3:
+    resolution: {integrity: sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==}
+    engines: {node: '>= 0.8'}
+
+  path-key@3.1.1:
+    resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
+    engines: {node: '>=8'}
+
+  path-to-regexp@8.4.2:
+    resolution: {integrity: sha512-qRcuIdP69NPm4qbACK+aDogI5CBDMi1jKe0ry5rSQJz8JVLsC7jV8XpiJjGRLLol3N+R5ihGYcrPLTno6pAdBA==}
+
+  pathe@2.0.3:
+    resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
+
+  perfect-debounce@2.1.0:
+    resolution: {integrity: sha512-LjgdTytVFXeUgtHZr9WYViYSM/g8MkcTPYDlPa3cDqMirHjKiSZPYd6DoL7pK8AJQr+uWkQvCjHNdiMqsrJs+g==}
+
+  pg-cloudflare@1.4.0:
+    resolution: {integrity: sha512-Vo7z/6rrQYxpNRylp4Tlob2elzbh+N/MOQbxFVWCxS7oEx6jF53GTJFxK2WWpKuBRkmiin4Mt+xofFDjx09R0A==}
+
+  pg-connection-string@2.13.0:
+    resolution: {integrity: sha512-EMnU9E2fSULdsbErBbMaXJvFeD9B4+nPcM3f+4lsiCR0BHLPrLVjv3DbyM2hgQQviKJaTWIRRTjKjWlHg3p2ig==}
+
+  pg-int8@1.0.1:
+    resolution: {integrity: sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==}
+    engines: {node: '>=4.0.0'}
+
+  pg-pool@3.14.0:
+    resolution: {integrity: sha512-gKtPkFdQPU3DksooVLi9LsjZxrsBUZIpa+7aVx+LV5pNh0KzP4Zleud2po+ConrxbuXGBJ6Hfer6hdgpIBpBaw==}
+    peerDependencies:
+      pg: '>=8.0'
+
+  pg-protocol@1.14.0:
+    resolution: {integrity: sha512-n5taZ1kO3s9ngDTVxsEznOqCyToTgz0FLuPq0B33COy5pPpuWJpY3/2oRBVETuOgzdqRXfWpM9HIhp2LBBT1BA==}
+
+  pg-types@2.2.0:
+    resolution: {integrity: sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==}
+    engines: {node: '>=4'}
+
+  pg@8.21.0:
+    resolution: {integrity: sha512-AUP1EYJuHraQGsVoCQVIcM7TEJVGtDzxWtGFZd8rds9d+CCXlU5Js1rYgfLNvxy9iJrpHjGrRjoi/3BT9fRyiA==}
+    engines: {node: '>= 16.0.0'}
+    peerDependencies:
+      pg-native: '>=3.0.1'
+    peerDependenciesMeta:
+      pg-native:
+        optional: true
+
+  pgpass@1.0.5:
+    resolution: {integrity: sha512-FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug==}
+
+  picomatch@2.3.2:
+    resolution: {integrity: sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==}
+    engines: {node: '>=8.6'}
+
+  pkg-types@2.3.1:
+    resolution: {integrity: sha512-y+ichcgc2LrADuhLNAx8DFjVfgz91pRxfZdI3UDhxHvcVEZsenLO+7XaU5vOp0u/7V/wZ+plyuQxtrDlZJ+yeg==}
+
+  postgres-array@2.0.0:
+    resolution: {integrity: sha512-VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA==}
+    engines: {node: '>=4'}
+
+  postgres-array@3.0.4:
+    resolution: {integrity: sha512-nAUSGfSDGOaOAEGwqsRY27GPOea7CNipJPOA7lPbdEpx5Kg3qzdP0AaWC5MlhTWV9s4hFX39nomVZ+C4tnGOJQ==}
+    engines: {node: '>=12'}
+
+  postgres-bytea@1.0.1:
+    resolution: {integrity: sha512-5+5HqXnsZPE65IJZSMkZtURARZelel2oXUEO8rH83VS/hxH5vv1uHquPg5wZs8yMAfdv971IU+kcPUczi7NVBQ==}
+    engines: {node: '>=0.10.0'}
+
+  postgres-date@1.0.7:
+    resolution: {integrity: sha512-suDmjLVQg78nMK2UZ454hAG+OAW+HQPZ6n++TNDUX+L0+uUlLywnoxJKDou51Zm+zTCjrCl0Nq6J9C5hP9vK/Q==}
+    engines: {node: '>=0.10.0'}
+
+  postgres-interval@1.2.0:
+    resolution: {integrity: sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==}
+    engines: {node: '>=0.10.0'}
+
+  postgres@3.4.7:
+    resolution: {integrity: sha512-Jtc2612XINuBjIl/QTWsV5UvE8UHuNblcO3vVADSrKsrc6RqGX6lOW1cEo3CM2v0XG4Nat8nI+YM7/f26VxXLw==}
+    engines: {node: '>=12'}
+
+  prisma@7.8.0:
+    resolution: {integrity: sha512-yfN4yrw7HV9kEJhoy1+jgah0jafEIQsf7uWouSsM8MvJtlubsk+kM7AIBWZ8+GJl74Yj3c+nbYqBkMOxtsZ3Lw==}
+    engines: {node: ^20.19 || ^22.12 || >=24.0}
+    hasBin: true
+    peerDependencies:
+      better-sqlite3: '>=9.0.0'
+      typescript: '>=5.4.0'
+    peerDependenciesMeta:
+      better-sqlite3:
+        optional: true
+      typescript:
+        optional: true
+
+  proper-lockfile@4.1.2:
+    resolution: {integrity: sha512-TjNPblN4BwAWMXU8s9AEz4JmQxnD1NNL7bNOY/AKUzyamc379FWASUhc/K1pL2noVb+XmZKLL68cjzLsiOAMaA==}
+
+  proxy-addr@2.0.7:
+    resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
+    engines: {node: '>= 0.10'}
+
+  proxy-from-env@2.1.0:
+    resolution: {integrity: sha512-cJ+oHTW1VAEa8cJslgmUZrc+sjRKgAKl3Zyse6+PV38hZe/V6Z14TbCuXcan9F9ghlz4QrFr2c92TNF82UkYHA==}
+    engines: {node: '>=10'}
+
+  pstree.remy@1.1.8:
+    resolution: {integrity: sha512-77DZwxQmxKnu3aR542U+X8FypNzbfJ+C5XQDk3uWjWxn6151aIMGthWYRXTqT1E5oJvg+ljaa2OJi+VfvCOQ8w==}
+
+  pure-rand@6.1.0:
+    resolution: {integrity: sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA==}
+
+  qs@6.15.1:
+    resolution: {integrity: sha512-6YHEFRL9mfgcAvql/XhwTvf5jKcOiiupt2FiJxHkiX1z4j7WL8J/jRHYLluORvc1XxB5rV20KoeK00gVJamspg==}
+    engines: {node: '>=0.6'}
+
+  range-parser@1.2.1:
+    resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
+    engines: {node: '>= 0.6'}
+
+  raw-body@3.0.2:
+    resolution: {integrity: sha512-K5zQjDllxWkf7Z5xJdV0/B0WTNqx6vxG70zJE4N0kBs4LovmEYWJzQGxC9bS9RAKu3bgM40lrd5zoLJ12MQ5BA==}
+    engines: {node: '>= 0.10'}
+
+  rc9@3.0.1:
+    resolution: {integrity: sha512-gMDyleLWVE+i6Sgtc0QbbY6pEKqYs97NGi6isHQPqYlLemPoO8dxQ3uGi0f4NiP98c+jMW6cG1Kx9dDwfvqARQ==}
+
+  react-dom@19.2.6:
+    resolution: {integrity: sha512-0prMI+hvBbPjsWnxDLxlCGyM8PN6UuWjEUCYmZhO67xIV9Xasa/r/vDnq+Xyq4Lo27g8QSbO5YzARu0D1Sps3g==}
+    peerDependencies:
+      react: ^19.2.6
+
+  react@19.2.6:
+    resolution: {integrity: sha512-sfWGGfavi0xr8Pg0sVsyHMAOziVYKgPLNrS7ig+ivMNb3wbCBw3KxtflsGBAwD3gYQlE/AEZsTLgToRrSCjb0Q==}
+    engines: {node: '>=0.10.0'}
+
+  readdirp@3.6.0:
+    resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
+    engines: {node: '>=8.10.0'}
+
+  readdirp@5.0.0:
+    resolution: {integrity: sha512-9u/XQ1pvrQtYyMpZe7DXKv2p5CNvyVwzUB6uhLAnQwHMSgKMBR62lc7AHljaeteeHXn11XTAaLLUVZYVZyuRBQ==}
+    engines: {node: '>= 20.19.0'}
+
+  remeda@2.33.4:
+    resolution: {integrity: sha512-ygHswjlc/opg2VrtiYvUOPLjxjtdKvjGz1/plDhkG66hjNjFr1xmfrs2ClNFo/E6TyUFiwYNh53bKV26oBoMGQ==}
+
+  require-from-string@2.0.2:
+    resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
+    engines: {node: '>=0.10.0'}
+
+  retry@0.12.0:
+    resolution: {integrity: sha512-9LkiTwjUh6rT555DtE9rTX+BKByPfrMzEAtnlEtdEwr3Nkffwiihqe2bWADg+OQRjt9gl6ICdmB/ZFDCGAtSow==}
+    engines: {node: '>= 4'}
+
+  router@2.2.0:
+    resolution: {integrity: sha512-nLTrUKm2UyiL7rlhapu/Zl45FwNgkZGaCpZbIHajDYgwlJCOzLSk+cIPAnsEqV955GjILJnKbdQC1nVPz+gAYQ==}
+    engines: {node: '>= 18'}
+
+  safe-buffer@5.1.2:
+    resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
+
+  safer-buffer@2.1.2:
+    resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+
+  scheduler@0.27.0:
+    resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
+
+  semver@7.8.0:
+    resolution: {integrity: sha512-AcM7dV/5ul4EekoQ29Agm5vri8JNqRyj39o0qpX6vDF2GZrtutZl5RwgD1XnZjiTAfncsJhMI48QQH3sN87YNA==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  send@1.2.1:
+    resolution: {integrity: sha512-1gnZf7DFcoIcajTjTwjwuDjzuz4PPcY2StKPlsGAQ1+YH20IRVrBaXSWmdjowTJ6u8Rc01PoYOGHXfP1mYcZNQ==}
+    engines: {node: '>= 18'}
+
+  seq-queue@0.0.5:
+    resolution: {integrity: sha512-hr3Wtp/GZIc/6DAGPDcV4/9WoZhjrkXsi5B/07QgX8tsdc6ilr7BFM6PM6rbdAX1kFSDYeZGLipIZZKyQP0O5Q==}
+
+  serve-static@2.2.1:
+    resolution: {integrity: sha512-xRXBn0pPqQTVQiC8wyQrKs2MOlX24zQ0POGaj0kultvoOCstBQM5yvOhAVSUwOMjQtTvsPWoNCHfPGwaaQJhTw==}
+    engines: {node: '>= 18'}
+
+  setprototypeof@1.2.0:
+    resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
+
+  shebang-command@2.0.0:
+    resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
+    engines: {node: '>=8'}
+
+  shebang-regex@3.0.0:
+    resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
+    engines: {node: '>=8'}
+
+  side-channel-list@1.0.1:
+    resolution: {integrity: sha512-mjn/0bi/oUURjc5Xl7IaWi/OJJJumuoJFQJfDDyO46+hBWsfaVM65TBHq2eoZBhzl9EchxOijpkbRC8SVBQU0w==}
+    engines: {node: '>= 0.4'}
+
+  side-channel-map@1.0.1:
+    resolution: {integrity: sha512-VCjCNfgMsby3tTdo02nbjtM/ewra6jPHmpThenkTYh8pG9ucZ/1P8So4u4FGBek/BjpOVsDCMoLA/iuBKIFXRA==}
+    engines: {node: '>= 0.4'}
+
+  side-channel-weakmap@1.0.2:
+    resolution: {integrity: sha512-WPS/HvHQTYnHisLo9McqBHOJk2FkHO/tlpvldyrnem4aeQp4hai3gythswg6p01oSoTl58rcpiFAjF2br2Ak2A==}
+    engines: {node: '>= 0.4'}
+
+  side-channel@1.1.0:
+    resolution: {integrity: sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==}
+    engines: {node: '>= 0.4'}
+
+  signal-exit@3.0.7:
+    resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+
+  signal-exit@4.1.0:
+    resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
+    engines: {node: '>=14'}
+
+  simple-update-notifier@2.0.0:
+    resolution: {integrity: sha512-a2B9Y0KlNXl9u/vsW6sTIu9vGEpfKu2wRV6l1H3XEas/0gUIzGzBoP/IouTcUQbm9JWZLH3COxyn03TYlFax6w==}
+    engines: {node: '>=10'}
+
+  split2@4.2.0:
+    resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
+    engines: {node: '>= 10.x'}
+
+  sqlstring@2.3.3:
+    resolution: {integrity: sha512-qC9iz2FlN7DQl3+wjwn3802RTyjCx7sDvfQEXchwa6CWOx07/WVfh91gBmQ9fahw8snwGEWU3xGzOt4tFyHLxg==}
+    engines: {node: '>= 0.6'}
+
+  statuses@2.0.2:
+    resolution: {integrity: sha512-DvEy55V3DB7uknRo+4iOGT5fP1slR8wQohVdknigZPMpMstaKJQWhwiYBACJE3Ul2pTnATihhBYnRhZQHGBiRw==}
+    engines: {node: '>= 0.8'}
+
+  std-env@3.10.0:
+    resolution: {integrity: sha512-5GS12FdOZNliM5mAOxFRg7Ir0pWz8MdpYm6AY6VPkGpbA7ZzmbzNcBJQ0GPvvyWgcY7QAhCgf9Uy89I03faLkg==}
+
+  supports-color@5.5.0:
+    resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
+    engines: {node: '>=4'}
+
+  to-regex-range@5.0.1:
+    resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
+    engines: {node: '>=8.0'}
+
+  toidentifier@1.0.1:
+    resolution: {integrity: sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==}
+    engines: {node: '>=0.6'}
+
+  touch@3.1.1:
+    resolution: {integrity: sha512-r0eojU4bI8MnHr8c5bNo7lJDdI2qXlWWJk6a9EAFG7vbhTjElYhBVS3/miuE0uOuoLdb8Mc/rVfsmm6eo5o9GA==}
+    hasBin: true
+
+  ts-node@10.9.2:
+    resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': '>=1.2.50'
+      '@swc/wasm': '>=1.2.50'
+      '@types/node': '*'
+      typescript: '>=2.7'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      '@swc/wasm':
+        optional: true
+
+  tsx@4.22.1:
+    resolution: {integrity: sha512-TvncJykhxAzFCk0VQZKBTClall4Pm7qXDSodb6uxi8QFa8X8mT6ABjxxsQ2opDRYxG7AzcRWXaFtruz5HJKuWg==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+
+  type-is@2.0.1:
+    resolution: {integrity: sha512-OZs6gsjF4vMp32qrCbiVSkrFmXtG/AZhY3t0iAMrMBiAZyV9oALtXO8hsrHbMXF9x6L3grlFuwW2oAz7cav+Gw==}
+    engines: {node: '>= 0.6'}
+
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+  undefsafe@2.0.5:
+    resolution: {integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==}
+
+  undici-types@7.21.0:
+    resolution: {integrity: sha512-w9IMgQrz4O0YN1LtB7K5P63vhlIOvC7opSmouCJ+ZywlPAlO9gIkJ+otk6LvGpAs2wg4econaCz3TvQ9xPoyuQ==}
+
+  unpipe@1.0.0:
+    resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
+    engines: {node: '>= 0.8'}
+
+  v8-compile-cache-lib@3.0.1:
+    resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
+
+  valibot@1.2.0:
+    resolution: {integrity: sha512-mm1rxUsmOxzrwnX5arGS+U4T25RdvpPjPN4yR0u9pUBov9+zGVtO84tif1eY4r6zWxVxu3KzIyknJy3rxfRZZg==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  vary@1.1.2:
+    resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
+    engines: {node: '>= 0.8'}
+
+  which@2.0.2:
+    resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
+    engines: {node: '>= 8'}
+    hasBin: true
+
+  wrappy@1.0.2:
+    resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
+
+  xtend@4.0.2:
+    resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
+    engines: {node: '>=0.4'}
+
+  yn@3.1.1:
+    resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==}
+    engines: {node: '>=6'}
+
+  zeptomatch@2.1.0:
+    resolution: {integrity: sha512-KiGErG2J0G82LSpniV0CtIzjlJ10E04j02VOudJsPyPwNZgGnRKQy7I1R7GMyg/QswnE4l7ohSGrQbQbjXPPDA==}
+
+  zod@4.4.3:
+    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
+
+snapshots:
+
+  '@cspotcode/source-map-support@0.8.1':
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.9
+
+  '@electric-sql/pglite-socket@0.1.1(@electric-sql/pglite@0.4.1)':
+    dependencies:
+      '@electric-sql/pglite': 0.4.1
+
+  '@electric-sql/pglite-tools@0.3.1(@electric-sql/pglite@0.4.1)':
+    dependencies:
+      '@electric-sql/pglite': 0.4.1
+
+  '@electric-sql/pglite@0.4.1': {}
+
+  '@esbuild/aix-ppc64@0.28.0':
+    optional: true
+
+  '@esbuild/android-arm64@0.28.0':
+    optional: true
+
+  '@esbuild/android-arm@0.28.0':
+    optional: true
+
+  '@esbuild/android-x64@0.28.0':
+    optional: true
+
+  '@esbuild/darwin-arm64@0.28.0':
+    optional: true
+
+  '@esbuild/darwin-x64@0.28.0':
+    optional: true
+
+  '@esbuild/freebsd-arm64@0.28.0':
+    optional: true
+
+  '@esbuild/freebsd-x64@0.28.0':
+    optional: true
+
+  '@esbuild/linux-arm64@0.28.0':
+    optional: true
+
+  '@esbuild/linux-arm@0.28.0':
+    optional: true
+
+  '@esbuild/linux-ia32@0.28.0':
+    optional: true
+
+  '@esbuild/linux-loong64@0.28.0':
+    optional: true
+
+  '@esbuild/linux-mips64el@0.28.0':
+    optional: true
+
+  '@esbuild/linux-ppc64@0.28.0':
+    optional: true
+
+  '@esbuild/linux-riscv64@0.28.0':
+    optional: true
+
+  '@esbuild/linux-s390x@0.28.0':
+    optional: true
+
+  '@esbuild/linux-x64@0.28.0':
+    optional: true
+
+  '@esbuild/netbsd-arm64@0.28.0':
+    optional: true
+
+  '@esbuild/netbsd-x64@0.28.0':
+    optional: true
+
+  '@esbuild/openbsd-arm64@0.28.0':
+    optional: true
+
+  '@esbuild/openbsd-x64@0.28.0':
+    optional: true
+
+  '@esbuild/openharmony-arm64@0.28.0':
+    optional: true
+
+  '@esbuild/sunos-x64@0.28.0':
+    optional: true
+
+  '@esbuild/win32-arm64@0.28.0':
+    optional: true
+
+  '@esbuild/win32-ia32@0.28.0':
+    optional: true
+
+  '@esbuild/win32-x64@0.28.0':
+    optional: true
+
+  '@hono/node-server@1.19.11(hono@4.12.18)':
+    dependencies:
+      hono: 4.12.18
+
+  '@jridgewell/resolve-uri@3.1.2': {}
+
+  '@jridgewell/sourcemap-codec@1.5.5': {}
+
+  '@jridgewell/trace-mapping@0.3.9':
+    dependencies:
+      '@jridgewell/resolve-uri': 3.1.2
+      '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@kurkle/color@0.3.4': {}
+
+  '@prisma/adapter-pg@7.8.0':
+    dependencies:
+      '@prisma/driver-adapter-utils': 7.8.0
+      '@types/pg': 8.20.0
+      pg: 8.21.0
+      postgres-array: 3.0.4
+    transitivePeerDependencies:
+      - pg-native
+
+  '@prisma/client-runtime-utils@7.8.0': {}
+
+  '@prisma/client@7.8.0(prisma@7.8.0(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(typescript@6.0.3))(typescript@6.0.3)':
+    dependencies:
+      '@prisma/client-runtime-utils': 7.8.0
+    optionalDependencies:
+      prisma: 7.8.0(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(typescript@6.0.3)
+      typescript: 6.0.3
+
+  '@prisma/config@7.8.0':
+    dependencies:
+      c12: 3.3.4
+      deepmerge-ts: 7.1.5
+      effect: 3.20.0
+      empathic: 2.0.0
+    transitivePeerDependencies:
+      - magicast
+
+  '@prisma/debug@7.2.0': {}
+
+  '@prisma/debug@7.8.0': {}
+
+  '@prisma/dev@0.24.3(typescript@6.0.3)':
+    dependencies:
+      '@electric-sql/pglite': 0.4.1
+      '@electric-sql/pglite-socket': 0.1.1(@electric-sql/pglite@0.4.1)
+      '@electric-sql/pglite-tools': 0.3.1(@electric-sql/pglite@0.4.1)
+      '@hono/node-server': 1.19.11(hono@4.12.18)
+      '@prisma/get-platform': 7.2.0
+      '@prisma/query-plan-executor': 7.2.0
+      '@prisma/streams-local': 0.1.2
+      foreground-child: 3.3.1
+      get-port-please: 3.2.0
+      hono: 4.12.18
+      http-status-codes: 2.3.0
+      pathe: 2.0.3
+      proper-lockfile: 4.1.2
+      remeda: 2.33.4
+      std-env: 3.10.0
+      valibot: 1.2.0(typescript@6.0.3)
+      zeptomatch: 2.1.0
+    transitivePeerDependencies:
+      - typescript
+
+  '@prisma/driver-adapter-utils@7.8.0':
+    dependencies:
+      '@prisma/debug': 7.8.0
+
+  '@prisma/engines-version@7.8.0-6.3c6e192761c0362d496ed980de936e2f3cebcd3a': {}
+
+  '@prisma/engines@7.8.0':
+    dependencies:
+      '@prisma/debug': 7.8.0
+      '@prisma/engines-version': 7.8.0-6.3c6e192761c0362d496ed980de936e2f3cebcd3a
+      '@prisma/fetch-engine': 7.8.0
+      '@prisma/get-platform': 7.8.0
+
+  '@prisma/fetch-engine@7.8.0':
+    dependencies:
+      '@prisma/debug': 7.8.0
+      '@prisma/engines-version': 7.8.0-6.3c6e192761c0362d496ed980de936e2f3cebcd3a
+      '@prisma/get-platform': 7.8.0
+
+  '@prisma/get-platform@7.2.0':
+    dependencies:
+      '@prisma/debug': 7.2.0
+
+  '@prisma/get-platform@7.8.0':
+    dependencies:
+      '@prisma/debug': 7.8.0
+
+  '@prisma/query-plan-executor@7.2.0': {}
+
+  '@prisma/streams-local@0.1.2':
+    dependencies:
+      ajv: 8.20.0
+      better-result: 2.9.2
+      env-paths: 3.0.0
+      proper-lockfile: 4.1.2
+
+  '@prisma/studio-core@0.27.3(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+    dependencies:
+      '@radix-ui/react-toggle': 1.1.10(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@types/react': 19.2.14
+      chart.js: 4.5.1
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+    transitivePeerDependencies:
+      - '@types/react-dom'
+
+  '@radix-ui/primitive@1.1.3': {}
+
+  '@radix-ui/react-compose-refs@1.1.2(@types/react@19.2.14)(react@19.2.6)':
+    dependencies:
+      react: 19.2.6
+    optionalDependencies:
+      '@types/react': 19.2.14
+
+  '@radix-ui/react-primitive@2.1.3(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+    dependencies:
+      '@radix-ui/react-slot': 1.2.3(@types/react@19.2.14)(react@19.2.6)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+    optionalDependencies:
+      '@types/react': 19.2.14
+
+  '@radix-ui/react-slot@1.2.3(@types/react@19.2.14)(react@19.2.6)':
+    dependencies:
+      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.2.14)(react@19.2.6)
+      react: 19.2.6
+    optionalDependencies:
+      '@types/react': 19.2.14
+
+  '@radix-ui/react-toggle@1.1.10(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+    dependencies:
+      '@radix-ui/primitive': 1.1.3
+      '@radix-ui/react-primitive': 2.1.3(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@radix-ui/react-use-controllable-state': 1.2.2(@types/react@19.2.14)(react@19.2.6)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+    optionalDependencies:
+      '@types/react': 19.2.14
+
+  '@radix-ui/react-use-controllable-state@1.2.2(@types/react@19.2.14)(react@19.2.6)':
+    dependencies:
+      '@radix-ui/react-use-effect-event': 0.0.2(@types/react@19.2.14)(react@19.2.6)
+      '@radix-ui/react-use-layout-effect': 1.1.1(@types/react@19.2.14)(react@19.2.6)
+      react: 19.2.6
+    optionalDependencies:
+      '@types/react': 19.2.14
+
+  '@radix-ui/react-use-effect-event@0.0.2(@types/react@19.2.14)(react@19.2.6)':
+    dependencies:
+      '@radix-ui/react-use-layout-effect': 1.1.1(@types/react@19.2.14)(react@19.2.6)
+      react: 19.2.6
+    optionalDependencies:
+      '@types/react': 19.2.14
+
+  '@radix-ui/react-use-layout-effect@1.1.1(@types/react@19.2.14)(react@19.2.6)':
+    dependencies:
+      react: 19.2.6
+    optionalDependencies:
+      '@types/react': 19.2.14
+
+  '@standard-schema/spec@1.1.0': {}
+
+  '@tsconfig/node10@1.0.12': {}
+
+  '@tsconfig/node12@1.0.11': {}
+
+  '@tsconfig/node14@1.0.3': {}
+
+  '@tsconfig/node16@1.0.4': {}
+
+  '@types/bcrypt@6.0.0':
+    dependencies:
+      '@types/node': 25.7.0
+
+  '@types/body-parser@1.19.6':
+    dependencies:
+      '@types/connect': 3.4.38
+      '@types/node': 25.7.0
+
+  '@types/connect@3.4.38':
+    dependencies:
+      '@types/node': 25.7.0
+
+  '@types/cookie-parser@1.4.10(@types/express@5.0.6)':
+    dependencies:
+      '@types/express': 5.0.6
+
+  '@types/cors@2.8.19':
+    dependencies:
+      '@types/node': 25.7.0
+
+  '@types/express-serve-static-core@5.1.1':
+    dependencies:
+      '@types/node': 25.7.0
+      '@types/qs': 6.15.1
+      '@types/range-parser': 1.2.7
+      '@types/send': 1.2.1
+
+  '@types/express@5.0.6':
+    dependencies:
+      '@types/body-parser': 1.19.6
+      '@types/express-serve-static-core': 5.1.1
+      '@types/serve-static': 2.2.0
+
+  '@types/http-errors@2.0.5': {}
+
+  '@types/jsonwebtoken@9.0.10':
+    dependencies:
+      '@types/ms': 2.1.0
+      '@types/node': 25.7.0
+
+  '@types/ms@2.1.0': {}
+
+  '@types/node@25.7.0':
+    dependencies:
+      undici-types: 7.21.0
+
+  '@types/pg@8.20.0':
+    dependencies:
+      '@types/node': 25.7.0
+      pg-protocol: 1.14.0
+      pg-types: 2.2.0
+
+  '@types/qs@6.15.1': {}
+
+  '@types/range-parser@1.2.7': {}
+
+  '@types/react@19.2.14':
+    dependencies:
+      csstype: 3.2.3
+
+  '@types/send@1.2.1':
+    dependencies:
+      '@types/node': 25.7.0
+
+  '@types/serve-static@2.2.0':
+    dependencies:
+      '@types/http-errors': 2.0.5
+      '@types/node': 25.7.0
+
+  accepts@2.0.0:
+    dependencies:
+      mime-types: 3.0.2
+      negotiator: 1.0.0
+
+  acorn-walk@8.3.5:
+    dependencies:
+      acorn: 8.16.0
+
+  acorn@8.16.0: {}
+
+  agent-base@6.0.2:
+    dependencies:
+      debug: 4.4.3(supports-color@5.5.0)
+    transitivePeerDependencies:
+      - supports-color
+
+  ajv@8.20.0:
+    dependencies:
+      fast-deep-equal: 3.1.3
+      fast-uri: 3.1.2
+      json-schema-traverse: 1.0.0
+      require-from-string: 2.0.2
+
+  anymatch@3.1.3:
+    dependencies:
+      normalize-path: 3.0.0
+      picomatch: 2.3.2
+
+  arg@4.1.3: {}
+
+  asynckit@0.4.0: {}
+
+  aws-ssl-profiles@1.1.2: {}
+
+  axios@1.16.1:
+    dependencies:
+      follow-redirects: 1.16.0
+      form-data: 4.0.5
+      https-proxy-agent: 5.0.1
+      proxy-from-env: 2.1.0
+    transitivePeerDependencies:
+      - debug
+      - supports-color
+
+  balanced-match@4.0.4: {}
+
+  basic-auth@2.0.1:
+    dependencies:
+      safe-buffer: 5.1.2
+
+  bcrypt@6.0.0:
+    dependencies:
+      node-addon-api: 8.7.0
+      node-gyp-build: 4.8.4
+
+  better-result@2.9.2: {}
+
+  binary-extensions@2.3.0: {}
+
+  body-parser@2.2.2:
+    dependencies:
+      bytes: 3.1.2
+      content-type: 1.0.5
+      debug: 4.4.3(supports-color@5.5.0)
+      http-errors: 2.0.1
+      iconv-lite: 0.7.2
+      on-finished: 2.4.1
+      qs: 6.15.1
+      raw-body: 3.0.2
+      type-is: 2.0.1
+    transitivePeerDependencies:
+      - supports-color
+
+  brace-expansion@5.0.6:
+    dependencies:
+      balanced-match: 4.0.4
+
+  braces@3.0.3:
+    dependencies:
+      fill-range: 7.1.1
+
+  buffer-equal-constant-time@1.0.1: {}
+
+  bytes@3.1.2: {}
+
+  c12@3.3.4:
+    dependencies:
+      chokidar: 5.0.0
+      confbox: 0.2.4
+      defu: 6.1.7
+      dotenv: 17.4.2
+      exsolve: 1.0.8
+      giget: 3.2.0
+      jiti: 2.7.0
+      ohash: 2.0.11
+      pathe: 2.0.3
+      perfect-debounce: 2.1.0
+      pkg-types: 2.3.1
+      rc9: 3.0.1
+
+  call-bind-apply-helpers@1.0.2:
+    dependencies:
+      es-errors: 1.3.0
+      function-bind: 1.1.2
+
+  call-bound@1.0.4:
+    dependencies:
+      call-bind-apply-helpers: 1.0.2
+      get-intrinsic: 1.3.0
+
+  chart.js@4.5.1:
+    dependencies:
+      '@kurkle/color': 0.3.4
+
+  chokidar@3.6.0:
+    dependencies:
+      anymatch: 3.1.3
+      braces: 3.0.3
+      glob-parent: 5.1.2
+      is-binary-path: 2.1.0
+      is-glob: 4.0.3
+      normalize-path: 3.0.0
+      readdirp: 3.6.0
+    optionalDependencies:
+      fsevents: 2.3.3
+
+  chokidar@5.0.0:
+    dependencies:
+      readdirp: 5.0.0
+
+  combined-stream@1.0.8:
+    dependencies:
+      delayed-stream: 1.0.0
+
+  confbox@0.2.4: {}
+
+  content-disposition@1.1.0: {}
+
+  content-type@1.0.5: {}
+
+  cookie-parser@1.4.7:
+    dependencies:
+      cookie: 0.7.2
+      cookie-signature: 1.0.6
+
+  cookie-signature@1.0.6: {}
+
+  cookie-signature@1.2.2: {}
+
+  cookie@0.7.2: {}
+
+  cors@2.8.6:
+    dependencies:
+      object-assign: 4.1.1
+      vary: 1.1.2
+
+  create-require@1.1.1: {}
+
+  cross-spawn@7.0.6:
+    dependencies:
+      path-key: 3.1.1
+      shebang-command: 2.0.0
+      which: 2.0.2
+
+  csstype@3.2.3: {}
+
+  debug@2.6.9:
+    dependencies:
+      ms: 2.0.0
+
+  debug@4.4.3(supports-color@5.5.0):
+    dependencies:
+      ms: 2.1.3
+    optionalDependencies:
+      supports-color: 5.5.0
+
+  deepmerge-ts@7.1.5: {}
+
+  defu@6.1.7: {}
+
+  delayed-stream@1.0.0: {}
+
+  denque@2.1.0: {}
+
+  depd@2.0.0: {}
+
+  destr@2.0.5: {}
+
+  diff@4.0.4: {}
+
+  dotenv@17.4.2: {}
+
+  dunder-proto@1.0.1:
+    dependencies:
+      call-bind-apply-helpers: 1.0.2
+      es-errors: 1.3.0
+      gopd: 1.2.0
+
+  ecdsa-sig-formatter@1.0.11:
+    dependencies:
+      safe-buffer: 5.1.2
+
+  ee-first@1.1.1: {}
+
+  effect@3.20.0:
+    dependencies:
+      '@standard-schema/spec': 1.1.0
+      fast-check: 3.23.2
+
+  empathic@2.0.0: {}
+
+  encodeurl@2.0.0: {}
+
+  env-paths@3.0.0: {}
+
+  es-define-property@1.0.1: {}
+
+  es-errors@1.3.0: {}
+
+  es-object-atoms@1.1.1:
+    dependencies:
+      es-errors: 1.3.0
+
+  es-set-tostringtag@2.1.0:
+    dependencies:
+      es-errors: 1.3.0
+      get-intrinsic: 1.3.0
+      has-tostringtag: 1.0.2
+      hasown: 2.0.3
+
+  esbuild@0.28.0:
+    optionalDependencies:
+      '@esbuild/aix-ppc64': 0.28.0
+      '@esbuild/android-arm': 0.28.0
+      '@esbuild/android-arm64': 0.28.0
+      '@esbuild/android-x64': 0.28.0
+      '@esbuild/darwin-arm64': 0.28.0
+      '@esbuild/darwin-x64': 0.28.0
+      '@esbuild/freebsd-arm64': 0.28.0
+      '@esbuild/freebsd-x64': 0.28.0
+      '@esbuild/linux-arm': 0.28.0
+      '@esbuild/linux-arm64': 0.28.0
+      '@esbuild/linux-ia32': 0.28.0
+      '@esbuild/linux-loong64': 0.28.0
+      '@esbuild/linux-mips64el': 0.28.0
+      '@esbuild/linux-ppc64': 0.28.0
+      '@esbuild/linux-riscv64': 0.28.0
+      '@esbuild/linux-s390x': 0.28.0
+      '@esbuild/linux-x64': 0.28.0
+      '@esbuild/netbsd-arm64': 0.28.0
+      '@esbuild/netbsd-x64': 0.28.0
+      '@esbuild/openbsd-arm64': 0.28.0
+      '@esbuild/openbsd-x64': 0.28.0
+      '@esbuild/openharmony-arm64': 0.28.0
+      '@esbuild/sunos-x64': 0.28.0
+      '@esbuild/win32-arm64': 0.28.0
+      '@esbuild/win32-ia32': 0.28.0
+      '@esbuild/win32-x64': 0.28.0
+
+  escape-html@1.0.3: {}
+
+  etag@1.8.1: {}
+
+  express-rate-limit@8.7.1(express@5.2.1):
+    dependencies:
+      debug: 4.4.3(supports-color@5.5.0)
+      express: 5.2.1
+      ip-address: 10.7.4
+    transitivePeerDependencies:
+      - supports-color
+
+  express@5.2.1:
+    dependencies:
+      accepts: 2.0.0
+      body-parser: 2.2.2
+      content-disposition: 1.1.0
+      content-type: 1.0.5
+      cookie: 0.7.2
+      cookie-signature: 1.2.2
+      debug: 4.4.3(supports-color@5.5.0)
+      depd: 2.0.0
+      encodeurl: 2.0.0
+      escape-html: 1.0.3
+      etag: 1.8.1
+      finalhandler: 2.1.1
+      fresh: 2.0.0
+      http-errors: 2.0.1
+      merge-descriptors: 2.0.0
+      mime-types: 3.0.2
+      on-finished: 2.4.1
+      once: 1.4.0
+      parseurl: 1.3.3
+      proxy-addr: 2.0.7
+      qs: 6.15.1
+      range-parser: 1.2.1
+      router: 2.2.0
+      send: 1.2.1
+      serve-static: 2.2.1
+      statuses: 2.0.2
+      type-is: 2.0.1
+      vary: 1.1.2
+    transitivePeerDependencies:
+      - supports-color
+
+  exsolve@1.0.8: {}
+
+  fast-check@3.23.2:
+    dependencies:
+      pure-rand: 6.1.0
+
+  fast-deep-equal@3.1.3: {}
+
+  fast-uri@3.1.2: {}
+
+  fill-range@7.1.1:
+    dependencies:
+      to-regex-range: 5.0.1
+
+  finalhandler@2.1.1:
+    dependencies:
+      debug: 4.4.3(supports-color@5.5.0)
+      encodeurl: 2.0.0
+      escape-html: 1.0.3
+      on-finished: 2.4.1
+      parseurl: 1.3.3
+      statuses: 2.0.2
+    transitivePeerDependencies:
+      - supports-color
+
+  follow-redirects@1.16.0: {}
+
+  foreground-child@3.3.1:
+    dependencies:
+      cross-spawn: 7.0.6
+      signal-exit: 4.1.0
+
+  form-data@4.0.5:
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      es-set-tostringtag: 2.1.0
+      hasown: 2.0.3
+      mime-types: 2.1.35
+
+  forwarded@0.2.0: {}
+
+  fresh@2.0.0: {}
+
+  fsevents@2.3.3:
+    optional: true
+
+  function-bind@1.1.2: {}
+
+  generate-function@2.3.1:
+    dependencies:
+      is-property: 1.0.2
+
+  get-intrinsic@1.3.0:
+    dependencies:
+      call-bind-apply-helpers: 1.0.2
+      es-define-property: 1.0.1
+      es-errors: 1.3.0
+      es-object-atoms: 1.1.1
+      function-bind: 1.1.2
+      get-proto: 1.0.1
+      gopd: 1.2.0
+      has-symbols: 1.1.0
+      hasown: 2.0.3
+      math-intrinsics: 1.1.0
+
+  get-port-please@3.2.0: {}
+
+  get-proto@1.0.1:
+    dependencies:
+      dunder-proto: 1.0.1
+      es-object-atoms: 1.1.1
+
+  giget@3.2.0: {}
+
+  glob-parent@5.1.2:
+    dependencies:
+      is-glob: 4.0.3
+
+  gopd@1.2.0: {}
+
+  graceful-fs@4.2.11: {}
+
+  grammex@3.1.12: {}
+
+  graphmatch@1.1.1: {}
+
+  has-flag@3.0.0: {}
+
+  has-symbols@1.1.0: {}
+
+  has-tostringtag@1.0.2:
+    dependencies:
+      has-symbols: 1.1.0
+
+  hasown@2.0.3:
+    dependencies:
+      function-bind: 1.1.2
+
+  helmet@8.1.0: {}
+
+  hono@4.12.18: {}
+
+  http-errors@2.0.1:
+    dependencies:
+      depd: 2.0.0
+      inherits: 2.0.4
+      setprototypeof: 1.2.0
+      statuses: 2.0.2
+      toidentifier: 1.0.1
+
+  http-status-codes@2.3.0: {}
+
+  https-proxy-agent@5.0.1:
+    dependencies:
+      agent-base: 6.0.2
+      debug: 4.4.3(supports-color@5.5.0)
+    transitivePeerDependencies:
+      - supports-color
+
+  iconv-lite@0.7.2:
+    dependencies:
+      safer-buffer: 2.1.2
+
+  ignore-by-default@1.0.1: {}
+
+  inherits@2.0.4: {}
+
+  ip-address@10.7.4: {}
+
+  ipaddr.js@1.9.1: {}
+
+  is-binary-path@2.1.0:
+    dependencies:
+      binary-extensions: 2.3.0
+
+  is-extglob@2.1.1: {}
+
+  is-glob@4.0.3:
+    dependencies:
+      is-extglob: 2.1.1
+
+  is-number@7.0.0: {}
+
+  is-promise@4.0.0: {}
+
+  is-property@1.0.2: {}
+
+  isexe@2.0.0: {}
+
+  jiti@2.7.0: {}
+
+  json-schema-traverse@1.0.0: {}
+
+  jsonwebtoken@9.0.3:
+    dependencies:
+      jws: 4.0.1
+      lodash.includes: 4.3.0
+      lodash.isboolean: 3.0.3
+      lodash.isinteger: 4.0.4
+      lodash.isnumber: 3.0.3
+      lodash.isplainobject: 4.0.6
+      lodash.isstring: 4.0.1
+      lodash.once: 4.1.1
+      ms: 2.1.3
+      semver: 7.8.0
+
+  jwa@2.0.1:
+    dependencies:
+      buffer-equal-constant-time: 1.0.1
+      ecdsa-sig-formatter: 1.0.11
+      safe-buffer: 5.1.2
+
+  jws@4.0.1:
+    dependencies:
+      jwa: 2.0.1
+      safe-buffer: 5.1.2
+
+  lodash.includes@4.3.0: {}
+
+  lodash.isboolean@3.0.3: {}
+
+  lodash.isinteger@4.0.4: {}
+
+  lodash.isnumber@3.0.3: {}
+
+  lodash.isplainobject@4.0.6: {}
+
+  lodash.isstring@4.0.1: {}
+
+  lodash.once@4.1.1: {}
+
+  long@5.3.2: {}
+
+  lru.min@1.1.4: {}
+
+  make-error@1.3.6: {}
+
+  math-intrinsics@1.1.0: {}
+
+  media-typer@1.1.0: {}
+
+  merge-descriptors@2.0.0: {}
+
+  mime-db@1.52.0: {}
+
+  mime-db@1.54.0: {}
+
+  mime-types@2.1.35:
+    dependencies:
+      mime-db: 1.52.0
+
+  mime-types@3.0.2:
+    dependencies:
+      mime-db: 1.54.0
+
+  minimatch@10.2.5:
+    dependencies:
+      brace-expansion: 5.0.6
+
+  moment@2.30.1: {}
+
+  morgan@1.10.1:
+    dependencies:
+      basic-auth: 2.0.1
+      debug: 2.6.9
+      depd: 2.0.0
+      on-finished: 2.3.0
+      on-headers: 1.1.0
+    transitivePeerDependencies:
+      - supports-color
+
+  ms@2.0.0: {}
+
+  ms@2.1.3: {}
+
+  mysql2@3.15.3:
+    dependencies:
+      aws-ssl-profiles: 1.1.2
+      denque: 2.1.0
+      generate-function: 2.3.1
+      iconv-lite: 0.7.2
+      long: 5.3.2
+      lru.min: 1.1.4
+      named-placeholders: 1.1.6
+      seq-queue: 0.0.5
+      sqlstring: 2.3.3
+
+  named-placeholders@1.1.6:
+    dependencies:
+      lru.min: 1.1.4
+
+  negotiator@1.0.0: {}
+
+  node-addon-api@8.7.0: {}
+
+  node-gyp-build@4.8.4: {}
+
+  nodemon@3.1.14:
+    dependencies:
+      chokidar: 3.6.0
+      debug: 4.4.3(supports-color@5.5.0)
+      ignore-by-default: 1.0.1
+      minimatch: 10.2.5
+      pstree.remy: 1.1.8
+      semver: 7.8.0
+      simple-update-notifier: 2.0.0
+      supports-color: 5.5.0
+      touch: 3.1.1
+      undefsafe: 2.0.5
+
+  normalize-path@3.0.0: {}
+
+  object-assign@4.1.1: {}
+
+  object-inspect@1.13.4: {}
+
+  ohash@2.0.11: {}
+
+  on-finished@2.3.0:
+    dependencies:
+      ee-first: 1.1.1
+
+  on-finished@2.4.1:
+    dependencies:
+      ee-first: 1.1.1
+
+  on-headers@1.1.0: {}
+
+  once@1.4.0:
+    dependencies:
+      wrappy: 1.0.2
+
+  parseurl@1.3.3: {}
+
+  path-key@3.1.1: {}
+
+  path-to-regexp@8.4.2: {}
+
+  pathe@2.0.3: {}
+
+  perfect-debounce@2.1.0: {}
+
+  pg-cloudflare@1.4.0:
+    optional: true
+
+  pg-connection-string@2.13.0: {}
+
+  pg-int8@1.0.1: {}
+
+  pg-pool@3.14.0(pg@8.21.0):
+    dependencies:
+      pg: 8.21.0
+
+  pg-protocol@1.14.0: {}
+
+  pg-types@2.2.0:
+    dependencies:
+      pg-int8: 1.0.1
+      postgres-array: 2.0.0
+      postgres-bytea: 1.0.1
+      postgres-date: 1.0.7
+      postgres-interval: 1.2.0
+
+  pg@8.21.0:
+    dependencies:
+      pg-connection-string: 2.13.0
+      pg-pool: 3.14.0(pg@8.21.0)
+      pg-protocol: 1.14.0
+      pg-types: 2.2.0
+      pgpass: 1.0.5
+    optionalDependencies:
+      pg-cloudflare: 1.4.0
+
+  pgpass@1.0.5:
+    dependencies:
+      split2: 4.2.0
+
+  picomatch@2.3.2: {}
+
+  pkg-types@2.3.1:
+    dependencies:
+      confbox: 0.2.4
+      exsolve: 1.0.8
+      pathe: 2.0.3
+
+  postgres-array@2.0.0: {}
+
+  postgres-array@3.0.4: {}
+
+  postgres-bytea@1.0.1: {}
+
+  postgres-date@1.0.7: {}
+
+  postgres-interval@1.2.0:
+    dependencies:
+      xtend: 4.0.2
+
+  postgres@3.4.7: {}
+
+  prisma@7.8.0(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(typescript@6.0.3):
+    dependencies:
+      '@prisma/config': 7.8.0
+      '@prisma/dev': 0.24.3(typescript@6.0.3)
+      '@prisma/engines': 7.8.0
+      '@prisma/studio-core': 0.27.3(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      mysql2: 3.15.3
+      postgres: 3.4.7
+    optionalDependencies:
+      typescript: 6.0.3
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-dom'
+      - magicast
+      - react
+      - react-dom
+
+  proper-lockfile@4.1.2:
+    dependencies:
+      graceful-fs: 4.2.11
+      retry: 0.12.0
+      signal-exit: 3.0.7
+
+  proxy-addr@2.0.7:
+    dependencies:
+      forwarded: 0.2.0
+      ipaddr.js: 1.9.1
+
+  proxy-from-env@2.1.0: {}
+
+  pstree.remy@1.1.8: {}
+
+  pure-rand@6.1.0: {}
+
+  qs@6.15.1:
+    dependencies:
+      side-channel: 1.1.0
+
+  range-parser@1.2.1: {}
+
+  raw-body@3.0.2:
+    dependencies:
+      bytes: 3.1.2
+      http-errors: 2.0.1
+      iconv-lite: 0.7.2
+      unpipe: 1.0.0
+
+  rc9@3.0.1:
+    dependencies:
+      defu: 6.1.7
+      destr: 2.0.5
+
+  react-dom@19.2.6(react@19.2.6):
+    dependencies:
+      react: 19.2.6
+      scheduler: 0.27.0
+
+  react@19.2.6: {}
+
+  readdirp@3.6.0:
+    dependencies:
+      picomatch: 2.3.2
+
+  readdirp@5.0.0: {}
+
+  remeda@2.33.4: {}
+
+  require-from-string@2.0.2: {}
+
+  retry@0.12.0: {}
+
+  router@2.2.0:
+    dependencies:
+      debug: 4.4.3(supports-color@5.5.0)
+      depd: 2.0.0
+      is-promise: 4.0.0
+      parseurl: 1.3.3
+      path-to-regexp: 8.4.2
+    transitivePeerDependencies:
+      - supports-color
+
+  safe-buffer@5.1.2: {}
+
+  safer-buffer@2.1.2: {}
+
+  scheduler@0.27.0: {}
+
+  semver@7.8.0: {}
+
+  send@1.2.1:
+    dependencies:
+      debug: 4.4.3(supports-color@5.5.0)
+      encodeurl: 2.0.0
+      escape-html: 1.0.3
+      etag: 1.8.1
+      fresh: 2.0.0
+      http-errors: 2.0.1
+      mime-types: 3.0.2
+      ms: 2.1.3
+      on-finished: 2.4.1
+      range-parser: 1.2.1
+      statuses: 2.0.2
+    transitivePeerDependencies:
+      - supports-color
+
+  seq-queue@0.0.5: {}
+
+  serve-static@2.2.1:
+    dependencies:
+      encodeurl: 2.0.0
+      escape-html: 1.0.3
+      parseurl: 1.3.3
+      send: 1.2.1
+    transitivePeerDependencies:
+      - supports-color
+
+  setprototypeof@1.2.0: {}
+
+  shebang-command@2.0.0:
+    dependencies:
+      shebang-regex: 3.0.0
+
+  shebang-regex@3.0.0: {}
+
+  side-channel-list@1.0.1:
+    dependencies:
+      es-errors: 1.3.0
+      object-inspect: 1.13.4
+
+  side-channel-map@1.0.1:
+    dependencies:
+      call-bound: 1.0.4
+      es-errors: 1.3.0
+      get-intrinsic: 1.3.0
+      object-inspect: 1.13.4
+
+  side-channel-weakmap@1.0.2:
+    dependencies:
+      call-bound: 1.0.4
+      es-errors: 1.3.0
+      get-intrinsic: 1.3.0
+      object-inspect: 1.13.4
+      side-channel-map: 1.0.1
+
+  side-channel@1.1.0:
+    dependencies:
+      es-errors: 1.3.0
+      object-inspect: 1.13.4
+      side-channel-list: 1.0.1
+      side-channel-map: 1.0.1
+      side-channel-weakmap: 1.0.2
+
+  signal-exit@3.0.7: {}
+
+  signal-exit@4.1.0: {}
+
+  simple-update-notifier@2.0.0:
+    dependencies:
+      semver: 7.8.0
+
+  split2@4.2.0: {}
+
+  sqlstring@2.3.3: {}
+
+  statuses@2.0.2: {}
+
+  std-env@3.10.0: {}
+
+  supports-color@5.5.0:
+    dependencies:
+      has-flag: 3.0.0
+
+  to-regex-range@5.0.1:
+    dependencies:
+      is-number: 7.0.0
+
+  toidentifier@1.0.1: {}
+
+  touch@3.1.1: {}
+
+  ts-node@10.9.2(@types/node@25.7.0)(typescript@6.0.3):
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.12
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@types/node': 25.7.0
+      acorn: 8.16.0
+      acorn-walk: 8.3.5
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.4
+      make-error: 1.3.6
+      typescript: 6.0.3
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+
+  tsx@4.22.1:
+    dependencies:
+      esbuild: 0.28.0
+    optionalDependencies:
+      fsevents: 2.3.3
+
+  type-is@2.0.1:
+    dependencies:
+      content-type: 1.0.5
+      media-typer: 1.1.0
+      mime-types: 3.0.2
+
+  typescript@6.0.3: {}
+
+  undefsafe@2.0.5: {}
+
+  undici-types@7.21.0: {}
+
+  unpipe@1.0.0: {}
+
+  v8-compile-cache-lib@3.0.1: {}
+
+  valibot@1.2.0(typescript@6.0.3):
+    optionalDependencies:
+      typescript: 6.0.3
+
+  vary@1.1.2: {}
+
+  which@2.0.2:
+    dependencies:
+      isexe: 2.0.0
+
+  wrappy@1.0.2: {}
+
+  xtend@4.0.2: {}
+
+  yn@3.1.1: {}
+
+  zeptomatch@2.1.0:
+    dependencies:
+      grammex: 3.1.12
+      graphmatch: 1.1.1
+
+  zod@4.4.3: {}
+
+```
+
+---
+
+### <a id="📄-prisma-config-ts"></a>📄 `prisma.config.ts`
+
+**File Info:**
+- **Size**: 388 B
+- **Extension**: `.ts`
+- **Language**: `typescript`
+- **Location**: `prisma.config.ts`
+- **Relative Path**: `root`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `444647e41040b623b99346e28373e2b7`
+- **SHA256**: `b8c30b02f98f6c61c5d2387bcde085a28126aaea9a13ef2e035a1bbbf547ed60`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```typescript
+// This file was generated by Prisma, and assumes you have installed the following:
+// npm install --save-dev prisma dotenv
+import "dotenv/config";
+import { defineConfig } from "prisma/config";
+
+export default defineConfig({
+  schema: "prisma/schema.prisma",
+  migrations: {
+    path: "prisma/migrations",
+  },
+  datasource: {
+    url: process.env["DATABASE_URL"],
+  },
+});
+
+```
+
+---
+
+### <a id="📄-tsconfig-json"></a>📄 `tsconfig.json`
+
+**File Info:**
+- **Size**: 626 B
+- **Extension**: `.json`
+- **Language**: `json`
+- **Location**: `tsconfig.json`
+- **Relative Path**: `root`
+- **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `fe03b98ea19311182b030d317524ea2e`
+- **SHA256**: `e3671d7e59a8967388a622530314fa2a6885011355e1211620c2671faf999bbb`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```json
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types"
+    ],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+    },
+    "ignoreDeprecations": "6.0",
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
+    ],
+  },
+}
+```
+
+---
+

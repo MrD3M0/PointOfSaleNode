@@ -13,8 +13,8 @@ datasource db {
 }
 
 enum Role{
-  User
-  Admin
+  ADMIN
+  USER
 }
 
 enum DiscountType {
@@ -27,12 +27,12 @@ model User {
   email String  @unique
   username  String @unique
   password String
-  role Role @default(User)
+  role Role @default(USER)
   categories Category[]
   products Product[]
   bills Bill[]
   createdAt       DateTime @default(now())
-  updatedAt       DateTime? @updatedAt
+  updatedAt       DateTime @updatedAt
 }
 
 model Category {
@@ -44,46 +44,69 @@ model Category {
   products Product[]
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt 
+  @@unique([userId, name])
+  @@unique([userId, shortName])
 }
 
 model Product {
-  id         String   @id @default(cuid())
+  id         String     @id @default(cuid())
   name       String
   shortName  String
-  price      Float
-  quantity   Int @default(0)
   userId     String
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
   categoryId String
-  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  category   Category   @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  batches    Batch[]
   billItems  BillItem[]
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  @@unique([userId, name])
+  @@unique([userId, shortName])
+  @@index([categoryId])
 }
+model Batch {
+  id          String     @id @default(cuid())
+  batchNumber String
+  costPrice   Decimal    @db.Decimal(10, 2)
+  price       Decimal    @db.Decimal(10, 2)
+  quantity    Int        @default(0)
+  productId   String
+  product     Product    @relation(fields: [productId], references: [id], onDelete: Cascade)
+  billItems   BillItem[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
 
+  @@unique([productId, batchNumber])
+}
 model Bill {
   id              String        @id @default(cuid())
   billNumber      Int           @unique @default(autoincrement())
   userId          String
   user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   billItems       BillItem[]
-  total           Float         @default(0)
+  total           Decimal @default(0) @db.Decimal(12, 2)
   discountType    DiscountType
-  discount        Float         @default(0)
-  finalBillAmount Float         @default(0)
+  discount        Decimal @default(0) @db.Decimal(12, 2)
+  finalBillAmount Decimal @default(0) @db.Decimal(12, 2)
   createdAt       DateTime      @default(now())
   updatedAt       DateTime      @updatedAt
+  @@index([userId, createdAt])
 }
 
 model BillItem {
-  id              String        @id @default(cuid())
-  billId          String
-  bill            Bill          @relation(fields: [billId], references: [id], onDelete: Cascade)
-  productId       String
-  product         Product       @relation(fields: [productId], references: [id], onDelete: Cascade)
-  quantity        Int
-  unitPrice       Float
-  total           Float
-  createdAt       DateTime      @default(now())
-  updatedAt       DateTime      @updatedAt
+  id        String   @id @default(cuid())
+  billId    String
+  bill      Bill     @relation(fields: [billId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  batchId   String
+  batch     Batch    @relation(fields: [batchId], references: [id], onDelete: Restrict)
+  quantity  Int
+  unitPrice Float
+  total     Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@index([billId])
+  @@index([productId])
+  @@index([batchId])
 }

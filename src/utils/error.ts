@@ -1,43 +1,32 @@
 import { CustomError, ValidationError } from "@/errors/CustomError";
-import {
-  PrismaClientInitializationError,
-  PrismaClientKnownRequestError,
-  PrismaClientRustPanicError,
-  PrismaClientUnknownRequestError,
-  PrismaClientValidationError,
-} from "@prisma/client/runtime/client";
+import { Prisma } from "@/generated/prisma/client";
 import { AxiosError } from "axios";
 import { Response } from "express";
-import { ZodError } from "zod";
+import { z, ZodError } from "zod";
 import { ResponseHandler } from "./response";
-type PrismaError =
-  | PrismaClientInitializationError
-  | PrismaClientKnownRequestError
-  | PrismaClientRustPanicError
-  | PrismaClientValidationError
-  | PrismaClientUnknownRequestError;
 
 export const ErrorHandler = {
-  // Handle error
   handleError: function (res: Response, error: unknown) {
     if (error instanceof ValidationError)
-      return this.handleValidationError(res, error);
-    else if (error instanceof CustomError)
-      return this.handleCustomError(res, error);
-    else if (error instanceof ZodError) return this.handleZodError(res, error);
-    else if (error instanceof AxiosError)
-      return this.handleAxiosError(res, error);
-
-    // Handle standard Error instances
-    if (error instanceof Error) {
+      return ErrorHandler.handleValidationError(res, error);
+    if (error instanceof CustomError)
+      return ErrorHandler.handleCustomError(res, error);
+    if (error instanceof ZodError)
+      return ErrorHandler.handleZodError(res, error);
+    if (error instanceof Prisma.PrismaClientKnownRequestError)
+      return ErrorHandler.handlePrismaError(res, error);
+    if (error instanceof Prisma.PrismaClientValidationError)
       return ResponseHandler.error({
         res,
-        code: 500,
-        message: "Internal Server Error",
-        error: error.message,
+        code: 400,
+        message: "Invalid request data",
+        error: null,
       });
-    }
+    if (error instanceof AxiosError)
+      return ErrorHandler.handleAxiosError(res, error);
 
+    // Log the real error server-side, never send internals to the client
+    console.error("Unhandled error:", error);
     return ResponseHandler.error({
       res,
       code: 500,
@@ -46,7 +35,6 @@ export const ErrorHandler = {
     });
   },
 
-  // Handle custom error
   handleCustomError: function (res: Response, error: CustomError) {
     return ResponseHandler.error({
       res,
@@ -56,7 +44,6 @@ export const ErrorHandler = {
     });
   },
 
-  // Handle validation error
   handleValidationError: function (res: Response, error: ValidationError) {
     return res.status(422).send({
       success: false,
@@ -66,47 +53,51 @@ export const ErrorHandler = {
     });
   },
 
-  handlePrismaError: function (error: PrismaError) {
-    switch (error.name) {
-      case "PrismaClientInitializationError":
-        // Return the error response json
-        return {
-          success: false,
-          status: 500,
-          message: "Server error occured. Our engineers are already notified.",
-          data: null,
-        };
+  handlePrismaError: function (
+    res: Response,
+    error: Prisma.PrismaClientKnownRequestError,
+  ) {
+    switch (error.code) {
+      case "P2002":
+        return ResponseHandler.error({
+          res,
+          code: 409,
+          message: "A record with the same unique value already exists",
+          error: null,
+        });
+      case "P2003":
+        return ResponseHandler.error({
+          res,
+          code: 409,
+          message: "This record is referenced by other records",
+          error: null,
+        });
+      case "P2025":
+        return ResponseHandler.error({
+          res,
+          code: 404,
+          message: "Record not found",
+          error: null,
+        });
       default:
-        // Return the error response json
-        return {
-          success: false,
-          status: 500,
-          message: "Server error occured. Our engineers are already notified.",
-          data: null,
-        };
+        console.error("Prisma error:", error);
+        return ResponseHandler.error({
+          res,
+          code: 500,
+          message: "Internal Server Error",
+          error: null,
+        });
     }
   },
 
   handleZodError: function (res: Response, error: ZodError) {
-    // Flatten the errors
-    const flattenedErrors: Record<string, unknown> =
-      error.flatten().fieldErrors;
-    /**
-     * In case a custom data is thrown from zod object via params object
-     * That needs to be respected. Simply flattening the errors
-     * Will only return message and not the custom data
-     * Hence we need to check if params exists and if it does
-     * We need to replace the message with the custom data
-     * To see the usage of params, see validation of invoiceEmails in client validation (clients/validator.tsx) file
-     */
-    // for each issue
+    const flattenedErrors: Record<string, unknown> = z.flattenError(error)
+      .fieldErrors as Record<string, unknown>;
+
+    // Respect custom data thrown via zod's params
     for (const issue of error.issues) {
-      const issuePaths = issue.path;
-      // for each path, check if issue.params exists
-      for (const path of issuePaths) {
-        // if issue.params exists, check if errors exists
+      for (const path of issue.path) {
         if ("params" in issue && issue.params) {
-          // if errors exists, add it to flattenedErrors
           flattenedErrors[String(path)] = issue.params;
         }
       }
@@ -116,14 +107,9 @@ export const ErrorHandler = {
       success: false,
       status: 422,
       message: "Validation Error",
-      data: { ...flattenedErrors, _deepErrors: error },
+      data: flattenedErrors,
     });
   },
-
-  // handleJWTError: function (error: JsonWebTokenError) {
-  //   // Return the error response json
-  //   return { success: false, status: 401, message: 'Invalid Authorization Token', data: [] };
-  // },
 
   handleAxiosError: function (res: Response, error: AxiosError) {
     const status = error.response?.status || 500;

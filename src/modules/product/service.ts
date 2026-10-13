@@ -1,7 +1,42 @@
-// product/service.ts
 import { prismaMain } from "@/lib/prismaClient";
+import { Prisma } from "@/generated/prisma/client";
 import { CustomError, ValidationError } from "@/errors/CustomError";
-import { T_ProductCreateInput } from "./validator";
+import { dateStamp } from "@/utils/batchNumber";
+import { T_ProductCreateInput, T_ProductUpdateInput } from "./validator";
+
+const productInclude = {
+  category: true,
+  batches: { orderBy: { createdAt: "asc" } },
+} satisfies Prisma.ProductInclude;
+
+const assertUnique = async (
+  userId: string,
+  data: { name: string; shortName: string },
+  excludeId?: string,
+) => {
+  const clash = await prismaMain.product.findFirst({
+    where: {
+      userId,
+      ...(excludeId && { id: { not: excludeId } }),
+      OR: [{ name: data.name }, { shortName: data.shortName }],
+    },
+  });
+  if (!clash) return;
+
+  const fields: Record<string, string> = {};
+  if (clash.name === data.name)
+    fields.name = "Product with the same name already exists";
+  if (clash.shortName === data.shortName)
+    fields.shortName = "Product with the same short name already exists";
+  throw new ValidationError(fields);
+};
+
+const assertCategory = async (categoryId: string, userId: string) => {
+  const category = await prismaMain.category.findFirst({
+    where: { id: categoryId, userId },
+  });
+  if (!category) throw new CustomError("Category not found", 404);
+};
 
 export const ProductService = {
   index: async (
@@ -10,206 +45,129 @@ export const ProductService = {
     searchTerm: string,
     userId: string,
   ) => {
-    // Calculate skip and take
     const skip = (pageNumber - 1) * limitNumber;
-    const take = limitNumber;
+    const where: Prisma.ProductWhereInput = {
+      userId,
+      ...(searchTerm && {
+        OR: [
+          { name: { contains: searchTerm, mode: "insensitive" } },
+          { category: { name: { contains: searchTerm, mode: "insensitive" } } },
+        ],
+      }),
+    };
 
-    // Fetch products from the database
     const products = await prismaMain.product.findMany({
-      where: {
-        userId,
-        ...(searchTerm && {
-          OR: [
-            { name: { contains: searchTerm, mode: "insensitive" } },
-            {
-              category: { name: { contains: searchTerm, mode: "insensitive" } },
-            },
-          ],
-        }),
-      },
-      include: {
-        category: true,
-      },
+      where,
+      include: productInclude,
       skip,
-      take,
+      take: limitNumber,
+      orderBy: { createdAt: "desc" },
     });
-
-    // Get the total count of products without pagination
-    const totalProducts = await prismaMain.product.count({
-      where: {
-        name: searchTerm ? { contains: searchTerm } : undefined,
-        userId,
-      },
-    });
+    const total = await prismaMain.product.count({ where });
 
     return {
       products,
-      pagination: {
-        page: pageNumber,
-        limit: limitNumber,
-        total: totalProducts,
-      },
+      pagination: { page: pageNumber, limit: limitNumber, total },
     };
   },
 
   create: async (data: T_ProductCreateInput, userId: string) => {
-    const { name, shortName, price, quantity, categoryId } = data;
+    const { name, shortName, categoryId, batch } = data;
 
-    // Validating whether the Product Name Exists or Not
-    const existingProductByName = await prismaMain.product.findFirst({
-      where: { name },
-    });
-    if (existingProductByName)
-      throw new ValidationError({
-        name: "Product with the same name already exists",
-      });
+    await assertUnique(userId, { name, shortName });
+    await assertCategory(categoryId, userId);
 
-    // Validating whether the Product ShortName Exists or Not
-    const existingProductByShortName = await prismaMain.product.findFirst({
-      where: { shortName },
-    });
-    if (existingProductByShortName)
-      throw new ValidationError({
-        shortName: "Product with the same short name already exists",
-      });
-
-    // Validating whether the Category Exists or Not
-    const category = await prismaMain.category.findUnique({
-      where: { id: categoryId },
-    });
-    if (!category) throw new CustomError("Category not found", 404);
-
-    // Create the Product
     return await prismaMain.product.create({
       data: {
         name,
         shortName,
-        price,
-        quantity,
         categoryId,
         userId,
+        ...(batch && {
+          batches: {
+            create: {
+              batchNumber: `${dateStamp()}-01`,
+              costPrice: batch.costPrice,
+              price: batch.price,
+              quantity: batch.quantity,
+            },
+          },
+        }),
       },
-      include: {
-        category: true,
-      },
+      include: productInclude,
     });
   },
 
-  getById: async (productId: string) => {
-    // Validating Where productId exists or not
-    const product = await prismaMain.product.findUnique({
-      where: { id: productId },
-      include: {
-        category: true,
-      },
+  getById: async (productId: string, userId: string) => {
+    const product = await prismaMain.product.findFirst({
+      where: { id: productId, userId },
+      include: productInclude,
     });
-
-    // if product not found, throw error
     if (!product) throw new CustomError("Product not found", 404);
-
     return product;
   },
 
-  update: async (productId: string, data: T_ProductCreateInput) => {
-    // Get the existing Data by using Product Id
-    const existingProduct = await prismaMain.product.findUnique({
-      where: { id: productId },
+  update: async (
+    productId: string,
+    data: T_ProductUpdateInput,
+    userId: string,
+  ) => {
+    const existing = await prismaMain.product.findFirst({
+      where: { id: productId, userId },
     });
+    if (!existing) throw new CustomError("Product not found", 404);
 
-    // If Product not found, throw error
-    if (!existingProduct) throw new CustomError("Product not found", 404);
+    await assertCategory(data.categoryId, userId);
+    await assertUnique(userId, data, productId);
 
-    // Validating whether the Category Exists or Not
-    if (data.categoryId) {
-      const category = await prismaMain.category.findUnique({
-        where: { id: data.categoryId },
-      });
-      if (!category) throw new CustomError("Category not found", 404);
-    }
-
-    // If name already exists in the db throw error
-    const existingProductByName = await prismaMain.product.findFirst({
-      where: { name: data.name },
-    });
-    if (
-      !!existingProductByName &&
-      existingProduct.name !== existingProductByName.name
-    )
-      throw new ValidationError({
-        name: "Product with the same name already exists",
-      });
-
-    // If shortName already exists in the db throw error
-    const existingProductByShortName = await prismaMain.product.findFirst({
-      where: { shortName: data.shortName },
-    });
-    if (
-      !!existingProductByShortName &&
-      existingProduct.id !== existingProductByShortName.id
-    )
-      throw new ValidationError({
-        shortName: "Product with the same short name already exists",
-      });
-
-    // Update the product
     return await prismaMain.product.update({
       where: { id: productId },
       data: {
         name: data.name,
         shortName: data.shortName,
-        price: data.price,
-        quantity: data.quantity,
         categoryId: data.categoryId,
       },
-      include: {
-        category: true,
-      },
+      include: productInclude,
     });
   },
 
-  getByName: async (name: string) => {
-    return await prismaMain.product.findFirst({
-      where: { name },
-      include: {
-        category: true,
-      },
-    });
-  },
+  getByName: async (name: string, userId: string) =>
+    prismaMain.product.findFirst({
+      where: { name, userId },
+      include: productInclude,
+    }),
 
-  getByShortName: async (shortName: string) => {
-    return await prismaMain.product.findFirst({
-      where: { shortName },
-      include: {
-        category: true,
-      },
-    });
-  },
+  getByShortName: async (shortName: string, userId: string) =>
+    prismaMain.product.findFirst({
+      where: { shortName, userId },
+      include: productInclude,
+    }),
 
-  getByCategoryId: async (categoryId: string, userId: string) => {
-    return await prismaMain.product.findMany({
-      where: {
-        categoryId,
-        userId,
-      },
-      include: {
-        category: true,
-      },
-    });
-  },
-  // product/service.ts
+  getByCategoryId: async (categoryId: string, userId: string) =>
+    prismaMain.product.findMany({
+      where: { categoryId, userId },
+      include: productInclude,
+      orderBy: { createdAt: "desc" },
+    }),
 
-  delete: async (productId: string) => {
-    // Validating where productId exists or not
-    const product = await prismaMain.product.findUnique({
-      where: { id: productId },
+  delete: async (productId: string, userId: string) => {
+    const product = await prismaMain.product.findFirst({
+      where: { id: productId, userId },
     });
-
-    // if product not found, throw error
     if (!product) throw new CustomError("Product not found", 404);
 
-    // Delete the product
-    return await prismaMain.product.delete({
-      where: { id: productId },
-    });
+    try {
+      return await prismaMain.product.delete({ where: { id: productId } });
+    } catch (error) {
+      if (
+        error instanceof Prisma.PrismaClientKnownRequestError &&
+        error.code === "P2003"
+      )
+        throw new CustomError(
+          "This product has sold batches in bills and can't be deleted",
+          400,
+        );
+      throw error;
+    }
   },
 };
