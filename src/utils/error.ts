@@ -20,7 +20,7 @@ export const ErrorHandler = {
         res,
         code: 400,
         message: "Invalid request data",
-        error: null,
+        error: error,
       });
     if (error instanceof AxiosError)
       return ErrorHandler.handleAxiosError(res, error);
@@ -31,7 +31,7 @@ export const ErrorHandler = {
       res,
       code: 500,
       message: "Internal Server Error",
-      error: null,
+      error: error,
     });
   },
 
@@ -40,7 +40,7 @@ export const ErrorHandler = {
       res,
       code: error.status || 500,
       message: error.message || "Internal Server Error",
-      error: null,
+      error: error,
     });
   },
 
@@ -63,21 +63,21 @@ export const ErrorHandler = {
           res,
           code: 409,
           message: "A record with the same unique value already exists",
-          error: null,
+          error: error,
         });
       case "P2003":
         return ResponseHandler.error({
           res,
           code: 409,
           message: "This record is referenced by other records",
-          error: null,
+          error: error,
         });
       case "P2025":
         return ResponseHandler.error({
           res,
           code: 404,
           message: "Record not found",
-          error: null,
+          error: error,
         });
       default:
         console.error("Prisma error:", error);
@@ -85,7 +85,7 @@ export const ErrorHandler = {
           res,
           code: 500,
           message: "Internal Server Error",
-          error: null,
+          error: error,
         });
     }
   },
@@ -117,6 +117,6 @@ export const ErrorHandler = {
       | { message?: string }
       | undefined;
     const message = responseData?.message || error.message || "Request failed";
-    return ResponseHandler.error({ res, code: status, message, error: null });
+    return ResponseHandler.error({ res, code: status, message, error: error });
   },
 };

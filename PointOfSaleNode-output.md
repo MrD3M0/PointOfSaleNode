@@ -3,8 +3,8 @@
 ## 📊 Project Information
 
 - **Project Name**: `PointOfSaleNode`
-- **Generated On**: 2026-10-13 13:18:20 (Asia/Katmandu / GMT+06:45)
-- **Total Files Processed**: 68
+- **Generated On**: 2026-10-15 15:36:07 (Asia/Katmandu / GMT+06:45)
+- **Total Files Processed**: 69
 - **Export Tool**: Easy Whole Project to Single Text File for LLMs v1.1.0
 - **Tool Author**: Jota / José Guilherme Pandolfi
 
@@ -52,8 +52,10 @@
 │   │   │   └── 📄 migration.sql (1.35 KB)
 │   │   ├── 📁 20261013124606_fixed_fast_search_in_db/
 │   │   │   └── 📄 migration.sql (2.37 KB)
+│   │   ├── 📁 20261015053258_removed_the_unique_constraints_of_the_user_table/
+│   │   │   └── 📄 migration.sql (88 B)
 │   │   └── 📄 migration_lock.toml (128 B)
-│   └── 📄 schema.prisma (3.22 KB)
+│   └── 📄 schema.prisma (3.21 KB)
 ├── 📁 src/
 │   ├── 📁 @types/
 │   │   └── 📄 type.ts (77 B)
@@ -64,7 +66,7 @@
 │   ├── 📁 generated/
 │   │   └── 📁 prisma/
 │   │       ├── 📁 internal/
-│   │       │   ├── 📄 class.ts (42.03 KB)
+│   │       │   ├── 📄 class.ts (42.01 KB)
 │   │       │   ├── 📄 prismaNamespace.ts (37.05 KB)
 │   │       │   └── 📄 prismaNamespaceBrowser.ts (4.68 KB)
 │   │       ├── 📁 models/
@@ -73,7 +75,7 @@
 │   │       │   ├── 📄 BillItem.ts (69.87 KB)
 │   │       │   ├── 📄 Category.ts (55.16 KB)
 │   │       │   ├── 📄 Product.ts (69.55 KB)
-│   │       │   └── 📄 User.ts (56.53 KB)
+│   │       │   └── 📄 User.ts (56.56 KB)
 │   │       ├── 📄 browser.ts (1.06 KB)
 │   │       ├── 📄 client.ts (1.88 KB)
 │   │       ├── 📄 commonInputTypes.ts (19.41 KB)
@@ -94,7 +96,7 @@
 │   │   │   ├── 📄 controller.ts (2.73 KB)
 │   │   │   ├── 📄 routes.ts (529 B)
 │   │   │   ├── 📄 service.ts (3.58 KB)
-│   │   │   └── 📄 validator.ts (1.59 KB)
+│   │   │   └── 📄 validator.ts (1.54 KB)
 │   │   ├── 📁 bill/
 │   │   │   ├── 📄 controller.ts (5.45 KB)
 │   │   │   ├── 📄 routes.ts (750 B)
@@ -116,7 +118,7 @@
 │   │   ├── 📄 error.ts (3.72 KB)
 │   │   ├── 📄 queryFilters.ts (888 B)
 │   │   └── 📄 response.ts (1.2 KB)
-│   ├── 📄 index.ts (1.97 KB)
+│   ├── 📄 index.ts (2.25 KB)
 │   └── 📄 router.ts (565 B)
 ├── 📄 package.json (1.27 KB)
 ├── 📄 pnpm-lock.yaml (81.56 KB)
@@ -143,6 +145,7 @@
 - [📄 prisma/migrations/20261013120205_fix_role_enum/migration.sql](#📄-prisma-migrations-20261013120205-fix-role-enum-migration-sql)
 - [📄 prisma/migrations/20261013121455_add_batch/migration.sql](#📄-prisma-migrations-20261013121455-add-batch-migration-sql)
 - [📄 prisma/migrations/20261013124606_fixed_fast_search_in_db/migration.sql](#📄-prisma-migrations-20261013124606-fixed-fast-search-in-db-migration-sql)
+- [📄 prisma/migrations/20261015053258_removed_the_unique_constraints_of_the_user_table/migration.sql](#📄-prisma-migrations-20261015053258-removed-the-unique-constraints-of-the-user-table-migration-sql)
 - [📄 prisma/migrations/migration_lock.toml](#📄-prisma-migrations-migration-lock-toml)
 - [📄 src/@types/type.ts](#📄-src-types-type-ts)
 - [📄 src/dev/seed-default-admin.ts](#📄-src-dev-seed-default-admin-ts)
@@ -202,18 +205,18 @@
 
 | Metric | Count |
 |--------|-------|
-| Total Files | 68 |
-| Total Directories | 34 |
-| Text Files | 67 |
+| Total Files | 69 |
+| Total Directories | 35 |
+| Text Files | 68 |
 | Binary Files | 1 |
-| Total Size | 645.25 KB |
+| Total Size | 645.57 KB |
 
 ### 📄 File Types Distribution
 
 | Extension | Count |
 |-----------|-------|
 | `.ts` | 48 |
-| `.sql` | 15 |
+| `.sql` | 16 |
 | `.json` | 2 |
 | `.toml` | 1 |
 | `.prisma` | 1 |
@@ -850,6 +853,33 @@ CREATE UNIQUE INDEX "Product_userId_shortName_key" ON "Product"("userId", "short
 
 ---
 
+### <a id="📄-prisma-migrations-20261015053258-removed-the-unique-constraints-of-the-user-table-migration-sql"></a>📄 `prisma/migrations/20261015053258_removed_the_unique_constraints_of_the_user_table/migration.sql`
+
+**File Info:**
+- **Size**: 88 B
+- **Extension**: `.sql`
+- **Language**: `sql`
+- **Location**: `prisma/migrations/20261015053258_removed_the_unique_constraints_of_the_user_table/migration.sql`
+- **Relative Path**: `prisma/migrations/20261015053258_removed_the_unique_constraints_of_the_user_table`
+- **Created**: 2026-10-15 05:32:58 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:32:58 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `3cd497e1c0cf355b401f9ff1c1e11fff`
+- **SHA256**: `03268ea2752b0bbec19ea8260c38f947eda106d22d2b76824078395e61f2faf8`
+- **Encoding**: ASCII
+
+**File code content:**
+
+```sql
+-- DropIndex
+DROP INDEX "User_email_key";
+
+-- DropIndex
+DROP INDEX "User_username_key";
+
+```
+
+---
+
 ### <a id="📄-prisma-migrations-migration-lock-toml"></a>📄 `prisma/migrations/migration_lock.toml`
 
 **File Info:**
@@ -859,7 +889,7 @@ CREATE UNIQUE INDEX "Product_userId_shortName_key" ON "Product"("userId", "short
 - **Location**: `prisma/migrations/migration_lock.toml`
 - **Relative Path**: `prisma/migrations`
 - **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:06 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:32:58 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `32c3527c0ea9ff20261cdb5b70d40dea`
 - **SHA256**: `99836963713b4f5b269ad49af0ed3d7b0b2e336115c2f92dc9ac683d139d0900`
 - **Encoding**: ASCII
@@ -916,9 +946,9 @@ export type T_Context = {
 - **Location**: `src/dev/seed-default-admin.ts`
 - **Relative Path**: `src/dev`
 - **Created**: 2026-10-13 11:45:47 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 13:17:23 (Asia/Katmandu / GMT+06:45)
-- **MD5**: `e4dac07c6e3623bd4ca4f44f5b6de172`
-- **SHA256**: `04448ac5f64ae3d91198631ca2cf7d9e70f0fe24403f8ca23c20276957ee8a46`
+- **Modified**: 2026-10-15 05:41:42 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `c025916f8a9b397ebc8af3059831447e`
+- **SHA256**: `af5cd66746a704d1020ca82ad256f380ca463b81809dc2701db2ef712fd647e8`
 - **Encoding**: ASCII
 
 **File code content:**
@@ -943,7 +973,7 @@ export async function seedDefaultAdmin() {
   }
 
   try {
-    const existingUser = await prismaMain.user.findUnique({ where: { email } });
+    const existingUser = await prismaMain.user.findFirst({ where: { email } });
     if (existingUser) {
       console.log("Default admin user already exists.");
       return;
@@ -1049,15 +1079,15 @@ export class ValidationError extends Error {
 ### <a id="📄-src-generated-prisma-internal-class-ts"></a>📄 `src/generated/prisma/internal/class.ts`
 
 **File Info:**
-- **Size**: 42.03 KB
+- **Size**: 42.01 KB
 - **Extension**: `.ts`
 - **Language**: `typescript`
 - **Location**: `src/generated/prisma/internal/class.ts`
 - **Relative Path**: `src/generated/prisma/internal`
-- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
-- **MD5**: `7cdbc0926ddd6b7ef93b62a55cd16fd7`
-- **SHA256**: `c1392d86793af681ca3483e0c3a0db5181544c82a00fbd7d78ac2021375c3dd0`
+- **Created**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `77cbfa2d2227bb894d67be802f0f353c`
+- **SHA256**: `b33a9eb57c599fabbd2f63caa40c7af43a73961deb9043c09f186e313832336b`
 - **Encoding**: UTF-8
 
 **File code content:**
@@ -1085,7 +1115,7 @@ const config: runtime.GetPrismaClientConfig = {
   "clientVersion": "7.8.0",
   "engineVersion": "3c6e192761c0362d496ed980de936e2f3cebcd3a",
   "activeProvider": "postgresql",
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Get a free hosted Postgres database in seconds: `npx create-db`\n\ngenerator client {\n  provider = \"prisma-client\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nenum Role {\n  ADMIN\n  USER\n}\n\nenum DiscountType {\n  Exact\n  Percentage\n}\n\nmodel User {\n  id         String     @id @default(cuid())\n  email      String     @unique\n  username   String     @unique\n  password   String\n  role       Role       @default(USER)\n  categories Category[]\n  products   Product[]\n  bills      Bill[]\n  createdAt  DateTime   @default(now())\n  updatedAt  DateTime   @updatedAt\n}\n\nmodel Category {\n  id        String    @id @default(cuid())\n  name      String\n  shortName String\n  userId    String\n  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)\n  products  Product[]\n  createdAt DateTime  @default(now())\n  updatedAt DateTime  @updatedAt\n\n  @@unique([userId, name])\n  @@unique([userId, shortName])\n}\n\nmodel Product {\n  id         String     @id @default(cuid())\n  name       String\n  shortName  String\n  userId     String\n  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)\n  categoryId String\n  category   Category   @relation(fields: [categoryId], references: [id], onDelete: Cascade)\n  batches    Batch[]\n  billItems  BillItem[]\n  createdAt  DateTime   @default(now())\n  updatedAt  DateTime   @updatedAt\n\n  @@unique([userId, name])\n  @@unique([userId, shortName])\n  @@index([categoryId])\n}\n\nmodel Batch {\n  id          String     @id @default(cuid())\n  batchNumber String\n  costPrice   Decimal    @db.Decimal(10, 2)\n  price       Decimal    @db.Decimal(10, 2)\n  quantity    Int        @default(0)\n  productId   String\n  product     Product    @relation(fields: [productId], references: [id], onDelete: Cascade)\n  billItems   BillItem[]\n  createdAt   DateTime   @default(now())\n  updatedAt   DateTime   @updatedAt\n\n  @@unique([productId, batchNumber])\n}\n\nmodel Bill {\n  id              String       @id @default(cuid())\n  billNumber      Int          @unique @default(autoincrement())\n  userId          String\n  user            User         @relation(fields: [userId], references: [id], onDelete: Cascade)\n  billItems       BillItem[]\n  total           Decimal      @default(0) @db.Decimal(12, 2)\n  discountType    DiscountType\n  discount        Decimal      @default(0) @db.Decimal(12, 2)\n  finalBillAmount Decimal      @default(0) @db.Decimal(12, 2)\n  createdAt       DateTime     @default(now())\n  updatedAt       DateTime     @updatedAt\n\n  @@index([userId, createdAt])\n}\n\nmodel BillItem {\n  id        String   @id @default(cuid())\n  billId    String\n  bill      Bill     @relation(fields: [billId], references: [id], onDelete: Cascade)\n  productId String\n  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)\n  batchId   String\n  batch     Batch    @relation(fields: [batchId], references: [id], onDelete: Restrict)\n  quantity  Int\n  unitPrice Float\n  total     Float\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n\n  @@index([billId])\n  @@index([productId])\n  @@index([batchId])\n}\n",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Get a free hosted Postgres database in seconds: `npx create-db`\n\ngenerator client {\n  provider = \"prisma-client\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nenum Role {\n  ADMIN\n  USER\n}\n\nenum DiscountType {\n  Exact\n  Percentage\n}\n\nmodel User {\n  id         String     @id @default(cuid())\n  email      String\n  username   String\n  password   String\n  role       Role       @default(USER)\n  categories Category[]\n  products   Product[]\n  bills      Bill[]\n  createdAt  DateTime   @default(now())\n  updatedAt  DateTime   @updatedAt\n}\n\nmodel Category {\n  id        String    @id @default(cuid())\n  name      String\n  shortName String\n  userId    String\n  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)\n  products  Product[]\n  createdAt DateTime  @default(now())\n  updatedAt DateTime  @updatedAt\n\n  @@unique([userId, name])\n  @@unique([userId, shortName])\n}\n\nmodel Product {\n  id         String     @id @default(cuid())\n  name       String\n  shortName  String\n  userId     String\n  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)\n  categoryId String\n  category   Category   @relation(fields: [categoryId], references: [id], onDelete: Cascade)\n  batches    Batch[]\n  billItems  BillItem[]\n  createdAt  DateTime   @default(now())\n  updatedAt  DateTime   @updatedAt\n\n  @@unique([userId, name])\n  @@unique([userId, shortName])\n  @@index([categoryId])\n}\n\nmodel Batch {\n  id          String     @id @default(cuid())\n  batchNumber String\n  costPrice   Decimal    @db.Decimal(10, 2)\n  price       Decimal    @db.Decimal(10, 2)\n  quantity    Int        @default(0)\n  productId   String\n  product     Product    @relation(fields: [productId], references: [id], onDelete: Cascade)\n  billItems   BillItem[]\n  createdAt   DateTime   @default(now())\n  updatedAt   DateTime   @updatedAt\n\n  @@unique([productId, batchNumber])\n}\n\nmodel Bill {\n  id              String       @id @default(cuid())\n  billNumber      Int          @unique @default(autoincrement())\n  userId          String\n  user            User         @relation(fields: [userId], references: [id], onDelete: Cascade)\n  billItems       BillItem[]\n  total           Decimal      @default(0) @db.Decimal(12, 2)\n  discountType    DiscountType\n  discount        Decimal      @default(0) @db.Decimal(12, 2)\n  finalBillAmount Decimal      @default(0) @db.Decimal(12, 2)\n  createdAt       DateTime     @default(now())\n  updatedAt       DateTime     @updatedAt\n\n  @@index([userId, createdAt])\n}\n\nmodel BillItem {\n  id        String   @id @default(cuid())\n  billId    String\n  bill      Bill     @relation(fields: [billId], references: [id], onDelete: Cascade)\n  productId String\n  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)\n  batchId   String\n  batch     Batch    @relation(fields: [batchId], references: [id], onDelete: Restrict)\n  quantity  Int\n  unitPrice Float\n  total     Float\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n\n  @@index([billId])\n  @@index([productId])\n  @@index([batchId])\n}\n",
   "runtimeDataModel": {
     "models": {},
     "enums": {},
@@ -1100,7 +1130,7 @@ const config: runtime.GetPrismaClientConfig = {
 config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"username\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"password\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"role\",\"kind\":\"enum\",\"type\":\"Role\"},{\"name\":\"categories\",\"kind\":\"object\",\"type\":\"Category\",\"relationName\":\"CategoryToUser\"},{\"name\":\"products\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"ProductToUser\"},{\"name\":\"bills\",\"kind\":\"object\",\"type\":\"Bill\",\"relationName\":\"BillToUser\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"Category\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"shortName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"CategoryToUser\"},{\"name\":\"products\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"CategoryToProduct\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"Product\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"shortName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"ProductToUser\"},{\"name\":\"categoryId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"category\",\"kind\":\"object\",\"type\":\"Category\",\"relationName\":\"CategoryToProduct\"},{\"name\":\"batches\",\"kind\":\"object\",\"type\":\"Batch\",\"relationName\":\"BatchToProduct\"},{\"name\":\"billItems\",\"kind\":\"object\",\"type\":\"BillItem\",\"relationName\":\"BillItemToProduct\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"Batch\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"batchNumber\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"costPrice\",\"kind\":\"scalar\",\"type\":\"Decimal\"},{\"name\":\"price\",\"kind\":\"scalar\",\"type\":\"Decimal\"},{\"name\":\"quantity\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"productId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"product\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"BatchToProduct\"},{\"name\":\"billItems\",\"kind\":\"object\",\"type\":\"BillItem\",\"relationName\":\"BatchToBillItem\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"Bill\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"billNumber\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"BillToUser\"},{\"name\":\"billItems\",\"kind\":\"object\",\"type\":\"BillItem\",\"relationName\":\"BillToBillItem\"},{\"name\":\"total\",\"kind\":\"scalar\",\"type\":\"Decimal\"},{\"name\":\"discountType\",\"kind\":\"enum\",\"type\":\"DiscountType\"},{\"name\":\"discount\",\"kind\":\"scalar\",\"type\":\"Decimal\"},{\"name\":\"finalBillAmount\",\"kind\":\"scalar\",\"type\":\"Decimal\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"BillItem\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"billId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"bill\",\"kind\":\"object\",\"type\":\"Bill\",\"relationName\":\"BillToBillItem\"},{\"name\":\"productId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"product\",\"kind\":\"object\",\"type\":\"Product\",\"relationName\":\"BillItemToProduct\"},{\"name\":\"batchId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"batch\",\"kind\":\"object\",\"type\":\"Batch\",\"relationName\":\"BatchToBillItem\"},{\"name\":\"quantity\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"unitPrice\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"total\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 config.parameterizationSchema = {
   strings: JSON.parse("[\"where\",\"orderBy\",\"cursor\",\"user\",\"category\",\"product\",\"billItems\",\"_count\",\"bill\",\"batch\",\"batches\",\"products\",\"categories\",\"bills\",\"User.findUnique\",\"User.findUniqueOrThrow\",\"User.findFirst\",\"User.findFirstOrThrow\",\"User.findMany\",\"data\",\"User.createOne\",\"User.createMany\",\"User.createManyAndReturn\",\"User.updateOne\",\"User.updateMany\",\"User.updateManyAndReturn\",\"create\",\"update\",\"User.upsertOne\",\"User.deleteOne\",\"User.deleteMany\",\"having\",\"_min\",\"_max\",\"User.groupBy\",\"User.aggregate\",\"Category.findUnique\",\"Category.findUniqueOrThrow\",\"Category.findFirst\",\"Category.findFirstOrThrow\",\"Category.findMany\",\"Category.createOne\",\"Category.createMany\",\"Category.createManyAndReturn\",\"Category.updateOne\",\"Category.updateMany\",\"Category.updateManyAndReturn\",\"Category.upsertOne\",\"Category.deleteOne\",\"Category.deleteMany\",\"Category.groupBy\",\"Category.aggregate\",\"Product.findUnique\",\"Product.findUniqueOrThrow\",\"Product.findFirst\",\"Product.findFirstOrThrow\",\"Product.findMany\",\"Product.createOne\",\"Product.createMany\",\"Product.createManyAndReturn\",\"Product.updateOne\",\"Product.updateMany\",\"Product.updateManyAndReturn\",\"Product.upsertOne\",\"Product.deleteOne\",\"Product.deleteMany\",\"Product.groupBy\",\"Product.aggregate\",\"Batch.findUnique\",\"Batch.findUniqueOrThrow\",\"Batch.findFirst\",\"Batch.findFirstOrThrow\",\"Batch.findMany\",\"Batch.createOne\",\"Batch.createMany\",\"Batch.createManyAndReturn\",\"Batch.updateOne\",\"Batch.updateMany\",\"Batch.updateManyAndReturn\",\"Batch.upsertOne\",\"Batch.deleteOne\",\"Batch.deleteMany\",\"_avg\",\"_sum\",\"Batch.groupBy\",\"Batch.aggregate\",\"Bill.findUnique\",\"Bill.findUniqueOrThrow\",\"Bill.findFirst\",\"Bill.findFirstOrThrow\",\"Bill.findMany\",\"Bill.createOne\",\"Bill.createMany\",\"Bill.createManyAndReturn\",\"Bill.updateOne\",\"Bill.updateMany\",\"Bill.updateManyAndReturn\",\"Bill.upsertOne\",\"Bill.deleteOne\",\"Bill.deleteMany\",\"Bill.groupBy\",\"Bill.aggregate\",\"BillItem.findUnique\",\"BillItem.findUniqueOrThrow\",\"BillItem.findFirst\",\"BillItem.findFirstOrThrow\",\"BillItem.findMany\",\"BillItem.createOne\",\"BillItem.createMany\",\"BillItem.createManyAndReturn\",\"BillItem.updateOne\",\"BillItem.updateMany\",\"BillItem.updateManyAndReturn\",\"BillItem.upsertOne\",\"BillItem.deleteOne\",\"BillItem.deleteMany\",\"BillItem.groupBy\",\"BillItem.aggregate\",\"AND\",\"OR\",\"NOT\",\"id\",\"billId\",\"productId\",\"batchId\",\"quantity\",\"unitPrice\",\"total\",\"createdAt\",\"updatedAt\",\"equals\",\"in\",\"notIn\",\"lt\",\"lte\",\"gt\",\"gte\",\"not\",\"contains\",\"startsWith\",\"endsWith\",\"billNumber\",\"userId\",\"DiscountType\",\"discountType\",\"discount\",\"finalBillAmount\",\"batchNumber\",\"costPrice\",\"price\",\"name\",\"shortName\",\"categoryId\",\"email\",\"username\",\"password\",\"Role\",\"role\",\"every\",\"some\",\"none\",\"productId_batchNumber\",\"userId_name\",\"userId_shortName\",\"is\",\"isNot\",\"connectOrCreate\",\"upsert\",\"createMany\",\"set\",\"disconnect\",\"delete\",\"connect\",\"updateMany\",\"deleteMany\",\"increment\",\"decrement\",\"multiply\",\"divide\"]"),
-  graph: "rQM8YA0LAADHAQAgDAAAxgEAIA0AAMgBACB2AADCAQAwdwAAIwAQeAAAwgEAMHkBAAAAAYABQADFAQAhgQFAAMUBACGZAQEAAAABmgEBAAAAAZsBAQDDAQAhnQEAAMQBnQEiAQAAAAEAIAsDAADMAQAgCwAAxwEAIHYAAN0BADB3AAADABB4AADdAQAweQEAwwEAIYABQADFAQAhgQFAAMUBACGOAQEAwwEAIZYBAQDDAQAhlwEBAMMBACECAwAA9wIAIAsAAPUCACANAwAAzAEAIAsAAMcBACB2AADdAQAwdwAAAwAQeAAA3QEAMHkBAAAAAYABQADFAQAhgQFAAMUBACGOAQEAwwEAIZYBAQDDAQAhlwEBAMMBACGiAQAA2wEAIKMBAADcAQAgAwAAAAMAIAEAAAQAMAIAAAUAIA4DAADMAQAgBAAA2QEAIAYAAM0BACAKAADaAQAgdgAA2AEAMHcAAAcAEHgAANgBADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIZgBAQDDAQAhBAMAAPcCACAEAAD8AgAgBgAA-AIAIAoAAP0CACAQAwAAzAEAIAQAANkBACAGAADNAQAgCgAA2gEAIHYAANgBADB3AAAHABB4AADYAQAweQEAAAABgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIZgBAQDDAQAhogEAANYBACCjAQAA1wEAIAMAAAAHACABAAAIADACAAAJACANBQAA0gEAIAYAAM0BACB2AADVAQAwdwAACwAQeAAA1QEAMHkBAMMBACF7AQDDAQAhfQIAzgEAIYABQADFAQAhgQFAAMUBACGTAQEAwwEAIZQBEADKAQAhlQEQAMoBACECBQAA-gIAIAYAAPgCACAOBQAA0gEAIAYAAM0BACB2AADVAQAwdwAACwAQeAAA1QEAMHkBAAAAAXsBAMMBACF9AgDOAQAhgAFAAMUBACGBAUAAxQEAIZMBAQDDAQAhlAEQAMoBACGVARAAygEAIaEBAADUAQAgAwAAAAsAIAEAAAwAMAIAAA0AIA8FAADSAQAgCAAA0QEAIAkAANMBACB2AADPAQAwdwAADwAQeAAAzwEAMHkBAMMBACF6AQDDAQAhewEAwwEAIXwBAMMBACF9AgDOAQAhfggA0AEAIX8IANABACGAAUAAxQEAIYEBQADFAQAhAwUAAPoCACAIAAD5AgAgCQAA-wIAIA8FAADSAQAgCAAA0QEAIAkAANMBACB2AADPAQAwdwAADwAQeAAAzwEAMHkBAAAAAXoBAMMBACF7AQDDAQAhfAEAwwEAIX0CAM4BACF-CADQAQAhfwgA0AEAIYABQADFAQAhgQFAAMUBACEDAAAADwAgAQAAEAAwAgAAEQAgAwAAAA8AIAEAABAAMAIAABEAIAEAAAAPACABAAAADwAgAwAAAA8AIAEAABAAMAIAABEAIAEAAAALACABAAAADwAgAQAAAAcAIAMAAAAHACABAAAIADACAAAJACAOAwAAzAEAIAYAAM0BACB2AADJAQAwdwAAGwAQeAAAyQEAMHkBAMMBACF_EADKAQAhgAFAAMUBACGBAUAAxQEAIY0BAgDOAQAhjgEBAMMBACGQAQAAywGQASKRARAAygEAIZIBEADKAQAhAgMAAPcCACAGAAD4AgAgDgMAAMwBACAGAADNAQAgdgAAyQEAMHcAABsAEHgAAMkBADB5AQAAAAF_EADKAQAhgAFAAMUBACGBAUAAxQEAIY0BAgAAAAGOAQEAwwEAIZABAADLAZABIpEBEADKAQAhkgEQAMoBACEDAAAAGwAgAQAAHAAwAgAAHQAgAQAAAAMAIAEAAAAHACABAAAAGwAgAQAAAAEAIA0LAADHAQAgDAAAxgEAIA0AAMgBACB2AADCAQAwdwAAIwAQeAAAwgEAMHkBAMMBACGAAUAAxQEAIYEBQADFAQAhmQEBAMMBACGaAQEAwwEAIZsBAQDDAQAhnQEAAMQBnQEiAwsAAPUCACAMAAD0AgAgDQAA9gIAIAMAAAAjACABAAAkADACAAABACADAAAAIwAgAQAAJAAwAgAAAQAgAwAAACMAIAEAACQAMAIAAAEAIAoLAADyAgAgDAAA8QIAIA0AAPMCACB5AQAAAAGAAUAAAAABgQFAAAAAAZkBAQAAAAGaAQEAAAABmwEBAAAAAZ0BAAAAnQECARMAACgAIAd5AQAAAAGAAUAAAAABgQFAAAAAAZkBAQAAAAGaAQEAAAABmwEBAAAAAZ0BAAAAnQECARMAACoAMAETAAAqADAKCwAAzgIAIAwAAM0CACANAADPAgAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGZAQEA4wEAIZoBAQDjAQAhmwEBAOMBACGdAQAAzAKdASICAAAAAQAgEwAALQAgB3kBAOMBACGAAUAA5gEAIYEBQADmAQAhmQEBAOMBACGaAQEA4wEAIZsBAQDjAQAhnQEAAMwCnQEiAgAAACMAIBMAAC8AIAIAAAAjACATAAAvACADAAAAAQAgGgAAKAAgGwAALQAgAQAAAAEAIAEAAAAjACADBwAAyQIAICAAAMsCACAhAADKAgAgCnYAAL4BADB3AAA2ABB4AAC-AQAweQEAqAEAIYABQACrAQAhgQFAAKsBACGZAQEAqAEAIZoBAQCoAQAhmwEBAKgBACGdAQAAvwGdASIDAAAAIwAgAQAANQAwHwAANgAgAwAAACMAIAEAACQAMAIAAAEAIAEAAAAFACABAAAABQAgAwAAAAMAIAEAAAQAMAIAAAUAIAMAAAADACABAAAEADACAAAFACADAAAAAwAgAQAABAAwAgAABQAgCAMAAMcCACALAADIAgAgeQEAAAABgAFAAAAAAYEBQAAAAAGOAQEAAAABlgEBAAAAAZcBAQAAAAEBEwAAPgAgBnkBAAAAAYABQAAAAAGBAUAAAAABjgEBAAAAAZYBAQAAAAGXAQEAAAABARMAAEAAMAETAABAADAIAwAAuQIAIAsAALoCACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIY4BAQDjAQAhlgEBAOMBACGXAQEA4wEAIQIAAAAFACATAABDACAGeQEA4wEAIYABQADmAQAhgQFAAOYBACGOAQEA4wEAIZYBAQDjAQAhlwEBAOMBACECAAAAAwAgEwAARQAgAgAAAAMAIBMAAEUAIAMAAAAFACAaAAA-ACAbAABDACABAAAABQAgAQAAAAMAIAMHAAC2AgAgIAAAuAIAICEAALcCACAJdgAAvQEAMHcAAEwAEHgAAL0BADB5AQCoAQAhgAFAAKsBACGBAUAAqwEAIY4BAQCoAQAhlgEBAKgBACGXAQEAqAEAIQMAAAADACABAABLADAfAABMACADAAAAAwAgAQAABAAwAgAABQAgAQAAAAkAIAEAAAAJACADAAAABwAgAQAACAAwAgAACQAgAwAAAAcAIAEAAAgAMAIAAAkAIAMAAAAHACABAAAIADACAAAJACALAwAAsgIAIAQAALMCACAGAAC1AgAgCgAAtAIAIHkBAAAAAYABQAAAAAGBAUAAAAABjgEBAAAAAZYBAQAAAAGXAQEAAAABmAEBAAAAAQETAABUACAHeQEAAAABgAFAAAAAAYEBQAAAAAGOAQEAAAABlgEBAAAAAZcBAQAAAAGYAQEAAAABARMAAFYAMAETAABWADALAwAAmQIAIAQAAJoCACAGAACcAgAgCgAAmwIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhmAEBAOMBACECAAAACQAgEwAAWQAgB3kBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhmAEBAOMBACECAAAABwAgEwAAWwAgAgAAAAcAIBMAAFsAIAMAAAAJACAaAABUACAbAABZACABAAAACQAgAQAAAAcAIAMHAACWAgAgIAAAmAIAICEAAJcCACAKdgAAvAEAMHcAAGIAEHgAALwBADB5AQCoAQAhgAFAAKsBACGBAUAAqwEAIY4BAQCoAQAhlgEBAKgBACGXAQEAqAEAIZgBAQCoAQAhAwAAAAcAIAEAAGEAMB8AAGIAIAMAAAAHACABAAAIADACAAAJACABAAAADQAgAQAAAA0AIAMAAAALACABAAAMADACAAANACADAAAACwAgAQAADAAwAgAADQAgAwAAAAsAIAEAAAwAMAIAAA0AIAoFAACUAgAgBgAAlQIAIHkBAAAAAXsBAAAAAX0CAAAAAYABQAAAAAGBAUAAAAABkwEBAAAAAZQBEAAAAAGVARAAAAABARMAAGoAIAh5AQAAAAF7AQAAAAF9AgAAAAGAAUAAAAABgQFAAAAAAZMBAQAAAAGUARAAAAABlQEQAAAAAQETAABsADABEwAAbAAwCgUAAIkCACAGAACKAgAgeQEA4wEAIXsBAOMBACF9AgDkAQAhgAFAAOYBACGBAUAA5gEAIZMBAQDjAQAhlAEQAPIBACGVARAA8gEAIQIAAAANACATAABvACAIeQEA4wEAIXsBAOMBACF9AgDkAQAhgAFAAOYBACGBAUAA5gEAIZMBAQDjAQAhlAEQAPIBACGVARAA8gEAIQIAAAALACATAABxACACAAAACwAgEwAAcQAgAwAAAA0AIBoAAGoAIBsAAG8AIAEAAAANACABAAAACwAgBQcAAIQCACAgAACHAgAgIQAAhgIAIFIAAIUCACBTAACIAgAgC3YAALsBADB3AAB4ABB4AAC7AQAweQEAqAEAIXsBAKgBACF9AgCpAQAhgAFAAKsBACGBAUAAqwEAIZMBAQCoAQAhlAEQALUBACGVARAAtQEAIQMAAAALACABAAB3ADAfAAB4ACADAAAACwAgAQAADAAwAgAADQAgAQAAAB0AIAEAAAAdACADAAAAGwAgAQAAHAAwAgAAHQAgAwAAABsAIAEAABwAMAIAAB0AIAMAAAAbACABAAAcADACAAAdACALAwAAggIAIAYAAIMCACB5AQAAAAF_EAAAAAGAAUAAAAABgQFAAAAAAY0BAgAAAAGOAQEAAAABkAEAAACQAQKRARAAAAABkgEQAAAAAQETAACAAQAgCXkBAAAAAX8QAAAAAYABQAAAAAGBAUAAAAABjQECAAAAAY4BAQAAAAGQAQAAAJABApEBEAAAAAGSARAAAAABARMAAIIBADABEwAAggEAMAsDAAD0AQAgBgAA9QEAIHkBAOMBACF_EADyAQAhgAFAAOYBACGBAUAA5gEAIY0BAgDkAQAhjgEBAOMBACGQAQAA8wGQASKRARAA8gEAIZIBEADyAQAhAgAAAB0AIBMAAIUBACAJeQEA4wEAIX8QAPIBACGAAUAA5gEAIYEBQADmAQAhjQECAOQBACGOAQEA4wEAIZABAADzAZABIpEBEADyAQAhkgEQAPIBACECAAAAGwAgEwAAhwEAIAIAAAAbACATAACHAQAgAwAAAB0AIBoAAIABACAbAACFAQAgAQAAAB0AIAEAAAAbACAFBwAA7QEAICAAAPABACAhAADvAQAgUgAA7gEAIFMAAPEBACAMdgAAtAEAMHcAAI4BABB4AAC0AQAweQEAqAEAIX8QALUBACGAAUAAqwEAIYEBQACrAQAhjQECAKkBACGOAQEAqAEAIZABAAC2AZABIpEBEAC1AQAhkgEQALUBACEDAAAAGwAgAQAAjQEAMB8AAI4BACADAAAAGwAgAQAAHAAwAgAAHQAgAQAAABEAIAEAAAARACADAAAADwAgAQAAEAAwAgAAEQAgAwAAAA8AIAEAABAAMAIAABEAIAMAAAAPACABAAAQADACAAARACAMBQAA6wEAIAgAAOoBACAJAADsAQAgeQEAAAABegEAAAABewEAAAABfAEAAAABfQIAAAABfggAAAABfwgAAAABgAFAAAAAAYEBQAAAAAEBEwAAlgEAIAl5AQAAAAF6AQAAAAF7AQAAAAF8AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQETAACYAQAwARMAAJgBADAMBQAA6AEAIAgAAOcBACAJAADpAQAgeQEA4wEAIXoBAOMBACF7AQDjAQAhfAEA4wEAIX0CAOQBACF-CADlAQAhfwgA5QEAIYABQADmAQAhgQFAAOYBACECAAAAEQAgEwAAmwEAIAl5AQDjAQAhegEA4wEAIXsBAOMBACF8AQDjAQAhfQIA5AEAIX4IAOUBACF_CADlAQAhgAFAAOYBACGBAUAA5gEAIQIAAAAPACATAACdAQAgAgAAAA8AIBMAAJ0BACADAAAAEQAgGgAAlgEAIBsAAJsBACABAAAAEQAgAQAAAA8AIAUHAADeAQAgIAAA4QEAICEAAOABACBSAADfAQAgUwAA4gEAIAx2AACnAQAwdwAApAEAEHgAAKcBADB5AQCoAQAhegEAqAEAIXsBAKgBACF8AQCoAQAhfQIAqQEAIX4IAKoBACF_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-gEAMKoBAAD6AQAwqwEAAPoBADCsAQAA-gEAMK0BAAD8AQAwrgEAAP0BADAKBQAA6wEAIAkAAOwBACB5AQAAAAF7AQAAAAF8AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQIAAAARACAaAACBAgAgAwAAABEAIBoAAIECACAbAACAAgAgARMAAJsDADAPBQAA0gEAIAgAANEBACAJAADTAQAgdgAAzwEAMHcAAA8AEHgAAM8BADB5AQAAAAF6AQDDAQAhewEAwwEAIXwBAMMBACF9AgDOAQAhfggA0AEAIX8IANABACGAAUAAxQEAIYEBQADFAQAhAgAAABEAIBMAAIACACACAAAA_gEAIBMAAP8BACAMdgAA_QEAMHcAAP4BABB4AAD9AQAweQEAwwEAIXoBAMMBACF7AQDDAQAhfAEAwwEAIX0CAM4BACF-CADQAQAhfwgA0AEAIYABQADFAQAhgQFAAMUBACEMdgAA_QEAMHcAAP4BABB4AAD9AQAweQEAwwEAIXoBAMMBACF7AQDDAQAhfAEAwwEAIX0CAM4BACF-CADQAQAhfwgA0AEAIYABQADFAQAhgQFAAMUBACEIeQEA4wEAIXsBAOMBACF8AQDjAQAhfQIA5AEAIX4IAOUBACF_CADlAQAhgAFAAOYBACGBAUAA5gEAIQoFAADoAQAgCQAA6QEAIHkBAOMBACF7AQDjAQAhfAEA4wEAIX0CAOQBACF-CADlAQAhfwgA5QEAIYABQADmAQAhgQFAAOYBACEKBQAA6wEAIAkAAOwBACB5AQAAAAF7AQAAAAF8AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQMaAACZAwAgpgEAAJoDACCsAQAAAQAgBBoAAPYBADCmAQAA9wEAMKgBAAD5AQAgrAEAAPoBADAAAAAAAAUaAACTAwAgGwAAlwMAIKYBAACUAwAgpwEAAJYDACCsAQAACQAgCxoAAIsCADAbAACPAgAwpgEAAIwCADCnAQAAjQIAMKgBAACOAgAgqQEAAPoBADCqAQAA-gEAMKsBAAD6AQAwrAEAAPoBADCtAQAAkAIAMK4BAAD9AQAwCgUAAOsBACAIAADqAQAgeQEAAAABegEAAAABewEAAAABfQIAAAABfggAAAABfwgAAAABgAFAAAAAAYEBQAAAAAECAAAAEQAgGgAAkwIAIAMAAAARACAaAACTAgAgGwAAkgIAIAETAACVAwAwAgAAABEAIBMAAJICACACAAAA_gEAIBMAAJECACAIeQEA4wEAIXoBAOMBACF7AQDjAQAhfQIA5AEAIX4IAOUBACF_CADlAQAhgAFAAOYBACGBAUAA5gEAIQoFAADoAQAgCAAA5wEAIHkBAOMBACF6AQDjAQAhewEA4wEAIX0CAOQBACF-CADlAQAhfwgA5QEAIYABQADmAQAhgQFAAOYBACEKBQAA6wEAIAgAAOoBACB5AQAAAAF6AQAAAAF7AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQMaAACTAwAgpgEAAJQDACCsAQAACQAgBBoAAIsCADCmAQAAjAIAMKgBAACOAgAgrAEAAPoBADAAAAAFGgAAiQMAIBsAAJEDACCmAQAAigMAIKcBAACQAwAgrAEAAAEAIAUaAACHAwAgGwAAjgMAIKYBAACIAwAgpwEAAI0DACCsAQAABQAgCxoAAKYCADAbAACrAgAwpgEAAKcCADCnAQAAqAIAMKgBAACpAgAgqQEAAKoCADCqAQAAqgIAMKsBAACqAgAwrAEAAKoCADCtAQAArAIAMK4BAACtAgAwCxoAAJ0CADAbAAChAgAwpgEAAJ4CADCnAQAAnwIAMKgBAACgAgAgqQEAAPoBADCqAQAA-gEAMKsBAAD6AQAwrAEAAPoBADCtAQAAogIAMK4BAAD9AQAwCggAAOoBACAJAADsAQAgeQEAAAABegEAAAABfAEAAAABfQIAAAABfggAAAABfwgAAAABgAFAAAAAAYEBQAAAAAECAAAAEQAgGgAApQIAIAMAAAARACAaAAClAgAgGwAApAIAIAETAACMAwAwAgAAABEAIBMAAKQCACACAAAA_gEAIBMAAKMCACAIeQEA4wEAIXoBAOMBACF8AQDjAQAhfQIA5AEAIX4IAOUBACF_CADlAQAhgAFAAOYBACGBAUAA5gEAIQoIAADnAQAgCQAA6QEAIHkBAOMBACF6AQDjAQAhfAEA4wEAIX0CAOQBACF-CADlAQAhfwgA5QEAIYABQADmAQAhgQFAAOYBACEKCAAA6gEAIAkAAOwBACB5AQAAAAF6AQAAAAF8AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQgGAACVAgAgeQEAAAABfQIAAAABgAFAAAAAAYEBQAAAAAGTAQEAAAABlAEQAAAAAZUBEAAAAAECAAAADQAgGgAAsQIAIAMAAAANACAaAACxAgAgGwAAsAIAIAETAACLAwAwDgUAANIBACAGAADNAQAgdgAA1QEAMHcAAAsAEHgAANUBADB5AQAAAAF7AQDDAQAhfQIAzgEAIYABQADFAQAhgQFAAMUBACGTAQEAwwEAIZQBEADKAQAhlQEQAMoBACGhAQAA1AEAIAIAAAANACATAACwAgAgAgAAAK4CACATAACvAgAgC3YAAK0CADB3AACuAgAQeAAArQIAMHkBAMMBACF7AQDDAQAhfQIAzgEAIYABQADFAQAhgQFAAMUBACGTAQEAwwEAIZQBEADKAQAhlQEQAMoBACELdgAArQIAMHcAAK4CABB4AACtAgAweQEAwwEAIXsBAMMBACF9AgDOAQAhgAFAAMUBACGBAUAAxQEAIZMBAQDDAQAhlAEQAMoBACGVARAAygEAIQd5AQDjAQAhfQIA5AEAIYABQADmAQAhgQFAAOYBACGTAQEA4wEAIZQBEADyAQAhlQEQAPIBACEIBgAAigIAIHkBAOMBACF9AgDkAQAhgAFAAOYBACGBAUAA5gEAIZMBAQDjAQAhlAEQAPIBACGVARAA8gEAIQgGAACVAgAgeQEAAAABfQIAAAABgAFAAAAAAYEBQAAAAAGTAQEAAAABlAEQAAAAAZUBEAAAAAEDGgAAiQMAIKYBAACKAwAgrAEAAAEAIAMaAACHAwAgpgEAAIgDACCsAQAABQAgBBoAAKYCADCmAQAApwIAMKgBAACpAgAgrAEAAKoCADAEGgAAnQIAMKYBAACeAgAwqAEAAKACACCsAQAA-gEAMAAAAAUaAACBAwAgGwAAhQMAIKYBAACCAwAgpwEAAIQDACCsAQAAAQAgCxoAALsCADAbAADAAgAwpgEAALwCADCnAQAAvQIAMKgBAAC-AgAgqQEAAL8CADCqAQAAvwIAMKsBAAC_AgAwrAEAAL8CADCtAQAAwQIAMK4BAADCAgAwCQMAALICACAGAAC1AgAgCgAAtAIAIHkBAAAAAYABQAAAAAGBAUAAAAABjgEBAAAAAZYBAQAAAAGXAQEAAAABAgAAAAkAIBoAAMYCACADAAAACQAgGgAAxgIAIBsAAMUCACABEwAAgwMAMBADAADMAQAgBAAA2QEAIAYAAM0BACAKAADaAQAgdgAA2AEAMHcAAAcAEHgAANgBADB5AQAAAAGAAUAAxQEAIYEBQADFAQAhjgEBAMMBACGWAQEAwwEAIZcBAQDDAQAhmAEBAMMBACGiAQAA1gEAIKMBAADXAQAgAgAAAAkAIBMAAMUCACACAAAAwwIAIBMAAMQCACAKdgAAwgIAMHcAAMMCABB4AADCAgAweQEAwwEAIYABQADFAQAhgQFAAMUBACGOAQEAwwEAIZYBAQDDAQAhlwEBAMMBACGYAQEAwwEAIQp2AADCAgAwdwAAwwIAEHgAAMICADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIZgBAQDDAQAhBnkBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhCQMAAJkCACAGAACcAgAgCgAAmwIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhCQMAALICACAGAAC1AgAgCgAAtAIAIHkBAAAAAYABQAAAAAGBAUAAAAABjgEBAAAAAZYBAQAAAAGXAQEAAAABAxoAAIEDACCmAQAAggMAIKwBAAABACAEGgAAuwIAMKYBAAC8AgAwqAEAAL4CACCsAQAAvwIAMAAAAAGpAQAAAJ0BAgsaAADlAgAwGwAA6gIAMKYBAADmAgAwpwEAAOcCADCoAQAA6AIAIKkBAADpAgAwqgEAAOkCADCrAQAA6QIAMKwBAADpAgAwrQEAAOsCADCuAQAA7AIAMAsaAADcAgAwGwAA4AIAMKYBAADdAgAwpwEAAN4CADCoAQAA3wIAIKkBAAC_AgAwqgEAAL8CADCrAQAAvwIAMKwBAAC_AgAwrQEAAOECADCuAQAAwgIAMAsaAADQAgAwGwAA1QIAMKYBAADRAgAwpwEAANICADCoAQAA0wIAIKkBAADUAgAwqgEAANQCADCrAQAA1AIAMKwBAADUAgAwrQEAANYCADCuAQAA1wIAMAkGAACDAgAgeQEAAAABfxAAAAABgAFAAAAAAYEBQAAAAAGNAQIAAAABkAEAAACQAQKRARAAAAABkgEQAAAAAQIAAAAdACAaAADbAgAgAwAAAB0AIBoAANsCACAbAADaAgAgARMAAIADADAOAwAAzAEAIAYAAM0BACB2AADJAQAwdwAAGwAQeAAAyQEAMHkBAAAAAX8QAMoBACGAAUAAxQEAIYEBQADFAQAhjQECAAAAAY4BAQDDAQAhkAEAAMsBkAEikQEQAMoBACGSARAAygEAIQIAAAAdACATAADaAgAgAgAAANgCACATAADZAgAgDHYAANcCADB3AADYAgAQeAAA1wIAMHkBAMMBACF_EADKAQAhgAFAAMUBACGBAUAAxQEAIY0BAgDOAQAhjgEBAMMBACGQAQAAywGQASKRARAAygEAIZIBEADKAQAhDHYAANcCADB3AADYAgAQeAAA1wIAMHkBAMMBACF_EADKAQAhgAFAAMUBACGBAUAAxQEAIY0BAgDOAQAhjgEBAMMBACGQAQAAywGQASKRARAAygEAIZIBEADKAQAhCHkBAOMBACF_EADyAQAhgAFAAOYBACGBAUAA5gEAIY0BAgDkAQAhkAEAAPMBkAEikQEQAPIBACGSARAA8gEAIQkGAAD1AQAgeQEA4wEAIX8QAPIBACGAAUAA5gEAIYEBQADmAQAhjQECAOQBACGQAQAA8wGQASKRARAA8gEAIZIBEADyAQAhCQYAAIMCACB5AQAAAAF_EAAAAAGAAUAAAAABgQFAAAAAAY0BAgAAAAGQAQAAAJABApEBEAAAAAGSARAAAAABCQQAALMCACAGAAC1AgAgCgAAtAIAIHkBAAAAAYABQAAAAAGBAUAAAAABlgEBAAAAAZcBAQAAAAGYAQEAAAABAgAAAAkAIBoAAOQCACADAAAACQAgGgAA5AIAIBsAAOMCACABEwAA_wIAMAIAAAAJACATAADjAgAgAgAAAMMCACATAADiAgAgBnkBAOMBACGAAUAA5gEAIYEBQADmAQAhlgEBAOMBACGXAQEA4wEAIZgBAQDjAQAhCQQAAJoCACAGAACcAgAgCgAAmwIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhlgEBAOMBACGXAQEA4wEAIZgBAQDjAQAhCQQAALMCACAGAAC1AgAgCgAAtAIAIHkBAAAAAYABQAAAAAGBAUAAAAABlgEBAAAAAZcBAQAAAAGYAQEAAAABBgsAAMgCACB5AQAAAAGAAUAAAAABgQFAAAAAAZYBAQAAAAGXAQEAAAABAgAAAAUAIBoAAPACACADAAAABQAgGgAA8AIAIBsAAO8CACABEwAA_gIAMA0DAADMAQAgCwAAxwEAIHYAAN0BADB3AAADABB4AADdAQAweQEAAAABgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIaIBAADbAQAgowEAANwBACACAAAABQAgEwAA7wIAIAIAAADtAgAgEwAA7gIAIAl2AADsAgAwdwAA7QIAEHgAAOwCADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIQl2AADsAgAwdwAA7QIAEHgAAOwCADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIQV5AQDjAQAhgAFAAOYBACGBAUAA5gEAIZYBAQDjAQAhlwEBAOMBACEGCwAAugIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhlgEBAOMBACGXAQEA4wEAIQYLAADIAgAgeQEAAAABgAFAAAAAAYEBQAAAAAGWAQEAAAABlwEBAAAAAQQaAADlAgAwpgEAAOYCADCoAQAA6AIAIKwBAADpAgAwBBoAANwCADCmAQAA3QIAMKgBAADfAgAgrAEAAL8CADAEGgAA0AIAMKYBAADRAgAwqAEAANMCACCsAQAA1AIAMAAAAAMLAAD1AgAgDAAA9AIAIA0AAPYCACAAAgMAAPcCACAGAAD4AgAgBAMAAPcCACAEAAD8AgAgBgAA-AIAIAoAAP0CACACBQAA-gIAIAYAAPgCACACAwAA9wIAIAsAAPUCACAABXkBAAAAAYABQAAAAAGBAUAAAAABlgEBAAAAAZcBAQAAAAEGeQEAAAABgAFAAAAAAYEBQAAAAAGWAQEAAAABlwEBAAAAAZgBAQAAAAEIeQEAAAABfxAAAAABgAFAAAAAAYEBQAAAAAGNAQIAAAABkAEAAACQAQKRARAAAAABkgEQAAAAAQkLAADyAgAgDQAA8wIAIHkBAAAAAYABQAAAAAGBAUAAAAABmQEBAAAAAZoBAQAAAAGbAQEAAAABnQEAAACdAQICAAAAAQAgGgAAgQMAIAZ5AQAAAAGAAUAAAAABgQFAAAAAAY4BAQAAAAGWAQEAAAABlwEBAAAAAQMAAAAjACAaAACBAwAgGwAAhgMAIAsAAAAjACALAADOAgAgDQAAzwIAIBMAAIYDACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIZkBAQDjAQAhmgEBAOMBACGbAQEA4wEAIZ0BAADMAp0BIgkLAADOAgAgDQAAzwIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhmQEBAOMBACGaAQEA4wEAIZsBAQDjAQAhnQEAAMwCnQEiBwMAAMcCACB5AQAAAAGAAUAAAAABgQFAAAAAAY4BAQAAAAGWAQEAAAABlwEBAAAAAQIAAAAFACAaAACHAwAgCQwAAPECACANAADzAgAgeQEAAAABgAFAAAAAAYEBQAAAAAGZAQEAAAABmgEBAAAAAZsBAQAAAAGdAQAAAJ0BAgIAAAABACAaAACJAwAgB3kBAAAAAX0CAAAAAYABQAAAAAGBAUAAAAABkwEBAAAAAZQBEAAAAAGVARAAAAABCHkBAAAAAXoBAAAAAXwBAAAAAX0CAAAAAX4IAAAAAX8IAAAAAYABQAAAAAGBAUAAAAABAwAAAAMAIBoAAIcDACAbAACPAwAgCQAAAAMAIAMAALkCACATAACPAwAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGOAQEA4wEAIZYBAQDjAQAhlwEBAOMBACEHAwAAuQIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhAwAAACMAIBoAAIkDACAbAACSAwAgCwAAACMAIAwAAM0CACANAADPAgAgEwAAkgMAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhmQEBAOMBACGaAQEA4wEAIZsBAQDjAQAhnQEAAMwCnQEiCQwAAM0CACANAADPAgAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGZAQEA4wEAIZoBAQDjAQAhmwEBAOMBACGdAQAAzAKdASIKAwAAsgIAIAQAALMCACAGAAC1AgAgeQEAAAABgAFAAAAAAYEBQAAAAAGOAQEAAAABlgEBAAAAAZcBAQAAAAGYAQEAAAABAgAAAAkAIBoAAJMDACAIeQEAAAABegEAAAABewEAAAABfQIAAAABfggAAAABfwgAAAABgAFAAAAAAYEBQAAAAAEDAAAABwAgGgAAkwMAIBsAAJgDACAMAAAABwAgAwAAmQIAIAQAAJoCACAGAACcAgAgEwAAmAMAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhmAEBAOMBACEKAwAAmQIAIAQAAJoCACAGAACcAgAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGOAQEA4wEAIZYBAQDjAQAhlwEBAOMBACGYAQEA4wEAIQkLAADyAgAgDAAA8QIAIHkBAAAAAYABQAAAAAGBAUAAAAABmQEBAAAAAZoBAQAAAAGbAQEAAAABnQEAAACdAQICAAAAAQAgGgAAmQMAIAh5AQAAAAF7AQAAAAF8AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQMAAAAjACAaAACZAwAgGwAAngMAIAsAAAAjACALAADOAgAgDAAAzQIAIBMAAJ4DACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIZkBAQDjAQAhmgEBAOMBACGbAQEA4wEAIZ0BAADMAp0BIgkLAADOAgAgDAAAzQIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhmQEBAOMBACGaAQEA4wEAIZsBAQDjAQAhnQEAAMwCnQEiCQUAAJQCACB5AQAAAAF7AQAAAAF9AgAAAAGAAUAAAAABgQFAAAAAAZMBAQAAAAGUARAAAAABlQEQAAAAAQIAAAANACAaAACfAwAgCgMAALICACAEAACzAgAgCgAAtAIAIHkBAAAAAYABQAAAAAGBAUAAAAABjgEBAAAAAZYBAQAAAAGXAQEAAAABmAEBAAAAAQIAAAAJACAaAAChAwAgCgMAAIICACB5AQAAAAF_EAAAAAGAAUAAAAABgQFAAAAAAY0BAgAAAAGOAQEAAAABkAEAAACQAQKRARAAAAABkgEQAAAAAQIAAAAdACAaAACjAwAgAwAAAAsAIBoAAJ8DACAbAACnAwAgCwAAAAsAIAUAAIkCACATAACnAwAgeQEA4wEAIXsBAOMBACF9AgDkAQAhgAFAAOYBACGBAUAA5gEAIZMBAQDjAQAhlAEQAPIBACGVARAA8gEAIQkFAACJAgAgeQEA4wEAIXsBAOMBACF9AgDkAQAhgAFAAOYBACGBAUAA5gEAIZMBAQDjAQAhlAEQAPIBACGVARAA8gEAIQMAAAAHACAaAAChAwAgGwAAqgMAIAwAAAAHACADAACZAgAgBAAAmgIAIAoAAJsCACATAACqAwAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGOAQEA4wEAIZYBAQDjAQAhlwEBAOMBACGYAQEA4wEAIQoDAACZAgAgBAAAmgIAIAoAAJsCACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIY4BAQDjAQAhlgEBAOMBACGXAQEA4wEAIZgBAQDjAQAhAwAAABsAIBoAAKMDACAbAACtAwAgDAAAABsAIAMAAPQBACATAACtAwAgeQEA4wEAIX8QAPIBACGAAUAA5gEAIYEBQADmAQAhjQECAOQBACGOAQEA4wEAIZABAADzAZABIpEBEADyAQAhkgEQAPIBACEKAwAA9AEAIHkBAOMBACF_EADyAQAhgAFAAOYBACGBAUAA5gEAIY0BAgDkAQAhjgEBAOMBACGQAQAA8wGQASKRARAA8gEAIZIBEADyAQAhBAcACwsaAwwGAg0eBgMDAAEHAAoLCgMFAwABBAACBhYFBwAJCg4EAwUAAwYSBQcACAMFAAMIAAYJAAQDAwABBhMFBwAHAQYUAAEGFQACBhgAChcAAQsZAAMLIAAMHwANIQAAAAADBwAQIAARIQASAAAAAwcAECAAESEAEgEDAAEBAwABAwcAFyAAGCEAGQAAAAMHABcgABghABkCAwABBAACAgMAAQQAAgMHAB4gAB8hACAAAAADBwAeIAAfIQAgAQUAAwEFAAMFBwAlIAAoIQApUgAmUwAnAAAAAAAFBwAlIAAoIQApUgAmUwAnAQMAAQEDAAEFBwAuIAAxIQAyUgAvUwAwAAAAAAAFBwAuIAAxIQAyUgAvUwAwAwUAAwgABgkABAMFAAMIAAYJAAQFBwA3IAA6IQA7UgA4UwA5AAAAAAAFBwA3IAA6IQA7UgA4UwA5DgIBDyIBECUBESYBEicBFCkBFSsMFiwNFy4BGDAMGTEOHDIBHTMBHjQMIjcPIzgTJDkCJToCJjsCJzwCKD0CKT8CKkEMK0IULEQCLUYMLkcVL0gCMEkCMUoMMk0WM04aNE8DNVADNlEDN1IDOFMDOVUDOlcMO1gbPFoDPVwMPl0cP14DQF8DQWAMQmMdQ2QhRGUERWYERmcER2gESGkESWsESm0MS24iTHAETXIMTnMjT3QEUHUEUXYMVHkkVXoqVnsGV3wGWH0GWX4GWn8GW4EBBlyDAQxdhAErXoYBBl-IAQxgiQEsYYoBBmKLAQZjjAEMZI8BLWWQATNmkQEFZ5IBBWiTAQVplAEFapUBBWuXAQVsmQEMbZoBNG6cAQVvngEMcJ8BNXGgAQVyoQEFc6IBDHSlATZ1pgE8"
+  graph: "rQM8YA0LAADHAQAgDAAAxgEAIA0AAMgBACB2AADCAQAwdwAAIwAQeAAAwgEAMHkBAAAAAYABQADFAQAhgQFAAMUBACGZAQEAwwEAIZoBAQDDAQAhmwEBAMMBACGdAQAAxAGdASIBAAAAAQAgCwMAAMwBACALAADHAQAgdgAA3QEAMHcAAAMAEHgAAN0BADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIQIDAAD3AgAgCwAA9QIAIA0DAADMAQAgCwAAxwEAIHYAAN0BADB3AAADABB4AADdAQAweQEAAAABgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIaIBAADbAQAgowEAANwBACADAAAAAwAgAQAABAAwAgAABQAgDgMAAMwBACAEAADZAQAgBgAAzQEAIAoAANoBACB2AADYAQAwdwAABwAQeAAA2AEAMHkBAMMBACGAAUAAxQEAIYEBQADFAQAhjgEBAMMBACGWAQEAwwEAIZcBAQDDAQAhmAEBAMMBACEEAwAA9wIAIAQAAPwCACAGAAD4AgAgCgAA_QIAIBADAADMAQAgBAAA2QEAIAYAAM0BACAKAADaAQAgdgAA2AEAMHcAAAcAEHgAANgBADB5AQAAAAGAAUAAxQEAIYEBQADFAQAhjgEBAMMBACGWAQEAwwEAIZcBAQDDAQAhmAEBAMMBACGiAQAA1gEAIKMBAADXAQAgAwAAAAcAIAEAAAgAMAIAAAkAIA0FAADSAQAgBgAAzQEAIHYAANUBADB3AAALABB4AADVAQAweQEAwwEAIXsBAMMBACF9AgDOAQAhgAFAAMUBACGBAUAAxQEAIZMBAQDDAQAhlAEQAMoBACGVARAAygEAIQIFAAD6AgAgBgAA-AIAIA4FAADSAQAgBgAAzQEAIHYAANUBADB3AAALABB4AADVAQAweQEAAAABewEAwwEAIX0CAM4BACGAAUAAxQEAIYEBQADFAQAhkwEBAMMBACGUARAAygEAIZUBEADKAQAhoQEAANQBACADAAAACwAgAQAADAAwAgAADQAgDwUAANIBACAIAADRAQAgCQAA0wEAIHYAAM8BADB3AAAPABB4AADPAQAweQEAwwEAIXoBAMMBACF7AQDDAQAhfAEAwwEAIX0CAM4BACF-CADQAQAhfwgA0AEAIYABQADFAQAhgQFAAMUBACEDBQAA-gIAIAgAAPkCACAJAAD7AgAgDwUAANIBACAIAADRAQAgCQAA0wEAIHYAAM8BADB3AAAPABB4AADPAQAweQEAAAABegEAwwEAIXsBAMMBACF8AQDDAQAhfQIAzgEAIX4IANABACF_CADQAQAhgAFAAMUBACGBAUAAxQEAIQMAAAAPACABAAAQADACAAARACADAAAADwAgAQAAEAAwAgAAEQAgAQAAAA8AIAEAAAAPACADAAAADwAgAQAAEAAwAgAAEQAgAQAAAAsAIAEAAAAPACABAAAABwAgAwAAAAcAIAEAAAgAMAIAAAkAIA4DAADMAQAgBgAAzQEAIHYAAMkBADB3AAAbABB4AADJAQAweQEAwwEAIX8QAMoBACGAAUAAxQEAIYEBQADFAQAhjQECAM4BACGOAQEAwwEAIZABAADLAZABIpEBEADKAQAhkgEQAMoBACECAwAA9wIAIAYAAPgCACAOAwAAzAEAIAYAAM0BACB2AADJAQAwdwAAGwAQeAAAyQEAMHkBAAAAAX8QAMoBACGAAUAAxQEAIYEBQADFAQAhjQECAAAAAY4BAQDDAQAhkAEAAMsBkAEikQEQAMoBACGSARAAygEAIQMAAAAbACABAAAcADACAAAdACABAAAAAwAgAQAAAAcAIAEAAAAbACABAAAAAQAgDQsAAMcBACAMAADGAQAgDQAAyAEAIHYAAMIBADB3AAAjABB4AADCAQAweQEAwwEAIYABQADFAQAhgQFAAMUBACGZAQEAwwEAIZoBAQDDAQAhmwEBAMMBACGdAQAAxAGdASIDCwAA9QIAIAwAAPQCACANAAD2AgAgAwAAACMAIAEAACQAMAIAAAEAIAMAAAAjACABAAAkADACAAABACADAAAAIwAgAQAAJAAwAgAAAQAgCgsAAPICACAMAADxAgAgDQAA8wIAIHkBAAAAAYABQAAAAAGBAUAAAAABmQEBAAAAAZoBAQAAAAGbAQEAAAABnQEAAACdAQIBEwAAKAAgB3kBAAAAAYABQAAAAAGBAUAAAAABmQEBAAAAAZoBAQAAAAGbAQEAAAABnQEAAACdAQIBEwAAKgAwARMAACoAMAoLAADOAgAgDAAAzQIAIA0AAM8CACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIZkBAQDjAQAhmgEBAOMBACGbAQEA4wEAIZ0BAADMAp0BIgIAAAABACATAAAtACAHeQEA4wEAIYABQADmAQAhgQFAAOYBACGZAQEA4wEAIZoBAQDjAQAhmwEBAOMBACGdAQAAzAKdASICAAAAIwAgEwAALwAgAgAAACMAIBMAAC8AIAMAAAABACAaAAAoACAbAAAtACABAAAAAQAgAQAAACMAIAMHAADJAgAgIAAAywIAICEAAMoCACAKdgAAvgEAMHcAADYAEHgAAL4BADB5AQCoAQAhgAFAAKsBACGBAUAAqwEAIZkBAQCoAQAhmgEBAKgBACGbAQEAqAEAIZ0BAAC_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-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQETAACWAQAgCXkBAAAAAXoBAAAAAXsBAAAAAXwBAAAAAX0CAAAAAX4IAAAAAX8IAAAAAYABQAAAAAGBAUAAAAABARMAAJgBADABEwAAmAEAMAwFAADoAQAgCAAA5wEAIAkAAOkBACB5AQDjAQAhegEA4wEAIXsBAOMBACF8AQDjAQAhfQIA5AEAIX4IAOUBACF_CADlAQAhgAFAAOYBACGBAUAA5gEAIQIAAAARACATAACbAQAgCXkBAOMBACF6AQDjAQAhewEA4wEAIXwBAOMBACF9AgDkAQAhfggA5QEAIX8IAOUBACGAAUAA5gEAIYEBQADmAQAhAgAAAA8AIBMAAJ0BACACAAAADwAgEwAAnQEAIAMAAAARACAaAACWAQAgGwAAmwEAIAEAAAARACABAAAADwAgBQcAAN4BACAgAADhAQAgIQAA4AEAIFIAAN8BACBTAADiAQAgDHYAAKcBADB3AACkAQAQeAAApwEAMHkBAKgBACF6AQCoAQAhewEAqAEAIXwBAKgBACF9AgCpAQAhfggAqgEAIX8IAKoBACGAAUAAqwEAIYEBQACrAQAhAwAAAA8AIAEAAKMBADAfAACkAQAgAwAAAA8AIAEAABAAMAIAABEAIAx2AACnAQAwdwAApAEAEHgAAKcBADB5AQCoAQAhegEAqAEAIXsBAKgBACF8AQCoAQAhfQIAqQEAIX4IAKoBACF_CACqAQAhgAFAAKsBACGBAUAAqwEAIQ4HAACtAQAgIAAAswEAICEAALMBACCCAQEAAAABgwEBAAAABIQBAQAAAASFAQEAAAABhgEBAAAAAYcBAQAAAAGIAQEAAAABiQEBALIBACGKAQEAAAABiwEBAAAAAYwBAQAAAAENBwAArQEAICAAAK0BACAhAACtAQAgUgAAsAEAIFMAAK0BACCCAQIAAAABgwECAAAABIQBAgAAAASFAQIAAAABhgECAAAAAYcBAgAAAAGIAQIAAAABiQECALEBACENBwAArQEAICAAALABACAhAACwAQAgUgAAsAEAIFMAALABACCCAQgAAAABgwEIAAAABIQBCAAAAASFAQgAAAABhgEIAAAAAYcBCAAAAAGIAQgAAAABiQEIAK8BACELBwAArQEAICAAAK4BACAhAACuAQAgggFAAAAAAYMBQAAAAASEAUAAAAAEhQFAAAAAAYYBQAAAAAGHAUAAAAABiAFAAAAAAYkBQACsAQAhCwcAAK0BACAgAACuAQAgIQAArgEAIIIBQAAAAAGDAUAAAAAEhAFAAAAABIUBQAAAAAGGAUAAAAABhwFAAAAAAYgBQAAAAAGJAUAArAEAIQiCAQIAAAABgwECAAAABIQBAgAAAASFAQIAAAABhgECAAAAAYcBAgAAAAGIAQIAAAABiQECAK0BACEIggFAAAAAAYMBQAAAAASEAUAAAAAEhQFAAAAAAYYBQAAAAAGHAUAAAAABiAFAAAAAAYkBQACuAQAhDQcAAK0BACAgAACwAQAgIQAAsAEAIFIAALABACBTAACwAQAgggEIAAAAAYMBCAAAAASEAQgAAAAEhQEIAAAAAYYBCAAAAAGHAQgAAAABiAEIAAAAAYkBCACvAQAhCIIBCAAAAAGDAQgAAAAEhAEIAAAABIUBCAAAAAGGAQgAAAABhwEIAAAAAYgBCAAAAAGJAQgAsAEAIQ0HAACtAQAgIAAArQEAICEAAK0BACBSAACwAQAgUwAArQEAIIIBAgAAAAGDAQIAAAAEhAECAAAABIUBAgAAAAGGAQIAAAABhwECAAAAAYgBAgAAAAGJAQIAsQEAIQ4HAACtAQAgIAAAswEAICEAALMBACCCAQEAAAABgwEBAAAABIQBAQAAAASFAQEAAAABhgEBAAAAAYcBAQAAAAGIAQEAAAABiQEBALIBACGKAQEAAAABiwEBAAAAAYwBAQAAAAELggEBAAAAAYMBAQAAAASEAQEAAAAEhQEBAAAAAYYBAQAAAAGHAQEAAAABiAEBAAAAAYkBAQCzAQAhigEBAAAAAYsBAQAAAAGMAQEAAAABDHYAALQBADB3AACOAQAQeAAAtAEAMHkBAKgBACF_EAC1AQAhgAFAAKsBACGBAUAAqwEAIY0BAgCpAQAhjgEBAKgBACGQAQAAtgGQASKRARAAtQEAIZIBEAC1AQAhDQcAAK0BACAgAAC6AQAgIQAAugEAIFIAALoBACBTAAC6AQAgggEQAAAAAYMBEAAAAASEARAAAAAEhQEQAAAAAYYBEAAAAAGHARAAAAABiAEQAAAAAYkBEAC5AQAhBwcAAK0BACAgAAC4AQAgIQAAuAEAIIIBAAAAkAECgwEAAACQAQiEAQAAAJABCIkBAAC3AZABIgcHAACtAQAgIAAAuAEAICEAALgBACCCAQAAAJABAoMBAAAAkAEIhAEAAACQAQiJAQAAtwGQASIEggEAAACQAQKDAQAAAJABCIQBAAAAkAEIiQEAALgBkAEiDQcAAK0BACAgAAC6AQAgIQAAugEAIFIAALoBACBTAAC6AQAgggEQAAAAAYMBEAAAAASEARAAAAAEhQEQAAAAAYYBEAAAAAGHARAAAAABiAEQAAAAAYkBEAC5AQAhCIIBEAAAAAGDARAAAAAEhAEQAAAABIUBEAAAAAGGARAAAAABhwEQAAAAAYgBEAAAAAGJARAAugEAIQt2AAC7AQAwdwAAeAAQeAAAuwEAMHkBAKgBACF7AQCoAQAhfQIAqQEAIYABQACrAQAhgQFAAKsBACGTAQEAqAEAIZQBEAC1AQAhlQEQALUBACEKdgAAvAEAMHcAAGIAEHgAALwBADB5AQCoAQAhgAFAAKsBACGBAUAAqwEAIY4BAQCoAQAhlgEBAKgBACGXAQEAqAEAIZgBAQCoAQAhCXYAAL0BADB3AABMABB4AAC9AQAweQEAqAEAIYABQACrAQAhgQFAAKsBACGOAQEAqAEAIZYBAQCoAQAhlwEBAKgBACEKdgAAvgEAMHcAADYAEHgAAL4BADB5AQCoAQAhgAFAAKsBACGBAUAAqwEAIZkBAQCoAQAhmgEBAKgBACGbAQEAqAEAIZ0BAAC_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-wEAMKYBAAD3AQAwpwEAAPgBADCoAQAA-QEAIKkBAAD6AQAwqgEAAPoBADCrAQAA-gEAMKwBAAD6AQAwrQEAAPwBADCuAQAA_QEAMAoFAADrAQAgCQAA7AEAIHkBAAAAAXsBAAAAAXwBAAAAAX0CAAAAAX4IAAAAAX8IAAAAAYABQAAAAAGBAUAAAAABAgAAABEAIBoAAIECACADAAAAEQAgGgAAgQIAIBsAAIACACABEwAAmwMAMA8FAADSAQAgCAAA0QEAIAkAANMBACB2AADPAQAwdwAADwAQeAAAzwEAMHkBAAAAAXoBAMMBACF7AQDDAQAhfAEAwwEAIX0CAM4BACF-CADQAQAhfwgA0AEAIYABQADFAQAhgQFAAMUBACECAAAAEQAgEwAAgAIAIAIAAAD-AQAgEwAA_wEAIAx2AAD9AQAwdwAA_gEAEHgAAP0BADB5AQDDAQAhegEAwwEAIXsBAMMBACF8AQDDAQAhfQIAzgEAIX4IANABACF_CADQAQAhgAFAAMUBACGBAUAAxQEAIQx2AAD9AQAwdwAA_gEAEHgAAP0BADB5AQDDAQAhegEAwwEAIXsBAMMBACF8AQDDAQAhfQIAzgEAIX4IANABACF_CADQAQAhgAFAAMUBACGBAUAAxQEAIQh5AQDjAQAhewEA4wEAIXwBAOMBACF9AgDkAQAhfggA5QEAIX8IAOUBACGAAUAA5gEAIYEBQADmAQAhCgUAAOgBACAJAADpAQAgeQEA4wEAIXsBAOMBACF8AQDjAQAhfQIA5AEAIX4IAOUBACF_CADlAQAhgAFAAOYBACGBAUAA5gEAIQoFAADrAQAgCQAA7AEAIHkBAAAAAXsBAAAAAXwBAAAAAX0CAAAAAX4IAAAAAX8IAAAAAYABQAAAAAGBAUAAAAABAxoAAJkDACCmAQAAmgMAIKwBAAABACAEGgAA9gEAMKYBAAD3AQAwqAEAAPkBACCsAQAA-gEAMAAAAAAABRoAAJMDACAbAACXAwAgpgEAAJQDACCnAQAAlgMAIKwBAAAJACALGgAAiwIAMBsAAI8CADCmAQAAjAIAMKcBAACNAgAwqAEAAI4CACCpAQAA-gEAMKoBAAD6AQAwqwEAAPoBADCsAQAA-gEAMK0BAACQAgAwrgEAAP0BADAKBQAA6wEAIAgAAOoBACB5AQAAAAF6AQAAAAF7AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQIAAAARACAaAACTAgAgAwAAABEAIBoAAJMCACAbAACSAgAgARMAAJUDADACAAAAEQAgEwAAkgIAIAIAAAD-AQAgEwAAkQIAIAh5AQDjAQAhegEA4wEAIXsBAOMBACF9AgDkAQAhfggA5QEAIX8IAOUBACGAAUAA5gEAIYEBQADmAQAhCgUAAOgBACAIAADnAQAgeQEA4wEAIXoBAOMBACF7AQDjAQAhfQIA5AEAIX4IAOUBACF_CADlAQAhgAFAAOYBACGBAUAA5gEAIQoFAADrAQAgCAAA6gEAIHkBAAAAAXoBAAAAAXsBAAAAAX0CAAAAAX4IAAAAAX8IAAAAAYABQAAAAAGBAUAAAAABAxoAAJMDACCmAQAAlAMAIKwBAAAJACAEGgAAiwIAMKYBAACMAgAwqAEAAI4CACCsAQAA-gEAMAAAAAUaAACJAwAgGwAAkQMAIKYBAACKAwAgpwEAAJADACCsAQAAAQAgBRoAAIcDACAbAACOAwAgpgEAAIgDACCnAQAAjQMAIKwBAAAFACALGgAApgIAMBsAAKsCADCmAQAApwIAMKcBAACoAgAwqAEAAKkCACCpAQAAqgIAMKoBAACqAgAwqwEAAKoCADCsAQAAqgIAMK0BAACsAgAwrgEAAK0CADALGgAAnQIAMBsAAKECADCmAQAAngIAMKcBAACfAgAwqAEAAKACACCpAQAA-gEAMKoBAAD6AQAwqwEAAPoBADCsAQAA-gEAMK0BAACiAgAwrgEAAP0BADAKCAAA6gEAIAkAAOwBACB5AQAAAAF6AQAAAAF8AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQIAAAARACAaAAClAgAgAwAAABEAIBoAAKUCACAbAACkAgAgARMAAIwDADACAAAAEQAgEwAApAIAIAIAAAD-AQAgEwAAowIAIAh5AQDjAQAhegEA4wEAIXwBAOMBACF9AgDkAQAhfggA5QEAIX8IAOUBACGAAUAA5gEAIYEBQADmAQAhCggAAOcBACAJAADpAQAgeQEA4wEAIXoBAOMBACF8AQDjAQAhfQIA5AEAIX4IAOUBACF_CADlAQAhgAFAAOYBACGBAUAA5gEAIQoIAADqAQAgCQAA7AEAIHkBAAAAAXoBAAAAAXwBAAAAAX0CAAAAAX4IAAAAAX8IAAAAAYABQAAAAAGBAUAAAAABCAYAAJUCACB5AQAAAAF9AgAAAAGAAUAAAAABgQFAAAAAAZMBAQAAAAGUARAAAAABlQEQAAAAAQIAAAANACAaAACxAgAgAwAAAA0AIBoAALECACAbAACwAgAgARMAAIsDADAOBQAA0gEAIAYAAM0BACB2AADVAQAwdwAACwAQeAAA1QEAMHkBAAAAAXsBAMMBACF9AgDOAQAhgAFAAMUBACGBAUAAxQEAIZMBAQDDAQAhlAEQAMoBACGVARAAygEAIaEBAADUAQAgAgAAAA0AIBMAALACACACAAAArgIAIBMAAK8CACALdgAArQIAMHcAAK4CABB4AACtAgAweQEAwwEAIXsBAMMBACF9AgDOAQAhgAFAAMUBACGBAUAAxQEAIZMBAQDDAQAhlAEQAMoBACGVARAAygEAIQt2AACtAgAwdwAArgIAEHgAAK0CADB5AQDDAQAhewEAwwEAIX0CAM4BACGAAUAAxQEAIYEBQADFAQAhkwEBAMMBACGUARAAygEAIZUBEADKAQAhB3kBAOMBACF9AgDkAQAhgAFAAOYBACGBAUAA5gEAIZMBAQDjAQAhlAEQAPIBACGVARAA8gEAIQgGAACKAgAgeQEA4wEAIX0CAOQBACGAAUAA5gEAIYEBQADmAQAhkwEBAOMBACGUARAA8gEAIZUBEADyAQAhCAYAAJUCACB5AQAAAAF9AgAAAAGAAUAAAAABgQFAAAAAAZMBAQAAAAGUARAAAAABlQEQAAAAAQMaAACJAwAgpgEAAIoDACCsAQAAAQAgAxoAAIcDACCmAQAAiAMAIKwBAAAFACAEGgAApgIAMKYBAACnAgAwqAEAAKkCACCsAQAAqgIAMAQaAACdAgAwpgEAAJ4CADCoAQAAoAIAIKwBAAD6AQAwAAAABRoAAIEDACAbAACFAwAgpgEAAIIDACCnAQAAhAMAIKwBAAABACALGgAAuwIAMBsAAMACADCmAQAAvAIAMKcBAAC9AgAwqAEAAL4CACCpAQAAvwIAMKoBAAC_AgAwqwEAAL8CADCsAQAAvwIAMK0BAADBAgAwrgEAAMICADAJAwAAsgIAIAYAALUCACAKAAC0AgAgeQEAAAABgAFAAAAAAYEBQAAAAAGOAQEAAAABlgEBAAAAAZcBAQAAAAECAAAACQAgGgAAxgIAIAMAAAAJACAaAADGAgAgGwAAxQIAIAETAACDAwAwEAMAAMwBACAEAADZAQAgBgAAzQEAIAoAANoBACB2AADYAQAwdwAABwAQeAAA2AEAMHkBAAAAAYABQADFAQAhgQFAAMUBACGOAQEAwwEAIZYBAQDDAQAhlwEBAMMBACGYAQEAwwEAIaIBAADWAQAgowEAANcBACACAAAACQAgEwAAxQIAIAIAAADDAgAgEwAAxAIAIAp2AADCAgAwdwAAwwIAEHgAAMICADB5AQDDAQAhgAFAAMUBACGBAUAAxQEAIY4BAQDDAQAhlgEBAMMBACGXAQEAwwEAIZgBAQDDAQAhCnYAAMICADB3AADDAgAQeAAAwgIAMHkBAMMBACGAAUAAxQEAIYEBQADFAQAhjgEBAMMBACGWAQEAwwEAIZcBAQDDAQAhmAEBAMMBACEGeQEA4wEAIYABQADmAQAhgQFAAOYBACGOAQEA4wEAIZYBAQDjAQAhlwEBAOMBACEJAwAAmQIAIAYAAJwCACAKAACbAgAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGOAQEA4wEAIZYBAQDjAQAhlwEBAOMBACEJAwAAsgIAIAYAALUCACAKAAC0AgAgeQEAAAABgAFAAAAAAYEBQAAAAAGOAQEAAAABlgEBAAAAAZcBAQAAAAEDGgAAgQMAIKYBAACCAwAgrAEAAAEAIAQaAAC7AgAwpgEAALwCADCoAQAAvgIAIKwBAAC_AgAwAAAAAakBAAAAnQECCxoAAOUCADAbAADqAgAwpgEAAOYCADCnAQAA5wIAMKgBAADoAgAgqQEAAOkCADCqAQAA6QIAMKsBAADpAgAwrAEAAOkCADCtAQAA6wIAMK4BAADsAgAwCxoAANwCADAbAADgAgAwpgEAAN0CADCnAQAA3gIAMKgBAADfAgAgqQEAAL8CADCqAQAAvwIAMKsBAAC_AgAwrAEAAL8CADCtAQAA4QIAMK4BAADCAgAwCxoAANACADAbAADVAgAwpgEAANECADCnAQAA0gIAMKgBAADTAgAgqQEAANQCADCqAQAA1AIAMKsBAADUAgAwrAEAANQCADCtAQAA1gIAMK4BAADXAgAwCQYAAIMCACB5AQAAAAF_EAAAAAGAAUAAAAABgQFAAAAAAY0BAgAAAAGQAQAAAJABApEBEAAAAAGSARAAAAABAgAAAB0AIBoAANsCACADAAAAHQAgGgAA2wIAIBsAANoCACABEwAAgAMAMA4DAADMAQAgBgAAzQEAIHYAAMkBADB3AAAbABB4AADJAQAweQEAAAABfxAAygEAIYABQADFAQAhgQFAAMUBACGNAQIAAAABjgEBAMMBACGQAQAAywGQASKRARAAygEAIZIBEADKAQAhAgAAAB0AIBMAANoCACACAAAA2AIAIBMAANkCACAMdgAA1wIAMHcAANgCABB4AADXAgAweQEAwwEAIX8QAMoBACGAAUAAxQEAIYEBQADFAQAhjQECAM4BACGOAQEAwwEAIZABAADLAZABIpEBEADKAQAhkgEQAMoBACEMdgAA1wIAMHcAANgCABB4AADXAgAweQEAwwEAIX8QAMoBACGAAUAAxQEAIYEBQADFAQAhjQECAM4BACGOAQEAwwEAIZABAADLAZABIpEBEADKAQAhkgEQAMoBACEIeQEA4wEAIX8QAPIBACGAAUAA5gEAIYEBQADmAQAhjQECAOQBACGQAQAA8wGQASKRARAA8gEAIZIBEADyAQAhCQYAAPUBACB5AQDjAQAhfxAA8gEAIYABQADmAQAhgQFAAOYBACGNAQIA5AEAIZABAADzAZABIpEBEADyAQAhkgEQAPIBACEJBgAAgwIAIHkBAAAAAX8QAAAAAYABQAAAAAGBAUAAAAABjQECAAAAAZABAAAAkAECkQEQAAAAAZIBEAAAAAEJBAAAswIAIAYAALUCACAKAAC0AgAgeQEAAAABgAFAAAAAAYEBQAAAAAGWAQEAAAABlwEBAAAAAZgBAQAAAAECAAAACQAgGgAA5AIAIAMAAAAJACAaAADkAgAgGwAA4wIAIAETAAD_AgAwAgAAAAkAIBMAAOMCACACAAAAwwIAIBMAAOICACAGeQEA4wEAIYABQADmAQAhgQFAAOYBACGWAQEA4wEAIZcBAQDjAQAhmAEBAOMBACEJBAAAmgIAIAYAAJwCACAKAACbAgAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGWAQEA4wEAIZcBAQDjAQAhmAEBAOMBACEJBAAAswIAIAYAALUCACAKAAC0AgAgeQEAAAABgAFAAAAAAYEBQAAAAAGWAQEAAAABlwEBAAAAAZgBAQAAAAEGCwAAyAIAIHkBAAAAAYABQAAAAAGBAUAAAAABlgEBAAAAAZcBAQAAAAECAAAABQAgGgAA8AIAIAMAAAAFACAaAADwAgAgGwAA7wIAIAETAAD-AgAwDQMAAMwBACALAADHAQAgdgAA3QEAMHcAAAMAEHgAAN0BADB5AQAAAAGAAUAAxQEAIYEBQADFAQAhjgEBAMMBACGWAQEAwwEAIZcBAQDDAQAhogEAANsBACCjAQAA3AEAIAIAAAAFACATAADvAgAgAgAAAO0CACATAADuAgAgCXYAAOwCADB3AADtAgAQeAAA7AIAMHkBAMMBACGAAUAAxQEAIYEBQADFAQAhjgEBAMMBACGWAQEAwwEAIZcBAQDDAQAhCXYAAOwCADB3AADtAgAQeAAA7AIAMHkBAMMBACGAAUAAxQEAIYEBQADFAQAhjgEBAMMBACGWAQEAwwEAIZcBAQDDAQAhBXkBAOMBACGAAUAA5gEAIYEBQADmAQAhlgEBAOMBACGXAQEA4wEAIQYLAAC6AgAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGWAQEA4wEAIZcBAQDjAQAhBgsAAMgCACB5AQAAAAGAAUAAAAABgQFAAAAAAZYBAQAAAAGXAQEAAAABBBoAAOUCADCmAQAA5gIAMKgBAADoAgAgrAEAAOkCADAEGgAA3AIAMKYBAADdAgAwqAEAAN8CACCsAQAAvwIAMAQaAADQAgAwpgEAANECADCoAQAA0wIAIKwBAADUAgAwAAAAAwsAAPUCACAMAAD0AgAgDQAA9gIAIAACAwAA9wIAIAYAAPgCACAEAwAA9wIAIAQAAPwCACAGAAD4AgAgCgAA_QIAIAIFAAD6AgAgBgAA-AIAIAIDAAD3AgAgCwAA9QIAIAAFeQEAAAABgAFAAAAAAYEBQAAAAAGWAQEAAAABlwEBAAAAAQZ5AQAAAAGAAUAAAAABgQFAAAAAAZYBAQAAAAGXAQEAAAABmAEBAAAAAQh5AQAAAAF_EAAAAAGAAUAAAAABgQFAAAAAAY0BAgAAAAGQAQAAAJABApEBEAAAAAGSARAAAAABCQsAAPICACANAADzAgAgeQEAAAABgAFAAAAAAYEBQAAAAAGZAQEAAAABmgEBAAAAAZsBAQAAAAGdAQAAAJ0BAgIAAAABACAaAACBAwAgBnkBAAAAAYABQAAAAAGBAUAAAAABjgEBAAAAAZYBAQAAAAGXAQEAAAABAwAAACMAIBoAAIEDACAbAACGAwAgCwAAACMAIAsAAM4CACANAADPAgAgEwAAhgMAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhmQEBAOMBACGaAQEA4wEAIZsBAQDjAQAhnQEAAMwCnQEiCQsAAM4CACANAADPAgAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGZAQEA4wEAIZoBAQDjAQAhmwEBAOMBACGdAQAAzAKdASIHAwAAxwIAIHkBAAAAAYABQAAAAAGBAUAAAAABjgEBAAAAAZYBAQAAAAGXAQEAAAABAgAAAAUAIBoAAIcDACAJDAAA8QIAIA0AAPMCACB5AQAAAAGAAUAAAAABgQFAAAAAAZkBAQAAAAGaAQEAAAABmwEBAAAAAZ0BAAAAnQECAgAAAAEAIBoAAIkDACAHeQEAAAABfQIAAAABgAFAAAAAAYEBQAAAAAGTAQEAAAABlAEQAAAAAZUBEAAAAAEIeQEAAAABegEAAAABfAEAAAABfQIAAAABfggAAAABfwgAAAABgAFAAAAAAYEBQAAAAAEDAAAAAwAgGgAAhwMAIBsAAI8DACAJAAAAAwAgAwAAuQIAIBMAAI8DACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIY4BAQDjAQAhlgEBAOMBACGXAQEA4wEAIQcDAAC5AgAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGOAQEA4wEAIZYBAQDjAQAhlwEBAOMBACEDAAAAIwAgGgAAiQMAIBsAAJIDACALAAAAIwAgDAAAzQIAIA0AAM8CACATAACSAwAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGZAQEA4wEAIZoBAQDjAQAhmwEBAOMBACGdAQAAzAKdASIJDAAAzQIAIA0AAM8CACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIZkBAQDjAQAhmgEBAOMBACGbAQEA4wEAIZ0BAADMAp0BIgoDAACyAgAgBAAAswIAIAYAALUCACB5AQAAAAGAAUAAAAABgQFAAAAAAY4BAQAAAAGWAQEAAAABlwEBAAAAAZgBAQAAAAECAAAACQAgGgAAkwMAIAh5AQAAAAF6AQAAAAF7AQAAAAF9AgAAAAF-CAAAAAF_CAAAAAGAAUAAAAABgQFAAAAAAQMAAAAHACAaAACTAwAgGwAAmAMAIAwAAAAHACADAACZAgAgBAAAmgIAIAYAAJwCACATAACYAwAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGOAQEA4wEAIZYBAQDjAQAhlwEBAOMBACGYAQEA4wEAIQoDAACZAgAgBAAAmgIAIAYAAJwCACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIY4BAQDjAQAhlgEBAOMBACGXAQEA4wEAIZgBAQDjAQAhCQsAAPICACAMAADxAgAgeQEAAAABgAFAAAAAAYEBQAAAAAGZAQEAAAABmgEBAAAAAZsBAQAAAAGdAQAAAJ0BAgIAAAABACAaAACZAwAgCHkBAAAAAXsBAAAAAXwBAAAAAX0CAAAAAX4IAAAAAX8IAAAAAYABQAAAAAGBAUAAAAABAwAAACMAIBoAAJkDACAbAACeAwAgCwAAACMAIAsAAM4CACAMAADNAgAgEwAAngMAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhmQEBAOMBACGaAQEA4wEAIZsBAQDjAQAhnQEAAMwCnQEiCQsAAM4CACAMAADNAgAgeQEA4wEAIYABQADmAQAhgQFAAOYBACGZAQEA4wEAIZoBAQDjAQAhmwEBAOMBACGdAQAAzAKdASIJBQAAlAIAIHkBAAAAAXsBAAAAAX0CAAAAAYABQAAAAAGBAUAAAAABkwEBAAAAAZQBEAAAAAGVARAAAAABAgAAAA0AIBoAAJ8DACAKAwAAsgIAIAQAALMCACAKAAC0AgAgeQEAAAABgAFAAAAAAYEBQAAAAAGOAQEAAAABlgEBAAAAAZcBAQAAAAGYAQEAAAABAgAAAAkAIBoAAKEDACAKAwAAggIAIHkBAAAAAX8QAAAAAYABQAAAAAGBAUAAAAABjQECAAAAAY4BAQAAAAGQAQAAAJABApEBEAAAAAGSARAAAAABAgAAAB0AIBoAAKMDACADAAAACwAgGgAAnwMAIBsAAKcDACALAAAACwAgBQAAiQIAIBMAAKcDACB5AQDjAQAhewEA4wEAIX0CAOQBACGAAUAA5gEAIYEBQADmAQAhkwEBAOMBACGUARAA8gEAIZUBEADyAQAhCQUAAIkCACB5AQDjAQAhewEA4wEAIX0CAOQBACGAAUAA5gEAIYEBQADmAQAhkwEBAOMBACGUARAA8gEAIZUBEADyAQAhAwAAAAcAIBoAAKEDACAbAACqAwAgDAAAAAcAIAMAAJkCACAEAACaAgAgCgAAmwIAIBMAAKoDACB5AQDjAQAhgAFAAOYBACGBAUAA5gEAIY4BAQDjAQAhlgEBAOMBACGXAQEA4wEAIZgBAQDjAQAhCgMAAJkCACAEAACaAgAgCgAAmwIAIHkBAOMBACGAAUAA5gEAIYEBQADmAQAhjgEBAOMBACGWAQEA4wEAIZcBAQDjAQAhmAEBAOMBACEDAAAAGwAgGgAAowMAIBsAAK0DACAMAAAAGwAgAwAA9AEAIBMAAK0DACB5AQDjAQAhfxAA8gEAIYABQADmAQAhgQFAAOYBACGNAQIA5AEAIY4BAQDjAQAhkAEAAPMBkAEikQEQAPIBACGSARAA8gEAIQoDAAD0AQAgeQEA4wEAIX8QAPIBACGAAUAA5gEAIYEBQADmAQAhjQECAOQBACGOAQEA4wEAIZABAADzAZABIpEBEADyAQAhkgEQAPIBACEEBwALCxoDDAYCDR4GAwMAAQcACgsKAwUDAAEEAAIGFgUHAAkKDgQDBQADBhIFBwAIAwUAAwgABgkABAMDAAEGEwUHAAcBBhQAAQYVAAIGGAAKFwABCxkAAwsgAAwfAA0hAAAAAAMHABAgABEhABIAAAADBwAQIAARIQASAQMAAQEDAAEDBwAXIAAYIQAZAAAAAwcAFyAAGCEAGQIDAAEEAAICAwABBAACAwcAHiAAHyEAIAAAAAMHAB4gAB8hACABBQADAQUAAwUHACUgACghAClSACZTACcAAAAAAAUHACUgACghAClSACZTACcBAwABAQMAAQUHAC4gADEhADJSAC9TADAAAAAAAAUHAC4gADEhADJSAC9TADADBQADCAAGCQAEAwUAAwgABgkABAUHADcgADohADtSADhTADkAAAAAAAUHADcgADohADtSADhTADkOAgEPIgEQJQERJgESJwEUKQEVKwwWLA0XLgEYMAwZMQ4cMgEdMwEeNAwiNw8jOBMkOQIlOgImOwInPAIoPQIpPwIqQQwrQhQsRAItRgwuRxUvSAIwSQIxSgwyTRYzTho0TwM1UAM2UQM3UgM4UwM5VQM6Vww7WBs8WgM9XAw-XRw_XgNAXwNBYAxCYx1DZCFEZQRFZgRGZwRHaARIaQRJawRKbQxLbiJMcARNcgxOcyNPdARQdQRRdgxUeSRVeipWewZXfAZYfQZZfgZafwZbgQEGXIMBDF2EAStehgEGX4gBDGCJASxhigEGYosBBmOMAQxkjwEtZZABM2aRAQVnkgEFaJMBBWmUAQVqlQEFa5cBBWyZAQxtmgE0bpwBBW-eAQxwnwE1caABBXKhAQVzogEMdKUBNnWmATw"
 }
 
 async function decodeBase64AsWasm(wasmBase64: string): Promise<WebAssembly.Module> {
@@ -1330,8 +1360,8 @@ export function getPrismaClientClass(): PrismaClientConstructor {
 - **Language**: `typescript`
 - **Location**: `src/generated/prisma/internal/prismaNamespace.ts`
 - **Relative Path**: `src/generated/prisma/internal`
-- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Created**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `916aabb170cd5e854e4a7ad5ad330c30`
 - **SHA256**: `f2dad6a53f446ed7b97e184d321d6972bdc883c6a3ffd32017c3a4a08bcd53ce`
 - **Encoding**: UTF-8
@@ -2626,8 +2656,8 @@ export type TransactionClient = Omit<DefaultPrismaClient, runtime.ITXClientDenyL
 - **Language**: `typescript`
 - **Location**: `src/generated/prisma/internal/prismaNamespaceBrowser.ts`
 - **Relative Path**: `src/generated/prisma/internal`
-- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Created**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `4d898adcaf2a8cf49b246e82feefc152`
 - **SHA256**: `81c09257d5cc892903c30ba0a7ec810d5fcb8f973621e9e762d36402dbfd3ae9`
 - **Encoding**: UTF-8
@@ -2822,8 +2852,8 @@ export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 - **Language**: `typescript`
 - **Location**: `src/generated/prisma/models/Batch.ts`
 - **Relative Path**: `src/generated/prisma/models`
-- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Created**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `f53fae38d65dff1ea10ee3ff21cc1646`
 - **SHA256**: `6c9eb9b002f6479d085c042c5307ad7d30d9d6d4d73aa217ad3c1780632821c5`
 - **Encoding**: UTF-8
@@ -4521,8 +4551,8 @@ export type BatchDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 - **Language**: `typescript`
 - **Location**: `src/generated/prisma/models/Bill.ts`
 - **Relative Path**: `src/generated/prisma/models`
-- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Created**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `1275e78106621f8f8cd95a372a678729`
 - **SHA256**: `339c329e65f698fa177281c4876a12732968c4e5fdaf03c4b1f35061aa2a3ac2`
 - **Encoding**: UTF-8
@@ -6243,8 +6273,8 @@ export type BillDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
 - **Language**: `typescript`
 - **Location**: `src/generated/prisma/models/BillItem.ts`
 - **Relative Path**: `src/generated/prisma/models`
-- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Created**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `befb02f6779f583f355df4180622e4aa`
 - **SHA256**: `dfc97f441980d188268044a33413895ac9b7a7fe359b0407b8948ea708aa5b53`
 - **Encoding**: UTF-8
@@ -8102,8 +8132,8 @@ export type BillItemDefaultArgs<ExtArgs extends runtime.Types.Extensions.Interna
 - **Language**: `typescript`
 - **Location**: `src/generated/prisma/models/Category.ts`
 - **Relative Path**: `src/generated/prisma/models`
-- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Created**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `256faf5623b33d74c9da0bf3c75135a9`
 - **SHA256**: `b17026f6e340fffc367762a67352d2261b1fb1b0023dd13ba0c9ad4cdc791b8e`
 - **Encoding**: UTF-8
@@ -9657,8 +9687,8 @@ export type CategoryDefaultArgs<ExtArgs extends runtime.Types.Extensions.Interna
 - **Language**: `typescript`
 - **Location**: `src/generated/prisma/models/Product.ts`
 - **Relative Path**: `src/generated/prisma/models`
-- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Created**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `658ef9e10f325462b911bc26f5c77710`
 - **SHA256**: `2a3d051311f6fd38c117fe184483630b4716464fd356877360b407f665c13a14`
 - **Encoding**: UTF-8
@@ -11512,15 +11542,15 @@ export type ProductDefaultArgs<ExtArgs extends runtime.Types.Extensions.Internal
 ### <a id="📄-src-generated-prisma-models-user-ts"></a>📄 `src/generated/prisma/models/User.ts`
 
 **File Info:**
-- **Size**: 56.53 KB
+- **Size**: 56.56 KB
 - **Extension**: `.ts`
 - **Language**: `typescript`
 - **Location**: `src/generated/prisma/models/User.ts`
 - **Relative Path**: `src/generated/prisma/models`
-- **Created**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
-- **MD5**: `9d4b619a03a64b8345bfbb8bd51d5250`
-- **SHA256**: `692e2f2aaa6569206e536e4397f2e93807029987dc87f24fa8044dd753ab4093`
+- **Created**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `218477dae136171ec6c4339226a669a5`
+- **SHA256**: `890cb5894317bc9744642a2bcb02a0caa71f773c3bd00c3fd817eef6f651f79d`
 - **Encoding**: UTF-8
 
 **File code content:**
@@ -11746,11 +11776,11 @@ export type UserOrderByWithRelationInput = {
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  email?: string
-  username?: string
   AND?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
+  email?: Prisma.StringFilter<"User"> | string
+  username?: Prisma.StringFilter<"User"> | string
   password?: Prisma.StringFilter<"User"> | string
   role?: Prisma.EnumRoleFilter<"User"> | $Enums.Role
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
@@ -11758,7 +11788,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   categories?: Prisma.CategoryListRelationFilter
   products?: Prisma.ProductListRelationFilter
   bills?: Prisma.BillListRelationFilter
-}, "id" | "email" | "username">
+}, "id">
 
 export type UserOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -13195,7 +13225,7 @@ export type UserDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
 - **Location**: `src/generated/prisma/browser.ts`
 - **Relative Path**: `src/generated/prisma`
 - **Created**: 2026-10-13 11:48:04 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `737eefbc78dae290353854be08bb20fc`
 - **SHA256**: `1846403f80e2db6542fbf427b650184943d70456ad13dd12791a0c57be31dd18`
 - **Encoding**: UTF-8
@@ -13266,7 +13296,7 @@ export type BillItem = Prisma.BillItemModel
 - **Location**: `src/generated/prisma/client.ts`
 - **Relative Path**: `src/generated/prisma`
 - **Created**: 2026-10-13 11:48:04 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `1db20a30600eb4203bd6d9c4a5d34c59`
 - **SHA256**: `25243e24ed126bc5b8e61cfc814df63a6236b791e611ac9e76be1785f872d35d`
 - **Encoding**: UTF-8
@@ -13359,7 +13389,7 @@ export type BillItem = Prisma.BillItemModel
 - **Location**: `src/generated/prisma/commonInputTypes.ts`
 - **Relative Path**: `src/generated/prisma`
 - **Created**: 2026-10-13 11:48:04 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `2cb571f689418f81d06e94171db7d85d`
 - **SHA256**: `a9a6cc377000f8b2242ee4a8d899a6616bf21988f514e8fa4e7f61bf30e64f3d`
 - **Encoding**: UTF-8
@@ -13742,7 +13772,7 @@ export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
 - **Location**: `src/generated/prisma/enums.ts`
 - **Relative Path**: `src/generated/prisma`
 - **Created**: 2026-10-13 11:48:04 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `fd2c162cdd55d202300531b84a66bae1`
 - **SHA256**: `31fe3549447b9c7d169bda4b83da22735e6e1a5030a5807192c89a8a688116d5`
 - **Encoding**: UTF-8
@@ -13789,7 +13819,7 @@ export type DiscountType = (typeof DiscountType)[keyof typeof DiscountType]
 - **Location**: `src/generated/prisma/models.ts`
 - **Relative Path**: `src/generated/prisma`
 - **Created**: 2026-10-13 11:48:04 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:46:18 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-15 05:33:12 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `9a9060d9ea06c4052a3dab03120b1d1d`
 - **SHA256**: `37c1a5bbd1e4e93d1adfc45c8bb3f5a7bfa65c54b2a2b294bf7138c91beeb9d2`
 - **Encoding**: UTF-8
@@ -14608,15 +14638,15 @@ export const BatchService = {
 ### <a id="📄-src-modules-batch-validator-ts"></a>📄 `src/modules/batch/validator.ts`
 
 **File Info:**
-- **Size**: 1.59 KB
+- **Size**: 1.54 KB
 - **Extension**: `.ts`
 - **Language**: `typescript`
 - **Location**: `src/modules/batch/validator.ts`
 - **Relative Path**: `src/modules/batch`
 - **Created**: 2026-10-13 12:29:28 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:29:30 (Asia/Katmandu / GMT+06:45)
-- **MD5**: `01c53e331bd9035769ce67a81992b803`
-- **SHA256**: `f38b6ead01e8c8ee1a53c3656248b8e361102add6069ffd2cc678b50f97ef375`
+- **Modified**: 2026-10-13 16:33:19 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `cdd069381f30c6ff4d7700f5f3ec7bcd`
+- **SHA256**: `1b25643d6658ab3335874349d4fed63c7d94aa12ae4e1bf031358ff940ee4cec`
 - **Encoding**: ASCII
 
 **File code content:**
@@ -14628,7 +14658,6 @@ export const batchCreateInputSchema = z.object({
   productId: z
     .string({ message: "Product ID is required" })
     .min(1, "Product ID is required"),
-  // Leave empty to auto-generate, e.g. 20261013-01
   batchNumber: z
     .string()
     .min(1, "Batch number cannot be empty")
@@ -16141,7 +16170,7 @@ export const validateProductUpdate = (data: unknown) =>
 - **Location**: `src/utils/batchNumber.ts`
 - **Relative Path**: `src/utils`
 - **Created**: 2026-10-13 12:27:44 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:27:50 (Asia/Katmandu / GMT+06:45)
+- **Modified**: 2026-10-13 13:44:58 (Asia/Katmandu / GMT+06:45)
 - **MD5**: `3f9ac266df2ac3f3fc2513860b56aa6d`
 - **SHA256**: `773f02afce649aa88f3ef9549cd9ea7c39d40c6b7512039dbcc80a831635210d`
 - **Encoding**: ASCII
@@ -16496,15 +16525,15 @@ export const ResponseHandler = {
 ### <a id="📄-src-index-ts"></a>📄 `src/index.ts`
 
 **File Info:**
-- **Size**: 1.97 KB
+- **Size**: 2.25 KB
 - **Extension**: `.ts`
 - **Language**: `typescript`
 - **Location**: `src/index.ts`
 - **Relative Path**: `src`
 - **Created**: 2026-10-13 11:29:01 (Asia/Katmandu / GMT+06:45)
-- **Modified**: 2026-10-13 12:54:03 (Asia/Katmandu / GMT+06:45)
-- **MD5**: `fb2a52927045f352951a1a20aef9b489`
-- **SHA256**: `c829a949a19bf91ab8e054daa50c2104d70c1b9cdbf91743383889c392fad4e6`
+- **Modified**: 2026-10-15 15:36:06 (Asia/Katmandu / GMT+06:45)
+- **MD5**: `0ba4ed85a94176e68039bbd4a7dfe804`
+- **SHA256**: `fe141f61ffc7c32ff114d888d18b04db69dff9c5667e430f1fdb673926c16b97`
 - **Encoding**: ASCII
 
 **File code content:**
@@ -16526,11 +16555,20 @@ import { ResponseHandler } from "./utils/response";
 const app = express();
 
 app.use(helmet());
+app.use(morgan())
+const allowedOrigins = (process.env.CORS_ORIGINS ?? "http://localhost:5173")
+  .split(",")
+  .map((o) => o.trim());
+
 app.use(
   cors({
-    origin: (process.env.CORS_ORIGIN ?? "http://localhost:5173").split(","),
+    origin: (origin, callback) => {
+      // allow non-browser clients (curl, Postman) that send no Origin
+      if (!origin || allowedOrigins.includes(origin))
+        return callback(null, true);
+      return callback(new Error(`CORS: origin ${origin} not allowed`));
+    },
     credentials: true,
-    exposedHeaders: ["X-New-Token", "X-Request-Id"],
   }),
 );
 app.use((_req: Request, res: Response, next: NextFunction) => {

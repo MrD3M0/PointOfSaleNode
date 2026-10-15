@@ -10,15 +10,24 @@ import { prismaMain } from "./lib/prismaClient";
 import { seedDefaultAdmin } from "./dev/seed-default-admin";
 import { ErrorHandler } from "./utils/error";
 import { ResponseHandler } from "./utils/response";
-
+import morgan from 'morgan'
 const app = express();
 
 app.use(helmet());
+app.use(morgan("dev"))
+const allowedOrigins = (process.env.CORS_ORIGINS ?? "http://localhost:5173")
+  .split(",")
+  .map((o) => o.trim());
+
 app.use(
   cors({
-    origin: (process.env.CORS_ORIGIN ?? "http://localhost:5173").split(","),
+    origin: (origin, callback) => {
+      // allow non-browser clients (curl, Postman) that send no Origin
+      if (!origin || allowedOrigins.includes(origin))
+        return callback(null, true);
+      return callback(new Error(`CORS: origin ${origin} not allowed`));
+    },
     credentials: true,
-    exposedHeaders: ["X-New-Token", "X-Request-Id"],
   }),
 );
 app.use((_req: Request, res: Response, next: NextFunction) => {

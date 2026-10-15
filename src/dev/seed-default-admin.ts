@@ -17,7 +17,7 @@ export async function seedDefaultAdmin() {
   }
 
   try {
-    const existingUser = await prismaMain.user.findUnique({ where: { email } });
+    const existingUser = await prismaMain.user.findFirst({ where: { email } });
     if (existingUser) {
       console.log("Default admin user already exists.");
       return;

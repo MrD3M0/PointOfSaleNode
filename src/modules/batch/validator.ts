@@ -4,7 +4,6 @@ export const batchCreateInputSchema = z.object({
   productId: z
     .string({ message: "Product ID is required" })
     .min(1, "Product ID is required"),
-  // Leave empty to auto-generate, e.g. 20261013-01
   batchNumber: z
     .string()
     .min(1, "Batch number cannot be empty")
